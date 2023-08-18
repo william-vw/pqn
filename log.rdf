@@ -1,0 +1,19 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tr: <http://example.org/trace#> .
+@prefix : <http://example.org#> .
+
+:a1 tr:next :a2 .
+:a2 tr:next :a3 .
+
+:a1 tr:next :a2 .
+:a2 tr:next :a3 .
+:a3 tr:next :a4 .
+:a4 tr:next :a5 .
+
+:a1 tr:next :a2 .
+:a2 tr:next :a5 .
+
+:a1 tr:next rdf:nil .
+
+:a1 tr:next :a4 .
+:a4 tr:next :a5 .

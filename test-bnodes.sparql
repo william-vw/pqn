@@ -1,0 +1,126 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX tr: <http://example.org/trace#>
+PREFIX : <http://example.org#>
+
+# (log-bnodes.rdf)
+
+# there exists a certain sequence
+
+SELECT ?t
+WHERE { 
+    [ tr:from :a1 ; tr:to :a2 ] tr:in ?t .
+    [ tr:from :a2 ; tr:to :a3 ] tr:in ?t .
+}
+
+# (get percentage of matching traces)
+
+# SELECT ?match_num ?total_num ?perc
+# WHERE { 
+#     {
+#         SELECT (COUNT(?t0) as ?match_num)
+#         WHERE {
+#             [ tr:from :a1 ; tr:to :a2 ] tr:in ?t0 .
+#             [ tr:from :a2 ; tr:to :a3 ] tr:in ?t0 .
+#         }
+#     }
+#     {
+#         SELECT (COUNT(DISTINCT ?t) as ?total_num)
+#         WHERE {
+#             ?x tr:in ?t .
+#         }
+#     }
+#     BIND ( ( ?match_num / ?total_num ) AS ?perc )
+# }
+
+
+# there does not exist a certain sequence
+
+# SELECT ?t
+# WHERE { 
+#     [ tr:from :a1 ; tr:to :a2 ] tr:in ?t .
+#     FILTER NOT EXISTS  { [ tr:from :a2 ; tr:to :a3 ] tr:in ?t . }
+# }
+
+
+# get start activities
+# could also simply have trace start with [ tr:from rdf:nil ; tr:to ?start ]
+
+# SELECT ?start ?t
+# WHERE {
+#     [ tr:from ?start ; tr:to ?next ] tr:in ?t .
+#     FILTER NOT EXISTS { [ tr:from ?prior ; tr:to ?start ] tr:in ?t . }
+# }
+
+
+# (log-bnodes-exp.rdf)
+
+# get pairs of actors working together
+
+# SELECT DISTINCT ?actor1 ?actor2
+# WHERE {
+#     [ tr:from [ tr:actor ?actor1 ] ; tr:to [ tr:actor ?actor2 ] ] tr:in ?t .
+#     FILTER ( !sameTerm(?actor1, ?actor2)  )
+# }
+
+# get actors with lots of outgoing edges (possibly to same actor)
+
+# SELECT ?actor1 (COUNT(?t) as ?num_traces)
+# WHERE {
+#     [ tr:from [ tr:actor ?actor1 ] ; tr:to [ tr:actor ?actor2 ] ] tr:in ?t .
+# }
+# GROUP BY ?actor1
+# ORDER BY DESC(?num_traces)
+
+# get avg duration for given activity grouped by actor
+
+# SELECT ?actor (AVG(?d) as ?avg_dur) (MAX(?d) as ?max_dur) (COUNT(?t) as ?num_traces)
+# WHERE {
+#     [ (tr:from|tr:to) [ tr:activity :a3 ; tr:actor ?actor ; tr:duration ?d ] ] tr:in ?t .
+# }
+# GROUP BY ?actor
+# ORDER BY DESC(?avg_dur)
+
+# get total duration of traces
+# assumes last event occurs with tr:next rdf:nil
+
+# SELECT ?t (SUM(?d) as ?total_dur)
+# WHERE {
+#     [ tr:from [ tr:duration ?d ] ] tr:in ?t .
+# }
+# GROUP BY ?t
+# ORDER BY DESC(?total_dur)
+
+# get actors involved in traces that take longer than average
+# good example for need of sin3
+
+# this is likely quite inefficient (.. also in sin3)
+# as per the spec, the inner query is first executed, and then joined with the outer one
+# well, it doesn't work any way in jena
+
+# SELECT DISTINCT ?t ?trace_dur ?avg_overall_dur
+# {
+#     [ tr:from ?x ] tr:in ?t .
+#     {
+#         SELECT ?t (SUM(?d) as ?trace_dur)
+#         WHERE {
+#             [ tr:from [ tr:duration ?d ] ] tr:in ?t .
+#         }
+#         GROUP BY ?t
+#     }
+    
+#     {
+#         SELECT (AVG(?trace_dur) as ?avg_overall_dur)
+#         WHERE {
+#             {
+#                 SELECT ?at (SUM(?ad) as ?trace_dur)
+#                 WHERE {
+#                     [ tr:from [ tr:duration ?ad ] ] tr:in ?at .
+#                 }
+#                 GROUP BY ?at
+#             }
+#         }
+#     }
+
+#     # FILTER (?trace_dur >= ?avg_trace_dur)
+# }
