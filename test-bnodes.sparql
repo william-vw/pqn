@@ -5,13 +5,69 @@ PREFIX : <http://example.org#>
 
 # (log-bnodes.rdf)
 
+# there exists a given activity
+
+# activityOccurs
+# SELECT ?t
+# WHERE { 
+#     [ tr:from :a5 ] tr:in ?t .
+# }
+
+# there does not exist a given activity
+
+# activityDoesNotOccur
+# SELECT DISTINCT ?t
+# WHERE { 
+#     # TODO annotate activities with type tr:Trace
+#     ?a tr:in ?t
+#     FILTER NOT EXISTS  { ?x tr:from :a2 ; tr:in ?t . }
+# }
+
+# two activities don't co-occur
+
+# SELECT DISTINCT ?t
+# WHERE { 
+#     ?a tr:in ?t
+#     FILTER NOT EXISTS  { 
+#         [ tr:from :a4 ] tr:in ?t . 
+#         [ tr:from :a5 ] tr:in ?t . 
+#     }
+# }
+
+# either two activities both occur or neither occur
+
+# SELECT DISTINCT ?t
+# WHERE { 
+#     {
+#         [ tr:from :a3 ] tr:in ?t .
+#         [ tr:from :a5 ] tr:in ?t .
+#     }
+#     UNION
+#     {
+#         {
+#             ?a tr:in ?t .
+#         }
+#         # subtract all traces where :a3 *or* :a5 occur
+#         # (cases where :a3 *and* :a5 occur are captured in first union operand)
+#         MINUS
+#         { 
+#             [ tr:from :a3 ] tr:in ?t
+#         }
+#         MINUS
+#         {
+#             [ tr:from :a5 ] tr:in ?t . 
+#         }
+#     }
+# }
+
 # there exists a certain sequence
 
-SELECT ?t
-WHERE { 
-    [ tr:from :a1 ; tr:to :a2 ] tr:in ?t .
-    [ tr:from :a2 ; tr:to :a3 ] tr:in ?t .
-}
+# sequenceOccurs
+# SELECT ?t
+# WHERE { 
+#     [ tr:from :a1 ; tr:to :a2 ] tr:in ?t .
+#     [ tr:from :a2 ; tr:to :a3 ] tr:in ?t .
+# }
 
 # (get percentage of matching traces)
 
@@ -33,18 +89,17 @@ WHERE {
 #     BIND ( ( ?match_num / ?total_num ) AS ?perc )
 # }
 
-
 # there does not exist a certain sequence
 
+# sequenceDoesNotOccur
 # SELECT ?t
 # WHERE { 
-#     [ tr:from :a1 ; tr:to :a2 ] tr:in ?t .
+#     ?x tr:in ?t .
 #     FILTER NOT EXISTS  { [ tr:from :a2 ; tr:to :a3 ] tr:in ?t . }
 # }
 
-
 # get start activities
-# could also simply have trace start with [ tr:from rdf:nil ; tr:to ?start ]
+# (could also have trace start with [ tr:from rdf:nil ; tr:to ?start ])
 
 # SELECT ?start ?t
 # WHERE {
@@ -52,19 +107,31 @@ WHERE {
 #     FILTER NOT EXISTS { [ tr:from ?prior ; tr:to ?start ] tr:in ?t . }
 # }
 
+# a given activity precedes another given activity
+# cannot do this in regular SPARQL - see test_bnodes.n3
+
+# SELECT DISTINCT ?t
+# WHERE { 
+#     ?t ^tr:in/tr:from :a1 .
+#     # does not ensure that same trace ?t is still used
+#     # does not ensure that :a1 is before :a4
+#     ?t ^tr:in/tr:to/(^tr:from/tr:to)* :a4
+# }
 
 # (log-bnodes-exp.rdf)
 
 # get pairs of actors working together
 
+# actorPairsWithHandOver
 # SELECT DISTINCT ?actor1 ?actor2
 # WHERE {
 #     [ tr:from [ tr:actor ?actor1 ] ; tr:to [ tr:actor ?actor2 ] ] tr:in ?t .
 #     FILTER ( !sameTerm(?actor1, ?actor2)  )
 # }
 
-# get actors with lots of outgoing edges (possibly to same actor)
+# get actors with counts of outgoing edges (possibly to same actor)
 
+# handOverCountPerActor
 # SELECT ?actor1 (COUNT(?t) as ?num_traces)
 # WHERE {
 #     [ tr:from [ tr:actor ?actor1 ] ; tr:to [ tr:actor ?actor2 ] ] tr:in ?t .
@@ -74,6 +141,7 @@ WHERE {
 
 # get avg duration for given activity grouped by actor
 
+# averageActivityDurationPerActor
 # SELECT ?actor (AVG(?d) as ?avg_dur) (MAX(?d) as ?max_dur) (COUNT(?t) as ?num_traces)
 # WHERE {
 #     [ (tr:from|tr:to) [ tr:activity :a3 ; tr:actor ?actor ; tr:duration ?d ] ] tr:in ?t .
@@ -82,8 +150,8 @@ WHERE {
 # ORDER BY DESC(?avg_dur)
 
 # get total duration of traces
-# assumes last event occurs with tr:next rdf:nil
 
+# totalDurationPerTrace
 # SELECT ?t (SUM(?d) as ?total_dur)
 # WHERE {
 #     [ tr:from [ tr:duration ?d ] ] tr:in ?t .
@@ -124,3 +192,12 @@ WHERE {
 
 #     # FILTER (?trace_dur >= ?avg_trace_dur)
 # }
+
+# two activities occur concurrently
+
+SELECT DISTINCT ?t
+WHERE { 
+    [ tr:from [ tr:activity :a1 ; tr:ts ?ts1 ] ] tr:in ?t .
+    [ tr:from [ tr:activity :a2 ; tr:ts ?ts2 ] ] tr:in ?t .
+    FILTER ( ABS(?ts1 - ?ts2) < 60 ) # within 1 minute
+}

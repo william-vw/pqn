@@ -6,12 +6,12 @@
 # doing it properly would not be quite as readable
 
 [
-    tr:from [ tr:activity :a1 ; tr:ts 123 ; tr:actor :X ; tr:duration 1 ] ;
-    tr:to [ tr:activity :a2 ; tr:ts 123 ; tr:actor :Y ; tr:duration 2 ] ;
+    tr:from [ tr:activity :a1 ; tr:ts 0 ; tr:actor :X ; tr:duration 1 ] ;
+    tr:to [ tr:activity :a2 ; tr:ts 30 ; tr:actor :Y ; tr:duration 2 ] ;
 ] tr:in :trace0 .
 
 [
-    tr:from [ tr:activity :a2 ; tr:ts 123 ; tr:actor :Y ; tr:duration 2 ] ;
+    tr:from [ tr:activity :a2 ; tr:ts 30 ; tr:actor :Y ; tr:duration 2 ] ;
     tr:to [ tr:activity :a3 ; tr:ts 123 ; tr:actor :Z ; tr:duration 7 ] ;
 ] tr:in :trace0 .
 
@@ -21,12 +21,12 @@
 ] tr:in :trace0 .
 
 [
-    tr:from [ tr:activity :a1 ; tr:ts 123 ; tr:actor :X ; tr:duration 1 ] ;
-    tr:to [ tr:activity :a2 ; tr:ts 123 ; tr:actor :Y ; tr:duration 4 ] ;
+    tr:from [ tr:activity :a1 ; tr:ts 0 ; tr:actor :X ; tr:duration 1 ] ;
+    tr:to [ tr:activity :a2 ; tr:ts 120 ; tr:actor :Y ; tr:duration 4 ] ;
 ] tr:in :trace1 .
 
 [
-    tr:from [ tr:activity :a2 ; tr:ts 123 ; tr:actor :Y ; tr:duration 4 ] ;
+    tr:from [ tr:activity :a2 ; tr:ts 120 ; tr:actor :Y ; tr:duration 4 ] ;
     tr:to [ tr:activity :a3 ; tr:ts 123 ; tr:actor :Y ; tr:duration 7 ] ;
 ] tr:in :trace1 .
 
@@ -46,12 +46,12 @@
 ] tr:in :trace1 .
 
 [
-    tr:from [ tr:activity :a1 ; tr:ts 123 ; tr:actor :X ; tr:duration 1 ] ;
-    tr:to [ tr:activity :a2 ; tr:ts 123 ; tr:actor :Y ; tr:duration 2 ] ;
+    tr:from [ tr:activity :a1 ; tr:ts 120 ; tr:actor :X ; tr:duration 1 ] ;
+    tr:to [ tr:activity :a2 ; tr:ts 360 ; tr:actor :Y ; tr:duration 2 ] ;
 ] tr:in :trace2 .
 
 [
-    tr:from [ tr:activity :a2 ; tr:ts 123 ; tr:actor :Y ; tr:duration 1 ] ;
+    tr:from [ tr:activity :a2 ; tr:ts 360 ; tr:actor :Y ; tr:duration 1 ] ;
     tr:to [ tr:activity :a5 ; tr:ts 123 ; tr:actor :Z ; tr:duration 9 ] ;
 ] tr:in :trace2 .
 
@@ -61,17 +61,17 @@
 ] tr:in :trace2 .
 
 [
-    tr:from [ tr:activity :a3 ; tr:ts 123 ; tr:actor :X ; tr:duration 11 ] ;
+    tr:from [ tr:activity :a3 ; tr:ts 0 ; tr:actor :X ; tr:duration 11 ] ;
     tr:to rdf:nil ;
 ] tr:in :trace3 .
 
 [
-    tr:from [ tr:activity :a1 ; tr:ts 123 ; tr:actor :X ; tr:duration 1 ] ;
-    tr:to [ tr:activity :a4 ; tr:ts 123 ; tr:actor :Z ; tr:duration 10 ] ;
+    tr:from [ tr:activity :a1 ; tr:ts 120 ; tr:actor :X ; tr:duration 1 ] ;
+    tr:to [ tr:activity :a4 ; tr:ts 150 ; tr:actor :Z ; tr:duration 10 ] ;
 ] tr:in :trace4 .
 
 [
-    tr:from [ tr:activity :a4 ; tr:ts 123 ; tr:actor :Z ; tr:duration 10 ] ;
+    tr:from [ tr:activity :a4 ; tr:ts 150 ; tr:actor :Z ; tr:duration 10 ] ;
     tr:to [ tr:activity :a5 ; tr:ts 123 ; tr:actor :Z ; tr:duration 5 ] ;
 ] tr:in :trace4 .
 
@@ -79,3 +79,18 @@
     tr:from [ tr:activity :a5 ; tr:ts 123 ; tr:actor :Z ; tr:duration 5 ] ;
     tr:to rdf:nil
 ] tr:in :trace4 .
+
+[
+    tr:from [ tr:activity :a3 ; tr:ts 0 ; tr:actor :Z ; tr:duration 11 ] ;
+    tr:to [ tr:activity :a2 ; tr:ts 59 ; tr:actor :Y ; tr:duration 11 ]
+] tr:in :trace5 .
+
+[
+    tr:from [ tr:activity :a2 ; tr:ts 59 ; tr:actor :Y ; tr:duration 11 ] ;
+    tr:to [ tr:activity :a1 ; tr:ts 300 ; tr:actor :X ; tr:duration 11 ]
+] tr:in :trace5 .
+
+[
+    tr:from [ tr:activity :a1 ; tr:ts 500 ; tr:actor :X ; tr:duration 11 ] ;
+    tr:to rdf:nil
+] tr:in :trace5 .

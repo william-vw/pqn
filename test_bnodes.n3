@@ -1,0 +1,67 @@
+# @alsoload log-bnodes.rdf
+
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX tr: <http://example.org/trace#>
+PREFIX : <http://example.org#>
+
+# # get traces where a given activity precedes another given activity
+
+# {
+#     ( :a1 ?t ) tr:precedes ( :a3 ?t )
+# } => {
+#     <> tr:match ?t
+# } .
+
+# # ... only if both activities occur
+# # (so, if only one or none them occurs in trace, also return that trace)
+# {
+
+#     ?x tr:in ?t .
+#     (
+#         ?b
+#         {
+#             ?b tr:from ?e ; tr:in ?t .
+#             ?e list:in ( :a1 :a3 )
+#         }
+#     ?bs ) log:collectAllIn _:t .
+
+#     ?bs!list:length math:lessThan 2 .
+
+# } => {
+#     <> tr:match ?t
+# } .
+
+# get traces where, if second activity occurs, it is not preceded by first activity
+
+{
+    [ tr:from :a3 ] tr:in ?t .
+    (?t
+        {
+            ( :a1 ?t ) tr:precedes ( :a3 ?t )
+        }
+    ()) log:collectAllIn _:t .
+
+} => {
+    <> tr:match ?t
+} .
+
+
+
+# helper rules
+
+{
+    (?e1 ?t) tr:precedes (?e2 ?t)
+
+} <= {
+    [ tr:from ?e1 ; tr:to ?ei ] tr:in ?t .
+    (?ei ?t) tr:precedes (?e2 ?t)
+} .
+
+{
+    (?e ?t) tr:precedes (?e ?t)   
+} <= {} .

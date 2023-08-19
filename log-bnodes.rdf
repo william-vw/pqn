@@ -13,6 +13,11 @@
 ] tr:in :trace0 .
 
 [
+    tr:from :a3 ;
+    tr:to rdf:nil ;
+] tr:in :trace0 .
+
+[
     tr:from :a1 ;
     tr:to :a2 ;
 ] tr:in :trace1 .
@@ -33,6 +38,11 @@
 ] tr:in :trace1 .
 
 [
+    tr:from :a5 ;
+    tr:to rdf:nil ;
+] tr:in :trace1 .
+
+[
     tr:from :a1 ;
     tr:to :a2 ;
 ] tr:in :trace2 .
@@ -40,6 +50,11 @@
 [
     tr:from :a2 ;
     tr:to :a5 ;
+] tr:in :trace2 .
+
+[
+    tr:from :a5 ;
+    tr:to rdf:nil ;
 ] tr:in :trace2 .
 
 [
@@ -56,3 +71,23 @@
     tr:from :a4 ;
     tr:to :a5 ;
 ] tr:in :trace4 .
+
+[
+    tr:from :a5 ;
+    tr:to rdf:nil ;
+] tr:in :trace4 .
+
+[
+    tr:from :a3 ;
+    tr:to :a2 ;
+] tr:in :trace5 .
+
+[
+    tr:from :a2 ;
+    tr:to :a1 ;
+] tr:in :trace5 .
+
+[
+    tr:from :a1 ;
+    tr:to rdf:nil ;
+] tr:in :trace5 .
