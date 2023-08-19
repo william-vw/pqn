@@ -17,6 +17,11 @@
 
 [
     tr:from [ tr:activity :a3 ; tr:ts 123 ; tr:actor :Y ; tr:duration 7 ] ;
+    tr:to [ tr:activity :a1 ; tr:ts 123 ; tr:actor :Y ; tr:duration 7 ] ;
+] tr:in :trace0 .
+
+[
+    tr:from [ tr:activity :a1 ; tr:ts 123 ; tr:actor :Y ; tr:duration 7 ] ;
     tr:to rdf:nil
 ] tr:in :trace0 .
 

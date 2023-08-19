@@ -9,40 +9,24 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX tr: <http://example.org/trace#>
 PREFIX : <http://example.org#>
 
-# # get traces where a given activity precedes another given activity
+# a given activity precedes another given activity
+# a.k.a. "ExistCausal", "ExistTotalCausal"
 
+# trace:activityPrecededByActivity
 # {
-#     ( :a1 ?t ) tr:precedes ( :a3 ?t )
+#     ( :a1 ?t ) tr:precedes ( :a3 ?t () )
 # } => {
 #     <> tr:match ?t
 # } .
 
-# # ... only if both activities occur
-# # (so, if only one or none them occurs in trace, also return that trace)
-# {
+# a given activity is not preceded by another given activity
 
-#     ?x tr:in ?t .
-#     (
-#         ?b
-#         {
-#             ?b tr:from ?e ; tr:in ?t .
-#             ?e list:in ( :a1 :a3 )
-#         }
-#     ?bs ) log:collectAllIn _:t .
-
-#     ?bs!list:length math:lessThan 2 .
-
-# } => {
-#     <> tr:match ?t
-# } .
-
-# get traces where, if second activity occurs, it is not preceded by first activity
-
+# trace:activityIsNotPrecededByActivity
 {
-    [ tr:from :a3 ] tr:in ?t .
+    ?x tr:in ?t .
     (?t
         {
-            ( :a1 ?t ) tr:precedes ( :a3 ?t )
+            ( :a1 ?t ) tr:precedes ( :a3 ?t () )
         }
     ()) log:collectAllIn _:t .
 
@@ -50,18 +34,51 @@ PREFIX : <http://example.org#>
     <> tr:match ?t
 } .
 
+# a given activity occurs and is not preceded by another given activity
+
+# trace:activityOccursAndNotPrecededByActivity
+# {
+#     [ tr:from :a3 ] tr:in ?t .
+#     (?t
+#         {
+#             ( :a1 ?t ) tr:precedes ( :a3 ?t () )
+#         }
+#     ()) log:collectAllIn _:t .
+
+# } => {
+#     <> tr:match ?t
+# } .
+
+# a given activity _always_ precedes a given activity
+# and, precedes it at least once
+
+# trace:activityPrecededByNeverPrecedingActivity
+# {
+#     ( :a1 ?t ) tr:precedes ( :a3 ?t () ) .
+#     (?t
+#         {
+#             ( :a3 ?t ) tr:precedes ( :a1 ?t () )
+#         }
+#     ()) log:collectAllIn _:t .
+
+# } => {
+#     <> tr:match ?t
+# } .
+
 
 
 # helper rules
 
 {
-    (?e1 ?t) tr:precedes (?e2 ?t)
-
+    (?a1 ?t) tr:precedes (?a2 ?t ?visited)
 } <= {
-    [ tr:from ?e1 ; tr:to ?ei ] tr:in ?t .
-    (?ei ?t) tr:precedes (?e2 ?t)
+    [ tr:from ?a1 ; tr:to ?ai ] tr:in ?t .
+    # avoid infinite loops
+    (?v { ?a1 list:in ?visited } ()) log:collectAllIn _:t .
+    ( ( ?a1 )  ?visited ) list:append ?visited2 .
+    (?ai ?t) tr:precedes (?a2 ?t ?visited2 ) .
 } .
 
 {
-    (?e ?t) tr:precedes (?e ?t)   
+    (?a ?t) tr:precedes (?a ?t ?visited)
 } <= {} .

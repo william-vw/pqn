@@ -7,15 +7,24 @@ PREFIX : <http://example.org#>
 
 # there exists a given activity
 
-# activityOccurs
+# trace:activityOccurs
 # SELECT ?t
 # WHERE { 
 #     [ tr:from :a5 ] tr:in ?t .
 # }
 
+# there exists multiple occurrences of a given activity
+
+# trace:activityOccurs[N]Times
+# SELECT ?t COUNT(?e)
+# WHERE { 
+#     ?e tr:from :a1 ; tr:in ?t .
+# }
+# GROUP BY ?t
+
 # there does not exist a given activity
 
-# activityDoesNotOccur
+# trace:activityDoesNotOccur
 # SELECT DISTINCT ?t
 # WHERE { 
 #     # TODO annotate activities with type tr:Trace
@@ -24,7 +33,10 @@ PREFIX : <http://example.org#>
 # }
 
 # two activities don't co-occur
+# (i.e., possible one of them occurs, or none of them occur)
+# aka "conflict"
 
+# trace:activitiesDoNotCoOccur
 # SELECT DISTINCT ?t
 # WHERE { 
 #     ?a tr:in ?t
@@ -36,6 +48,7 @@ PREFIX : <http://example.org#>
 
 # either two activities both occur or neither occur
 
+# trace:activitiesCoOccurOrNoneOccurs
 # SELECT DISTINCT ?t
 # WHERE { 
 #     {
@@ -62,7 +75,7 @@ PREFIX : <http://example.org#>
 
 # there exists a certain sequence
 
-# sequenceOccurs
+# trace:sequenceOccurs
 # SELECT ?t
 # WHERE { 
 #     [ tr:from :a1 ; tr:to :a2 ] tr:in ?t .
@@ -91,25 +104,35 @@ PREFIX : <http://example.org#>
 
 # there does not exist a certain sequence
 
-# sequenceDoesNotOccur
+# trace:sequenceDoesNotOccur
 # SELECT ?t
 # WHERE { 
 #     ?x tr:in ?t .
 #     FILTER NOT EXISTS  { [ tr:from :a2 ; tr:to :a3 ] tr:in ?t . }
 # }
 
-# get start activities
+# get start activities per trace
 # (could also have trace start with [ tr:from rdf:nil ; tr:to ?start ])
 
+# activity:occursAsStart/trace
 # SELECT ?start ?t
 # WHERE {
 #     [ tr:from ?start ; tr:to ?next ] tr:in ?t .
 #     FILTER NOT EXISTS { [ tr:from ?prior ; tr:to ?start ] tr:in ?t . }
 # }
 
+# get end activities per trace
+
+# activity:occursAsEnd/trace
+# SELECT ?end ?t
+# WHERE {
+#     [ tr:from ?end ; tr:to rdf:nil ] tr:in ?t .
+# }
+
 # a given activity precedes another given activity
 # cannot do this in regular SPARQL - see test_bnodes.n3
 
+# trace:activityPrecedesActivity
 # SELECT DISTINCT ?t
 # WHERE { 
 #     ?t ^tr:in/tr:from :a1 .
@@ -122,7 +145,7 @@ PREFIX : <http://example.org#>
 
 # get pairs of actors working together
 
-# actorPairsWithHandOver
+# actor:pairsWithHandOver
 # SELECT DISTINCT ?actor1 ?actor2
 # WHERE {
 #     [ tr:from [ tr:actor ?actor1 ] ; tr:to [ tr:actor ?actor2 ] ] tr:in ?t .
@@ -131,7 +154,7 @@ PREFIX : <http://example.org#>
 
 # get actors with counts of outgoing edges (possibly to same actor)
 
-# handOverCountPerActor
+# actor:handOverCount
 # SELECT ?actor1 (COUNT(?t) as ?num_traces)
 # WHERE {
 #     [ tr:from [ tr:actor ?actor1 ] ; tr:to [ tr:actor ?actor2 ] ] tr:in ?t .
@@ -141,7 +164,7 @@ PREFIX : <http://example.org#>
 
 # get avg duration for given activity grouped by actor
 
-# averageActivityDurationPerActor
+# actor:averageActivityDuration
 # SELECT ?actor (AVG(?d) as ?avg_dur) (MAX(?d) as ?max_dur) (COUNT(?t) as ?num_traces)
 # WHERE {
 #     [ (tr:from|tr:to) [ tr:activity :a3 ; tr:actor ?actor ; tr:duration ?d ] ] tr:in ?t .
@@ -151,7 +174,7 @@ PREFIX : <http://example.org#>
 
 # get total duration of traces
 
-# totalDurationPerTrace
+# trace:totalDuration
 # SELECT ?t (SUM(?d) as ?total_dur)
 # WHERE {
 #     [ tr:from [ tr:duration ?d ] ] tr:in ?t .
@@ -161,6 +184,7 @@ PREFIX : <http://example.org#>
 
 # get actors involved in traces that take longer than average
 # good example for need of sin3
+# TODO - currently incomplete
 
 # this is likely quite inefficient (.. also in sin3)
 # as per the spec, the inner query is first executed, and then joined with the outer one
@@ -195,9 +219,10 @@ PREFIX : <http://example.org#>
 
 # two activities occur concurrently
 
-SELECT DISTINCT ?t
-WHERE { 
-    [ tr:from [ tr:activity :a1 ; tr:ts ?ts1 ] ] tr:in ?t .
-    [ tr:from [ tr:activity :a2 ; tr:ts ?ts2 ] ] tr:in ?t .
-    FILTER ( ABS(?ts1 - ?ts2) < 60 ) # within 1 minute
-}
+# trace:concurrentActivities
+# SELECT DISTINCT ?t
+# WHERE { 
+#     [ tr:from [ tr:activity :a1 ; tr:ts ?ts1 ] ] tr:in ?t .
+#     [ tr:from [ tr:activity :a2 ; tr:ts ?ts2 ] ] tr:in ?t .
+#     FILTER ( ABS(?ts1 - ?ts2) < 60 ) # within 1 minute
+# }
