@@ -434,7 +434,7 @@
     [ tr:from ?e1 ; tr:to ?ei ] tr:in ?t . # find link starting from event
     ?e1 tr:activity ?a . # event is about a
     ?ei log:notEqualTo rdf:nil .
-    ?t pq:precedes ( ?ei ?b ( ?a ) ) # from this event onward, look for b
+    ?t pq:precedesActivity ( ?ei ?b ) # from this event onward, look for b
 } .
 
 # TODO debug at-least-n's and any/all
@@ -520,6 +520,101 @@
 } .
 
 
+# pq:activityDoesNotOccur
+
+{
+    ?t pq:activityDoesNotOccur ?a 
+}
+<= 
+{
+    ?t a tr:Trace .
+    (
+        1
+        {
+            ?t pq:activityOccurs ?a
+        }
+        ()
+    ) log:collectAllIn _:t .
+} .
+
+
+# pq:activitiesCoOccurOrNoneOccurs
+# either all activities occur, or none occur
+# cfr. "Cooccur" (Polyvyanyy et al., 2019)
+
+{
+    ?t pq:activitiesCoOccurOrNoneOccurs ?activities
+}
+<=
+{
+    ?t pq:uniqueActivityCount ( ?activities 0 ) .
+} .
+
+{
+    ?t pq:activitiesCoOccurOrNoneOccurs ?activities
+}
+<=
+{
+    ?t pq:uniqueActivityCount ( ?activities ?count ) .
+    ?count math:equalTo ?activities!list:length .
+} .
+
+
+# pq:activitiesDoNotCoOccur
+# either several (but not all) of them occur, or none of them occur
+# cfr. "Conflict" (Polyvyanyy et al., 2019)
+
+{
+    ?t pq:activitiesDoNotCoOccur ?activities
+}
+<=
+{
+    ?t pq:uniqueActivityCount ( ?activities 0 ) .
+} .
+
+{
+    ?t pq:activitiesDoNotCoOccur ?activities
+}
+<=
+{
+    ?t pq:uniqueActivityCount ( ?activities ?count ) .
+    ?count math:lessThan ?activities!list:length .
+} .
+
+
+# pq:activitiesAlwaysPrecedeActivities
+# all occurrences of first set of activities precede all occurrences of second set of activities,
+# in case the activities occur (cfr. logical implication)
+# cfr. "TotalCausal" (Polyvyanyy et al., 2019)
+
+{
+    ?t pq:activitiesAlwaysPrecedeActivities ( ?activities1 ?activities2 )
+}
+<=
+{
+    ?t a tr:Trace .
+    (   1
+        {
+            # check non-existence of a counter example
+
+            ?a2 list:in ?activities2 .
+            # event e2 from trace with activity a2
+            ?l2 tr:in ?t ; tr:from ?e2 . 
+            ?e2 tr:activity ?a2 .
+
+            ?a1 list:in ?activities1 .
+            # event e1 from trace with activity a1
+            ?l1 tr:in ?t ; tr:from ?e1 . 
+            ?e1 tr:activity ?a1 .
+
+            # "T0" log:trace ( ?e2 ?e1 ) .
+            # e2 precedes e1
+            ?t pq:precedesEvent ( ?e2 ?e1 )
+        }
+        ()
+    ) log:collectAllIn _:t .
+} .
+
 
 # helper rules
 
@@ -537,26 +632,66 @@
 # check precedence
 
 {
-    ?t pq:precedes ( ?ei ?b ?visited )
+    ?t pq:precedesActivity ( ?ei ?b )
 }
 <= 
 {
     ?ei!tr:activity log:notEqualTo ?b . # mutex with rule below
     [ tr:from ?ei ; tr:to ?ej ] tr:in ?t .
-    ?ej tr:activity ?aj . # next event is about aj (j=i+1)
-    # avoid infinite loops; we haven't visited aj yet
-    ( ?v { ?aj list:in ?visited } () ) log:collectAllIn _:t .
-    ( ( ?aj )  ?visited ) list:append ?visited2 .
-    # "T1" log:trace ( ?ei ?ej ?aj ) .
-    ?t pq:precedes ( ?ej ?b ?visited2 ) . # search from ej onward
+    ?ej log:notEqualTo rdf:nil .
+    # "T1" log:trace ( ?t ?ei ?ej ) .
+    ?t pq:precedesActivity ( ?ej ?b ) . # search from ej onward
 } .
 
 {
     # stop when next event was about b
-    ?t pq:precedes ( ?ei ?b ?visited )
+    ?t pq:precedesActivity ( ?ei ?b )
 } 
 <= 
 {
     ?ei tr:activity ?b .
-    # "T2" log:trace ( ?t ?ei ?b ) .
+    # "T2" log:trace ( ?t ?ei ) .
+} .
+
+{
+    ?t pq:precedesEvent ( ?ei ?e2 )
+}
+<= 
+{
+    ?ei log:notEqualTo ?e2 . # mutex with rule below
+    [ tr:from ?ei ; tr:to ?ej ] tr:in ?t .
+    ?ej log:notEqualTo rdf:nil .
+    # "T1" log:trace ( ?t ?ei ?ej ) .
+    ?t pq:precedesActivity ( ?ej ?e2 ) . # search from ej onward
+} .
+
+{
+    # stop when next event is the target event
+    ?t pq:precedesActivity ( ?e2 ?e2 )
+} 
+<= 
+{
+    # "T2" log:trace ( ?t ?e2 ) .
+} .
+
+
+# count activities that occur at least once in trace
+
+{
+    ?t pq:uniqueActivityCount ( ?activities ?count )
+}
+<=
+{
+    ?t a tr:Trace .
+    (
+        ?a
+        {
+            ?a list:in ?activities .
+            ?t pq:activityOccurs ?a 
+        }
+        ?coll
+    ) log:collectAllIn _:t .
+
+    ?coll e:sort ?collu .
+    ?collu list:length ?count .
 } .

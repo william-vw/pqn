@@ -116,8 +116,32 @@
 #     ?t pq:activitiesDirectlyFollow ( :a1 :a3 ?l )
 # } .
 
+# {
+#     ?t pq:activitiesEventuallyFollow ( :a3 :a1 )
+# } => {
+#     ?t pq:activitiesEventuallyFollow ( :a3 :a1 )
+# } .
+
+# {
+#     ?t pq:activityDoesNotOccur :a5
+# } => {
+#     ?t pq:activityDoesNotOccur :a5
+# } .
+
+# {
+#     ?t pq:activitiesCoOccurOrNoneOccurs ( :a1 :a5 )
+# } => {
+#     ?t pq:activitiesCoOccurOrNoneOccurs ( :a1 :a5 )
+# } .
+
+# {
+#     ?t pq:activitiesDoNotCoOccur ( :a1 :a5 )
+# } => {
+#     ?t pq:activitiesDoNotCoOccur ( :a1 :a5 )
+# } .
+
 {
-    ?t pq:activitiesEventuallyFollow ( :a3 :a5 )
+    ?t pq:activitiesAlwaysPrecedeActivities ( ( :a1 :a2 ) ( :a3 ) )
 } => {
-    ?t pq:activitiesEventuallyFollow ( :a3 :a5 )
+    ?t pq:activitiesAlwaysPrecedeActivities ( ( :a1 :a2 ) ( :a3 ) )
 } .
