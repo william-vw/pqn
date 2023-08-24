@@ -3,7 +3,7 @@ import pandas as pd
 import urllib.parse
 import time
 
-def convert_log(log, filepath):
+def convert_xes_n3(log, filepath):
     start = time.time_ns()
 
     start_conv = time.time_ns()
