@@ -1,0 +1,41 @@
+#!/bin/bash
+
+usage="usage:
+run.sh -q <query> -l <log> [ -q <pqn> ]
+where
+    -q <query> is the query over the event log
+    -l <log> is the event log
+    -p <pqn> is the PQN implementation"
+
+while getopts "q:l:" option; do
+    case "${option}" in
+        q | query)
+            query=${OPTARG}
+        ;;
+        l | log)
+            log=${OPTARG}
+        ;;
+        p | pqn)
+            pqn=${OPTARG}
+        ;;
+        *)
+            echo "$usage"
+            exit 1
+        ;;
+    esac
+done
+
+if [ -z "$query" ] || [ -z "$log" ]; then
+    echo "$usage"
+    exit 1
+fi
+
+if [[ -z "$pqn" ]]; then
+    pqn="pqn.n3"
+fi
+
+TIMEFORMAT="time: %3R"
+time {
+eye $pqn $log --query $query --nope
+echo "eye $pqn $log --query $query --nope"
+}

@@ -1,0 +1,72 @@
+# Processed by EYE v4.11.2 (2023-08-08)
+# eye pqn.n3 logs/sepsis.n3 --query queries/q1.n3 --nope
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix tr: <http://notation3.org/trace#>.
+@prefix pq: <http://notation3.org/pqn#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <http://dutch.hospital.nl/sepsis#>.
+
+:trace_CZ pq:activityOccurs (:Release+B :evt_9867).
+:trace_PU pq:activityOccurs (:Release+B :evt_8176).
+:trace_CJ pq:activityOccurs (:Release+B :evt_3530).
+:trace_BM pq:activityOccurs (:Release+B :evt_4683).
+:trace_FQ pq:activityOccurs (:Release+B :evt_6505).
+:trace_CGA pq:activityOccurs (:Release+B :evt_12359).
+:trace_ZMA pq:activityOccurs (:Release+B :evt_15079).
+:trace_TD pq:activityOccurs (:Release+B :evt_1619).
+:trace_SQ pq:activityOccurs (:Release+B :evt_6659).
+:trace_VP pq:activityOccurs (:Release+B :evt_6349).
+:trace_EAA pq:activityOccurs (:Release+B :evt_10294).
+:trace_MW pq:activityOccurs (:Release+B :evt_8827).
+:trace_OD pq:activityOccurs (:Release+B :evt_1561).
+:trace_PBA pq:activityOccurs (:Release+B :evt_10800).
+:trace_GV pq:activityOccurs (:Release+B :evt_8394).
+:trace_AS pq:activityOccurs (:Release+B :evt_7113).
+:trace_U pq:activityOccurs (:Release+B :evt_233).
+:trace_LE pq:activityOccurs (:Release+B :evt_1845).
+:trace_XZ pq:activityOccurs (:Release+B :evt_10203).
+:trace_LB pq:activityOccurs (:Release+B :evt_707).
+:trace_DD pq:activityOccurs (:Release+B :evt_1274).
+:trace_QD pq:activityOccurs (:Release+B :evt_1582).
+:trace_FN pq:activityOccurs (:Release+B :evt_5343).
+:trace_JQ pq:activityOccurs (:Release+B :evt_6559).
+:trace_BI pq:activityOccurs (:Release+B :evt_3124).
+:trace_GX pq:activityOccurs (:Release+B :evt_9134).
+:trace_AY pq:activityOccurs (:Release+B :evt_9473).
+:trace_XX pq:activityOccurs (:Release+B :evt_9357).
+:trace_T pq:activityOccurs (:Release+B :evt_222).
+:trace_EK pq:activityOccurs (:Release+B :evt_3935).
+:trace_PJ pq:activityOccurs (:Release+B :evt_3751).
+:trace_QX pq:activityOccurs (:Release+B :evt_9284).
+:trace_NR pq:activityOccurs (:Release+B :evt_6933).
+:trace_XO pq:activityOccurs (:Release+B :evt_6037).
+:trace_EY pq:activityOccurs (:Release+B :evt_9538).
+:trace_SV pq:activityOccurs (:Release+B :evt_8532).
+:trace_GS pq:activityOccurs (:Release+B :evt_7218).
+:trace_LEA pq:activityOccurs (:Release+B :evt_11827).
+:trace_RFA pq:activityOccurs (:Release+B :evt_12219).
+:trace_ZG pq:activityOccurs (:Release+B :evt_2793).
+:trace_JKA pq:activityOccurs (:Release+B :evt_14068).
+:trace_H pq:activityOccurs (:Release+B :evt_103).
+:trace_XB pq:activityOccurs (:Release+B :evt_847).
+:trace_YP pq:activityOccurs (:Release+B :evt_6408).
+:trace_WKA pq:activityOccurs (:Release+B :evt_14284).
+:trace_LP pq:activityOccurs (:Release+B :evt_6223).
+:trace_QFA pq:activityOccurs (:Release+B :evt_12209).
+:trace_RN pq:activityOccurs (:Release+B :evt_5557).
+:trace_QH pq:activityOccurs (:Release+B :evt_3014).
+:trace_ZE pq:activityOccurs (:Release+B :evt_2012).
+:trace_BFA pq:activityOccurs (:Release+B :evt_12057).
+:trace_UZ pq:activityOccurs (:Release+B :evt_10157).
+:trace_SGA pq:activityOccurs (:Release+B :evt_12734).
+:trace_TR pq:activityOccurs (:Release+B :evt_7006).
+:trace_MGA pq:activityOccurs (:Release+B :evt_12476).
+:trace_CN pq:activityOccurs (:Release+B :evt_5307).
+# 2023-08-25T16:23:40.900Z in=122804 out=56 ent=56 step=56 brake=1 inf=90697877 sec=3.866 inf/sec=23460392
+# ENDS
+

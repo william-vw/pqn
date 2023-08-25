@@ -12,6 +12,7 @@ def convert_xes_n3(log, filepath):
     Sepsis = Namespace("http://dutch.hospital.nl/sepsis#")
 
     tr_terms = {
+        'Trace': TR['Trace'],
         'in': TR['in'],
         'activity': TR.activity,
         'ts': TR.ts,
@@ -24,15 +25,18 @@ def convert_xes_n3(log, filepath):
 
     g = Graph()
 
-    for col in log.columns:
-        if col not in ( 'time:timestamp', 'concept:name', 'case:concept:name', 'lifecycle:transition', 'org:group' ):
-            log_terms[col] = Sepsis[col]
+    # for col in log.columns:
+    #     if col not in ( 'time:timestamp', 'concept:name', 'case:concept:name', 'lifecycle:transition', 'org:group' ):
+    #         log_terms[col] = Sepsis[col]
 
     groups = log.sort_values(by='time:timestamp', ascending=True).groupby('case:concept:name')
     # print(groups.groups)
 
+    num_traces = 0
     for case, df in groups:
         trace = Sepsis[f"trace_{case}"]
+        g.add((trace, RDF.type, tr_terms['Trace']))
+
         prior_evt = False
 
         for index, row in df.iterrows():
@@ -44,6 +48,8 @@ def convert_xes_n3(log, filepath):
             ts = Literal(row['time:timestamp'])
             g.add((evt, tr_terms['ts'], ts))
 
+            g.add((evt, tr_terms['in'], trace))
+
             if (row['lifecycle:transition']):
                 value = urllib.parse.quote_plus(row['lifecycle:transition'])
                 value = TR[value]
@@ -54,10 +60,10 @@ def convert_xes_n3(log, filepath):
                 value = TR[value]
                 g.add((evt, tr_terms['group'], value))
 
-            for col in log_terms:
-                if not pd.isna(row[col]):
-                    value = Literal(row[col])
-                    g.add((evt, log_terms[col], value))
+            # for col in log_terms:
+            #     if not pd.isna(row[col]):
+            #         value = Literal(row[col])
+            #         g.add((evt, log_terms[col], value))
 
             if prior_evt is not False:
                 link = BNode()
@@ -73,6 +79,10 @@ def convert_xes_n3(log, filepath):
 
         g.add((link, tr_terms['from'], prior_evt))
         g.add((link, tr_terms['to'], RDF.nil))
+
+        # num_traces += 1
+        # if num_traces == 100:
+        #     break
 
     end_conv = time.time_ns()
     print("conversion time (ms):", (end_conv-start_conv)/1000000)

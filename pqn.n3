@@ -21,11 +21,12 @@
 # for a (given) trace, check whether activity is present
 # (backward rule)
 {
-    ?t pq:activityOccurs ?a
+    ?t pq:activityOccurs ( ?a ?e )
 }
 <= 
 {
-    [ tr:from [ tr:activity ?a ] ] tr:in ?t 
+    ?l tr:from ?e ; tr:in ?t .
+    ?e tr:activity ?a .
 } .
 
 # for all traces, get all their activities
@@ -43,6 +44,7 @@
 # > pq:activityOccursAtLeastNTimes
 # cfr. isContained >= N (Schuster 2022)
 
+# high exec time
 {
     ?t pq:activityOccursAtLeastNTimes ( ?a ?atLeastN ?actualN )
 }
@@ -50,14 +52,15 @@
 {
     ?t a tr:Trace .
     (
-        1
+        ?e
         {
-            ?t pq:activityOccurs ?a
+            ?t pq:activityOccurs ( ?a ?e )
         }
         ?coll
     ) log:collectAllIn _:t .
     
-    ?coll list:length ?actualN .
+    ?coll e:sort ?collu .
+    ?collu list:length ?actualN .
     ?actualN math:notLessThan ?atLeastN .
 } .
 
@@ -65,6 +68,7 @@
 # pq:allActivitiesOccur
 # cfr. ALL keyword (without other constraints) (Schuster 2022))
 
+# high exec time
 {
     ?t pq:allActivitiesOccur ?activities
 }
@@ -73,7 +77,7 @@
     ?t a tr:Trace .
     ( 
         { ?a list:in ?activities } 
-        { ?t pq:activityOccurs ?a } 
+        { ?t pq:activityOccurs ( ?a ?e ) } 
 
     ) log:forAllIn _:t 
 } .
@@ -87,13 +91,15 @@
 }
 <=
 {
-    ?t pq:activityOccurs ?activities!list:member .
+    ?activities list:member ?a .
+    ?t pq:activityOccurs ( ?a ?e ) .
 } .
 
 
 # pq:allActivitiesOccurAtLeastNTimes
 # cfr. ALL{ A, B } isContained >= N (Schuster 2022)
 
+# (very) high exec time
 {
     ?t pq:allActivitiesOccurAtLeastNTimes ( ?activities ?atLeastN )
 }
@@ -522,6 +528,7 @@
 
 # pq:activityDoesNotOccur
 
+# high exec time
 {
     ?t pq:activityDoesNotOccur ?a 
 }
@@ -529,9 +536,9 @@
 {
     ?t a tr:Trace .
     (
-        1
+        ?e
         {
-            ?t pq:activityOccurs ?a
+            ?t pq:activityOccurs ( ?a ?e )
         }
         ()
     ) log:collectAllIn _:t .
@@ -542,12 +549,21 @@
 # either all activities occur, or none occur
 # cfr. "Cooccur" (Polyvyanyy et al., 2019)
 
+# very high exec time
 {
     ?t pq:activitiesCoOccurOrNoneOccurs ?activities
 }
 <=
 {
-    ?t pq:uniqueActivityCount ( ?activities 0 ) .
+    ?t a tr:Trace .
+    (
+        ?e
+        {
+            ?a list:in ?activities .
+            ?t pq:activityOccurs ( ?a ?e )
+        }
+        ()
+    ) log:collectAllIn _:t .
 } .
 
 {
@@ -555,13 +571,12 @@
 }
 <=
 {
-    ?t pq:uniqueActivityCount ( ?activities ?count ) .
-    ?count math:equalTo ?activities!list:length .
+    ?t pq:allActivitiesOccur ?activities
 } .
 
 
 # pq:activitiesDoNotCoOccur
-# either several (but not all) of them occur, or none of them occur
+# either several (but not all) of them occur, or none of them occur; none of them can all occur together
 # cfr. "Conflict" (Polyvyanyy et al., 2019)
 
 {
@@ -587,6 +602,7 @@
 # in case the activities occur (cfr. logical implication)
 # cfr. "TotalCausal" (Polyvyanyy et al., 2019)
 
+# (very) high exec time
 {
     ?t pq:activitiesAlwaysPrecedeActivities ( ?activities1 ?activities2 )
 }
@@ -618,15 +634,15 @@
 
 # helper rules
 
-# what is a trace
+# # what is a trace
 
-{
-    ?t a tr:Trace
-}
-<=
-{
-    [ tr:from [ tr:activity ?a ] ] tr:in ?t
-} .
+# {
+#     ?t a tr:Trace
+# }
+# <=
+# {
+#     [ tr:from [ tr:activity ?a ] ] tr:in ?t
+# } .
 
 
 # check precedence
@@ -687,7 +703,7 @@
         ?a
         {
             ?a list:in ?activities .
-            ?t pq:activityOccurs ?a 
+            ?t pq:activityOccurs ( ?a ?e )
         }
         ?coll
     ) log:collectAllIn _:t .
