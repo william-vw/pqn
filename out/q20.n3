@@ -1,5 +1,5 @@
 # Processed by EYE v4.11.2 (2023-08-08)
-# eye pqn.n3 logs/sepsis.n3 --query queries/q20.n3 --nope
+# eye pqn.n3 logs/sepsis_500.n3 --query queries/q20.n3 --nope
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
@@ -8,29 +8,15 @@
 @prefix tr: <http://notation3.org/trace#>.
 @prefix pq: <http://notation3.org/pqn#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix ns1: <http://dutch.hospital.nl/sepsis#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix : <http://dutch.hospital.nl/sepsis#>.
 
-:trace_LG pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_347).
-:trace_PGA pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_520).
-:trace_GO pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_1449).
-:trace_XBA pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_1984).
-:trace_RY pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_2033).
-:trace_BP pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_2426).
-:trace_YF pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_3015).
-:trace_RU pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_4004).
-:trace_S pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_4662).
-:trace_XI pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_5326).
-:trace_VN pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_6643).
-:trace_UC pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_7868).
-:trace_YX pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_8732).
-:trace_TN pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_10054).
-:trace_LT pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_10454).
-:trace_AD pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_10709).
-:trace_WKA pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_13574).
-:trace_FO pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_14243).
-:trace_NZ pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_14681).
-:trace_XFA pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:bn_14933).
-# 2023-08-25T16:24:07.111Z in=122804 out=20 ent=20 step=20 brake=1 inf=90674822 sec=3.992 inf/sec=22714134
+ns1:trace_AD pq:activitiesDirectlyFollow (ns1:Admission+NC ns1:Admission+IC _:bn_1064).
+ns1:trace_GO pq:activitiesDirectlyFollow (ns1:Admission+NC ns1:Admission+IC _:bn_1627).
+ns1:trace_FO pq:activitiesDirectlyFollow (ns1:Admission+NC ns1:Admission+IC _:bn_2626).
+ns1:trace_BP pq:activitiesDirectlyFollow (ns1:Admission+NC ns1:Admission+IC _:bn_4087).
+ns1:trace_LG pq:activitiesDirectlyFollow (ns1:Admission+NC ns1:Admission+IC _:bn_5077).
+ns1:trace_LT pq:activitiesDirectlyFollow (ns1:Admission+NC ns1:Admission+IC _:bn_7006).
+# 2023-08-28T15:41:34.288Z in=72836 out=6 ent=6 step=6 brake=1 inf=40535645 sec=2.040 inf/sec=19870414
 # ENDS
 

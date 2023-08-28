@@ -7,7 +7,7 @@
 
 
 {
-    ?t pq:activityOccurs ( <http://dutch.hospital.nl/sepsis#Release+B> ?e )
+    ?t pq:activityOccurs ( <http://dutch.hospital.nl/sepsis#Release+A> ?e )
 } => {
-    ?t pq:activityOccurs ( <http://dutch.hospital.nl/sepsis#Release+B> ?e )
+    ?t pq:activityOccurs ( <http://dutch.hospital.nl/sepsis#Release+A> ?e )
 } .

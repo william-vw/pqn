@@ -1,11 +1,11 @@
 #!/bin/bash
 
 pqn="pqn.n3"
-log="logs/sepsis.n3"
+log="logs/sepsis_500.n3"
 dir="queries"
-times="times.csv"
+times="times_500.csv"
 
-echo "query,networking,reasoning\n" > $times 
+echo "query,networking,reasoning" > $times 
 
 file_rx='.*/(.*)'
 time_rx='.*networking ([^ ]+).*reasoning ([^ ]+).*'

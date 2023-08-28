@@ -1,0 +1,18 @@
+# Processed by EYE v4.11.2 (2023-08-08)
+# eye pqn.n3 logs/sepsis_500.n3 --query queries/q26.n3 --nope
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix tr: <http://notation3.org/trace#>.
+@prefix pq: <http://notation3.org/pqn#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix ns1: <http://dutch.hospital.nl/sepsis#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+pq:result pq:entry ns1:trace_AD.
+pq:result pq:entry ns1:trace_LG.
+# 2023-08-28T15:41:51.425Z in=72836 out=2 ent=2 step=145 brake=1 inf=92515731 sec=5.934 inf/sec=15590787
+# ENDS
+

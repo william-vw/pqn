@@ -1,3 +1,4 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
 @prefix list: <http://www.w3.org/2000/10/swap/list#> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix tr: <http://notation3.org/trace#> .
@@ -132,11 +133,11 @@
 #     ?t pq:activityDoesNotOccur <http://dutch.hospital.nl/sepsis#Release+A>
 # } .
 
-{
-    ?t pq:activitiesCoOccurOrNoneOccurs ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Transfer+NC> )
-} => {
-    ?t pq:activitiesCoOccurOrNoneOccurs ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Transfer+NC> )
-} .
+# {
+#     ?t pq:activitiesCoOccurOrNoneOccurs ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Transfer+NC> )
+# } => {
+#     ?t pq:activitiesCoOccurOrNoneOccurs ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Transfer+NC> )
+# } .
 
 # {
 #     ?t pq:activitiesDoNotCoOccur ( :a1 :a5 )
@@ -148,4 +149,15 @@
 #     ?t pq:activitiesAlwaysPrecedeActivities ( ( :a1 :a2 ) ( :a3 ) )
 # } => {
 #     ?t pq:activitiesAlwaysPrecedeActivities ( ( :a1 :a2 ) ( :a3 ) )
+# } .
+
+# {
+#     ?t pq:activityOccurs ( :LacticAcid ?le ) .
+#     ?t pq:activityOccurs ( :CRP ?ce ) .
+#     ?t pq:activitiesDirectlyFollow ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Admission+IC> ?r ) .
+#     ?t pq:activityOccurs ( <http://dutch.hospital.nl/sepsis#ER+Registration> ?re ) .
+#     ?re :Age ?age . ?age math:notLessThan 65 .
+#     ?re :InfectionSuspected true .
+# } => {
+#     pq:result pq:entry ?t
 # } .

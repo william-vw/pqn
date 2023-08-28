@@ -3,7 +3,7 @@ import pandas as pd
 import urllib.parse
 import time
 
-def convert_xes_n3(log, filepath):
+def convert_xes_n3(log, filepath, limit=-1):
     start = time.time_ns()
 
     start_conv = time.time_ns()
@@ -25,14 +25,15 @@ def convert_xes_n3(log, filepath):
 
     g = Graph()
 
-    # for col in log.columns:
-    #     if col not in ( 'time:timestamp', 'concept:name', 'case:concept:name', 'lifecycle:transition', 'org:group' ):
-    #         log_terms[col] = Sepsis[col]
+    for col in log.columns:
+        if col not in ( 'time:timestamp', 'concept:name', 'case:concept:name', 'lifecycle:transition', 'org:group' ):
+            log_terms[col] = Sepsis[col]
 
     groups = log.sort_values(by='time:timestamp', ascending=True).groupby('case:concept:name')
     # print(groups.groups)
 
-    num_traces = 0
+    total_num = 0
+    cur_traces = 0
     for case, df in groups:
         trace = Sepsis[f"trace_{case}"]
         g.add((trace, RDF.type, tr_terms['Trace']))
@@ -52,18 +53,18 @@ def convert_xes_n3(log, filepath):
 
             if (row['lifecycle:transition']):
                 value = urllib.parse.quote_plus(row['lifecycle:transition'])
-                value = TR[value]
+                value = Sepsis[value]
                 g.add((evt, tr_terms['lifecycle'], value))
 
             if (row['org:group']):
                 value = urllib.parse.quote_plus(row['org:group'])
-                value = TR[value]
+                value = Sepsis[value]
                 g.add((evt, tr_terms['group'], value))
 
-            # for col in log_terms:
-            #     if not pd.isna(row[col]):
-            #         value = Literal(row[col])
-            #         g.add((evt, log_terms[col], value))
+            for col in log_terms:
+                if not pd.isna(row[col]):
+                    value = Literal(row[col])
+                    g.add((evt, log_terms[col], value))
 
             if prior_evt is not False:
                 link = BNode()
@@ -80,11 +81,15 @@ def convert_xes_n3(log, filepath):
         g.add((link, tr_terms['from'], prior_evt))
         g.add((link, tr_terms['to'], RDF.nil))
 
-        # num_traces += 1
-        # if num_traces == 100:
-        #     break
+        total_num += 1
+        cur_traces += 1
+        if limit != -1 and cur_traces == limit:
+            break
 
     end_conv = time.time_ns()
+
+    print("total number of traces:", total_num)
+
     print("conversion time (ms):", (end_conv-start_conv)/1000000)
 
     start_save = time.time_ns()

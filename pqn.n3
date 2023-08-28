@@ -54,7 +54,10 @@
     (
         ?e
         {
+            # no real difference
             ?t pq:activityOccurs ( ?a ?e )
+            # ?l tr:from ?e ; tr:in ?t .
+            # ?e tr:activity ?a .
         }
         ?coll
     ) log:collectAllIn _:t .
@@ -77,7 +80,12 @@
     ?t a tr:Trace .
     ( 
         { ?a list:in ?activities } 
-        { ?t pq:activityOccurs ( ?a ?e ) } 
+        { 
+            # no real difference
+            ?t pq:activityOccurs ( ?a ?e ) 
+            # ?l tr:from ?e ; tr:in ?t .
+            # ?e tr:activity ?a .
+        } 
 
     ) log:forAllIn _:t 
 } .
@@ -447,6 +455,7 @@
 
 # pq:activitiesEventuallyFollowAtMostNTimes
 # cfr. A IsEventuallyFollowed B <= N (Schuster 2022)
+
 {
     ?t pq:activitiesEventuallyFollowAtMostNTimes ( ?a ?b ?atMostN ?actualN )
 }
@@ -534,14 +543,19 @@
 }
 <= 
 {
+    # very little difference in exec time
+
+    # ?t a tr:Trace .
+    # (
+    #     ?e
+    #     {
+    #         ?t pq:activityOccurs ( ?a ?e )
+    #     }
+    #     ()
+    # ) log:collectAllIn _:t .
+
     ?t a tr:Trace .
-    (
-        ?e
-        {
-            ?t pq:activityOccurs ( ?a ?e )
-        }
-        ()
-    ) log:collectAllIn _:t .
+    _:t log:notIncludes { [ tr:from [ tr:activity ?a ] ] tr:in ?t } .
 } .
 
 
@@ -602,33 +616,57 @@
 # in case the activities occur (cfr. logical implication)
 # cfr. "TotalCausal" (Polyvyanyy et al., 2019)
 
-# (very) high exec time
 {
     ?t pq:activitiesAlwaysPrecedeActivities ( ?activities1 ?activities2 )
 }
 <=
 {
+    # 2.5-3 s
+    # ?t a tr:Trace .
+    # (   1
+    #     {
+    #         # check non-existence of a counter example
+
+    #         ?a2 list:in ?activities2 .
+    #         # event e2 from trace with activity a2
+    #         ?l2 tr:in ?t ; tr:from ?e2 . 
+    #         ?e2 tr:activity ?a2 .
+
+    #         ?a1 list:in ?activities1 .
+    #         # event e1 from trace with activity a1
+    #         ?l1 tr:in ?t ; tr:from ?e1 . 
+    #         ?e1 tr:activity ?a1 .
+
+    #         # "T0" log:trace ( ?e2 ?e1 ) .
+    #         # e2 precedes e1
+    #         ?t pq:precedesEvent ( ?e2 ?e1 )
+    #     }
+    #     ()
+    # ) log:collectAllIn _:t .
+
+    # 50-100ms
     ?t a tr:Trace .
-    (   1
+    (
         {
-            # check non-existence of a counter example
-
-            ?a2 list:in ?activities2 .
-            # event e2 from trace with activity a2
-            ?l2 tr:in ?t ; tr:from ?e2 . 
-            ?e2 tr:activity ?a2 .
-
             ?a1 list:in ?activities1 .
             # event e1 from trace with activity a1
             ?l1 tr:in ?t ; tr:from ?e1 . 
             ?e1 tr:activity ?a1 .
-
-            # "T0" log:trace ( ?e2 ?e1 ) .
-            # e2 precedes e1
-            ?t pq:precedesEvent ( ?e2 ?e1 )
         }
-        ()
-    ) log:collectAllIn _:t .
+        {
+            (
+                {
+                    ?a2 list:in ?activities2 .
+                    # event e2 from trace with activity a2
+                    ?l2 tr:in ?t ; tr:from ?e2 . 
+                    ?e2 tr:activity ?a2 .
+                }
+                {
+                    ?t pq:precedesEvent ( ?e1 ?e2 )
+                }
+            ) log:forAllIn _:t .
+        }
+    ) log:forAllIn _:t .
 } .
 
 
