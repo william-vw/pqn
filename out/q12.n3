@@ -10,12 +10,12 @@
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix : <http://dutch.hospital.nl/sepsis#>.
 
-:trace_AD pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:node_1032).
-:trace_GO pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:node_1595).
-:trace_FO pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:node_2594).
-:trace_BP pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:node_4055).
-:trace_LG pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:node_5045).
-:trace_LT pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:node_6974).
-# 2023-08-30T21:41:40.411Z in=72835 out=6 ent=6 step=6 brake=1 inf=2296324 sec=0.294 inf/sec=7810626
+:trace_LG pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:node_424).
+:trace_AD pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:node_1795).
+:trace_FO pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:node_2271).
+:trace_GO pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:node_3084).
+:trace_BP pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:node_4137).
+:trace_LT pq:activitiesDirectlyFollow (:Admission+NC :Admission+IC _:node_5626).
+# 2023-08-30T22:15:22.548Z in=72835 out=6 ent=6 step=6 brake=1 inf=2296307 sec=0.293 inf/sec=7837225
 # ENDS
 

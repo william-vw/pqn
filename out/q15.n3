@@ -118,6 +118,6 @@
 :trace_FD pq:activitiesCoOccurOrNoneOccurs (:Admission+NC :Transfer+NC).
 :trace_GW pq:activitiesCoOccurOrNoneOccurs (:Admission+NC :Transfer+NC).
 :trace_AS pq:activitiesCoOccurOrNoneOccurs (:Admission+NC :Transfer+NC).
-# 2023-08-30T21:41:41.389Z in=72835 out=108 ent=108 step=108 brake=2 inf=2509149 sec=0.289 inf/sec=8682176
+# 2023-08-30T22:15:23.594Z in=72835 out=108 ent=108 step=108 brake=2 inf=2509111 sec=0.310 inf/sec=8093906
 # ENDS
 

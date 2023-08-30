@@ -487,6 +487,6 @@
 :trace_LGA pq:anyActivityOccursAsStart (:ER+Registration :ER+Triage).
 :trace_IC pq:anyActivityOccursAsStart (:ER+Registration :ER+Triage).
 :trace_KX pq:anyActivityOccursAsStart (:ER+Registration :ER+Triage).
-# 2023-08-30T21:41:44.276Z in=72835 out=477 ent=477 step=477 brake=2 inf=2572640 sec=0.291 inf/sec=8840687
+# 2023-08-30T22:15:26.659Z in=72835 out=477 ent=477 step=477 brake=2 inf=2572532 sec=0.316 inf/sec=8140924
 # ENDS
 

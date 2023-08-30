@@ -249,7 +249,7 @@
     ?t a tr:Trace .
     ?l  tr:in ?t ;
         tr:from ?e ;
-        tr:to rdf:nil . # no further events (ends) 
+        tr:to tr:nil . # no further events (ends) 
     ?e tr:activity ?a . # event e involves activity a
 } .
 
@@ -446,7 +446,7 @@
 {
     [ tr:from ?e1 ; tr:to ?ei ] tr:in ?t . # find link starting from event
     ?e1 tr:activity ?a . # event is about a
-    ?ei log:notEqualTo rdf:nil .
+    ?ei log:notEqualTo tr:nil .
     ?t pq:precedesActivity ( ?ei ?b ) # from this event onward, look for b
 } .
 
@@ -693,7 +693,7 @@
 {
     ?ei!tr:activity log:notEqualTo ?b . # mutex with rule below
     [ tr:from ?ei ; tr:to ?ej ] tr:in ?t .
-    ?ej log:notEqualTo rdf:nil .
+    ?ej log:notEqualTo tr:nil .
     # "T1" log:trace ( ?t ?ei ?ej ) .
     ?t pq:precedesActivity ( ?ej ?b ) . # search from ej onward
 } .
@@ -715,7 +715,7 @@
 {
     ?ei log:notEqualTo ?e2 . # mutex with rule below
     [ tr:from ?ei ; tr:to ?ej ] tr:in ?t .
-    ?ej log:notEqualTo rdf:nil .
+    ?ej log:notEqualTo tr:nil .
     # "T1" log:trace ( ?t ?ei ?ej ) .
     ?t pq:precedesActivity ( ?ej ?e2 ) . # search from ej onward
 } .

@@ -111,6 +111,6 @@
 :trace_BS pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
 :trace_FMA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
 :trace_KW pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-# 2023-08-30T21:41:42.049Z in=72835 out=101 ent=101 step=101 brake=2 inf=2580610 sec=0.302 inf/sec=8545066
+# 2023-08-30T22:15:24.298Z in=72835 out=101 ent=101 step=101 brake=2 inf=2576495 sec=0.324 inf/sec=7952145
 # ENDS
 

@@ -484,6 +484,6 @@
 :trace_ES pq:activityOccursAsStart (:ER+Registration :evt_7149).
 :trace_GF pq:activityOccursAsStart (:ER+Registration :evt_2097).
 :trace_KM pq:activityOccursAsStart (:ER+Registration :evt_4831).
-# 2023-08-30T21:41:43.635Z in=72835 out=474 ent=474 step=474 brake=2 inf=2510141 sec=0.288 inf/sec=8715767
+# 2023-08-30T22:15:25.971Z in=72835 out=474 ent=474 step=474 brake=2 inf=2510087 sec=0.294 inf/sec=8537711
 # ENDS
 

@@ -184,6 +184,6 @@
 :trace_LG pq:activityDoesNotOccur :Release+A.
 :trace_HS pq:activityDoesNotOccur :Release+A.
 :trace_GK pq:activityDoesNotOccur :Release+A.
-# 2023-08-30T21:41:41.068Z in=72835 out=174 ent=174 step=174 brake=2 inf=2451797 sec=0.286 inf/sec=8572717
+# 2023-08-30T22:15:23.247Z in=72835 out=174 ent=174 step=174 brake=2 inf=2451780 sec=0.299 inf/sec=8199933
 # ENDS
 

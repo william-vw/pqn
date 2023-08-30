@@ -319,6 +319,6 @@
 :trace_GF pq:allActivitiesOccurAtLeastNTimes ((:CRP :Leucocytes) 2).
 :trace_GK pq:allActivitiesOccurAtLeastNTimes ((:CRP :Leucocytes) 2).
 :trace_KM pq:allActivitiesOccurAtLeastNTimes ((:CRP :Leucocytes) 2).
-# 2023-08-30T21:41:43.315Z in=72835 out=309 ent=309 step=309 brake=2 inf=2501410 sec=0.285 inf/sec=8776877
+# 2023-08-30T22:15:25.645Z in=72835 out=309 ent=309 step=309 brake=2 inf=2501394 sec=0.301 inf/sec=8310279
 # ENDS
 

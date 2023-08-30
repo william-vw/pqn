@@ -89,6 +89,6 @@
 :trace_GF pq:activityOccursAtLeastNTimes (:CRP 5 19).
 :trace_GK pq:activityOccursAtLeastNTimes (:CRP 5 27).
 :trace_KM pq:activityOccursAtLeastNTimes (:CRP 5 51).
-# 2023-08-30T21:41:42.358Z in=72835 out=79 ent=79 step=79 brake=2 inf=2364687 sec=0.278 inf/sec=8506068
+# 2023-08-30T22:15:24.634Z in=72835 out=79 ent=79 step=79 brake=2 inf=2364671 sec=0.300 inf/sec=7882237
 # ENDS
 

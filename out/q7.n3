@@ -484,6 +484,6 @@
 :trace_ES pq:activityOccursAsStartAtLeastNTimes (:ER+Registration 1 1).
 :trace_GF pq:activityOccursAsStartAtLeastNTimes (:ER+Registration 1 1).
 :trace_KM pq:activityOccursAsStartAtLeastNTimes (:ER+Registration 1 1).
-# 2023-08-30T21:41:43.954Z in=72835 out=474 ent=474 step=474 brake=2 inf=2507872 sec=0.287 inf/sec=8738230
+# 2023-08-30T22:15:26.305Z in=72835 out=474 ent=474 step=474 brake=2 inf=2507818 sec=0.299 inf/sec=8387351
 # ENDS
 

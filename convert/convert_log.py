@@ -18,6 +18,7 @@ def convert_xes_n3(log, filepath, limit=-1):
         'ts': TR.ts,
         'from': TR['from'],
         'to': TR.to,
+        'nil': TR.nil,
         'lifecycle': TR.lifecycle_transition,
         'group': TR.org_group
     }
@@ -79,7 +80,7 @@ def convert_xes_n3(log, filepath, limit=-1):
         g.add((link, tr_terms['in'], trace))
 
         g.add((link, tr_terms['from'], prior_evt))
-        g.add((link, tr_terms['to'], RDF.nil))
+        g.add((link, tr_terms['to'], tr_terms['nil']))
 
         total_num += 1
         cur_traces += 1

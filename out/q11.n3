@@ -10,6 +10,6 @@
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix : <http://dutch.hospital.nl/sepsis#>.
 
-# 2023-08-30T21:41:40.082Z in=72835 out=0 ent=0 step=0 brake=2 inf=2323944 sec=0.280 inf/sec=8299800
+# 2023-08-30T22:15:22.219Z in=72835 out=0 ent=0 step=0 brake=2 inf=2331586 sec=0.306 inf/sec=7619562
 # ENDS
 
