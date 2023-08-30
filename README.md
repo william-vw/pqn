@@ -1,5 +1,22 @@
 # Process Querying in Notation3 (PQN)
 
+## Updated Querying Times
+
+Due to significant optimizations of the underlying PQN implementation, we can report much faster query execution times than currently reported in the PODS4H submission:
+
+| Query                                       | Execution Time (ms) | 
+|---------------------------------------------|---------------------|
+| pq:activitiesCoOccurOrNoneOccurs (q15.n3)   | 47                  |
+| pq:activitiesDoNotCoOccur (q16.n3)          | 50                  |
+| pq:allActivitiesOccurAtLeastNTimes (q5.n3)  | 39                  |
+| pq:activityDoesNotOccur (q14.n3)            | 56                  |
+| pq:activityOccursAtLeastNTimes (q2.n3)      | 21                  |
+| pq:allActivitiesOccur (q3.n3)               | 32                  |
+
+We refer to instructions below to reproduce our experiments.
+
+## Instructions
+
 This repository contains the [Notation3 (N3)](http://notation3.org) implementation of the Process Querying in N3 (PQN) language.
 The goal of this language is to query process traces in order to make sense of an event log before process mining.
 
