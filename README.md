@@ -4,8 +4,8 @@ This repository contains the [Notation3 (N3)](http://notation3.org) implementati
 The goal of this language is to query process traces in order to make sense of an event log before process mining.
 
 - The [pqn.n3](pqn.n3) file contains the current N3 implementation of PQN.
-- The [convert_log.py](convert/convert_log.py) script converts an event log (XES format) into an equivalent RDF format. See [convert_log.ipynb](convert/convert_log.ipynb) for an example on how to call this script.
 - The [queries/constraints](queries/constraints) folder contains test queries for the individual PQN constraints on the sepsis event log [1].
+- The [convert_log.py](convert/convert_log.py) script converts an event log (XES format) into an equivalent RDF format. See [convert_log.ipynb](convert/convert_log.ipynb) for an example on how to call this script. These scripts rely on the `rdflib` and `pm4py` dependencies, among others.
 
 To run an individual test query (such as `q1.n3`) on the full sepsis event log, run the following command:
 ```
