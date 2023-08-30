@@ -29,14 +29,13 @@ To run an individual test query (such as `q1.n3`) on the full sepsis event log, 
 ./run.sh -q queries/constraints/q1.n3 -l logs/sepsis_all.n3
 ```
 
-To run all test queries on a particular log (e.g., on 10% of the sepsis event log), run the following command:
+To run all test queries on a particular log (e.g., the [full sepsis event log](logs/)), run the following command:
 ```
-./run_all.sh -d queries/constraints -l logs/sepsis_10.n3 -r results/times_10.csv
+./run_all.sh -d queries/constraints -l logs/sepsis_all.n3 -r results/times_all.csv
 ```
-Where the query outputs will appear in the `out/` folder, and result times will appear in `results/times_10.csv` for this example.
+Where the query outputs will appear in the `out/` folder, and result times will appear in `results/times_all.csv` for this example.
 
 You can run `./run.sh -h` and `./run_all.sh -h` for details on the usage of each shell script.
-Note that the output of each query will show up under the `out/` folder.
 
 # References
 [1] Mannhardt, F., Blinde, D.: Analyzing the Trajectories of Patients with Sepsis using Process Mining. In: RADAR+ EMISA@ CAiSE. pp. 72–80 (2017).
