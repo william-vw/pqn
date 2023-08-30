@@ -1,5 +1,5 @@
 # Processed by EYE v4.11.2 (2023-08-08)
-# eye pqn.n3 --turtle logs/sepsis_all.n3 --query queries/constraints/q9.n3 --nope
+# eye pqn.n3 --turtle logs/sepsis_50.n3 --query queries/constraints/q9.n3 --nope
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
@@ -10,6 +10,6 @@
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix : <http://dutch.hospital.nl/sepsis#>.
 
-# 2023-08-30T21:21:52.625Z in=155688 out=0 ent=0 step=0 brake=1 inf=4694508 sec=0.563 inf/sec=8338380
+# 2023-08-30T21:41:44.580Z in=72835 out=0 ent=0 step=0 brake=1 inf=2306731 sec=0.274 inf/sec=8418726
 # ENDS
 
