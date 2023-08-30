@@ -1,14 +1,14 @@
 #!/bin/bash
 
 usage="usage:
-run_all.sh -d <dir> -l <log> -r <results> [ -q <pqn> ]
+run_all.sh -d <dir> -l <log> -r <results> [ -p <pqn> ]
 where
     -d <dir> is the directory with query files
     -l <log> is the event log
     -r <results> is the results file to write to
     -p <pqn> is the PQN implementation"
 
-while getopts "d:l:r:" option; do
+while getopts "d:l:r:p:" option; do
     case "${option}" in
         d | dir)
             dir=${OPTARG}
@@ -37,6 +37,8 @@ fi
 if [[ -z "$pqn" ]]; then
     pqn="pqn.n3"
 fi
+
+echo -e "using $pqn\n"
 
 echo "query,networking,reasoning" > $results 
 

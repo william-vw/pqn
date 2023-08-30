@@ -7,7 +7,7 @@ where
     -l <log> is the event log
     -p <pqn> is the PQN implementation"
 
-while getopts "q:l:" option; do
+while getopts "q:l:p:" option; do
     case "${option}" in
         q | query)
             query=${OPTARG}
@@ -33,6 +33,8 @@ fi
 if [[ -z "$pqn" ]]; then
     pqn="pqn.n3"
 fi
+
+echo -e "using $pqn\n"
 
 TIMEFORMAT="time: %3R"
 time {
