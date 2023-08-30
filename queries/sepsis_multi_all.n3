@@ -11,9 +11,6 @@
     ?t pq:activityOccurs ( :LacticAcid ?le ) .
     ?t pq:activityOccurs ( :CRP ?ce ) .
     ?t pq:activitiesDirectlyFollow ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Admission+IC> ?r ) .
-    # ?t pq:activityOccurs ( <http://dutch.hospital.nl/sepsis#ER+Registration> ?re ) .
-    # ?re :Age ?age . ?age math:notLessThan 65 .
-    # ?re :InfectionSuspected true .
 } => {
     pq:result pq:entry ?t
 } .
