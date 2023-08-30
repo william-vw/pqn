@@ -38,6 +38,6 @@ echo -e "using $pqn\n"
 
 TIMEFORMAT="time: %3R"
 time {
-eye $pqn $log --query $query --nope
-echo "eye $pqn $log --query $query --nope"
+echo "eye $pqn --turtle $log --query $query --nope"
+eye $pqn --turtle $log --query $query --nope
 }

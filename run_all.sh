@@ -47,7 +47,7 @@ for path in "$dir"/*; do
     query="${path##*/}"
     echo $query
 
-    error=$( { eye $pqn $log --query $path --nope > out/$query; } 2>&1 )
+    error=$( { eye $pqn --turtle $log --query $path --nope > out/$query; } 2>&1 )
     # echo $error
     
     [[ $error =~ $time_rx ]]
