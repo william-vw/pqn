@@ -29,7 +29,7 @@ To run an individual test query (such as `q1.n3`) on the full sepsis event log, 
 ./run.sh -q queries/constraints/q1.n3 -l logs/sepsis_all.n3
 ```
 
-To run all test queries on a particular log (e.g., on the [full sepsis event log](logs/)), run the following command:
+To run all test queries on a particular log (e.g., the [full sepsis event log](logs/)), run the following command:
 ```
 ./run_all.sh -d queries/constraints -l logs/sepsis_all.n3 -r results/times_all.csv
 ```
