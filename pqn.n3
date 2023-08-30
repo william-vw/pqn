@@ -351,7 +351,6 @@
         tr:in ?t .
 } .
 
-# TODO debug at-least-n's and any/all
 
 # pq:activitiesDirectlyFollowAtLeastNTimes
 # cfr. A isDirectlyFollowed B >= N (Schuster 2022)
@@ -451,7 +450,6 @@
     ?t pq:precedesActivity ( ?ei ?b ) # from this event onward, look for b
 } .
 
-# TODO debug at-least-n's and any/all
 
 # pq:activitiesEventuallyFollowAtMostNTimes
 # cfr. A IsEventuallyFollowed B <= N (Schuster 2022)
@@ -555,7 +553,7 @@
     # ) log:collectAllIn _:t .
 
     ?t a tr:Trace .
-    _:t log:notIncludes { [ tr:from [ tr:activity ?a ] ] tr:in ?t } .
+    _:t log:notIncludes { [ tr:activity ?a ] tr:in ?t } .
 } .
 
 
@@ -590,7 +588,7 @@
 
 
 # pq:activitiesDoNotCoOccur
-# either several (but not all) of them occur, or none of them occur; none of them can all occur together
+# activities cannot all co-occur together (some may co-occur)
 # cfr. "Conflict" (Polyvyanyy et al., 2019)
 
 {
@@ -598,16 +596,19 @@
 }
 <=
 {
-    ?t pq:uniqueActivityCount ( ?activities 0 ) .
-} .
+    ?t a tr:Trace .
+    (
+        ?a
+        {
+            ?a list:in ?activities .
+            ?t pq:activityOccurs ( ?a ?e )
+        }
+        ?coll
+    ) log:collectAllIn _:t .
 
-{
-    ?t pq:activitiesDoNotCoOccur ?activities
-}
-<=
-{
-    ?t pq:uniqueActivityCount ( ?activities ?count ) .
-    ?count math:lessThan ?activities!list:length .
+    ?coll e:sort ?collu .
+    ?collu list:length ?len .
+    ?len math:lessThan ?activities!list:length .
 } .
 
 

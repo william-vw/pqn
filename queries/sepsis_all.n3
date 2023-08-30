@@ -1,0 +1,163 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix tr: <http://notation3.org/trace#> .
+@prefix pq: <http://notation3.org/pqn#> .
+# @prefix : <http://example.org#> .
+@prefix : <http://dutch.hospital.nl/sepsis#> .
+
+
+# {
+#     ?t pq:activityOccurs ( <http://dutch.hospital.nl/sepsis#Release+B> ?e )
+# } => {
+#     ?t pq:activityOccurs ( <http://dutch.hospital.nl/sepsis#Release+B> ?e )
+# } .
+
+# {
+#     ?t pq:activityOccursAtLeastNTimes (  <http://dutch.hospital.nl/sepsis#ER+Registration> 1 ?n )
+# } => {
+#     ?t pq:activityOccursAtLeastNTimes (  <http://dutch.hospital.nl/sepsis#ER+Registration> 1 ?n )
+# } .
+
+# {
+#     ?t pq:allActivitiesOccur ( :CRP :Leucocytes )
+# } => {
+#     ?t pq:allActivitiesOccur ( :CRP :Leucocytes )
+# } .
+
+# {
+#     ?t pq:anyActivitiesOccur ( <http://dutch.hospital.nl/sepsis#Release+A> <http://dutch.hospital.nl/sepsis#Release+B> )
+# } => {
+#     ?t pq:anyActivitiesOccur ( <http://dutch.hospital.nl/sepsis#Release+A> <http://dutch.hospital.nl/sepsis#Release+B> )
+# } .
+
+# {
+#     ?t pq:allActivitiesOccurAtLeastNTimes ( ( :CRP :Leucocytes ) 2 )
+# } => {
+#     ?t pq:allActivitiesOccurAtLeastNTimes ( ( :CRP :Leucocytes ) 2 )
+# } .
+
+# {
+#     ?t pq:anyActivityOccursAtLeastNTimes ( ( :a1 :a3 ) 2 )
+# } => {
+#     ?t pq:anyActivityOccursAtLeastNTimes ( ( :a1 :a3 ) 2 )
+# } .
+
+# {
+#     ?t pq:activityOccursAsStart ( <http://dutch.hospital.nl/sepsis#ER+Registration> ?e )
+# } => {
+#     ?t pq:activityOccursAsStart ( <http://dutch.hospital.nl/sepsis#ER+Registration> ?e )
+# } .
+
+# {
+#     ?t pq:activityOccursAsStartAtLeastNTimes ( <http://dutch.hospital.nl/sepsis#ER+Registration> 1 ?n )
+# } => {
+#     ?t pq:activityOccursAsStartAtLeastNTimes ( <http://dutch.hospital.nl/sepsis#ER+Registration> 1 ?n )
+# } .
+
+# {
+#     ?t pq:anyActivityOccursAsStart (<http://dutch.hospital.nl/sepsis#ER+Registration> <http://dutch.hospital.nl/sepsis#ER+Triage> )
+# } => {
+#     ?t pq:anyActivityOccursAsStart ( <http://dutch.hospital.nl/sepsis#ER+Registration> <http://dutch.hospital.nl/sepsis#ER+Triage> )
+# } .
+
+# {
+#     ?t pq:allActivitiesOccurAsStart ( :a1 :a3 )
+# } => {
+#     ?t pq:allActivitiesOccurAsStart ( :a1 :a3 )
+# } .
+
+# {
+#     ?t pq:anyActivityOccursAsStartAtLeastNTimes ( ( :a3 ) 2 )
+# } => {
+#     ?t pq:anyActivityOccursAsStartAtLeastNTimes ( ( :a3 ) 2 )
+# } .
+
+# {
+#     ?t pq:allActivitiesOccurAsStartAtLeastNTimes ( ( :a1 :a3 ) 1 )
+# } => {
+#     ?t pq:allActivitiesOccurAsStartAtLeastNTimes ( ( :a1 :a3 ) 1 )
+# } .
+
+# {
+#     ?t pq:activityOccursAsEnd ( <http://dutch.hospital.nl/sepsis#Release+A> ?e )
+# } => {
+#     ?t pq:activityOccursAsEnd ( <http://dutch.hospital.nl/sepsis#Release+A> ?e )
+# } .
+
+# {
+#     ?t pq:activityOccursAsEndAtLeastNTimes ( :a1 1 ?n )
+# } => {
+#     ?t pq:activityOccursAsEndAtLeastNTimes ( :a1 1 ?n )
+# } .
+
+# {
+#     ?t pq:anyActivityOccursAsEnd ( <http://dutch.hospital.nl/sepsis#Release+A> <http://dutch.hospital.nl/sepsis#Release+B> )
+# } => {
+#     ?t pq:anyActivityOccursAsEnd ( <http://dutch.hospital.nl/sepsis#Release+A> <http://dutch.hospital.nl/sepsis#Release+B> )
+# } .
+
+# {
+#     ?t pq:allActivitiesOccurAsEnd ( <http://dutch.hospital.nl/sepsis#Release+A> <http://dutch.hospital.nl/sepsis#Release+B> )
+# } => {
+#     ?t pq:allActivitiesOccurAsEnd ( <http://dutch.hospital.nl/sepsis#Release+A> <http://dutch.hospital.nl/sepsis#Release+B> )
+# } .
+
+# {
+#     ?t pq:anyActivityOccursAsEndAtLeastNTimes ( ( :a1 :a3 ) 2 )
+# } => {
+#     ?t pq:anyActivityOccursAsEndAtLeastNTimes ( ( :a1 :a3 ) 2 )
+# } .
+
+# {
+#     ?t pq:allActivitiesOccurAsEndAtLeastNTimes ( ( :a1 ) 2 )
+# } => {
+#     ?t pq:allActivitiesOccurAsEndAtLeastNTimes ( ( :a1 ) 2 )
+# } .
+
+# {
+#     ?t pq:activitiesDirectlyFollow ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Admission+IC> ?l )
+# } => {
+#     ?t pq:activitiesDirectlyFollow ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Admission+IC> ?l )
+# } .
+
+# {
+#     ?t pq:activitiesEventuallyFollow ( <http://dutch.hospital.nl/sepsis#ER+Sepsis+Triage> <http://dutch.hospital.nl/sepsis#Admission+NC> )
+# } => {
+#     ?t pq:activitiesEventuallyFollow ( <http://dutch.hospital.nl/sepsis#ER+Sepsis+Triage> <http://dutch.hospital.nl/sepsis#Admission+NC> )
+# } .
+
+# {
+#     ?t pq:activityDoesNotOccur <http://dutch.hospital.nl/sepsis#Release+A>
+# } => {
+#     ?t pq:activityDoesNotOccur <http://dutch.hospital.nl/sepsis#Release+A>
+# } .
+
+# {
+#     ?t pq:activitiesCoOccurOrNoneOccurs ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Transfer+NC> )
+# } => {
+#     ?t pq:activitiesCoOccurOrNoneOccurs ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Transfer+NC> )
+# } .
+
+# {
+#     ?t pq:activitiesDoNotCoOccur ( :a1 :a5 )
+# } => {
+#     ?t pq:activitiesDoNotCoOccur ( :a1 :a5 )
+# } .
+
+# {
+#     ?t pq:activitiesAlwaysPrecedeActivities ( ( :a1 :a2 ) ( :a3 ) )
+# } => {
+#     ?t pq:activitiesAlwaysPrecedeActivities ( ( :a1 :a2 ) ( :a3 ) )
+# } .
+
+# {
+#     ?t pq:activityOccurs ( :LacticAcid ?le ) .
+#     ?t pq:activityOccurs ( :CRP ?ce ) .
+#     ?t pq:activitiesDirectlyFollow ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Admission+IC> ?r ) .
+#     ?t pq:activityOccurs ( <http://dutch.hospital.nl/sepsis#ER+Registration> ?re ) .
+#     ?re :Age ?age . ?age math:notLessThan 65 .
+#     ?re :InfectionSuspected true .
+# } => {
+#     pq:result pq:entry ?t
+# } .

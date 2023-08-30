@@ -1,0 +1,36 @@
+# Processed by EYE v4.11.2 (2023-08-08)
+# eye pqn.n3 logs/sepsis_all.n3 --query queries/constraints/q12.n3 --nope
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix tr: <http://notation3.org/trace#>.
+@prefix pq: <http://notation3.org/pqn#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix ns2: <http://dutch.hospital.nl/sepsis#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+ns2:trace_S pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_347).
+ns2:trace_WKA pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_878).
+ns2:trace_YF pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_1032).
+ns2:trace_BP pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_1453).
+ns2:trace_YX pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_3244).
+ns2:trace_NZ pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_4193).
+ns2:trace_PGA pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_6963).
+ns2:trace_TN pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_7136).
+ns2:trace_GO pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_7679).
+ns2:trace_VN pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_7695).
+ns2:trace_LG pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_7985).
+ns2:trace_XBA pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_10217).
+ns2:trace_RY pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_10475).
+ns2:trace_XI pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_10665).
+ns2:trace_AD pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_10849).
+ns2:trace_XFA pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_11181).
+ns2:trace_LT pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_11263).
+ns2:trace_UC pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_12676).
+ns2:trace_FO pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_13239).
+ns2:trace_RU pq:activitiesDirectlyFollow (ns2:Admission+NC ns2:Admission+IC _:bn_13619).
+# 2023-08-30T13:48:42.880Z in=155688 out=20 ent=20 step=20 brake=1 inf=86457881 sec=4.124 inf/sec=20964569
+# ENDS
+
