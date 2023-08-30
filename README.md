@@ -2,7 +2,7 @@
 
 ## Updated Querying Times
 
-Due to significant optimizations of the underlying PQN implementation, we can report much faster query execution times than currently reported in the PODS4H submission:
+Due to significant optimizations of the PQN implementation, we can report much faster query execution times than currently reported in the PODS4H submission:
 
 | Query                                       | Execution Time (ms) | 
 |---------------------------------------------|---------------------|
@@ -12,6 +12,8 @@ Due to significant optimizations of the underlying PQN implementation, we can re
 | pq:activityDoesNotOccur (q14.n3)            | 56                  |
 | pq:activityOccursAtLeastNTimes (q2.n3)      | 21                  |
 | pq:allActivitiesOccur (q3.n3)               | 32                  |
+
+By further optimizing the loading of the RDF log, we can also report `127ms`, `262ms`, and `546ms` loading times for 25%, 50%, and 100% of the sepsis event log, respectively [1].
 
 We refer to instructions below to reproduce our experiments.
 
