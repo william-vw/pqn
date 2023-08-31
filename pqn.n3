@@ -346,9 +346,9 @@
 }
 <=
 {
-    ?l  tr:from [ tr:activity ?a ] ;
-        tr:to [ tr:activity ?b ] ;
-        tr:in ?t .
+    ?l  tr:in ?t ;
+        tr:from [ tr:activity ?a ] ;
+        tr:to [ tr:activity ?b ] .
 } .
 
 
