@@ -1,0 +1,66 @@
+# Processed by EYE v4.14.12 (2023-08-31)
+# eye pqn.n3 --turtle logs/sepsis_25.n3 --query queries/constraints/q23.n3 --nope
+
+@prefix : <http://dutch.hospital.nl/sepsis#>.
+@prefix pq: <http://notation3.org/pqn#>.
+
+:trace_AKA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_CDA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_DMA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_FFA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_CL pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_AG pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_AJA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_AM pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_BC pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_CIA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_CK pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_DE pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_DF pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_DIA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_DN pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_EG pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_ENA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_FLA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_AX pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_BB pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_BO pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_BY pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_EFA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_EZ pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_FP pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_FS pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_AW pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_CS pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_AA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_AB pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_ACA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_AN pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_AT pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_BEA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_CA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_CAA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_CCA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_CD pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_CLA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_DLA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_DM pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_DNA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_DQ pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_DV pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_E pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_EB pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_EN pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_EP pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_ER pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_FA pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_FB pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_FF pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_FI pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_FV pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_EV pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_FD pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+:trace_AS pq:activitiesCoOccurOrNoneOccurs (:Admission_NC :Transfer_NC).
+# 2023-08-31T14:44:23.070Z in=34802 out=57 ent=57 step=57 brake=2 inf=1280255 sec=0.153 inf/sec=8367680
+# ENDS
+

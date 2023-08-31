@@ -248,6 +248,6 @@
 :trace_FT pq:allActivitiesOccur (:CRP :Leucocytes).
 :trace_CZ pq:allActivitiesOccur (:CRP :Leucocytes).
 :trace_ES pq:allActivitiesOccur (:CRP :Leucocytes).
-# 2023-08-31T13:40:02.642Z in=34802 out=244 ent=244 step=244 brake=2 inf=1302863 sec=0.153 inf/sec=8515444
+# 2023-08-31T14:44:28.371Z in=34802 out=244 ent=244 step=244 brake=2 inf=1299636 sec=0.153 inf/sec=8494353
 # ENDS
 

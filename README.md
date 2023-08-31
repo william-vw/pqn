@@ -2,20 +2,20 @@
 
 ## Updated Querying Times
 
-Due to significant optimizations of the PQN implementation, we can report much faster query execution times than currently reported in the PODS4H submission:
+Due to significant optimizations of the PQN implementation, we can report much faster query execution times (on the full sepsis log) than currently reported in the PODS4H submission:
 
 | Query                                       | Execution Time (ms) |
 |---------------------------------------------|---------------------|
-| pq:activitiesCoOccurOrNoneOccurs (q15.n3)   | 47                  |
-| pq:activitiesDoNotCoOccur (q16.n3)          | 50                  |
-| pq:allActivitiesOccurAtLeastNTimes (q5.n3)  | 39                  |
-| pq:activityDoesNotOccur (q14.n3)            | 56                  |
-| pq:activityOccursAtLeastNTimes (q2.n3)      | 21                  |
-| pq:allActivitiesOccur (q3.n3)               | 32                  |
+| pq:activitiesCoOccurOrNoneOccurs (q23.n3)   | 43                  |
+| pq:activitiesDoNotCoOccur (q24.n3)          | 49                  |
+| pq:allActivitiesOccurAtLeastNTimes (q5.n3)  | 26                  |
+| pq:activityDoesNotOccur (q22.n3)            | 52                  |
+| pq:activityOccursAtLeastNTimes (q2.n3)      | 22                  |
+| pq:allActivitiesOccur (q3.n3)               | 41                  |
 
-All times are averaged over 10 runs.
+All times are averaged over 10 runs. All query execution times for all event logs can be found in the [`results/`](results/) folder.
 
-By further optimizing the loading of the RDF log, we can also report `121ms`, `244ms`, and `509ms` loading times for 25%, 50%, and 100% of the sepsis event log [1], respectively.
+By further optimizing the loading of the RDF log, we can also report `121ms`, `244ms`, and `507ms` loading times for 25%, 50%, and 100% of the sepsis event log [1], respectively.
 
 We refer to instructions below to reproduce our experiments.
 
@@ -26,7 +26,7 @@ The goal of this language is to query process traces in order to make sense of a
 
 - The [pqn.n3](pqn.n3) file contains the current N3 implementation of PQN.
 - The [queries/constraints](queries/constraints) folder contains test queries for the individual PQN constraints on the sepsis event log [1].
-- The [convert_log.py](convert/convert_log.py) script converts an event log (XES format) into an equivalent RDF format. See [convert_log.ipynb](convert/convert_log.ipynb) for an example on how to call this script. These scripts rely on the `rdflib` and `pm4py` dependencies, among others.
+- The [convert_log.py](convert/convert_log.py) script converts an event log (XES format) into an equivalent RDF format. See [convert_log.ipynb](convert/convert_log.ipynb) for an example on how to call this script. These scripts rely on the `pm4py` and `pandas` dependency, among others.
 
 First, install the latest version of the [`eye`](https://github.com/eyereasoner/eye/tags) reasoner (the experiments were performed with v.4.14.12).
 

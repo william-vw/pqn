@@ -1,60 +1,6 @@
 # Processed by EYE v4.14.12 (2023-08-31)
 # eye pqn.n3 --turtle logs/sepsis_25.n3 --query queries/constraints/q17.n3 --nope
 
-@prefix : <http://dutch.hospital.nl/sepsis#>.
-@prefix pq: <http://notation3.org/pqn#>.
-
-:trace_AKA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_CDA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_DMA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_FFA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_CL pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_AG pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_AJA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_AM pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_BC pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_CIA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_DE pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_DF pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_BB pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_BO pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_BY pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_EZ pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_FS pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_AO pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_AW pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_BNA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_CS pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_AN pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_AT pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_CAA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_CCA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_CD pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_CLA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_CMA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_CO pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_E pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_EN pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_EP pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_ER pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_FB pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_FI pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_FV pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_DJA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_DU pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_FL pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_AV pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_ET pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_F pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_FEA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_BL pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_CE pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_CN pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_B pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_BMA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_DC pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_BS pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-:trace_FMA pq:activitiesAlwaysPrecedeActivities ((:Leucocytes) (:CRP)).
-# 2023-08-31T13:39:59.193Z in=34802 out=51 ent=51 step=51 brake=2 inf=1314182 sec=0.159 inf/sec=8265296
+# 2023-08-31T14:44:11.011Z in=34802 out=0 ent=0 step=0 brake=2 inf=1202877 sec=0.148 inf/sec=8127547
 # ENDS
 

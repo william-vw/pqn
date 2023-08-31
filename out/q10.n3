@@ -4,117 +4,249 @@
 @prefix : <http://dutch.hospital.nl/sepsis#>.
 @prefix pq: <http://notation3.org/pqn#>.
 
-:trace_BNA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EE pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_FC pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CJA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CO pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_AMA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_ANA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CH pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DT pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EJA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_AV pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BG pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DFA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EH pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_ET pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_F pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_FEA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_AH pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_ALA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BL pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CE pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DL pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EJ pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_FG pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_FKA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_AHA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_AU pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_B pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BAA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BD pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BDA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BGA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BQ pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CT pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CV pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DB pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DG pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DI pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EBA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_FU pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_G pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_GA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CI pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CQ pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DW pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DX pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EGA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_AQ pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BBA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BU pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_C pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CB pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CEA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CX pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DBA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DEA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DP pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DY pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EF pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EKA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EL pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_AGA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_AZ pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BHA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CG pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CM pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CW pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DR pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DS pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BV pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DAA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_FJA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_FM pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_GAA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_ABA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CKA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DDA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EC pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_FK pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CFA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_ECA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BH pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_ELA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BJ pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BW pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CBA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_A pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BP pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EW pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BZ pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EX pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_AJ pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BN pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_FO pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EHA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DZ pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_FT pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_DD pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_FQ pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BI pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CGA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CN pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EY pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EAA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_EK pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_BFA pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_AS pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_AY pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_FN pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CJ pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-:trace_CZ pq:anyActivityOccursAsEnd (:Release+A :Release+B).
-# 2023-08-31T13:39:47.073Z in=34802 out=111 ent=111 step=111 brake=1 inf=1241185 sec=0.151 inf/sec=8219768
+:trace_AKA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CDA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DMA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FFA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CL pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AJA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AM pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BC pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CIA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CK pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DE pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DF pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DIA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DN pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EG pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_ENA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FLA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AX pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BB pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BO pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BY pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EFA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EZ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FP pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FS pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AO pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AW pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BNA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CS pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EE pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FC pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AB pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_ACA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AN pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AT pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CAA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CCA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CD pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CJA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CLA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CMA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CO pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DD pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DHA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DLA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DM pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DNA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DQ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DV pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_E pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EB pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EN pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EP pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_ER pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FB pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FF pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FI pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FQ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FV pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AEA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AMA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_ANA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BM pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CH pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DJA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DT pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DU pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EJA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FL pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FNA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FR pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AV pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BG pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BI pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CGA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DFA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EH pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_ET pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EV pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_F pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FBA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FEA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AAA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AH pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AK pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_ALA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AP pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BL pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BR pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CE pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CN pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CU pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DL pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EJ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FD pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FG pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FGA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FKA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AHA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AU pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_B pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BAA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BD pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BDA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BGA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BMA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BQ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CT pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CV pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DB pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DC pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DG pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DI pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EBA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EDA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EIA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EY pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FU pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_G pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_GA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AC pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AFA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BF pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BK pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BS pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BT pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CHA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CI pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CQ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_D pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DCA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DK pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DW pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EEA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EGA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FH pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FHA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FIA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FJ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FMA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_GB pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AQ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BBA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BU pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_C pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CB pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CC pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CEA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CX pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DBA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DEA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DKA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DP pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DY pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EF pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EI pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EKA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EL pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EU pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AGA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AI pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AZ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BE pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BHA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CG pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CM pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CP pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CW pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DH pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DR pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EAA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EO pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FCA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BV pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DAA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DO pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FJA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FM pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_GAA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_ABA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AF pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AIA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BJA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BX pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CKA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CNA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CR pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DDA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EC pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EMA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FAA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FE pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FK pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FX pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FY pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AE pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CFA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DGA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FDA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FZ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AL pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BCA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BKA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_ECA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BH pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BLA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EK pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_ELA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FW pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BJ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BW pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CBA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_A pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AS pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AY pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BP pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AR pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DJ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EW pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FN pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_ADA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BZ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EX pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AJ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_BN pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CF pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FO pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_AD pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EM pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EHA pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_EQ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_DZ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CY pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_ED pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_FT pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_CZ pq:allActivitiesOccurAsStart (:ER_Registration).
+:trace_ES pq:allActivitiesOccurAsStart (:ER_Registration).
+# 2023-08-31T14:43:58.945Z in=34802 out=243 ent=243 step=243 brake=2 inf=1288172 sec=0.153 inf/sec=8419425
 # ENDS
 

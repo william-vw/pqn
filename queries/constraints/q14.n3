@@ -2,12 +2,11 @@
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix tr: <http://notation3.org/trace#> .
 @prefix pq: <http://notation3.org/pqn#> .
-# @prefix : <http://example.org#> .
 @prefix : <http://dutch.hospital.nl/sepsis#> .
 
 
 {
-    ?t pq:activityDoesNotOccur <http://dutch.hospital.nl/sepsis#Release+A>
+    ?t pq:anyActivityOccursAsEnd ( :Release_A :Release_B )
 } => {
-    ?t pq:activityDoesNotOccur <http://dutch.hospital.nl/sepsis#Release+A>
+    ?t pq:anyActivityOccursAsEnd ( :Release_A :Release_B )
 } .

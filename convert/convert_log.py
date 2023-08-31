@@ -44,7 +44,8 @@ def convert_xes_n3(log, filepath, limit=-1):
         for index, row in df.iterrows():
             evt = Sepsis[f"evt_{index}"]
 
-            activ = Sepsis[urllib.parse.quote_plus(row['concept:name'])]
+            activ_label=urllib.parse.quote(row['concept:name']).replace("%20", "_")
+            activ = Sepsis[activ_label]
             g.add((evt, tr_terms['activity'], activ))
 
             ts = Literal(row['time:timestamp'])

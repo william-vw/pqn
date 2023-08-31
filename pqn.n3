@@ -44,7 +44,6 @@
 # > pq:activityOccursAtLeastNTimes
 # cfr. isContained >= N (Schuster 2022)
 
-# high exec time
 {
     ?t pq:activityOccursAtLeastNTimes ( ?a ?atLeastN ?actualN )
 }
@@ -54,10 +53,7 @@
     (
         ?e
         {
-            # no real difference
             ?t pq:activityOccurs ( ?a ?e )
-            # ?l tr:from ?e ; tr:in ?t .
-            # ?e tr:activity ?a .
         }
         ?coll
     ) log:collectAllIn _:t .
@@ -71,7 +67,6 @@
 # pq:allActivitiesOccur
 # cfr. ALL keyword (without other constraints) (Schuster 2022))
 
-# high exec time
 {
     ?t pq:allActivitiesOccur ?activities
 }
@@ -81,10 +76,7 @@
     ( 
         { ?a list:in ?activities } 
         { 
-            # no real difference
             ?t pq:activityOccurs ( ?a ?e ) 
-            # ?l tr:from ?e ; tr:in ?t .
-            # ?e tr:activity ?a .
         } 
 
     ) log:forAllIn _:t 
@@ -107,7 +99,6 @@
 # pq:allActivitiesOccurAtLeastNTimes
 # cfr. ALL{ A, B } isContained >= N (Schuster 2022)
 
-# (very) high exec time
 {
     ?t pq:allActivitiesOccurAtLeastNTimes ( ?activities ?atLeastN )
 }
@@ -122,11 +113,11 @@
 } .
 
 
-# pq:anyActivityOccurAtLeastNTimes
+# pq:anyActivityOccursAtLeastNTimes
 # cfr. ANY{ A, B } isContained >= N (Schuster 2022)
 
 {
-    ?t pq:anyActivityOccurAtLeastNTimes ( ?activities ?atLeastN )
+    ?t pq:anyActivityOccursAtLeastNTimes ( ?activities ?atLeastN )
 }
 <=
 {
@@ -171,7 +162,7 @@
         ?coll
     ) log:collectAllIn _:t .
     
-    ?coll e:sort ?collu . # remove duplicates (unsure why needed)
+    ?coll e:sort ?collu .
     ?collu list:length ?actualN .
     ?actualN math:notLessThan ?atLeastN .
 } .
@@ -444,8 +435,9 @@
 }
 <=
 {
-    [ tr:from ?e1 ; tr:to ?ei ] tr:in ?t . # find link starting from event
+    ?l tr:in ?t ; tr:from ?e1 . # find link starting from event
     ?e1 tr:activity ?a . # event is about a
+    ?l tr:to ?ei .
     ?ei log:notEqualTo tr:nil .
     ?t pq:precedesActivity ( ?ei ?b ) # from this event onward, look for b
 } .
@@ -469,7 +461,7 @@
     ) log:collectAllIn _:t .
     
     ?coll list:length ?actualN .
-    ?actualN math:notGreaterThan ?atLeastN .
+    ?actualN math:notGreaterThan ?atMostN .
 } .
 
 
@@ -535,23 +527,11 @@
 
 # pq:activityDoesNotOccur
 
-# high exec time
 {
     ?t pq:activityDoesNotOccur ?a 
 }
 <= 
 {
-    # very little difference in exec time
-
-    # ?t a tr:Trace .
-    # (
-    #     ?e
-    #     {
-    #         ?t pq:activityOccurs ( ?a ?e )
-    #     }
-    #     ()
-    # ) log:collectAllIn _:t .
-
     ?t a tr:Trace .
     _:t log:notIncludes { [ tr:activity ?a ] tr:in ?t } .
 } .
@@ -561,7 +541,6 @@
 # either all activities occur, or none occur
 # cfr. "Cooccur" (Polyvyanyy et al., 2019)
 
-# very high exec time
 {
     ?t pq:activitiesCoOccurOrNoneOccurs ?activities
 }
@@ -622,30 +601,6 @@
 }
 <=
 {
-    # 2.5-3 s
-    # ?t a tr:Trace .
-    # (   1
-    #     {
-    #         # check non-existence of a counter example
-
-    #         ?a2 list:in ?activities2 .
-    #         # event e2 from trace with activity a2
-    #         ?l2 tr:in ?t ; tr:from ?e2 . 
-    #         ?e2 tr:activity ?a2 .
-
-    #         ?a1 list:in ?activities1 .
-    #         # event e1 from trace with activity a1
-    #         ?l1 tr:in ?t ; tr:from ?e1 . 
-    #         ?e1 tr:activity ?a1 .
-
-    #         # "T0" log:trace ( ?e2 ?e1 ) .
-    #         # e2 precedes e1
-    #         ?t pq:precedesEvent ( ?e2 ?e1 )
-    #     }
-    #     ()
-    # ) log:collectAllIn _:t .
-
-    # 50-100ms
     ?t a tr:Trace .
     (
         {
@@ -672,17 +627,6 @@
 
 
 # helper rules
-
-# # what is a trace
-
-# {
-#     ?t a tr:Trace
-# }
-# <=
-# {
-#     [ tr:from [ tr:activity ?a ] ] tr:in ?t
-# } .
-
 
 # check precedence
 
@@ -731,6 +675,7 @@
 
 
 # count activities that occur at least once in trace
+# (currently not used)
 
 {
     ?t pq:uniqueActivityCount ( ?activities ?count )

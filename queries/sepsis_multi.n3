@@ -1,0 +1,18 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix tr: <http://notation3.org/trace#> .
+@prefix pq: <http://notation3.org/pqn#> .
+@prefix : <http://dutch.hospital.nl/sepsis#> .
+
+{
+    ?t pq:activityOccurs ( :LacticAcid ?le ) .
+    ?t pq:activityOccurs ( :CRP ?ce ) .
+    ?t pq:activitiesDirectlyFollow ( :Admission_NC :Admission_IC ?r ) .    
+    ?t pq:activityOccurs ( :ER_Registration ?reg ) .
+    ?reg :Age ?age . ?age math:notLessThan 65 .
+    ?reg :InfectionSuspected true .
+} => {
+    pq:result pq:entry ?t .
+} .

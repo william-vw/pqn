@@ -1,0 +1,12 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix tr: <http://notation3.org/trace#> .
+@prefix pq: <http://notation3.org/pqn#> .
+@prefix : <http://dutch.hospital.nl/sepsis#> .
+
+
+{
+    ?t pq:activitiesDirectlyFollow ( :Admission_NC :Admission_IC ?l )
+} => {
+    ?t pq:activitiesDirectlyFollow ( :Admission_NC :Admission_IC ?l )
+} .

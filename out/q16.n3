@@ -4,239 +4,117 @@
 @prefix : <http://dutch.hospital.nl/sepsis#>.
 @prefix pq: <http://notation3.org/pqn#>.
 
-:trace_AKA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CDA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DMA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FFA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CL pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AG pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AJA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AM pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BC pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CIA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CK pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DE pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DF pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DIA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DN pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EG pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_ENA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FLA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AX pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BB pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BO pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BY pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EFA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EZ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FP pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FS pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AO pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AW pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BNA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CS pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EE pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FC pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AB pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_ACA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AN pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AT pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BEA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CAA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CCA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CD pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CJA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CLA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CMA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CO pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DD pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DHA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DLA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DM pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DNA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DQ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DV pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_E pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EB pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EN pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EP pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_ER pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FB pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FF pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FI pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FQ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FV pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AEA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AMA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_ANA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BM pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CH pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DJA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DT pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DU pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EJA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FL pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FNA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FR pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AV pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BG pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BI pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CGA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DFA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EH pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_ET pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EV pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_F pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FBA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FEA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AAA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AH pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AK pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_ALA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AP pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BL pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BR pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CE pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CN pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CU pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DL pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EJ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FD pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FG pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FGA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FKA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AHA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AU pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_B pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BAA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BD pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BDA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BGA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BMA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BQ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CT pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CV pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DB pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DC pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DG pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DI pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EBA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EDA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EIA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EY pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FU pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_G pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_GA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AC pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AFA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BF pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BK pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BS pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BT pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CHA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CI pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CQ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_D pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DCA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DK pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DW pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DX pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EEA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EGA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FH pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FHA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FIA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FJ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FMA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_GB pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AQ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BBA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BU pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_C pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CB pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CC pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CEA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CX pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DBA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DEA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DKA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DP pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DY pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EF pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EI pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EKA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EL pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EU pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AGA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AI pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AZ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BE pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BHA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CG pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CM pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CP pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CW pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DH pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DR pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DS pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EAA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EO pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FCA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BV pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DAA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DO pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FJA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FM pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_GAA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_ABA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AF pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AIA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BJA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BX pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CKA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CNA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CR pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DDA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EC pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EMA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FAA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FE pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FK pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FX pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FY pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CFA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_DGA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FDA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FZ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AL pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BCA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BKA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BH pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BLA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_ELA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FW pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BW pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CBA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_A pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AS pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AY pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AR pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EW pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_FN pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_ADA pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BZ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EX pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_AJ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CJ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_BN pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_CF pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_EQ pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-:trace_ED pq:activitiesDoNotCoOccur (:Admission+NC :Admission+IC).
-# 2023-08-31T13:39:57.390Z in=34802 out=233 ent=233 step=233 brake=2 inf=1325144 sec=0.155 inf/sec=8549316
+:trace_BNA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EE pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_FC pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CJA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CO pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_AMA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_ANA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CH pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DT pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EJA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_AV pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BG pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DFA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EH pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_ET pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_F pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_FEA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_AH pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_ALA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BL pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CE pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DL pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EJ pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_FG pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_FKA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_AHA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_AU pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_B pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BAA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BD pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BDA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BGA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BQ pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CT pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CV pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DB pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DG pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DI pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EBA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_FU pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_G pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_GA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CI pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CQ pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DW pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DX pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EGA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_AQ pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BBA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BU pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_C pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CB pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CEA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CX pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DBA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DEA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DP pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DY pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EF pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EKA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EL pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_AGA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_AZ pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BHA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CG pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CM pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CW pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DR pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DS pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BV pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DAA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_FJA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_FM pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_GAA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_ABA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CKA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DDA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EC pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_FK pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CFA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_ECA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BH pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_ELA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BJ pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BW pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CBA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_A pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BP pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EW pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BZ pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EX pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_AJ pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BN pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_FO pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EHA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DZ pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_FT pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_DD pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_FQ pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BI pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CGA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CN pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EY pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EAA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_EK pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_BFA pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_AS pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_AY pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_FN pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CJ pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+:trace_CZ pq:anyActivityOccursAsEndAtLeastNTimes ((:Release_A :Release_B) 1).
+# 2023-08-31T14:44:09.324Z in=34802 out=111 ent=111 step=111 brake=2 inf=1273402 sec=0.156 inf/sec=8162833
 # ENDS
 

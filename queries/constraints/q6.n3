@@ -2,12 +2,11 @@
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix tr: <http://notation3.org/trace#> .
 @prefix pq: <http://notation3.org/pqn#> .
-# @prefix : <http://example.org#> .
 @prefix : <http://dutch.hospital.nl/sepsis#> .
 
 
 {
-    ?t pq:activityOccursAsStart ( <http://dutch.hospital.nl/sepsis#ER+Registration> ?e )
+    ?t pq:anyActivityOccursAtLeastNTimes ( ( :CRP :Leucocytes ) 5 )
 } => {
-    ?t pq:activityOccursAsStart ( <http://dutch.hospital.nl/sepsis#ER+Registration> ?e )
+    ?t pq:anyActivityOccursAtLeastNTimes ( ( :CRP :Leucocytes ) 5 )
 } .

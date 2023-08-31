@@ -1,0 +1,12 @@
+# Processed by EYE v4.14.12 (2023-08-31)
+# eye pqn.n3 --turtle logs/sepsis_25.n3 --query queries/constraints/q18.n3 --nope
+
+@prefix : <http://dutch.hospital.nl/sepsis#>.
+@prefix pq: <http://notation3.org/pqn#>.
+
+:trace_BP pq:activitiesDirectlyFollow (:Admission_NC :Admission_IC _:node_516).
+:trace_FO pq:activitiesDirectlyFollow (:Admission_NC :Admission_IC _:node_1469).
+:trace_AD pq:activitiesDirectlyFollow (:Admission_NC :Admission_IC _:node_2831).
+# 2023-08-31T14:44:12.673Z in=34802 out=3 ent=3 step=3 brake=1 inf=1174461 sec=0.147 inf/sec=7989531
+# ENDS
+

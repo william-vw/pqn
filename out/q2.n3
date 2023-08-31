@@ -42,6 +42,6 @@
 :trace_FT pq:activityOccursAtLeastNTimes (:CRP 5 10).
 :trace_CZ pq:activityOccursAtLeastNTimes (:CRP 5 11).
 :trace_ES pq:activityOccursAtLeastNTimes (:CRP 5 7).
-# 2023-08-31T13:40:00.894Z in=34802 out=38 ent=38 step=38 brake=2 inf=1210296 sec=0.154 inf/sec=7859065
+# 2023-08-31T14:44:16.047Z in=34802 out=38 ent=38 step=38 brake=2 inf=1207069 sec=0.150 inf/sec=8047127
 # ENDS
 

@@ -4,249 +4,54 @@
 @prefix : <http://dutch.hospital.nl/sepsis#>.
 @prefix pq: <http://notation3.org/pqn#>.
 
-:trace_AKA pq:activityOccursAsStart (:ER+Registration :evt_13945).
-:trace_CDA pq:activityOccursAsStart (:ER+Registration :evt_11339).
-:trace_DMA pq:activityOccursAsStart (:ER+Registration :evt_14769).
-:trace_FFA pq:activityOccursAsStart (:ER+Registration :evt_12092).
-:trace_CL pq:activityOccursAsStart (:ER+Registration :evt_4379).
-:trace_AJA pq:activityOccursAsStart (:ER+Registration :evt_13641).
-:trace_AM pq:activityOccursAsStart (:ER+Registration :evt_4671).
-:trace_BC pq:activityOccursAsStart (:ER+Registration :evt_892).
-:trace_CIA pq:activityOccursAsStart (:ER+Registration :evt_13260).
-:trace_CK pq:activityOccursAsStart (:ER+Registration :evt_3898).
-:trace_DE pq:activityOccursAsStart (:ER+Registration :evt_1734).
-:trace_DF pq:activityOccursAsStart (:ER+Registration :evt_2070).
-:trace_DIA pq:activityOccursAsStart (:ER+Registration :evt_13265).
-:trace_DN pq:activityOccursAsStart (:ER+Registration :evt_5308).
-:trace_EG pq:activityOccursAsStart (:ER+Registration :evt_2476).
-:trace_ENA pq:activityOccursAsStart (:ER+Registration :evt_15121).
-:trace_FLA pq:activityOccursAsStart (:ER+Registration :evt_14424).
-:trace_AX pq:activityOccursAsStart (:ER+Registration :evt_9029).
-:trace_BB pq:activityOccursAsStart (:ER+Registration :evt_580).
-:trace_BO pq:activityOccursAsStart (:ER+Registration :evt_5684).
-:trace_BY pq:activityOccursAsStart (:ER+Registration :evt_9474).
-:trace_EFA pq:activityOccursAsStart (:ER+Registration :evt_12086).
-:trace_EZ pq:activityOccursAsStart (:ER+Registration :evt_9900).
-:trace_FP pq:activityOccursAsStart (:ER+Registration :evt_6147).
-:trace_FS pq:activityOccursAsStart (:ER+Registration :evt_7197).
-:trace_AO pq:activityOccursAsStart (:ER+Registration :evt_5677).
-:trace_AW pq:activityOccursAsStart (:ER+Registration :evt_8625).
-:trace_BNA pq:activityOccursAsStart (:ER+Registration :evt_15089).
-:trace_CS pq:activityOccursAsStart (:ER+Registration :evt_7127).
-:trace_EE pq:activityOccursAsStart (:ER+Registration :evt_1739).
-:trace_FC pq:activityOccursAsStart (:ER+Registration :evt_940).
-:trace_AA pq:activityOccursAsStart (:ER+Registration :evt_297).
-:trace_AB pq:activityOccursAsStart (:ER+Registration :evt_572).
-:trace_ACA pq:activityOccursAsStart (:ER+Registration :evt_10957).
-:trace_AN pq:activityOccursAsStart (:ER+Registration :evt_5263).
-:trace_AT pq:activityOccursAsStart (:ER+Registration :evt_7556).
-:trace_CA pq:activityOccursAsStart (:ER+Registration :evt_318).
-:trace_CAA pq:activityOccursAsStart (:ER+Registration :evt_10256).
-:trace_CCA pq:activityOccursAsStart (:ER+Registration :evt_10984).
-:trace_CD pq:activityOccursAsStart (:ER+Registration :evt_1259).
-:trace_CJA pq:activityOccursAsStart (:ER+Registration :evt_13663).
-:trace_CLA pq:activityOccursAsStart (:ER+Registration :evt_14388).
-:trace_CMA pq:activityOccursAsStart (:ER+Registration :evt_14761).
-:trace_CO pq:activityOccursAsStart (:ER+Registration :evt_5690).
-:trace_DD pq:activityOccursAsStart (:ER+Registration :evt_1267).
-:trace_DHA pq:activityOccursAsStart (:ER+Registration :evt_12907).
-:trace_DLA pq:activityOccursAsStart (:ER+Registration :evt_14396).
-:trace_DM pq:activityOccursAsStart (:ER+Registration :evt_4700).
-:trace_DNA pq:activityOccursAsStart (:ER+Registration :evt_15113).
-:trace_DQ pq:activityOccursAsStart (:ER+Registration :evt_6460).
-:trace_DV pq:activityOccursAsStart (:ER+Registration :evt_8355).
-:trace_E pq:activityOccursAsStart (:ER+Registration :evt_61).
-:trace_EB pq:activityOccursAsStart (:ER+Registration :evt_612).
-:trace_EN pq:activityOccursAsStart (:ER+Registration :evt_5313).
-:trace_EP pq:activityOccursAsStart (:ER+Registration :evt_6139).
-:trace_ER pq:activityOccursAsStart (:ER+Registration :evt_6825).
-:trace_FA pq:activityOccursAsStart (:ER+Registration :evt_353).
-:trace_FB pq:activityOccursAsStart (:ER+Registration :evt_620).
-:trace_FF pq:activityOccursAsStart (:ER+Registration :evt_2089).
-:trace_FI pq:activityOccursAsStart (:ER+Registration :evt_3164).
-:trace_FQ pq:activityOccursAsStart (:ER+Registration :evt_6498).
-:trace_FV pq:activityOccursAsStart (:ER+Registration :evt_8373).
-:trace_AEA pq:activityOccursAsStart (:ER+Registration :evt_11667).
-:trace_AMA pq:activityOccursAsStart (:ER+Registration :evt_14740).
-:trace_ANA pq:activityOccursAsStart (:ER+Registration :evt_15080).
-:trace_BM pq:activityOccursAsStart (:ER+Registration :evt_4676).
-:trace_CH pq:activityOccursAsStart (:ER+Registration :evt_2825).
-:trace_DJA pq:activityOccursAsStart (:ER+Registration :evt_13671).
-:trace_DT pq:activityOccursAsStart (:ER+Registration :evt_7589).
-:trace_DU pq:activityOccursAsStart (:ER+Registration :evt_7986).
-:trace_EJA pq:activityOccursAsStart (:ER+Registration :evt_13680).
-:trace_FL pq:activityOccursAsStart (:ER+Registration :evt_4408).
-:trace_FNA pq:activityOccursAsStart (:ER+Registration :evt_15126).
-:trace_FR pq:activityOccursAsStart (:ER+Registration :evt_6833).
-:trace_AV pq:activityOccursAsStart (:ER+Registration :evt_8317).
-:trace_BG pq:activityOccursAsStart (:ER+Registration :evt_2439).
-:trace_BI pq:activityOccursAsStart (:ER+Registration :evt_3115).
-:trace_CGA pq:activityOccursAsStart (:ER+Registration :evt_12350).
-:trace_DFA pq:activityOccursAsStart (:ER+Registration :evt_12076).
-:trace_EH pq:activityOccursAsStart (:ER+Registration :evt_2849).
-:trace_ET pq:activityOccursAsStart (:ER+Registration :evt_7598).
-:trace_EV pq:activityOccursAsStart (:ER+Registration :evt_8363).
-:trace_F pq:activityOccursAsStart (:ER+Registration :evt_69).
-:trace_FBA pq:activityOccursAsStart (:ER+Registration :evt_10671).
-:trace_FEA pq:activityOccursAsStart (:ER+Registration :evt_11725).
-:trace_AAA pq:activityOccursAsStart (:ER+Registration :evt_10233).
-:trace_AH pq:activityOccursAsStart (:ER+Registration :evt_2794).
-:trace_AK pq:activityOccursAsStart (:ER+Registration :evt_3874).
-:trace_ALA pq:activityOccursAsStart (:ER+Registration :evt_14357).
-:trace_AP pq:activityOccursAsStart (:ER+Registration :evt_6077).
-:trace_BL pq:activityOccursAsStart (:ER+Registration :evt_4368).
-:trace_BR pq:activityOccursAsStart (:ER+Registration :evt_6782).
-:trace_CE pq:activityOccursAsStart (:ER+Registration :evt_1723).
-:trace_CN pq:activityOccursAsStart (:ER+Registration :evt_5297).
-:trace_CU pq:activityOccursAsStart (:ER+Registration :evt_7975).
-:trace_DL pq:activityOccursAsStart (:ER+Registration :evt_4383).
-:trace_EJ pq:activityOccursAsStart (:ER+Registration :evt_3554).
-:trace_FD pq:activityOccursAsStart (:ER+Registration :evt_1308).
-:trace_FG pq:activityOccursAsStart (:ER+Registration :evt_2481).
-:trace_FGA pq:activityOccursAsStart (:ER+Registration :evt_12391).
-:trace_FKA pq:activityOccursAsStart (:ER+Registration :evt_14012).
-:trace_AHA pq:activityOccursAsStart (:ER+Registration :evt_12867).
-:trace_AU pq:activityOccursAsStart (:ER+Registration :evt_7949).
-:trace_B pq:activityOccursAsStart (:ER+Registration :evt_22).
-:trace_BAA pq:activityOccursAsStart (:ER+Registration :evt_10244).
-:trace_BD pq:activityOccursAsStart (:ER+Registration :evt_1247).
-:trace_BDA pq:activityOccursAsStart (:ER+Registration :evt_11327).
-:trace_BGA pq:activityOccursAsStart (:ER+Registration :evt_12338).
-:trace_BMA pq:activityOccursAsStart (:ER+Registration :evt_14749).
-:trace_BQ pq:activityOccursAsStart (:ER+Registration :evt_6435).
-:trace_CT pq:activityOccursAsStart (:ER+Registration :evt_7577).
-:trace_CV pq:activityOccursAsStart (:ER+Registration :evt_8343).
-:trace_DA pq:activityOccursAsStart (:ER+Registration :evt_326).
-:trace_DB pq:activityOccursAsStart (:ER+Registration :evt_600).
-:trace_DC pq:activityOccursAsStart (:ER+Registration :evt_911).
-:trace_DG pq:activityOccursAsStart (:ER+Registration :evt_2464).
-:trace_DI pq:activityOccursAsStart (:ER+Registration :evt_3138).
-:trace_EBA pq:activityOccursAsStart (:ER+Registration :evt_10659).
-:trace_EDA pq:activityOccursAsStart (:ER+Registration :evt_11359).
-:trace_EIA pq:activityOccursAsStart (:ER+Registration :evt_13270).
-:trace_EY pq:activityOccursAsStart (:ER+Registration :evt_9527).
-:trace_FU pq:activityOccursAsStart (:ER+Registration :evt_8009).
-:trace_G pq:activityOccursAsStart (:ER+Registration :evt_79).
-:trace_GA pq:activityOccursAsStart (:ER+Registration :evt_361).
-:trace_AC pq:activityOccursAsStart (:ER+Registration :evt_879).
-:trace_AFA pq:activityOccursAsStart (:ER+Registration :evt_12024).
-:trace_BA pq:activityOccursAsStart (:ER+Registration :evt_305).
-:trace_BF pq:activityOccursAsStart (:ER+Registration :evt_2030).
-:trace_BK pq:activityOccursAsStart (:ER+Registration :evt_3885).
-:trace_BS pq:activityOccursAsStart (:ER+Registration :evt_7114).
-:trace_BT pq:activityOccursAsStart (:ER+Registration :evt_7564).
-:trace_CHA pq:activityOccursAsStart (:ER+Registration :evt_12894).
-:trace_CI pq:activityOccursAsStart (:ER+Registration :evt_3125).
-:trace_CQ pq:activityOccursAsStart (:ER+Registration :evt_6447).
-:trace_D pq:activityOccursAsStart (:ER+Registration :evt_48).
-:trace_DCA pq:activityOccursAsStart (:ER+Registration :evt_10992).
-:trace_DK pq:activityOccursAsStart (:ER+Registration :evt_3903).
-:trace_DW pq:activityOccursAsStart (:ER+Registration :evt_8668).
-:trace_EEA pq:activityOccursAsStart (:ER+Registration :evt_11712).
-:trace_EGA pq:activityOccursAsStart (:ER+Registration :evt_12378).
-:trace_FH pq:activityOccursAsStart (:ER+Registration :evt_2859).
-:trace_FHA pq:activityOccursAsStart (:ER+Registration :evt_12945).
-:trace_FIA pq:activityOccursAsStart (:ER+Registration :evt_13282).
-:trace_FJ pq:activityOccursAsStart (:ER+Registration :evt_3565).
-:trace_FMA pq:activityOccursAsStart (:ER+Registration :evt_14789).
-:trace_GB pq:activityOccursAsStart (:ER+Registration :evt_628).
-:trace_AQ pq:activityOccursAsStart (:ER+Registration :evt_6421).
-:trace_BBA pq:activityOccursAsStart (:ER+Registration :evt_10610).
-:trace_BU pq:activityOccursAsStart (:ER+Registration :evt_7961).
-:trace_C pq:activityOccursAsStart (:ER+Registration :evt_34).
-:trace_CB pq:activityOccursAsStart (:ER+Registration :evt_586).
-:trace_CC pq:activityOccursAsStart (:ER+Registration :evt_897).
-:trace_CEA pq:activityOccursAsStart (:ER+Registration :evt_11684).
-:trace_CX pq:activityOccursAsStart (:ER+Registration :evt_9052).
-:trace_DBA pq:activityOccursAsStart (:ER+Registration :evt_10645).
-:trace_DEA pq:activityOccursAsStart (:ER+Registration :evt_11698).
-:trace_DKA pq:activityOccursAsStart (:ER+Registration :evt_13984).
-:trace_DP pq:activityOccursAsStart (:ER+Registration :evt_6125).
-:trace_DY pq:activityOccursAsStart (:ER+Registration :evt_9513).
-:trace_EF pq:activityOccursAsStart (:ER+Registration :evt_2075).
-:trace_EI pq:activityOccursAsStart (:ER+Registration :evt_3150).
-:trace_EKA pq:activityOccursAsStart (:ER+Registration :evt_13998).
-:trace_EL pq:activityOccursAsStart (:ER+Registration :evt_4394).
-:trace_EU pq:activityOccursAsStart (:ER+Registration :evt_7995).
-:trace_AGA pq:activityOccursAsStart (:ER+Registration :evt_12323).
-:trace_AI pq:activityOccursAsStart (:ER+Registration :evt_3100).
-:trace_AZ pq:activityOccursAsStart (:ER+Registration :evt_9789).
-:trace_BE pq:activityOccursAsStart (:ER+Registration :evt_1708).
-:trace_BHA pq:activityOccursAsStart (:ER+Registration :evt_12879).
-:trace_CG pq:activityOccursAsStart (:ER+Registration :evt_2449).
-:trace_CM pq:activityOccursAsStart (:ER+Registration :evt_4685).
-:trace_CP pq:activityOccursAsStart (:ER+Registration :evt_6110).
-:trace_CW pq:activityOccursAsStart (:ER+Registration :evt_8653).
-:trace_DH pq:activityOccursAsStart (:ER+Registration :evt_2834).
-:trace_DR pq:activityOccursAsStart (:ER+Registration :evt_6810).
-:trace_EA pq:activityOccursAsStart (:ER+Registration :evt_338).
-:trace_EAA pq:activityOccursAsStart (:ER+Registration :evt_10280).
-:trace_EO pq:activityOccursAsStart (:ER+Registration :evt_5714).
-:trace_FCA pq:activityOccursAsStart (:ER+Registration :evt_11024).
-:trace_BV pq:activityOccursAsStart (:ER+Registration :evt_8327).
-:trace_DAA pq:activityOccursAsStart (:ER+Registration :evt_10264).
-:trace_DO pq:activityOccursAsStart (:ER+Registration :evt_5698).
-:trace_FJA pq:activityOccursAsStart (:ER+Registration :evt_13689).
-:trace_FM pq:activityOccursAsStart (:ER+Registration :evt_4737).
-:trace_GAA pq:activityOccursAsStart (:ER+Registration :evt_10312).
-:trace_ABA pq:activityOccursAsStart (:ER+Registration :evt_10593).
-:trace_AF pq:activityOccursAsStart (:ER+Registration :evt_2013).
-:trace_AIA pq:activityOccursAsStart (:ER+Registration :evt_13207).
-:trace_BJA pq:activityOccursAsStart (:ER+Registration :evt_13646).
-:trace_BX pq:activityOccursAsStart (:ER+Registration :evt_9035).
-:trace_CKA pq:activityOccursAsStart (:ER+Registration :evt_13967).
-:trace_CNA pq:activityOccursAsStart (:ER+Registration :evt_15096).
-:trace_CR pq:activityOccursAsStart (:ER+Registration :evt_6793).
-:trace_DDA pq:activityOccursAsStart (:ER+Registration :evt_11342).
-:trace_EC pq:activityOccursAsStart (:ER+Registration :evt_923).
-:trace_EMA pq:activityOccursAsStart (:ER+Registration :evt_14772).
-:trace_FAA pq:activityOccursAsStart (:ER+Registration :evt_10295).
-:trace_FE pq:activityOccursAsStart (:ER+Registration :evt_1746).
-:trace_FK pq:activityOccursAsStart (:ER+Registration :evt_3936).
-:trace_FX pq:activityOccursAsStart (:ER+Registration :evt_9103).
-:trace_FY pq:activityOccursAsStart (:ER+Registration :evt_9539).
-:trace_AE pq:activityOccursAsStart (:ER+Registration :evt_1690).
-:trace_CFA pq:activityOccursAsStart (:ER+Registration :evt_12058).
-:trace_DGA pq:activityOccursAsStart (:ER+Registration :evt_12360).
-:trace_FDA pq:activityOccursAsStart (:ER+Registration :evt_11371).
-:trace_FZ pq:activityOccursAsStart (:ER+Registration :evt_9906).
-:trace_AL pq:activityOccursAsStart (:ER+Registration :evt_4349).
-:trace_BCA pq:activityOccursAsStart (:ER+Registration :evt_10965).
-:trace_BKA pq:activityOccursAsStart (:ER+Registration :evt_13948).
-:trace_ECA pq:activityOccursAsStart (:ER+Registration :evt_11005).
-:trace_BH pq:activityOccursAsStart (:ER+Registration :evt_2805).
-:trace_BLA pq:activityOccursAsStart (:ER+Registration :evt_14368).
-:trace_EK pq:activityOccursAsStart (:ER+Registration :evt_3916).
-:trace_ELA pq:activityOccursAsStart (:ER+Registration :evt_14404).
-:trace_FW pq:activityOccursAsStart (:ER+Registration :evt_8704).
-:trace_BJ pq:activityOccursAsStart (:ER+Registration :evt_3485).
-:trace_BW pq:activityOccursAsStart (:ER+Registration :evt_8632).
-:trace_CBA pq:activityOccursAsStart (:ER+Registration :evt_10624).
-:trace_A pq:activityOccursAsStart (:ER+Registration :evt_0).
-:trace_AS pq:activityOccursAsStart (:ER+Registration :evt_7092).
-:trace_AY pq:activityOccursAsStart (:ER+Registration :evt_9452).
-:trace_BP pq:activityOccursAsStart (:ER+Registration :evt_6088).
-:trace_AR pq:activityOccursAsStart (:ER+Registration :evt_6759).
-:trace_DJ pq:activityOccursAsStart (:ER+Registration :evt_3531).
-:trace_EW pq:activityOccursAsStart (:ER+Registration :evt_8681).
-:trace_FN pq:activityOccursAsStart (:ER+Registration :evt_5321).
-:trace_ADA pq:activityOccursAsStart (:ER+Registration :evt_11303).
-:trace_BZ pq:activityOccursAsStart (:ER+Registration :evt_9804).
-:trace_EX pq:activityOccursAsStart (:ER+Registration :evt_9079).
-:trace_AJ pq:activityOccursAsStart (:ER+Registration :evt_3460).
-:trace_BN pq:activityOccursAsStart (:ER+Registration :evt_5271).
-:trace_CF pq:activityOccursAsStart (:ER+Registration :evt_2043).
-:trace_FO pq:activityOccursAsStart (:ER+Registration :evt_5729).
-:trace_AD pq:activityOccursAsStart (:ER+Registration :evt_1218).
-:trace_EM pq:activityOccursAsStart (:ER+Registration :evt_4708).
-:trace_EHA pq:activityOccursAsStart (:ER+Registration :evt_12915).
-:trace_EQ pq:activityOccursAsStart (:ER+Registration :evt_6468).
-:trace_DZ pq:activityOccursAsStart (:ER+Registration :evt_9868).
-:trace_CY pq:activityOccursAsStart (:ER+Registration :evt_9480).
-:trace_ED pq:activityOccursAsStart (:ER+Registration :evt_1275).
-:trace_FT pq:activityOccursAsStart (:ER+Registration :evt_7608).
-:trace_CZ pq:activityOccursAsStart (:ER+Registration :evt_9828).
-:trace_ES pq:activityOccursAsStart (:ER+Registration :evt_7149).
-# 2023-08-31T13:40:07.871Z in=34802 out=243 ent=243 step=243 brake=2 inf=1319775 sec=0.155 inf/sec=8514677
+:trace_AFA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_FM pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_CNA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_DDA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_FE pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_FK pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_CFA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_BH pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_BLA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_FW pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_BJ pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_CBA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_A pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_AY pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_BP pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_AR pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_DJ pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_EW pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_FN pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_ADA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_BZ pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_EX pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_AJ pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_CJ pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_BN pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_CF pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_FO pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_AD pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_EM pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_EHA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_EQ pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_DZ pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_CY pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_ED pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_BIA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_FT pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_CZ pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_ES pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_ABA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_AIA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_EC pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_DGA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_FZ pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_AL pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_ELA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_BFA pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_BW pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+:trace_AS pq:anyActivityOccursAtLeastNTimes ((:CRP :Leucocytes) 5).
+# 2023-08-31T14:44:33.494Z in=34802 out=48 ent=48 step=80 brake=2 inf=1243118 sec=0.151 inf/sec=8232570
 # ENDS
 

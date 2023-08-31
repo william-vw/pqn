@@ -4,96 +4,117 @@
 @prefix : <http://dutch.hospital.nl/sepsis#>.
 @prefix pq: <http://notation3.org/pqn#>.
 
-:trace_AKA pq:activityDoesNotOccur :Release+A.
-:trace_CDA pq:activityDoesNotOccur :Release+A.
-:trace_DMA pq:activityDoesNotOccur :Release+A.
-:trace_FFA pq:activityDoesNotOccur :Release+A.
-:trace_CL pq:activityDoesNotOccur :Release+A.
-:trace_AG pq:activityDoesNotOccur :Release+A.
-:trace_AJA pq:activityDoesNotOccur :Release+A.
-:trace_AM pq:activityDoesNotOccur :Release+A.
-:trace_BC pq:activityDoesNotOccur :Release+A.
-:trace_CIA pq:activityDoesNotOccur :Release+A.
-:trace_CK pq:activityDoesNotOccur :Release+A.
-:trace_DE pq:activityDoesNotOccur :Release+A.
-:trace_DF pq:activityDoesNotOccur :Release+A.
-:trace_DIA pq:activityDoesNotOccur :Release+A.
-:trace_DN pq:activityDoesNotOccur :Release+A.
-:trace_EG pq:activityDoesNotOccur :Release+A.
-:trace_ENA pq:activityDoesNotOccur :Release+A.
-:trace_FLA pq:activityDoesNotOccur :Release+A.
-:trace_AX pq:activityDoesNotOccur :Release+A.
-:trace_BB pq:activityDoesNotOccur :Release+A.
-:trace_BO pq:activityDoesNotOccur :Release+A.
-:trace_BY pq:activityDoesNotOccur :Release+A.
-:trace_EFA pq:activityDoesNotOccur :Release+A.
-:trace_EZ pq:activityDoesNotOccur :Release+A.
-:trace_FP pq:activityDoesNotOccur :Release+A.
-:trace_FS pq:activityDoesNotOccur :Release+A.
-:trace_AW pq:activityDoesNotOccur :Release+A.
-:trace_CS pq:activityDoesNotOccur :Release+A.
-:trace_AA pq:activityDoesNotOccur :Release+A.
-:trace_AB pq:activityDoesNotOccur :Release+A.
-:trace_ACA pq:activityDoesNotOccur :Release+A.
-:trace_AN pq:activityDoesNotOccur :Release+A.
-:trace_AT pq:activityDoesNotOccur :Release+A.
-:trace_BEA pq:activityDoesNotOccur :Release+A.
-:trace_CA pq:activityDoesNotOccur :Release+A.
-:trace_CAA pq:activityDoesNotOccur :Release+A.
-:trace_CCA pq:activityDoesNotOccur :Release+A.
-:trace_CD pq:activityDoesNotOccur :Release+A.
-:trace_CLA pq:activityDoesNotOccur :Release+A.
-:trace_CMA pq:activityDoesNotOccur :Release+A.
-:trace_DD pq:activityDoesNotOccur :Release+A.
-:trace_DHA pq:activityDoesNotOccur :Release+A.
-:trace_DLA pq:activityDoesNotOccur :Release+A.
-:trace_DM pq:activityDoesNotOccur :Release+A.
-:trace_DNA pq:activityDoesNotOccur :Release+A.
-:trace_DQ pq:activityDoesNotOccur :Release+A.
-:trace_DV pq:activityDoesNotOccur :Release+A.
-:trace_E pq:activityDoesNotOccur :Release+A.
-:trace_EB pq:activityDoesNotOccur :Release+A.
-:trace_EN pq:activityDoesNotOccur :Release+A.
-:trace_EP pq:activityDoesNotOccur :Release+A.
-:trace_ER pq:activityDoesNotOccur :Release+A.
-:trace_FA pq:activityDoesNotOccur :Release+A.
-:trace_FB pq:activityDoesNotOccur :Release+A.
-:trace_FF pq:activityDoesNotOccur :Release+A.
-:trace_FI pq:activityDoesNotOccur :Release+A.
-:trace_FQ pq:activityDoesNotOccur :Release+A.
-:trace_FV pq:activityDoesNotOccur :Release+A.
-:trace_AEA pq:activityDoesNotOccur :Release+A.
-:trace_BM pq:activityDoesNotOccur :Release+A.
-:trace_DU pq:activityDoesNotOccur :Release+A.
-:trace_FL pq:activityDoesNotOccur :Release+A.
-:trace_FNA pq:activityDoesNotOccur :Release+A.
-:trace_FR pq:activityDoesNotOccur :Release+A.
-:trace_BI pq:activityDoesNotOccur :Release+A.
-:trace_CGA pq:activityDoesNotOccur :Release+A.
-:trace_EV pq:activityDoesNotOccur :Release+A.
-:trace_AK pq:activityDoesNotOccur :Release+A.
-:trace_AP pq:activityDoesNotOccur :Release+A.
-:trace_CN pq:activityDoesNotOccur :Release+A.
-:trace_FD pq:activityDoesNotOccur :Release+A.
-:trace_FGA pq:activityDoesNotOccur :Release+A.
-:trace_DA pq:activityDoesNotOccur :Release+A.
-:trace_EY pq:activityDoesNotOccur :Release+A.
-:trace_BS pq:activityDoesNotOccur :Release+A.
-:trace_FIA pq:activityDoesNotOccur :Release+A.
-:trace_CC pq:activityDoesNotOccur :Release+A.
-:trace_EI pq:activityDoesNotOccur :Release+A.
-:trace_CP pq:activityDoesNotOccur :Release+A.
-:trace_EAA pq:activityDoesNotOccur :Release+A.
-:trace_DGA pq:activityDoesNotOccur :Release+A.
-:trace_BCA pq:activityDoesNotOccur :Release+A.
-:trace_EK pq:activityDoesNotOccur :Release+A.
-:trace_BFA pq:activityDoesNotOccur :Release+A.
-:trace_AS pq:activityDoesNotOccur :Release+A.
-:trace_AY pq:activityDoesNotOccur :Release+A.
-:trace_FN pq:activityDoesNotOccur :Release+A.
-:trace_CJ pq:activityDoesNotOccur :Release+A.
-:trace_CY pq:activityDoesNotOccur :Release+A.
-:trace_CZ pq:activityDoesNotOccur :Release+A.
-# 2023-08-31T13:39:53.898Z in=34802 out=90 ent=90 step=90 brake=2 inf=1232606 sec=0.149 inf/sec=8272523
+:trace_BNA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EE pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_FC pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CJA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CO pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_AMA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_ANA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CH pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DT pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EJA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_AV pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BG pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DFA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EH pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_ET pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_F pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_FEA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_AH pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_ALA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BL pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CE pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DL pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EJ pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_FG pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_FKA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_AHA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_AU pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_B pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BAA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BD pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BDA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BGA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BQ pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CT pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CV pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DB pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DG pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DI pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EBA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_FU pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_G pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_GA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CI pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CQ pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DW pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DX pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EGA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_AQ pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BBA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BU pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_C pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CB pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CEA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CX pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DBA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DEA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DP pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DY pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EF pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EKA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EL pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_AGA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_AZ pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BHA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CG pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CM pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CW pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DR pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DS pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BV pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DAA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_FJA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_FM pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_GAA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_ABA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CKA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DDA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EC pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_FK pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CFA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_ECA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BH pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_ELA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BJ pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BW pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CBA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_A pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BP pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EW pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BZ pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EX pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_AJ pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BN pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_FO pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EHA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DZ pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_FT pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_DD pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_FQ pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BI pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CGA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CN pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EY pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EAA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_EK pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_BFA pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_AS pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_AY pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_FN pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CJ pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+:trace_CZ pq:anyActivityOccursAsEnd (:Release_A :Release_B).
+# 2023-08-31T14:44:05.915Z in=34802 out=111 ent=111 step=111 brake=1 inf=1236880 sec=0.150 inf/sec=8245867
 # ENDS
 
