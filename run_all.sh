@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage="usage:
-run_all.sh -d <dir> -l <log> -r <results> -n <runs> [ -p <pqn> ]
+run_all.sh -d <dir> -l <log> -r <results> -n <runs> -p <pqn>
 where
     -d <dir> is the directory with query files
     -l <log> is the event log

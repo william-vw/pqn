@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage="usage:
-run.sh -q <query> -l <log> [ -q <pqn> ]
+run.sh -q <query> -l <log> -q <pqn>
 where
     -q <query> is the query over the event log
     -l <log> is the event log

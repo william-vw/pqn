@@ -4,7 +4,7 @@
 
 Due to significant optimizations of the PQN implementation, we can report much faster query execution times than currently reported in the PODS4H submission:
 
-| Query                                       | Execution Time (ms) | 
+| Query                                       | Execution Time (ms) |
 |---------------------------------------------|---------------------|
 | pq:activitiesCoOccurOrNoneOccurs (q15.n3)   | 47                  |
 | pq:activitiesDoNotCoOccur (q16.n3)          | 50                  |
@@ -13,7 +13,9 @@ Due to significant optimizations of the PQN implementation, we can report much f
 | pq:activityOccursAtLeastNTimes (q2.n3)      | 21                  |
 | pq:allActivitiesOccur (q3.n3)               | 32                  |
 
-By further optimizing the loading of the RDF log, we can also report `127ms`, `262ms`, and `509ms` loading times for 25%, 50%, and 100% of the sepsis event log, respectively [1].
+All times are averaged over 10 runs.
+
+By further optimizing the loading of the RDF log, we can also report `121ms`, `244ms`, and `509ms` loading times for 25%, 50%, and 100% of the sepsis event log [1], respectively.
 
 We refer to instructions below to reproduce our experiments.
 
@@ -30,14 +32,14 @@ First, install the latest version of the [`eye`](https://github.com/eyereasoner/
 
 To run an individual test query (such as `q1.n3`) on the full sepsis event log, run the following command:
 ```
-./run.sh -q queries/constraints/q1.n3 -l logs/sepsis_all.n3
+./run.sh -q queries/constraints/q1.n3 -l logs/sepsis_all.n3 -p pqn.n3
 ```
 
 To run all test queries on a particular log (e.g., the [full sepsis event log](logs/)), run the following command:
 ```
 ./run_all.sh -d queries/constraints -l logs/sepsis_all.n3 -r results/times_all.csv -n 10 -p pqn.n3
 ```
-Where result times will appear in `results/times_all.csv` for this example, times will be averaged over 10 runs, and query outputs will appear in the `out/` folder.
+Where result times will appear in `results/times_all.csv` for this example, and times will be averaged over 10 runs. Query outputs will appear in the `out/` folder.
 
 You can run `./run.sh -h` and `./run_all.sh -h` for details on the usage of each shell script.
 
