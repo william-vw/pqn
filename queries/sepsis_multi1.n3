@@ -10,7 +10,7 @@
 {
     ?t pq:activityOccurs ( :LacticAcid ?le ) .
     ?t pq:activityOccurs ( :CRP ?ce ) .
-    #?t pq:activitiesDirectlyFollow ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Admission+IC> ?r ) .
+    ?t pq:activitiesDirectlyFollow ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Admission+IC> ?r ) .
 } => {
     pq:result pq:entry ?t
 } .
