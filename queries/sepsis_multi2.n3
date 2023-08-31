@@ -4,27 +4,15 @@
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix tr: <http://notation3.org/trace#> .
 @prefix pq: <http://notation3.org/pqn#> .
-# @prefix : <http://example.org#> .
 @prefix : <http://dutch.hospital.nl/sepsis#> .
 
-# the actual full query!
 {
-    # this part working (thanks Jos!)
-    # ?t pq:activityOccurs ( :LacticAcid ?le ) .
-    # ?t pq:activityOccurs ( :CRP ?ce ) .
-    # ?t pq:activitiesDirectlyFollow ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Admission+IC> ?r ) .
-    
-    # this part is not working :-(
-    # ?t pq:activityOccurs ( :ER_Registration ?reg ) .
-    # ?reg :Age ?age . ?age math:notLessThan 65 .
-    # ?reg :InfectionSuspected true .
-
-    # so, let's see what they return
-    # (e.g., trace Z has age over 65 and infection as true)
+    ?t pq:activityOccurs ( :LacticAcid ?le ) .
+    ?t pq:activityOccurs ( :CRP ?ce ) .
+    ?t pq:activitiesDirectlyFollow ( <http://dutch.hospital.nl/sepsis#Admission+NC> <http://dutch.hospital.nl/sepsis#Admission+IC> ?r ) .    
     ?t pq:activityOccurs ( <http://dutch.hospital.nl/sepsis#ER+Registration> ?reg ) .
-    ?reg :Age ?age .
-    ?reg :InfectionSuspected ?inf
+    ?reg :Age ?age . ?age math:notLessThan 65 .
+    ?reg :InfectionSuspected true .
 } => {
-    # pq:result pq:entry ?t .
-    pq:result pq:entry [ :t ?t ; :a ?age ; :inf ?inf ]
+    pq:result pq:entry ?t .
 } .
