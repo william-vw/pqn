@@ -1,6 +1,6 @@
 # Process Querying in Notation3 (PQN)
 
-## Updated Querying Times
+## Improved Querying Times
 
 Due to significant optimizations of the PQN implementation, we can report much faster query execution times (on the full sepsis log) than currently reported in the PODS4H submission:
 
