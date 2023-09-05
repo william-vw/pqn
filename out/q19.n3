@@ -1,12 +1,29 @@
 # Processed by EYE v4.14.12 (2023-08-31)
-# eye pqn.n3 --turtle logs/sepsis_25.n3 --query queries/constraints/q19.n3 --nope
+# eye pqn.n3 --turtle logs/sepsis_all.n3 --query queries/constraints/q19.n3 --nope
 
 @prefix : <http://dutch.hospital.nl/sepsis#>.
 @prefix pq: <http://notation3.org/pqn#>.
 
+:trace_WKA pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_S pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_XFA pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_GO pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
 :trace_BP pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_PGA pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_RY pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_TN pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_XBA pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
 :trace_FO pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_VN pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
 :trace_AD pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
-# 2023-08-31T14:44:14.354Z in=34802 out=3 ent=3 step=3 brake=2 inf=1188649 sec=0.149 inf/sec=7977510
+:trace_LT pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_YF pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_UC pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_RU pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_XI pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_LG pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_NZ pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+:trace_YX pq:activitiesDirectlyFollowAtLeastNTimes (:Admission_NC :Admission_IC 1 1).
+# 2023-09-05T14:42:51.142Z in=155688 out=20 ent=20 step=20 brake=2 inf=4605421 sec=0.549 inf/sec=8388745
 # ENDS
 
