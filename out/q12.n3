@@ -1,5 +1,5 @@
 # Processed by EYE v4.14.12 (2023-08-31)
-# eye pqn.n3 --turtle logs/sepsis_all.n3 --query queries/constraints/q12.n3 --nope
+# eye pqn_pred.n3 --turtle logs/sepsis_pred_all.n3 --query queries/constraints/q12.n3 --nope
 
 @prefix : <http://dutch.hospital.nl/sepsis#>.
 @prefix pq: <http://notation3.org/pqn#>.
@@ -999,6 +999,6 @@
 :trace_OD pq:allActivitiesOccurAsStartAtLeastNTimes ((:ER_Registration) 1).
 :trace_KM pq:allActivitiesOccurAsStartAtLeastNTimes ((:ER_Registration) 1).
 :trace_NGA pq:allActivitiesOccurAsStartAtLeastNTimes ((:ER_Registration) 1).
-# 2023-09-05T14:42:29.661Z in=155688 out=995 ent=995 step=995 brake=2 inf=5149966 sec=0.584 inf/sec=8818435
+# 2023-09-07T19:21:12.253Z in=125260 out=995 ent=995 step=995 brake=2 inf=4306152 sec=0.473 inf/sec=9103915
 # ENDS
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage="usage:
-run_all.sh -d <dir> -l <log> -r <results> -n <runs> -p <pqn>
+run_all.sh -t <type> -d <dir> -l <log> -r <results> -n <runs> -p <pqn>
 where
     -t <type> is the run type (eye or pvm)
     -d <dir> is the directory with query files
@@ -70,7 +70,7 @@ for path in "$dir"/*; do
         if [ $type == 'eye' ]; then
             error=$( { eye $pqn --turtle $log --query $path --nope > out/$query; } 2>&1 )
         elif [ $type == 'pvm' ]; then
-            error=$( { swipl -x pqn.pvm -- --query $path --nope > out/$query; } 2>&1 )
+            error=$( { swipl -x $pqn -- --query $path --nope > out/$query; } 2>&1 )
         fi
         # echo $error
         

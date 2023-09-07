@@ -1,5 +1,5 @@
 # Processed by EYE v4.14.12 (2023-08-31)
-# eye pqn.n3 --turtle logs/sepsis_all.n3 --query queries/constraints/q3.n3 --nope
+# eye pqn_pred.n3 --turtle logs/sepsis_pred_all.n3 --query queries/constraints/q3.n3 --nope
 
 @prefix : <http://dutch.hospital.nl/sepsis#>.
 @prefix pq: <http://notation3.org/pqn#>.
@@ -1010,6 +1010,6 @@
 :trace_OD pq:allActivitiesOccur (:CRP :Leucocytes).
 :trace_KM pq:allActivitiesOccur (:CRP :Leucocytes).
 :trace_NGA pq:allActivitiesOccur (:CRP :Leucocytes).
-# 2023-09-05T14:43:16.985Z in=155688 out=1006 ent=1006 step=1006 brake=2 inf=5059421 sec=0.571 inf/sec=8860632
+# 2023-09-07T19:22:29.653Z in=125260 out=1006 ent=1006 step=1006 brake=2 inf=4239013 sec=0.465 inf/sec=9116157
 # ENDS
 

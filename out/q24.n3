@@ -1,5 +1,5 @@
 # Processed by EYE v4.14.12 (2023-08-31)
-# eye pqn.n3 --turtle logs/sepsis_all.n3 --query queries/constraints/q24.n3 --nope
+# eye pqn_pred.n3 --turtle logs/sepsis_pred_all.n3 --query queries/constraints/q24.n3 --nope
 
 @prefix : <http://dutch.hospital.nl/sepsis#>.
 @prefix pq: <http://notation3.org/pqn#>.
@@ -954,6 +954,6 @@
 :trace_PU pq:activitiesDoNotCoOccur (:Admission_NC :Admission_IC).
 :trace_JS pq:activitiesDoNotCoOccur (:Admission_NC :Admission_IC).
 :trace_OD pq:activitiesDoNotCoOccur (:Admission_NC :Admission_IC).
-# 2023-09-05T14:43:10.408Z in=155688 out=950 ent=950 step=950 brake=2 inf=5147797 sec=0.587 inf/sec=8769671
+# 2023-09-07T19:22:18.673Z in=125260 out=950 ent=950 step=950 brake=2 inf=4303445 sec=0.479 inf/sec=8984228
 # ENDS
 

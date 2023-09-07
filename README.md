@@ -30,18 +30,60 @@ The goal of this language is to query process traces in order to make sense of a
 
 First, install the latest version of the [`eye`](https://github.com/eyereasoner/eye/tags) reasoner (the experiments were performed with v.4.14.12).
 
-To run an individual test query (such as `q1.n3`) on the full sepsis event log, run the following command:
+You can run `./test.sh -h`, `./run.sh -h` and `./run_all.sh -h` for details on the usage of each shell script.
+
+### Test single query
+
+To test an individual query using eye on the full sepsis event log, run the following command:
 ```
-./run.sh -q queries/constraints/q1.n3 -l logs/sepsis_all.n3 -p pqn.n3
+./test.sh -t eye -q queries/sepsis_multi.n3 -l logs/sepsis_reif_all.n3 -p pqn_reif.n3
 ```
 
-To run all test queries on a particular log (e.g., the [full sepsis event log](logs/)), run the following command:
+To do the same using a pre-compiled `pvm` image (see below):
 ```
-./run_all.sh -d queries/constraints -l logs/sepsis_all.n3 -r results/times_all.csv -n 10 -p pqn.n3
+./test.sh -t pvm -q queries/sepsis_multi.n3 -l logs/sepsis_reif_all.n3 -p pqn_reif.pvm
 ```
+
+### Measure performance of single query
+
+To measure the performance of an individual test query using eye on the full sepsis event log, run the following command:
+```
+./run.sh -t eye -q queries/sepsis_multi.n3 -l logs/sepsis_reif_all.n3 -r results/eye/times_reif_all.csv  -n 10 -p pqn_reif.n3
+```
+
+To do the same using a pre-compiled `pvm` image (see below):
+```
+./run.sh -t pvm -q queries/sepsis_multi.n3 -l logs/sepsis_reif_all.n3 -r results/pvm/times_reif_all.csv  -n 10 -p pqn_reif.pvm
+```
+
 Where result times will appear in `results/times_all.csv` for this example, and times will be averaged over 10 runs. Query outputs will appear in the `out/` folder.
 
-You can run `./run.sh -h` and `./run_all.sh -h` for details on the usage of each shell script.
+
+### Measure performance of a directory of queries
+
+To measure the performance of all test queries using eye on the full sepsis event log, run the following command:
+```
+./run_all.sh -t eye -d queries/constraints -l logs/sepsis_reif_all.n3 -r results/eye/times_reif_all.csv -n 10 -p pqn_reif.n3
+```
+
+To do the same using a pre-compiled `pvm` image (see below):
+```
+./run_all.sh -t pvm -d queries/constraints -l logs/sepsis_reif_all.n3 -r results/pvm/times_reif_all.csv -n 10 -p pqn_reif.pvm
+```
+
+
+### Pre-compiling a PVM image
+
+To pre-compile a `pvm` image:
+```
+eye pqn_reif.n3 --turtle logs/sepsis_reif_all.n3 --image pqn_reif.pvm
+```
+
+To directly run a `pvm` image:
+```
+swipl -x pqn_reif.pvm -- --query queries/sepsis_multi.n3 --nope 
+```
+
 
 # References
 [1] Mannhardt, F., Blinde, D.: Analyzing the Trajectories of Patients with Sepsis using Process Mining. In: RADAR+ EMISA@ CAiSE. pp. 72–80 (2017).
