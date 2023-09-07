@@ -661,12 +661,12 @@
     [ tr:from ?ei ; tr:to ?ej ] tr:in ?t .
     ?ej log:notEqualTo tr:nil .
     # "T1" log:trace ( ?t ?ei ?ej ) .
-    ?t pq:precedesActivity ( ?ej ?e2 ) . # search from ej onward
+    ?t pq:precedesEvent ( ?ej ?e2 ) . # search from ej onward
 } .
 
 {
     # stop when next event is the target event
-    ?t pq:precedesActivity ( ?e2 ?e2 )
+    ?t pq:precedesEvent ( ?e2 ?e2 )
 } 
 <= 
 {
