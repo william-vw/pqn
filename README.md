@@ -1,21 +1,12 @@
 # Process Querying in Notation3 (PQN)
 
-## Improved Querying Times
+## Performance Tests
 
-Due to significant optimizations of the PQN implementation, we can report much faster query execution times (on the full sepsis log) than currently reported in the PODS4H submission:
-
-| Query                                       | Execution Time (ms) |
-|---------------------------------------------|---------------------|
-| pq:activitiesCoOccurOrNoneOccurs (q23.n3)   | 43                  |
-| pq:activitiesDoNotCoOccur (q24.n3)          | 49                  |
-| pq:allActivitiesOccurAtLeastNTimes (q5.n3)  | 26                  |
-| pq:activityDoesNotOccur (q22.n3)            | 52                  |
-| pq:activityOccursAtLeastNTimes (q2.n3)      | 22                  |
-| pq:allActivitiesOccur (q3.n3)               | 41                  |
-
-All times are averaged over 10 runs. All query execution times for all event logs can be found in the [`results/`](results/) folder.
-
-By further optimizing the loading of the RDF log, we can also report `121ms`, `244ms`, and `507ms` loading times for 25%, 50%, and 100% of the sepsis event log [1], respectively.
+The [logs](logs) folder contains subsets (25%, 50%, 100%) of the sepsis event log [1]. 
+The [queries/constraints](queries/constraints) folder contains test queries for individual PQN constraints on the sepsis log.
+We ran performance tests for these test queries on the different log subsets.
+The query execution times for all event logs can be found in the [`results/`](results/) folder.
+All times are averaged over 10 runs. 
 
 We refer to instructions below to reproduce our experiments.
 
