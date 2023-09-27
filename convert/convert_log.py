@@ -53,12 +53,12 @@ def convert_xes_n3(log, filepath, limit=-1):
 
             g.add((evt, tr_terms['in'], trace))
 
-            if (row['lifecycle:transition']):
+            if ('lifecycle:transition' in row):
                 value = urllib.parse.quote_plus(row['lifecycle:transition'])
                 value = Sepsis[value]
                 g.add((evt, tr_terms['lifecycle'], value))
 
-            if (row['org:group']):
+            if ('org:group' in row):
                 value = urllib.parse.quote_plus(row['org:group'])
                 value = Sepsis[value]
                 g.add((evt, tr_terms['group'], value))
