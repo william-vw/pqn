@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-A live demo, using the sepsis event log [1] and a query with multiple constraints, can be found [here]().
+A live demo, using the sepsis event log [1] and a query with multiple constraints, can be found here: [https://n3-editor.herokuapp.com/n3/editor/pqn.html](https://n3-editor.herokuapp.com/n3/editor/pqn.html).
 Note that you can try out any other XES event log as well.
 
 ## Performance Tests
