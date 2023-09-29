@@ -6,6 +6,8 @@ A live demo, using the sepsis event log [1] and a query with multiple constraint
 
 Note that you can try out any other XES event log as well.
 
+(Note - the online editor is currently rather slow due to the web platform and reasoner version utilized. See instructions below on how to run queries a lot faster on your local machine.)
+
 ## Performance Tests
 
 The [logs](logs) folder contains subsets (25%, 50%, 100%) of the sepsis event log [1]. 
