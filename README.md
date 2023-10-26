@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-A live demo, using the sepsis event log [1] and a query with multiple constraints, can be found here: [http://notation3.org:8080/n3/pqn/s/z6duWaSv](http://notation3.org:8080/n3/pqn/s/z6duWaSv).
+A live demo, using the sepsis event log [1] and a query with multiple constraints, can be found here: [http://editor.notation3.org/pqn/s/z6duWaSv](http://editor.notation3.org/pqn/s/z6duWaSv).
 
 Note that you can try out any other XES event log as well.
 
