@@ -1,0 +1,57 @@
+@prefix : <http://example.com/ns#> .
+@prefix ex: <http://example.com/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+:injury_shape a sh:NodeShape ;
+    sh:targetNode :injury ;
+    sh:property [
+        sh:path :next ;
+        sh:hasValue :acute
+    ] ;
+    sh:property [
+        sh:path :next ;
+        sh:hasValue :rehab
+    ] ;
+    # sh:closed true . # doesn't work like we need it to
+    # (only works for properties *not* listed already)
+    sh:property [
+        sh:path :next ;
+        sh:maxCount 2
+    ] .
+
+:acute_shape a sh:NodeShape ;
+    sh:targetNode :acute ;
+    sh:property [
+        sh:path :next ;
+        sh:hasValue :rehab
+    ] ;
+    sh:property [
+        sh:path :next ;
+        sh:hasValue :morgue
+    ] ;
+    sh:property [
+        sh:path :next ;
+        sh:hasValue :disch
+    ] ;
+    sh:property [
+        sh:path :next ;
+        sh:maxCount 3
+    ] .
+
+:rehab_shape a sh:NodeShape ;
+    sh:targetNode :rehab ;
+    sh:property [
+        sh:path :next ;
+        sh:hasValue :disch 
+    ] ;
+    sh:property [
+        sh:path :next ;
+        sh:maxCount 1
+    ] .
+
+:leaf_shape a sh:NodeShape ;
+    sh:targetNode :disch , :morgue ;
+    sh:property [
+        sh:path :next ;
+        sh:maxCount 0
+    ] .
