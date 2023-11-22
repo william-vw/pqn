@@ -1,0 +1,41 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix tr: <http://notation3.org/trace#> .
+@prefix pq: <http://notation3.org/pqn#> .
+@prefix : <http://dutch.hospital.nl/sepsis#> .
+
+{
+    ?t pq:uniqueActivityCount 4
+}
+=> 
+{
+    pq:result2 pq:entry ?t .
+} .
+
+{
+    ?t pq:onlyActivitiesOccurFrom ( :ER_Registration :CRP :Leucocytes :Release_B )
+}
+=> 
+{
+    pq:result1 pq:entry ?t .
+} .
+
+{
+    ?t pq:activitiesDoNotOccur ( :IV_Liquid :IV_Antibiotics )
+}
+=> 
+{
+    pq:result3 pq:entry ?t .
+} .
+
+# (count traces meeting criteria)
+{
+    (?t { ?t pq:activitiesDoNotOccur ( :Release_B ) } ?ts ) log:collectAllIn _:t .
+    ?ts list:length ?c
+}
+=> 
+{
+    pq:result4 pq:entry ?c .
+} .

@@ -25,7 +25,7 @@ tr_terms = {
 }
 log_terms = {}
 
-def convert_xes_n3(log, filepath, format, limit=-1):
+def convert_df_n3(log, filepath, format, limit=-1):
     start = time.time_ns()
     start_conv = time.time_ns()
 
@@ -49,7 +49,7 @@ def convert_xes_n3(log, filepath, format, limit=-1):
         for index, row in df.iterrows():
             evt = Sepsis[f"evt_{index}"]
 
-            activ_label=urllib.parse.quote(row['concept:name']).replace("%20", "_")
+            activ_label = urllib.parse.quote(row['concept:name']).replace("%20", "_")
             activ = Sepsis[activ_label]
             g.add((evt, tr_terms['activity'], activ))
 
@@ -58,18 +58,18 @@ def convert_xes_n3(log, filepath, format, limit=-1):
 
             g.add((evt, tr_terms['in'], trace))
 
-            if (row['lifecycle:transition']):
+            if ('lifecycle:transition' in row):
                 value = urllib.parse.quote_plus(row['lifecycle:transition'])
                 value = Sepsis[value]
                 g.add((evt, tr_terms['lifecycle'], value))
 
-            if (row['org:group']):
+            if ('org:group' in row):
                 value = urllib.parse.quote_plus(row['org:group'])
                 value = Sepsis[value]
                 g.add((evt, tr_terms['group'], value))
 
             for col in log_terms:
-                if not pd.isna(row[col]):
+                if col in row and not pd.isna(row[col]):
                     value = Literal(row[col])
                     g.add((evt, log_terms[col], value))
 

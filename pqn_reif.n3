@@ -8,6 +8,12 @@
 @prefix pq: <http://notation3.org/pqn#> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 
+# TODO
+# add from pqn_pred: 
+# pq:uniqueActivityCount
+# pq:onlyActivitiesOccurFrom
+# pq:activitiesDoNotOccur
+
 # NOTE in the associated queries, variable ?t can also be restricted to get results pertaining only to a particular trace
 # NOTE technically the anyActivityX rules can simply call anyActivityXAtLeastNTimes with atLeastN = 1, 
 # and the activityX rules can simply call activityXAtLeastNTimes with atLeastN = 1,
@@ -40,7 +46,7 @@
 # } .
 
 
-# > pq:activityOccursAtLeastNTimes
+# pq:activityOccursAtLeastNTimes
 # cfr. isContained >= N (Schuster 2022)
 
 {
