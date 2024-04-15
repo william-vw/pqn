@@ -19,6 +19,9 @@
     # "inf - norm_o" log:trace ?norm_o .
 
     ?disc_os dfg:inChoiceBranch ?norm_o
+
+    # TODO ensure that it does not occur in any other decision's choice branch
+    # (see note in data.n3)
 } .
 
 { ?options dfg:inChoiceBranch ?cur }

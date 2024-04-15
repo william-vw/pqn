@@ -11,6 +11,14 @@
     dfg:source dfg:normative
 ] .
 
+# NOTE should mean that "c2" cannot be a determinant for "c"
+# since it also occurs in choice branch of "a"
+[
+    dfg:from :a ;
+    dfg:to :c2 ;
+    dfg:source dfg:normative
+] .
+
 [
     dfg:from :x ;
     dfg:to :c ;
