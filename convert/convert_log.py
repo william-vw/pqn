@@ -1,15 +1,9 @@
-from enum import Enum
+from convert_base import str_to_uri, RdfRepresent, QuoteOptions
 from rdflib import Namespace, Literal, Graph, BNode, RDF
 import pandas as pd
-import urllib.parse
 import time
 
-class RDFLogFormat(Enum):
-    LINK_REIFIED = 1
-    LINK_PRED = 2
-
-TR = Namespace("http://notation3.org/trace#")
-Sepsis = Namespace("http://dutch.hospital.nl/sepsis#")
+TR = Namespace("http://rdf.org/trace#")
 
 tr_terms = {
     'Trace': TR['Trace'],
@@ -25,7 +19,7 @@ tr_terms = {
 }
 log_terms = {}
 
-def convert_df_n3(log, filepath, format, limit=-1):
+def convert_log_rdf(log, save_to, ns, format, limit=-1):
     start = time.time_ns()
     start_conv = time.time_ns()
 
@@ -33,7 +27,7 @@ def convert_df_n3(log, filepath, format, limit=-1):
 
     for col in log.columns:
         if col not in ( 'time:timestamp', 'concept:name', 'case:concept:name', 'lifecycle:transition', 'org:group' ):
-            log_terms[col] = Sepsis[col]
+            log_terms[col] = ns[col]
 
     groups = log.sort_values(by='time:timestamp', ascending=True).groupby('case:concept:name')
     # print(groups.groups)
@@ -41,16 +35,15 @@ def convert_df_n3(log, filepath, format, limit=-1):
     total_num = 0
     cur_traces = 0
     for case, df in groups:
-        trace = Sepsis[f"trace_{case}"]
+        trace = ns[f"trace_{case}"]
         g.add((trace, RDF.type, tr_terms['Trace']))
 
         prior_evt = False
 
         for index, row in df.iterrows():
-            evt = Sepsis[f"evt_{index}"]
+            evt = ns[f"evt_{index}"]
 
-            activ_label = urllib.parse.quote(row['concept:name']).replace("%20", "_")
-            activ = Sepsis[activ_label]
+            activ = str_to_uri(row['concept:name'], ns, QuoteOptions.SPACE_UNDERSCORE)
             g.add((evt, tr_terms['activity'], activ))
 
             ts = Literal(row['time:timestamp'])
@@ -59,13 +52,11 @@ def convert_df_n3(log, filepath, format, limit=-1):
             g.add((evt, tr_terms['in'], trace))
 
             if ('lifecycle:transition' in row):
-                value = urllib.parse.quote_plus(row['lifecycle:transition'])
-                value = Sepsis[value]
+                value = str_to_uri(row['lifecycle:transition'], ns)
                 g.add((evt, tr_terms['lifecycle'], value))
 
             if ('org:group' in row):
-                value = urllib.parse.quote_plus(row['org:group'])
-                value = Sepsis[value]
+                value = str_to_uri(row['org:group'], ns)
                 g.add((evt, tr_terms['group'], value))
 
             for col in log_terms:
@@ -92,7 +83,7 @@ def convert_df_n3(log, filepath, format, limit=-1):
 
     start_save = time.time_ns()
 
-    g.serialize(destination=filepath)
+    g.serialize(destination=save_to)
 
     end_save = time.time_ns()
     print("save time (ms):", (end_save-start_save)/1000000)
@@ -103,11 +94,11 @@ def convert_df_n3(log, filepath, format, limit=-1):
 
 
 def add_link(prior_evt, next_evt, trace, g, format):
-    if format == RDFLogFormat.LINK_REIFIED:
+    if format == RdfRepresent.LINK_REIFIED:
         link = BNode()
         g.add((link, tr_terms['in'], trace))
         g.add((link, tr_terms['from'], prior_evt))
         g.add((link, tr_terms['to'], next_evt))
                     
-    elif format == RDFLogFormat.LINK_PRED:
+    elif format == RdfRepresent.LINK_PRED:
         g.add((prior_evt, tr_terms['next'], next_evt))
