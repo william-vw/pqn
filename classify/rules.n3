@@ -1,0 +1,64 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+@prefix : <http://example.org/> .
+
+{ ?pt dfg:inferredDiscoveredDecision ?norm_o } 
+<= {   
+    ?pt a dfg:DecisionPoint ; dfg:normative true ; dfg:discovered true .
+    (?disc_o {
+        ?disc_l dfg:from ?pt ; dfg:to ?disc_o .
+        ?disc_l dfg:source dfg:discovered .
+
+    } ?disc_os) log:collectAllIn _:t .
+    # "inf - disc_os" log:trace ?disc_os .
+
+    ?norm_l dfg:from ?pt ; dfg:to ?norm_o ; dfg:source dfg:normative .
+    ?norm_o list:notIn ?disc_os .
+    # "inf - norm_o" log:trace ?norm_o .
+
+    ?disc_os dfg:inChoiceBranch ?norm_o
+} .
+
+{ ?options dfg:inChoiceBranch ?cur }
+<= {
+    ?cur list:in ?options .
+    # "choice - found" log:trace ?cur .
+    true log:callWithCut true .
+} .
+
+{ ?options dfg:inChoiceBranch ?cur }
+<= {
+    # "choice - searching" log:trace ?cur .
+    ?l dfg:from ?cur ; dfg:to ?next ; dfg:source dfg:normative .
+    ?options dfg:inChoiceBranch ?next .
+} .
+
+
+# helpers
+
+{ ?a dfg:link ?l }
+<= { ?l dfg:from ?a } .
+
+{ ?a dfg:link ?l }
+<= { ?l dfg:to ?a } .
+
+# { ?a a dfg:Activity } <= { ?l dfg:from ?a } .
+# { ?a a dfg:Activity } <= { ?l dfg:to ?a } .
+
+{ ?a a dfg:DecisionPoint . } 
+<= {
+    ?l1 dfg:from ?a .
+    ?l2 dfg:from ?a .
+    ?l1 log:notEqualTo ?l2 .
+} .
+
+{ ?a dfg:normative true }
+<= { ?a dfg:link ?l . ?l dfg:source dfg:normative } .
+
+{ ?a dfg:discovered true }
+<= { ?a dfg:link ?l . ?l dfg:source dfg:discovered } .
+
+{ ?m list:notIn ?lst } 
+<= { (1 { ?m list:in ?lst } ()) log:collectAllIn _:t } .

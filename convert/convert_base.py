@@ -17,7 +17,7 @@ def str_to_uri(str, ns, space=None):
             quoted = urllib.parse.quote(str).replace("%20", "_")
             
         case QuoteOptions.REMOVE_SPECIAL:
-            quoted = re.sub("%\d+", "", urllib.parse.quote(str))
+            quoted = re.sub("%(\d\d|\d[A-Z])", "", urllib.parse.quote(str))
         
         case _:
             quoted = urllib.parse.quote_plus(str)
