@@ -4,38 +4,43 @@
 @prefix dfg: <http://rdf.org/dfg#> .
 @prefix : <http://example.org/> .
 
-{ ?pt dfg:inferredDiscoveredDecision ?norm_o } 
+{ ?pt dfg:inferredDiscoveredDecision ?norm_d } 
 <= {   
     ?pt a dfg:DecisionPoint ; dfg:normative true ; dfg:discovered true .
-    (?disc_o {
-        ?disc_l dfg:from ?pt ; dfg:to ?disc_o .
-        ?disc_l dfg:source dfg:discovered .
 
-    } ?disc_os) log:collectAllIn _:t .
-    # "inf - disc_os" log:trace ?disc_os .
+    # collect decisions in discovered model
+    (?disc_d {
+        ?disc_l dfg:from ?pt ; dfg:to ?disc_d ; dfg:source dfg:discovered .
 
-    ?norm_l dfg:from ?pt ; dfg:to ?norm_o ; dfg:source dfg:normative .
-    ?norm_o list:notIn ?disc_os .
-    # "inf - norm_o" log:trace ?norm_o .
+    } ?disc_ds) log:collectAllIn _:t .
+    # "inf - disc_ds" log:trace ?disc_ds .
 
-    ?disc_os dfg:inChoiceBranch ?norm_o
+    # for each "missing" decision, i.e., in normative but not discovered model
+    ?norm_l dfg:from ?pt ; dfg:to ?norm_d ; dfg:source dfg:normative .
+    ?norm_d list:notIn ?disc_ds .
+    # "inf - norm_d" log:trace ?norm_d .
 
-    # TODO ensure that it does not occur in any other decision's choice branch
-    # (see note in data.n3)
+    # missing decision's choice branch includes a discovered decision
+    ( ?disc_ds ?norm_d ) dfg:inChoiceBranch ?determ .
+
+    # no other incoming edges for discovered decision in normative model
+    ( ?determ dfg:normative ) dfg:priors ?priors .
+    # "inf - priors" log:trace ( ?priors "=>" ?determ ) .
+    ?priors list:length 1 .
 } .
 
-{ ?options dfg:inChoiceBranch ?cur }
+{ ( ?options ?cur ) dfg:inChoiceBranch ?cur }
 <= {
     ?cur list:in ?options .
     # "choice - found" log:trace ?cur .
     true log:callWithCut true .
 } .
 
-{ ?options dfg:inChoiceBranch ?cur }
+{ ( ?options ?cur ) dfg:inChoiceBranch ?found }
 <= {
     # "choice - searching" log:trace ?cur .
     ?l dfg:from ?cur ; dfg:to ?next ; dfg:source dfg:normative .
-    ?options dfg:inChoiceBranch ?next .
+    ( ?options ?next ) dfg:inChoiceBranch ?found .
 } .
 
 
@@ -62,6 +67,15 @@
 
 { ?a dfg:discovered true }
 <= { ?a dfg:link ?l . ?l dfg:source dfg:discovered } .
+
+{ ( ?a ?src ) dfg:priors ?priors }
+<= { 
+    (?prior
+        {
+            ?l dfg:to ?a ; dfg:from ?prior ; dfg:source ?src
+        }
+    ?priors) log:collectAllIn _:t .
+} .
 
 { ?m list:notIn ?lst } 
 <= { (1 { ?m list:in ?lst } ()) log:collectAllIn _:t } .

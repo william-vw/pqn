@@ -9,9 +9,11 @@
 # { ?a a dfg:FoundDecision . } => { ?a a dfg:FoundDecision . } .
 
 # {
-#     (:c2) dfg:inChoiceBranch :c .
+#     ( ( :c2 :a ) :c ) dfg:inChoiceBranch ?determ .
+#     ( ?determ dfg:normative ) dfg:prior ?priors .
+
 # } => {
-#     <> :out :c2 .
+#     <> :determ ?determ ; :priors ?priors .
 # } .
 
 { ?pt dfg:inferredDiscoveredDecision ?norm_o } 
