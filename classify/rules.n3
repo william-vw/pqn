@@ -4,7 +4,45 @@
 @prefix dfg: <http://rdf.org/dfg#> .
 @prefix : <http://example.org/> .
 
-{ ?pt dfg:inferredDiscoveredDecision ?norm_d } 
+# - infer missing events after a known event up until next decision point OR end
+# (data1.n3)
+{ ( ?from ?to ) dfg:inferredEventFromKnownEvent ?known_e }
+<= {
+    ?known_e dfg:normative true ; dfg:discovered true .
+    ( ?known_e () ) dfg:collectBranchLinks ?links .
+    ( ?from ?to ) list:in ?links .
+    _:t log:notIncludes { ?l dfg:from ?from ; dfg:to ?to ; dfg:source dfg:discovered }
+} .
+
+{ ( ?from ?cur ) dfg:collectBranchLinks ?links }
+<= {
+    ?l dfg:from ?from ; dfg:to ?to ; dfg:source dfg:normative .
+    ?to a dfg:DecisionPoint .
+    ( ?cur (( ?from ?to )) ) list:append ?links .
+    # "collect1" log:trace ( ?to ?links ).
+    true log:callWithCut true .
+} .
+
+{ ( ?from ?cur ) dfg:collectBranchLinks ?cur }
+<= {
+    ?l dfg:from ?from ; dfg:to dfg:nil ; dfg:source dfg:normative .
+    # "collect2" log:trace ( ?to ?cur ) .
+    true log:callWithCut true .
+} .
+
+{ ( ?from ?cur ) dfg:collectBranchLinks ?links }
+<= {
+    ?l dfg:from ?from ; dfg:to ?to ; dfg:source dfg:normative .
+    ( ?cur (( ?from ?to )) ) list:append ?cur2 .
+    # "collect3" log:trace ( ?to ?cur2 ) .
+    ( ?to ?cur2 ) dfg:collectBranchLinks ?links .
+} .
+
+
+
+# - infer decisions based on their downstream events
+# (data2.n3)
+{ ?pt dfg:inferredDecisionFromFollowingEvent ?norm_d } 
 <= {   
     ?pt a dfg:DecisionPoint ; dfg:normative true ; dfg:discovered true .
 
@@ -44,35 +82,43 @@
 } .
 
 
+
+# - infer decision points based on downstream decisions
+{ ?d dfg:inferredDecisionPointFromFollowingDecision ?pt } 
+<= {
+    
+} .
+
+
 # helpers
 
-{ ?a dfg:link ?l }
-<= { ?l dfg:from ?a } .
+{ ?e dfg:link ?l }
+<= { ?l dfg:from ?e } .
 
-{ ?a dfg:link ?l }
-<= { ?l dfg:to ?a } .
+{ ?e dfg:link ?l }
+<= { ?l dfg:to ?e } .
 
-# { ?a a dfg:Activity } <= { ?l dfg:from ?a } .
-# { ?a a dfg:Activity } <= { ?l dfg:to ?a } .
+# { ?e a dfg:Activity } <= { ?l dfg:from ?e } .
+# { ?e a dfg:Activity } <= { ?l dfg:to ?e } .
 
-{ ?a a dfg:DecisionPoint . } 
+{ ?e a dfg:DecisionPoint . } 
 <= {
-    ?l1 dfg:from ?a .
-    ?l2 dfg:from ?a .
+    ?l1 dfg:from ?e .
+    ?l2 dfg:from ?e .
     ?l1 log:notEqualTo ?l2 .
 } .
 
-{ ?a dfg:normative true }
-<= { ?a dfg:link ?l . ?l dfg:source dfg:normative } .
+{ ?e dfg:normative true }
+<= { ?e dfg:link ?l . ?l dfg:source dfg:normative } .
 
-{ ?a dfg:discovered true }
-<= { ?a dfg:link ?l . ?l dfg:source dfg:discovered } .
+{ ?e dfg:discovered true }
+<= { ?e dfg:link ?l . ?l dfg:source dfg:discovered } .
 
-{ ( ?a ?src ) dfg:priors ?priors }
+{ ( ?e ?src ) dfg:priors ?priors }
 <= { 
     (?prior
         {
-            ?l dfg:to ?a ; dfg:from ?prior ; dfg:source ?src
+            ?l dfg:to ?e ; dfg:from ?prior ; dfg:source ?src
         }
     ?priors) log:collectAllIn _:t .
 } .

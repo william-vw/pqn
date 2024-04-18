@@ -3,6 +3,9 @@
 @prefix dfg: <http://rdf.org/dfg#> .
 @prefix : <http://example.org/> .
 
+# test data:
+# eye test.n3 --turtle ./data/data1.n3 --query query.n3 --nope
+# pilot medical:
 # eye rules.n3 --turtle ../logs/pilot_medical-normative.n3 ../logs/pilot_medical-discovered.n3 --query query.n3 --nope
 
 # { ?a a dfg:DecisionPoint . } => { ?a a dfg:DecisionPoint . } .
@@ -16,13 +19,32 @@
 #     <> :determ ?determ ; :priors ?priors .
 # } .
 
-{ ?pt dfg:inferredDiscoveredDecision ?norm_o } 
-# => { ?pt dfg:inferredDiscoveredDecision ?norm_o } .
+# { ?pt dfg:inferredDecisionFromFollowingEvent ?norm_o } 
+# # => { ?pt dfg:inferredDecisionFromFollowingEvent ?norm_o } .
+# => {
+#     [
+#         dfg:from ?pt ;
+#         dfg:to ?norm_o ;
+#         dfg:source dfg:discovered ;
+#         dfg:inferred "inferredDecisionFromFollowingEvent"
+#     ]
+# } .
+
+# { ( :a () ) dfg:collectBranchLinks ?links }
+# =>
+# { :a :branchLinks ?links } .
+
+# { ( :k () ) dfg:collectBranchLinks ?links }
+# =>
+# { :k :branchLinks ?links } .
+
+
+{ ( ?from ?to ) dfg:inferredEventFromKnownEvent ?known_e }
 => {
     [
-        dfg:from ?pt ;
-        dfg:to ?norm_o ;
+        dfg:from ?from ;
+        dfg:to ?to ;
         dfg:source dfg:discovered ;
-        dfg:inferred true
+        dfg:inferred "inferredEventFromKnownEvent"
     ]
 } .
