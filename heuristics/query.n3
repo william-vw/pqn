@@ -68,13 +68,13 @@
 #     ]
 # } .
 
-{ ?pt dfg:inferredDecisionPointFromDecision ?d } 
-# => { ?pt dfg:inferredDecisionPointFromDecision ?d } .
-=> {
-    [
-        dfg:from ?pt ;
-        dfg:to ?d ;
-        dfg:source dfg:discovered ;
-        dfg:inferred "inferredDecisionPointFromDecision"
-    ]
-} .
+# { ?pt dfg:inferredDecisionPointFromDecision ?d } 
+# # => { ?pt dfg:inferredDecisionPointFromDecision ?d } .
+# => {
+#     [
+#         dfg:from ?pt ;
+#         dfg:to ?d ;
+#         dfg:source dfg:discovered ;
+#         dfg:inferred "inferredDecisionPointFromDecision"
+#     ]
+# } .

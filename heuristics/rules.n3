@@ -47,11 +47,12 @@
 { ( ?pt ?norm_d ) dfg:inferredDecisionFromFollowingEvent ?determ } 
 <= {
     ( ?pt dfg:normative ) dfg:decisionPoint true .
-    ?pt dfg:inDiscovered true .
+    # decision point may not be in discovered model
+    # ?pt dfg:inDiscovered true .
 
     # collect decisions in discovered model
     (?disc_d {
-        ?disc_l dfg:from ?pt ; dfg:to ?disc_d ; dfg:source dfg:discovered .
+        ?disc_l dfg:from ?x ; dfg:to ?disc_d ; dfg:source dfg:discovered .
 
     } ?disc_ds) log:collectAllIn _:t .
     # "inf - disc_ds" log:trace ?disc_ds .
@@ -84,7 +85,7 @@
 
 
 
-# - infer decision points based on downstream decisions
+# - infer decision points based on decisions
 # (data3.n3)
 { ?pt dfg:inferredDecisionPointFromDecision ?d } 
 <= {
