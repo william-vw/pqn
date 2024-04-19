@@ -62,9 +62,7 @@
     ( ?disc_ds ?norm_d ) dfg:inChoiceBranch ?determ .
 
     # no other incoming edges for discovered decision in normative model
-    ( ?determ dfg:normative ) dfg:priors ?priors .
-    # "inf - priors" log:trace ( ?priors "=>" ?determ ) .
-    ?priors list:length 1 .
+    ?determ dfg:determinant true .
 } .
 
 { ( ?options ?cur ) dfg:inChoiceBranch ?cur }
@@ -84,13 +82,19 @@
 
 
 # - infer decision points based on downstream decisions
-{ ?d dfg:inferredDecisionPointFromFollowingDecision ?pt } 
+{ ?pt dfg:inferredDecisionPointFromFollowingDecision ?d } 
 <= {
-    
+    ?pt a dfg:DecisionPoint ; dfg:normative true ; dfg:discovered false .
+    ?l dfg:from ?pt ; dfg:to ?d . 
+    ?d dfg:discovered true .
+    ?d dfg:determinant true .
 } .
 
 
 # helpers
+
+{ ?m list:notIn ?lst } 
+<= { (1 { ?m list:in ?lst } ()) log:collectAllIn _:t } .
 
 { ?e dfg:link ?l }
 <= { ?l dfg:from ?e } .
@@ -114,6 +118,12 @@
 { ?e dfg:discovered true }
 <= { ?e dfg:link ?l . ?l dfg:source dfg:discovered } .
 
+{ ?e dfg:normative false }
+<= { _:t log:notIncludes { ?e dfg:link ?l . ?l dfg:source dfg:normative } } .
+
+{ ?e dfg:discovered false }
+<= { _:t log:notIncludes { ?e dfg:link ?l . ?l dfg:source dfg:discovered } } .
+
 { ( ?e ?src ) dfg:priors ?priors }
 <= { 
     (?prior
@@ -123,5 +133,10 @@
     ?priors) log:collectAllIn _:t .
 } .
 
-{ ?m list:notIn ?lst } 
-<= { (1 { ?m list:in ?lst } ()) log:collectAllIn _:t } .
+# no other incoming edges for event in normative model
+{ ?e dfg:determinant true }
+<= { 
+    ( ?e dfg:normative ) dfg:priors ?priors .
+    # "determinant?" log:trace ( ?priors "=>" ?determ ) .
+    ?priors list:length 1 .
+ } .

@@ -39,12 +39,15 @@
 # { :k :branchLinks ?links } .
 
 
-{ ( ?from ?to ) dfg:inferredEventFromKnownEvent ?known_e }
-=> {
-    [
-        dfg:from ?from ;
-        dfg:to ?to ;
-        dfg:source dfg:discovered ;
-        dfg:inferred "inferredEventFromKnownEvent"
-    ]
-} .
+# { ( ?from ?to ) dfg:inferredEventFromKnownEvent ?known_e }
+# => {
+#     [
+#         dfg:from ?from ;
+#         dfg:to ?to ;
+#         dfg:source dfg:discovered ;
+#         dfg:inferred "inferredEventFromKnownEvent"
+#     ]
+# } .
+
+{ ?pt dfg:inferredDecisionPointFromFollowingDecision ?d } 
+=> { ?pt dfg:inferredDecisionPointFromFollowingDecision ?d } .
