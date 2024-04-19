@@ -39,12 +39,6 @@
 
 [
     dfg:from :x ;
-    dfg:to :a ;
-    dfg:source dfg:discovered
-] .
-
-[
-    dfg:from :x ;
     dfg:to :c2 ;
     dfg:source dfg:discovered
 ] .

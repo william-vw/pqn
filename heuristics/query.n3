@@ -4,12 +4,31 @@
 @prefix : <http://example.org/> .
 
 # test data:
-# eye test.n3 --turtle ./data/data1.n3 --query query.n3 --nope
+# eye test.n3 / rules.n3 --turtle ./data/data1.n3 --query query.n3 --nope
 # pilot medical:
-# eye rules.n3 --turtle ../logs/pilot_medical-normative.n3 ../logs/pilot_medical-discovered.n3 --query query.n3 --nope
+# eye rules.n3 --turtle ./data/pilot_medical-normative.n3 --query query.n3 --nope
 
-# { ?a a dfg:DecisionPoint . } => { ?a a dfg:DecisionPoint . } .
-# { ?a a dfg:FoundDecision . } => { ?a a dfg:FoundDecision . } .
+# { 
+#     ?pt dfg:inNormative true .
+#     ( ?pt dfg:normative ) dfg:decisionPoint true .
+
+# } => { ?pt :found true } .
+
+# { 
+#     ( ?pt dfg:normative ) dfg:decisionPoint true .
+#     ?pt dfg:inDiscovered false .
+
+# } => { ?pt :found true } .
+
+# { 
+#     ( dfg:normative dfg:discovered ) log:equalTo ?srcs .
+#     ?src list:in ?srcs . 
+
+#     ( ?pt ?src ) dfg:decisionPoint true .
+#     # only found in normative / discovered
+#     ( { ( ?pt ?found ) dfg:decisionPoint true } { ?found log:equalTo ?src } ) log:forAllIn _:t .
+
+# } => { ?pt dfg:dpOnlyIn ?src } .
 
 # {
 #     ( ( :c2 :a ) :c ) dfg:inChoiceBranch ?determ .
@@ -19,16 +38,16 @@
 #     <> :determ ?determ ; :priors ?priors .
 # } .
 
-# { ?pt dfg:inferredDecisionFromFollowingEvent ?norm_o } 
-# # => { ?pt dfg:inferredDecisionFromFollowingEvent ?norm_o } .
-# => {
-#     [
-#         dfg:from ?pt ;
-#         dfg:to ?norm_o ;
-#         dfg:source dfg:discovered ;
-#         dfg:inferred "inferredDecisionFromFollowingEvent"
-#     ]
-# } .
+{ ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } 
+# => { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } .
+=> {
+    [
+        dfg:from ?pt ;
+        dfg:to ?d ;
+        dfg:source dfg:discovered ;
+        dfg:inferred "inferredDecisionFromFollowingEvent"
+    ]
+} .
 
 # { ( :a () ) dfg:collectBranchLinks ?links }
 # =>
@@ -49,5 +68,13 @@
 #     ]
 # } .
 
-{ ?pt dfg:inferredDecisionPointFromFollowingDecision ?d } 
-=> { ?pt dfg:inferredDecisionPointFromFollowingDecision ?d } .
+{ ?pt dfg:inferredDecisionPointFromDecision ?d } 
+# => { ?pt dfg:inferredDecisionPointFromDecision ?d } .
+=> {
+    [
+        dfg:from ?pt ;
+        dfg:to ?d ;
+        dfg:source dfg:discovered ;
+        dfg:inferred "inferredDecisionPointFromDecision"
+    ]
+} .

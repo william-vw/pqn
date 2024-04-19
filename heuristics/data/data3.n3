@@ -11,6 +11,14 @@
     dfg:source dfg:normative
 ] .
 
+# means that "a" is not a determinant
+# (since it can also be reached from "y")
+# [
+#     dfg:from :y ;
+#     dfg:to :a ;
+#     dfg:source dfg:normative
+# ] .
+
 [
     dfg:from :x ;
     dfg:to :b ;

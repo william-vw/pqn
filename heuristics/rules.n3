@@ -4,11 +4,13 @@
 @prefix dfg: <http://rdf.org/dfg#> .
 @prefix : <http://example.org/> .
 
+
 # - infer missing events after a known event up until next decision point OR end
+# (relies on stronger assumptions; likely not a good idea)
 # (data1.n3)
 { ( ?from ?to ) dfg:inferredEventFromKnownEvent ?known_e }
 <= {
-    ?known_e dfg:normative true ; dfg:discovered true .
+    ?known_e dfg:inNormative true ; dfg:inDiscovered true .
     ( ?known_e () ) dfg:collectBranchLinks ?links .
     ( ?from ?to ) list:in ?links .
     _:t log:notIncludes { ?l dfg:from ?from ; dfg:to ?to ; dfg:source dfg:discovered }
@@ -17,7 +19,7 @@
 { ( ?from ?cur ) dfg:collectBranchLinks ?links }
 <= {
     ?l dfg:from ?from ; dfg:to ?to ; dfg:source dfg:normative .
-    ?to a dfg:DecisionPoint .
+    ( ?to dfg:normative ) dfg:decisionPoint true .
     ( ?cur (( ?from ?to )) ) list:append ?links .
     # "collect1" log:trace ( ?to ?links ).
     true log:callWithCut true .
@@ -42,9 +44,10 @@
 
 # - infer decisions based on their downstream events
 # (data2.n3)
-{ ?pt dfg:inferredDecisionFromFollowingEvent ?norm_d } 
-<= {   
-    ?pt a dfg:DecisionPoint ; dfg:normative true ; dfg:discovered true .
+{ ( ?pt ?norm_d ) dfg:inferredDecisionFromFollowingEvent ?determ } 
+<= {
+    ( ?pt dfg:normative ) dfg:decisionPoint true .
+    ?pt dfg:inDiscovered true .
 
     # collect decisions in discovered model
     (?disc_d {
@@ -62,7 +65,7 @@
     ( ?disc_ds ?norm_d ) dfg:inChoiceBranch ?determ .
 
     # no other incoming edges for discovered decision in normative model
-    ?determ dfg:determinant true .
+    ( ?determ dfg:normative ) dfg:determinant true .
 } .
 
 { ( ?options ?cur ) dfg:inChoiceBranch ?cur }
@@ -82,12 +85,15 @@
 
 
 # - infer decision points based on downstream decisions
-{ ?pt dfg:inferredDecisionPointFromFollowingDecision ?d } 
+# (data3.n3)
+{ ?pt dfg:inferredDecisionPointFromDecision ?d } 
 <= {
-    ?pt a dfg:DecisionPoint ; dfg:normative true ; dfg:discovered false .
-    ?l dfg:from ?pt ; dfg:to ?d . 
-    ?d dfg:discovered true .
-    ?d dfg:determinant true .
+    ( ?pt dfg:normative ) dfg:decisionPoint true .
+    ?pt dfg:inDiscovered false .
+
+    ?l dfg:from ?pt ; dfg:to ?d ; dfg:source dfg:normative .
+    ?d dfg:inDiscovered true .
+    ( ?d dfg:normative ) dfg:determinant true .
 } .
 
 
@@ -105,23 +111,24 @@
 # { ?e a dfg:Activity } <= { ?l dfg:from ?e } .
 # { ?e a dfg:Activity } <= { ?l dfg:to ?e } .
 
-{ ?e a dfg:DecisionPoint . } 
+{ ( ?pt ?src ) dfg:decisionPoint true } 
 <= {
-    ?l1 dfg:from ?e .
-    ?l2 dfg:from ?e .
+    ?l1 dfg:from ?pt ; dfg:to ?to1 ; dfg:source ?src .
+    ?l2 dfg:from ?pt ; dfg:to ?to2 ; dfg:source ?src .
     ?l1 log:notEqualTo ?l2 .
+    ?to1 log:notEqualTo ?to2 .
 } .
 
-{ ?e dfg:normative true }
+{ ?e dfg:inNormative true }
 <= { ?e dfg:link ?l . ?l dfg:source dfg:normative } .
 
-{ ?e dfg:discovered true }
+{ ?e dfg:inDiscovered true }
 <= { ?e dfg:link ?l . ?l dfg:source dfg:discovered } .
 
-{ ?e dfg:normative false }
+{ ?e dfg:inNormative false }
 <= { _:t log:notIncludes { ?e dfg:link ?l . ?l dfg:source dfg:normative } } .
 
-{ ?e dfg:discovered false }
+{ ?e dfg:inDiscovered false }
 <= { _:t log:notIncludes { ?e dfg:link ?l . ?l dfg:source dfg:discovered } } .
 
 { ( ?e ?src ) dfg:priors ?priors }
@@ -133,10 +140,10 @@
     ?priors) log:collectAllIn _:t .
 } .
 
-# no other incoming edges for event in normative model
-{ ?e dfg:determinant true }
+# no other incoming edges for event
+{ ( ?determ ?src ) dfg:determinant true }
 <= { 
-    ( ?e dfg:normative ) dfg:priors ?priors .
+    ( ?determ ?src ) dfg:priors ?priors .
     # "determinant?" log:trace ( ?priors "=>" ?determ ) .
     ?priors list:length 1 .
  } .
