@@ -43,44 +43,39 @@
 
 
 # - infer decisions based on their downstream events
-# (data2.n3)
-{ ( ?pt ?norm_d ) dfg:inferredDecisionFromFollowingEvent ?determ } 
+# (data2.n3, data3.n3)
+{ ( ?pt ?miss_dec ) dfg:inferredDecisionFromFollowingEvent ?disc_evt } 
 <= {
     ( ?pt dfg:normative ) dfg:decisionPoint true .
-    # decision point may not be in discovered model
-    # ?pt dfg:inDiscovered true .
-
-    # collect decisions in discovered model
-    (?disc_d {
-        ?disc_l dfg:from ?x ; dfg:to ?disc_d ; dfg:source dfg:discovered .
-
-    } ?disc_ds) log:collectAllIn _:t .
-    # "inf - disc_ds" log:trace ?disc_ds .
+    # "inf - pt" log:trace ?pt .
 
     # for each "missing" decision, i.e., in normative but not discovered model
-    ?norm_l dfg:from ?pt ; dfg:to ?norm_d ; dfg:source dfg:normative .
-    ?norm_d list:notIn ?disc_ds .
-    # "inf - norm_d" log:trace ?norm_d .
+    ?l dfg:from ?pt ; dfg:to ?miss_dec ; dfg:source dfg:normative .
+    # if we leave this out, the next heuristic is a special case of this one
+    # ?miss_dec dfg:inDiscovered false .
+    # "inf - miss_dec" log:trace ?miss_dec .
 
-    # missing decision's choice branch includes a discovered decision
-    ( ?disc_ds ?norm_d ) dfg:inChoiceBranch ?determ .
+    # missing decision's choice branch in normative model includes a discovered event
+    ( ?miss_dec dfg:normative dfg:discovered ) dfg:inChoiceBranch ?disc_evt .
+    # "inf - disc_evt" log:trace ?disc_evt .
 
-    # no other incoming edges for discovered decision in normative model
-    ( ?determ dfg:normative ) dfg:determinant true .
+    # discovered decision is determinant in normative model
+    # (note: could integrate this into dfg:inChoiceBranch)
+    ( ?miss_dec ?disc_evt dfg:normative ) dfg:determinant true .
 } .
 
-{ ( ?options ?cur ) dfg:inChoiceBranch ?cur }
+{ ( ?cur ?src ?in ) dfg:inChoiceBranch ?cur }
 <= {
-    ?cur list:in ?options .
+    ?cur dfg:foundIn ?in .
     # "choice - found" log:trace ?cur .
-    true log:callWithCut true .
 } .
 
-{ ( ?options ?cur ) dfg:inChoiceBranch ?found }
+{ ( ?cur ?src ?in ) dfg:inChoiceBranch ?found }
 <= {
+    ?cur dfg:notFoundIn ?in .
     # "choice - searching" log:trace ?cur .
-    ?l dfg:from ?cur ; dfg:to ?next ; dfg:source dfg:normative .
-    ( ?options ?next ) dfg:inChoiceBranch ?found .
+    ?l dfg:from ?cur ; dfg:to ?next ; dfg:source ?src .
+    ( ?next ?src ?in ) dfg:inChoiceBranch ?found .
 } .
 
 
@@ -94,7 +89,7 @@
 
     ?l dfg:from ?pt ; dfg:to ?d ; dfg:source dfg:normative .
     ?d dfg:inDiscovered true .
-    ( ?d dfg:normative ) dfg:determinant true .
+    ( ?pt ?d dfg:normative ) dfg:determinant true .
 } .
 
 
@@ -121,30 +116,46 @@
 } .
 
 { ?e dfg:inNormative true }
-<= { ?e dfg:link ?l . ?l dfg:source dfg:normative } .
+<= { ?e dfg:foundIn dfg:normative } .
 
 { ?e dfg:inDiscovered true }
-<= { ?e dfg:link ?l . ?l dfg:source dfg:discovered } .
+<= { ?e dfg:foundIn dfg:discovered } .
+
+{ ?e dfg:foundIn ?src }
+<= { ?e dfg:link ?l . ?l dfg:source ?src } .
 
 { ?e dfg:inNormative false }
-<= { _:t log:notIncludes { ?e dfg:link ?l . ?l dfg:source dfg:normative } } .
+<= { ?e dfg:notFoundIn dfg:normative }.
 
 { ?e dfg:inDiscovered false }
-<= { _:t log:notIncludes { ?e dfg:link ?l . ?l dfg:source dfg:discovered } } .
+<= { ?e dfg:notFoundIn dfg:discovered }.
+
+{ ?e dfg:notFoundIn ?src }
+<= { 
+    (1
+        { ?e dfg:link ?l . ?l dfg:source ?src }
+    ()) log:collectAllIn _:t .
+    # messes up log:trace's
+    # _:t log:notIncludes { ?e dfg:link ?l . ?l dfg:source ?src } 
+} .
 
 { ( ?e ?src ) dfg:priors ?priors }
 <= { 
-    (?prior
-        {
-            ?l dfg:to ?e ; dfg:from ?prior ; dfg:source ?src
-        }
-    ?priors) log:collectAllIn _:t .
+    (?prior { ?l dfg:to ?e ; dfg:from ?prior ; dfg:source ?src } ?priors) 
+        log:collectAllIn _:t .
 } .
 
-# no other incoming edges for event
-{ ( ?determ ?src ) dfg:determinant true }
+{ ( ?from ?from ?src ) dfg:determinant true }
 <= { 
-    ( ?determ ?src ) dfg:priors ?priors .
-    # "determinant?" log:trace ( ?priors "=>" ?determ ) .
+    # "determ" log:trace ?from .
+    true log:callWithCut true .
+} .
+
+{ ( ?from ?cur ?src ) dfg:determinant true }
+<= { 
+    ( ?cur ?src ) dfg:priors ?priors .
     ?priors list:length 1 .
+
+    ?prior list:in ?priors .
+    ( ?from ?prior ?src ) dfg:determinant true
  } .

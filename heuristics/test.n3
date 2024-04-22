@@ -1,0 +1,24 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+@prefix : <http://example.org/> .
+
+{ ( ?e ?src ) dfg:priors ?priors }
+<= { 
+    (?prior { ?l dfg:to ?e ; dfg:from ?prior ; dfg:source ?src } ?priors) 
+        log:collectAllIn _:t .
+} .
+
+{ ( ?from ?from ?src ) dfg:determinant true }
+<= { } .
+
+{ ( ?from ?cur ?src ) dfg:determinant true }
+<= { 
+    ( ?cur ?src ) dfg:priors ?priors .
+    # "priors" log:trace ?priors .
+    ?priors list:length 1 .
+
+    ?prior list:in ?priors .
+    ( ?from ?prior ?src ) dfg:determinant true
+ } .

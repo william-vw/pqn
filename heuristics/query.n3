@@ -3,10 +3,14 @@
 @prefix dfg: <http://rdf.org/dfg#> .
 @prefix : <http://example.org/> .
 
+# - run tests
 # test data:
 # eye test.n3 / rules.n3 --turtle ./data/data1.n3 --query query.n3 --nope
 # pilot medical:
 # eye rules.n3 --turtle ./data/pilot_medical-normative.n3 --query query.n3 --nope
+
+
+# - arbitrary tests
 
 # { 
 #     ?pt dfg:inNormative true .
@@ -30,34 +34,13 @@
 
 # } => { ?pt dfg:dpOnlyIn ?src } .
 
-# {
-#     ( ( :c2 :a ) :c ) dfg:inChoiceBranch ?determ .
-#     ( ?determ dfg:normative ) dfg:prior ?priors .
-
-# } => {
-#     <> :determ ?determ ; :priors ?priors .
-# } .
-
-{ ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } 
-# => { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } .
-=> {
-    [
-        dfg:from ?pt ;
-        dfg:to ?d ;
-        dfg:source dfg:discovered ;
-        dfg:inferred "inferredDecisionFromFollowingEvent"
-    ]
-} .
-
-# { ( :a () ) dfg:collectBranchLinks ?links }
-# =>
-# { :a :branchLinks ?links } .
-
-# { ( :k () ) dfg:collectBranchLinks ?links }
-# =>
-# { :k :branchLinks ?links } .
+# { ( :c :c3 dfg:normative ) dfg:determinant true }
+# => {( :c :c3 dfg:normative ) dfg:determinant true } .
 
 
+# - heuristic tests
+
+# (data1.n3)
 # { ( ?from ?to ) dfg:inferredEventFromKnownEvent ?known_e }
 # => {
 #     [
@@ -68,6 +51,22 @@
 #     ]
 # } .
 
+# (data2.n3, data3.n3)
+{ ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } 
+# => { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } .
+=> {
+    [
+        dfg:from ?pt ;
+        dfg:to ?d ;
+        dfg:source dfg:discovered ;
+        dfg:inferred [ 
+            dfg:heuristic "inferredDecisionFromFollowingEvent" ;
+            dfg:followingEvent ?e
+        ]
+    ]
+} .
+
+# # (data3.n3)
 # { ?pt dfg:inferredDecisionPointFromDecision ?d } 
 # # => { ?pt dfg:inferredDecisionPointFromDecision ?d } .
 # => {

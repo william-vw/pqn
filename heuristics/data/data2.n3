@@ -40,6 +40,6 @@
 [
     # dfg:from :x ; # (dp also in discovered model)
     dfg:from :k ; # (dp not in discovered model)
-    dfg:to :c2 ;
+    dfg:to :c3 ;
     dfg:source dfg:discovered
 ] .
