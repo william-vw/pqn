@@ -7,7 +7,7 @@
 # test data:
 # eye test.n3 / rules.n3 --turtle ./data/data1.n3 --query query.n3 --nope
 # pilot medical:
-# eye rules.n3 --turtle ./data/pilot_medical-normative.n3 --query query.n3 --nope
+# eye rules.n3 --turtle ./data/tc/2/norm.n3 ./data/tc/2/disc.n3 --query query.n3 --nope
 
 
 # - arbitrary tests
@@ -34,9 +34,11 @@
 
 # } => { ?pt dfg:dpOnlyIn ?src } .
 
-# { ( :c :c3 dfg:normative ) dfg:determinant true }
-# => {( :c :c3 dfg:normative ) dfg:determinant true } .
+{ ( :x :d ) dfg:consistentLink true }
+=> { ( :x :d ) dfg:consistentLink true } .
 
+{ ( :z :d ) dfg:consistentLink true }
+=> { ( :z :d ) dfg:consistentLink true } .
 
 # - heuristic tests
 
@@ -52,19 +54,19 @@
 # } .
 
 # (data2.n3, data3.n3)
-{ ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } 
-# => { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } .
-=> {
-    [
-        dfg:from ?pt ;
-        dfg:to ?d ;
-        dfg:source dfg:discovered ;
-        dfg:inferred [ 
-            dfg:heuristic "inferredDecisionFromFollowingEvent" ;
-            dfg:followingEvent ?e
-        ]
-    ]
-} .
+# { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } 
+# # => { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } .
+# => {
+#     [
+#         dfg:from ?pt ;
+#         dfg:to ?d ;
+#         dfg:source dfg:discovered ;
+#         dfg:inferred [ 
+#             dfg:heuristic "inferredDecisionFromFollowingEvent" ;
+#             dfg:followingEvent ?e
+#         ]
+#     ]
+# } .
 
 # # (data3.n3)
 # { ?pt dfg:inferredDecisionPointFromDecision ?d } 

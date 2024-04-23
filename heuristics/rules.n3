@@ -1,3 +1,4 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
 @prefix list: <http://www.w3.org/2000/10/swap/list#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
@@ -56,26 +57,44 @@
     # "inf - miss_dec" log:trace ?miss_dec .
 
     # missing decision's choice branch in normative model includes a discovered event
-    ( ?miss_dec dfg:normative dfg:discovered ) dfg:inChoiceBranch ?disc_evt .
+    ( ?pt ?miss_dec dfg:normative dfg:discovered ) dfg:inChoiceBranch ?disc_evt .
     # "inf - disc_evt" log:trace ?disc_evt .
 
-    # discovered decision is determinant in normative model
-    # (note: could integrate this into dfg:inChoiceBranch)
+    ( ?pt ?disc_evt ) dfg:consistentLink true .
+
     ( ?miss_dec ?disc_evt dfg:normative ) dfg:determinant true .
 } .
 
-{ ( ?cur ?src ?in ) dfg:inChoiceBranch ?cur }
+{ ( ?start ?cur ?src ?in ) dfg:inChoiceBranch ?cur }
 <= {
-    ?cur dfg:foundIn ?in .
+    ?cur log:notEqualTo dfg:nil ; dfg:foundIn ?in .
     # "choice - found" log:trace ?cur .
+    true log:callWithCut true .
 } .
 
-{ ( ?cur ?src ?in ) dfg:inChoiceBranch ?found }
+{ ( ?start ?cur ?src ?in ) dfg:inChoiceBranch ?found }
 <= {
-    ?cur dfg:notFoundIn ?in .
+    # ?cur dfg:notFoundIn ?in .
     # "choice - searching" log:trace ?cur .
     ?l dfg:from ?cur ; dfg:to ?next ; dfg:source ?src .
-    ( ?next ?src ?in ) dfg:inChoiceBranch ?found .
+    ?next log:notEqualTo ?start . # avoid loops
+    ( ?start ?next ?src ?in ) dfg:inChoiceBranch ?found .
+} .
+
+{ ( ?pt ?disc_evt ) dfg:consistentLink true }
+<=
+{ (1 { ?l dfg:from ?disc_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered } ()) log:collectAllIn _:t } .
+
+{ ( ?pt ?disc_evt ) dfg:consistentLink true }
+<= {
+    ?l dfg:from ?disc_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
+    ( ?pt ?disc_prior dfg:normative ) dfg:inBranch true .
+} .
+
+{ ( ?pt ?disc_evt ) dfg:consistentLink true }
+<= {
+    ?l dfg:from ?disc_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
+    ( ?disc_prior ?pt dfg:normative ) dfg:inBranch true .
 } .
 
 
@@ -132,30 +151,50 @@
 
 { ?e dfg:notFoundIn ?src }
 <= { 
-    (1
-        { ?e dfg:link ?l . ?l dfg:source ?src }
-    ()) log:collectAllIn _:t .
+    (1 { ?e dfg:link ?l . ?l dfg:source ?src } ()) log:collectAllIn _:t .
     # messes up log:trace's
     # _:t log:notIncludes { ?e dfg:link ?l . ?l dfg:source ?src } 
 } .
 
-{ ( ?e ?src ) dfg:priors ?priors }
-<= { 
-    (?prior { ?l dfg:to ?e ; dfg:from ?prior ; dfg:source ?src } ?priors) 
-        log:collectAllIn _:t .
+{ ( ?pt ?miss_dec ?disc_evt ) dfg:determinant true }
+<= {
+    (?disc_prior 
+    { 
+        ?l dfg:from ?disc_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
+        ( ?disc_prior ?pt dfg:normative ) dfg:inBranch true .
+    } 
+    ?disc_priors) log:collectAllIn _:t .
+
+    ( ( ?miss_dec ) ?disc_priors ?disc_evt dfg:normative ) dfg:forAllPriorBranches true .
 } .
 
-{ ( ?from ?from ?src ) dfg:determinant true }
+
+{ ( ?cur ?cur ?src ) dfg:inBranch true }
+<= { } .
+
+{ ( ?cur ?needle ?src ) dfg:inBranch true }
+<= {
+    ?cur log:notEqualTo ?needle .
+    ?l dfg:from ?cur ; dfg:to ?next ; dfg:source ?src .
+    ( ?next ?needle ?src ) dfg:inBranch true .
+} .
+
+
+{ ( ?trueAt ?falseAt ?cur ?src ) dfg:forAllPriorBranches true }
+<= {
+    ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src .
+    ?cur list:notIn ?falseAt . # stop if in falseAt - branch (so entire search) is nok
+
+    ( ?trueAt ?falseAt ?prior ?src ) dfg:forAllPriorBranches true
+ } .
+
+# found trueAt in branch - ok
+{ ( ?trueAt ?falseAt ?cur ?src ) dfg:forAllPriorBranches true }
 <= { 
-    # "determ" log:trace ?from .
+    ?cur list:in ?trueAt .
     true log:callWithCut true .
 } .
 
-{ ( ?from ?cur ?src ) dfg:determinant true }
-<= { 
-    ( ?cur ?src ) dfg:priors ?priors .
-    ?priors list:length 1 .
-
-    ?prior list:in ?priors .
-    ( ?from ?prior ?src ) dfg:determinant true
- } .
+# branch is done - ok
+{ ( ?trueAt ?falseAt ?cur ?src ) dfg:forAllPriorBranches true }
+<= { (1 { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src } ()) log:collectAllIn _:t } .

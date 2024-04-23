@@ -4,21 +4,28 @@
 @prefix dfg: <http://rdf.org/dfg#> .
 @prefix : <http://example.org/> .
 
-{ ( ?e ?src ) dfg:priors ?priors }
-<= { 
-    (?prior { ?l dfg:to ?e ; dfg:from ?prior ; dfg:source ?src } ?priors) 
-        log:collectAllIn _:t .
+{ ( ?pt ?disc_evt ) dfg:consistentLink true }
+<=
+{ (1 { ?l dfg:from ?disc_evt_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered } ()) log:collectAllIn _:t } .
+
+{ ( ?pt ?disc_evt ) dfg:consistentLink true }
+<= {
+    ?l dfg:from ?disc_evt_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
+    ( ?pt ?disc_evt_prior dfg:normative ) dfg:hasFollowing true .
 } .
 
-{ ( ?from ?from ?src ) dfg:determinant true }
+{ ( ?pt ?disc_evt ) dfg:consistentLink true }
+<= {
+    ?l dfg:from ?disc_evt_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
+    ( ?disc_evt_prior ?pt dfg:normative ) dfg:hasFollowing true .
+} .
+
+{ ( ?cur ?cur ?src ) dfg:hasFollowing true }
 <= { } .
 
-{ ( ?from ?cur ?src ) dfg:determinant true }
-<= { 
-    ( ?cur ?src ) dfg:priors ?priors .
-    # "priors" log:trace ?priors .
-    ?priors list:length 1 .
-
-    ?prior list:in ?priors .
-    ( ?from ?prior ?src ) dfg:determinant true
- } .
+{ ( ?cur ?needle ?src ) dfg:hasFollowing true }
+<= {
+    ?cur log:notEqualTo ?needle .
+    ?l dfg:from ?cur ; dfg:to ?next ; dfg:source ?src .
+    ( ?next ?needle ?src ) dfg:hasFollowing true .
+} .

@@ -1,0 +1,16 @@
+{
+ ('In Progress - Assessor Reviewing', 'On Hold (Pending) - AMRB'): 1,
+ ('In Progress - Assessor Reviewing', 'Duplicate'): 1,
+ ('In Progress - Assessor Reviewing', 'Created in error'): 1,
+ ('In Progress - Assessor Reviewing', 'File retrieval'): 1,
+ ('In Progress - Assessor Reviewing', 'On Hold (Pending) - Administrative issue'): 1,
+ ('In Progress - Assessor Reviewing', 'withdrawn by applicant'): 1,
+ ('In Progress - Assessor Reviewing', 'Request additional docs?'): 1,
+ ('In Progress - Assessor Reviewing', 'Request additional tests?'): 1,
+ ('In Progress - Assessor Reviewing', 'Completed - Assessment Complete'): 1,
+ ('Completed - Assessment Complete', 'In Progress - Letter - Unfit'): 1,
+ ('Completed - Assessment Complete', 'In Progress - Letter - Defer'): 1,
+ ('Completed - Assessment Complete', 'In Progress - Letter - Fit'): 1,
+ ('In Progress - Letter - Defer', 'On Hold (Pending) - Await Applicant'): 1,
+ ('On Hold (Pending) - Await Applicant', 'End'): 1,
+ }
