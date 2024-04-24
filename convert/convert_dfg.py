@@ -1,5 +1,5 @@
 from convert_base import str_to_uri, RdfRepresent, QuoteOptions
-from rdflib import Namespace, Literal, Graph, BNode, RDF, RDFS
+from rdflib import Namespace, Literal, Graph, BNode, RDF, RDFS, URIRef
 import pandas as pd
 from enum import Enum
 import time
@@ -33,10 +33,7 @@ def convert_dfg_rdf(dfg, save_to, ns, source):
     g = Graph()
     
     # use to determine if activity is endpoint or not
-    df = pd.DataFrame(
-        [ [ src, tgt, freq ] for ((src, tgt), freq) in dfg.items() ],
-        columns=[ 'src', 'tgt', 'freq' ]
-    )
+    srcs = set( src for ((src, _), _) in dfg.items() )
     
     for ((src, tgt), freq) in dfg.items():
         src_activ = str_to_uri(src, ns, QuoteOptions.REMOVE_SPECIAL)
@@ -44,7 +41,7 @@ def convert_dfg_rdf(dfg, save_to, ns, source):
         
         add_link(src_activ, tgt_activ, source, g, freq=freq)
         
-        if tgt not in df['src']:
+        if tgt not in srcs:
             add_link(tgt_activ, dfg_terms['nil'], source, g)
     
     end_conv = time.time_ns()
@@ -78,3 +75,28 @@ def add_link(prior_activ, next_activ, source, g, freq=False):
     g.add((link, dfg_terms['source'], dfg_terms[source]))
     if freq:
         g.add((link, dfg_terms['freq'], Literal(freq)))
+        
+        
+def convert_rdf_dfg(rdf_path, save_to):
+    start_conv = time.time_ns()
+    
+    g = Graph()
+    g.parse(rdf_path)
+    
+    dfg = {}
+    for l, _, _ in g.triples((None, dfg_terms['from'], None)):
+        src = local_name(next(g.triples((l, dfg_terms['from'], None)))[2])
+        tgt = local_name(next(g.triples((l, dfg_terms['to'], None)))[2])
+        # freq = next(g.triples((l, dfg_terms['freq'], None)))            
+        dfg[ ( src, tgt ) ] = 1
+                
+    end_conv = time.time_ns()
+    print("conversion time (ms):", (end_conv-start_conv)/1000000)
+    
+    return dfg
+    
+def local_name(uriref):
+    uristr = uriref + ""
+    idx = uristr.find("#") if "#" in uristr else uristr.rfind("/")
+    
+    return uristr[idx+1:]
