@@ -34,11 +34,21 @@
 
 # } => { ?pt dfg:dpOnlyIn ?src } .
 
-{ ( :x :d ) dfg:consistentLink true }
-=> { ( :x :d ) dfg:consistentLink true } .
+# { ( :x :d ) dfg:consistentLink true }
+# => { ( :x :d ) dfg:consistentLink true } .
 
-{ ( :z :d ) dfg:consistentLink true }
-=> { ( :z :d ) dfg:consistentLink true } .
+# { ( :z :d ) dfg:consistentLink true }
+# => { ( :z :d ) dfg:consistentLink true } .
+
+# { ( :b dfg:decisionPoint dfg:normative () ) dfg:collectAncestors ?anc } 
+# => { ( :b dfg:decisionPoint dfg:normative () ) dfg:collectAncestors ?anc } .
+
+# { ( ( :b ) ( :b ) :e dfg:normative ) dfg:forAllPriorBranches true }
+# => { ( ( :b ) ( :b ) :e dfg:normative ) dfg:forAllPriorBranches true } .
+
+{ ( :x :b :e ) dfg:determinant true }
+=> { ( :x :b :e ) dfg:determinant true } .
+
 
 # - heuristic tests
 

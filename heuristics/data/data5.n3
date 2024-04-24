@@ -5,12 +5,39 @@
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix dfg: <http://rdf.org/dfg#> .
 
-# normative: x = decision point
-# discovered event: d
+[
+    dfg:from :z ;
+    dfg:to :y ;
+    dfg:source dfg:normative 
+] .
+
+[
+    dfg:from :z ;
+    dfg:to :m ;
+    dfg:source dfg:normative 
+] .
 
 [
     dfg:from :y ;
     dfg:to :x ;
+    dfg:source dfg:normative 
+] .
+
+[
+    dfg:from :y ;
+    dfg:to :k ;
+    dfg:source dfg:normative 
+] .
+
+[
+    dfg:from :k ;
+    dfg:to :c ;
+    dfg:source dfg:normative 
+] .
+
+[
+    dfg:from :k ;
+    dfg:to :l ;
     dfg:source dfg:normative 
 ] .
 
@@ -21,7 +48,7 @@
 ] .
 
 [
-    dfg:from :a ;
+    dfg:from :x ;
     dfg:to :b ;
     dfg:source dfg:normative 
 ] .
@@ -39,34 +66,26 @@
 ] .
 
 [
-    dfg:from :y ;
-    dfg:to :z ;
-    dfg:source dfg:normative 
-] .
-
-[
-    dfg:from :z ;
-    dfg:to :d ;
-    dfg:source dfg:normative 
-] .
-
-[
-    dfg:from :z ;
-    dfg:to :l ;
+    dfg:from :c ;
+    dfg:to :e ;
     dfg:source dfg:normative 
 ] .
 
 
-# consistent with x as DP:
+# TODO more (negative) examples necessary here
+# e.g., prior links that converge back before miss_dec
+# e.g., multiple discovered links with e_p before dp
+
+# ok
 [
-    dfg:from :b ;
-    dfg:to :d ;
+    dfg:from :x ;
+    dfg:to :e ;
     dfg:source dfg:discovered 
 ] .
 
-# consistent with x, z as DP:
+# # nok
 # [
 #     dfg:from :y ;
-#     dfg:to :d ;
+#     dfg:to :e ;
 #     dfg:source dfg:discovered 
 # ] .

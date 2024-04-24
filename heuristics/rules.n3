@@ -88,13 +88,13 @@
 { ( ?pt ?disc_evt ) dfg:consistentLink true }
 <= {
     ?l dfg:from ?disc_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
-    ( ?pt ?disc_prior dfg:normative ) dfg:inBranch true .
+    ( ?pt ?disc_prior dfg:normative ) dfg:inSomeBranch true .
 } .
 
 { ( ?pt ?disc_evt ) dfg:consistentLink true }
 <= {
     ?l dfg:from ?disc_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
-    ( ?disc_prior ?pt dfg:normative ) dfg:inBranch true .
+    ( ?disc_prior ?pt dfg:normative ) dfg:inSomeBranch true .
 } .
 
 
@@ -158,43 +158,71 @@
 
 { ( ?pt ?miss_dec ?disc_evt ) dfg:determinant true }
 <= {
-    (?disc_prior 
-    { 
-        ?l dfg:from ?disc_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
-        ( ?disc_prior ?pt dfg:normative ) dfg:inBranch true .
-    } 
-    ?disc_priors) log:collectAllIn _:t .
+    (?disc_prior
+        { 
+            ?l dfg:from ?disc_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
+            ( ?disc_prior ?pt dfg:normative ) dfg:inSomeBranch true .
+            "determinant (disc_prior)" log:trace ( ?disc_prior ?pt ) .
+        } 
+    ?disc_priors ) log:collectAllIn _:t .
 
-    ( ( ?miss_dec ) ?disc_priors ?disc_evt dfg:normative ) dfg:forAllPriorBranches true .
+    "determinant (trueAt)" log:trace ( ?miss_dec ) .
+    "determinant (falseAt)" log:trace ?disc_priors .
+
+    ( ?disc_evt ( ?miss_dec ) ?disc_priors dfg:normative ) dfg:forAllPriorBranches true .
 } .
 
 
-{ ( ?cur ?cur ?src ) dfg:inBranch true }
+{ ( ?cur ?cur ?src ) dfg:inSomeBranch true }
 <= { } .
 
-{ ( ?cur ?needle ?src ) dfg:inBranch true }
+{ ( ?cur ?needle ?src ) dfg:inSomeBranch true }
 <= {
     ?cur log:notEqualTo ?needle .
     ?l dfg:from ?cur ; dfg:to ?next ; dfg:source ?src .
-    ( ?next ?needle ?src ) dfg:inBranch true .
+    ( ?next ?needle ?src ) dfg:inSomeBranch true .
 } .
 
 
-{ ( ?trueAt ?falseAt ?cur ?src ) dfg:forAllPriorBranches true }
-<= {
-    ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src .
-    ?cur list:notIn ?falseAt . # stop if in falseAt - branch (so entire search) is nok
-
-    ( ?trueAt ?falseAt ?prior ?src ) dfg:forAllPriorBranches true
- } .
-
-# found trueAt in branch - ok
-{ ( ?trueAt ?falseAt ?cur ?src ) dfg:forAllPriorBranches true }
+{ ( ?cur ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true }
 <= { 
-    ?cur list:in ?trueAt .
+    ?cur list:in ?trueAt . 
+    "forAllPriorBranches (0)" log:trace ( ?cur ?trueAt ) .
     true log:callWithCut true .
 } .
 
-# branch is done - ok
-{ ( ?trueAt ?falseAt ?cur ?src ) dfg:forAllPriorBranches true }
-<= { (1 { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src } ()) log:collectAllIn _:t } .
+{ ( ?cur ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true }
+<= { 
+    ?cur list:notIn ?falseAt .
+    ( 
+        { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src }
+        { 
+            "forAllPriorBranches (1)" log:trace ( ?prior "=>" ?cur ) .
+            ( ?prior ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true 
+        }
+    ) log:forAllIn _:t .
+ } .
+ 
+
+#  { ( ?cur ?pred ?src ?coll ) dfg:collectAncestors ?anc } 
+#  <= { 
+#     ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src .
+#     ( ?prior ?pred ?src ?coll ) dfg:collectAncestor ?coll2 .
+
+#     ( ?prior ?pred ?src ?coll2 ) dfg:collectAncestors ?anc .
+# } .
+
+# { ( ?cur ?pred ?src ?coll ) dfg:collectAncestors ?coll } 
+# <= {
+#     _:t log:notIncludes { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src } .
+# } .
+
+# { ( ?node ?pred ?src ?coll ) dfg:collectAncestor ?coll2 }
+#   <= { 
+#     ( ?node ?src ) ?pred true .
+#     ( ?coll ( ?node ) ) list:append ?coll2 .
+#     true log:callWithCut true .
+# } .
+
+# { ( ?node ?pred ?src ?coll ) dfg:collectAncestor ?coll }
+# <= {} .
