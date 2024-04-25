@@ -62,7 +62,7 @@
 
     ( ?pt ?disc_evt ) dfg:consistentLink true .
 
-    ( ?miss_dec ?disc_evt dfg:normative ) dfg:determinant true .
+    ( ?pt ?miss_dec ?disc_evt ) dfg:determinant true .
 } .
 
 { ( ?start ?cur ?src ?in ) dfg:inChoiceBranch ?cur }
@@ -88,28 +88,28 @@
 { ( ?pt ?disc_evt ) dfg:consistentLink true }
 <= {
     ?l dfg:from ?disc_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
-    ( ?pt ?disc_prior dfg:normative ) dfg:inSomeBranch true .
+    ( ?pt ( ?disc_prior ) dfg:normative ) dfg:inSomeBranch true .
 } .
 
 { ( ?pt ?disc_evt ) dfg:consistentLink true }
 <= {
     ?l dfg:from ?disc_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
-    ( ?disc_prior ?pt dfg:normative ) dfg:inSomeBranch true .
+    ( ?disc_prior ( ?pt ) dfg:normative ) dfg:inSomeBranch true .
 } .
 
 
 
-# - infer decision points based on decisions
-# (data3.n3)
-{ ?pt dfg:inferredDecisionPointFromDecision ?d } 
-<= {
-    ( ?pt dfg:normative ) dfg:decisionPoint true .
-    ?pt dfg:inDiscovered false .
+# # - infer decision points based on decisions
+# # (data3.n3)
+# { ?pt dfg:inferredDecisionPointFromDecision ?d } 
+# <= {
+#     ( ?pt dfg:normative ) dfg:decisionPoint true .
+#     ?pt dfg:inDiscovered false .
 
-    ?l dfg:from ?pt ; dfg:to ?d ; dfg:source dfg:normative .
-    ?d dfg:inDiscovered true .
-    ( ?pt ?d dfg:normative ) dfg:determinant true .
-} .
+#     ?l dfg:from ?pt ; dfg:to ?d ; dfg:source dfg:normative .
+#     ?d dfg:inDiscovered true .
+#     ( ?pt ?d ) dfg:determinant true .
+# } .
 
 
 # helpers
@@ -158,71 +158,68 @@
 
 { ( ?pt ?miss_dec ?disc_evt ) dfg:determinant true }
 <= {
-    (?disc_prior
-        { 
-            ?l dfg:from ?disc_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
-            ( ?disc_prior ?pt dfg:normative ) dfg:inSomeBranch true .
-            "determinant (disc_prior)" log:trace ( ?disc_prior ?pt ) .
-        } 
-    ?disc_priors ) log:collectAllIn _:t .
+    "determinant (0)" log:trace ( ?pt ?miss_dec ?disc_evt ) .
 
-    "determinant (trueAt)" log:trace ( ?miss_dec ) .
-    "determinant (falseAt)" log:trace ?disc_priors .
+    ( ?pt ?disc_evt ) dfg:cutoffs ?cutoffs .
+    "determinant (cutoffs)" log:trace ?cutoffs .
 
-    ( ?disc_evt ( ?miss_dec ) ?disc_priors dfg:normative ) dfg:forAllPriorBranches true .
+    ( ?disc_evt ( ?miss_dec ) ?cutoffs dfg:normative ) dfg:determinantPriors true .
 } .
 
-
-{ ( ?cur ?cur ?src ) dfg:inSomeBranch true }
-<= { } .
-
-{ ( ?cur ?needle ?src ) dfg:inSomeBranch true }
+# cutoff is prior event in discovered model
+# (cutoff states that part in between cutoff & event happened)
+{ ( ?pt ?disc_evt ) dfg:cutoffs ?cutoffs }
 <= {
-    ?cur log:notEqualTo ?needle .
-    ?l dfg:from ?cur ; dfg:to ?next ; dfg:source ?src .
-    ( ?next ?needle ?src ) dfg:inSomeBranch true .
-} .
+    (?cutoff
+        { 
+            ?l dfg:from ?cutoff ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
+            ( ?cutoff ( ?pt ) dfg:normative ) dfg:inSomeBranch true .
+            "cutoff" log:trace ( ?cutoff ?pt ) .
+        } 
+    ?cutoffs ) log:collectAllIn _:t .
+}  .
 
-
-{ ( ?cur ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true }
+{ ( ?cur ?oneOf ?src ) dfg:inSomeBranch true }
 <= { 
-    ?cur list:in ?trueAt . 
-    "forAllPriorBranches (0)" log:trace ( ?cur ?trueAt ) .
+    ?cur list:in ?oneOf .
     true log:callWithCut true .
 } .
 
-{ ( ?cur ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true }
+{ ( ?cur ?oneOf ?src ) dfg:inSomeBranch true }
+<= {
+    ?l dfg:from ?cur ; dfg:to ?next ; dfg:source ?src .
+    ( ?next ?oneOf ?src ) dfg:inSomeBranch true .
+} .
+
+# event is determinant if only 1 way from missing decision to event
+
+{ ( ?subject ?subject ?cutoffs ) dfg:determinantPriors true }
 <= { 
-    ?cur list:notIn ?falseAt .
+    # good branch: starts at missing decision
+    "determinantPriors - good branch (1)" log:trace ?subject .
+    true log:callWithCut true .
+} .
+
+{ ( ?cur ?subject ?cutoffs ) dfg:determinantPriors true }
+<= { 
+    "determinantPriors (0)" log:trace ( ?cur ?subject ?cutoffs ) .
+    # bad branch: starts at cutoff, so not ruled out by discovered model
+    ?cur list:notIn ?cutoffs .
+
+    # bad branch: cutoff is in transitive closure but not after decision point
+    # otherwise, branch would be ruled out by discovered model (good branch)
+    (
+        { ( ?cur ?cutoffs ) dfg:inSomeBranch true }
+        { ( ?cur dfg:normative ) dfg:decisionPoint true }
+    ) log:forAllIn _:t .
+
+    # all prior branches must adhere to conditions
+    # (so, also false if there are no more branches)
+    ?x dfg:from ?y ; dfg:to ?cur ; dfg:source dfg:normative . # (at least one)
     ( 
-        { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src }
+        { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source dfg:normative }
         { 
-            "forAllPriorBranches (1)" log:trace ( ?prior "=>" ?cur ) .
-            ( ?prior ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true 
+            ( ?prior ?subject ?cutoffs ) dfg:determinantPriors true 
         }
     ) log:forAllIn _:t .
  } .
- 
-
-#  { ( ?cur ?pred ?src ?coll ) dfg:collectAncestors ?anc } 
-#  <= { 
-#     ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src .
-#     ( ?prior ?pred ?src ?coll ) dfg:collectAncestor ?coll2 .
-
-#     ( ?prior ?pred ?src ?coll2 ) dfg:collectAncestors ?anc .
-# } .
-
-# { ( ?cur ?pred ?src ?coll ) dfg:collectAncestors ?coll } 
-# <= {
-#     _:t log:notIncludes { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src } .
-# } .
-
-# { ( ?node ?pred ?src ?coll ) dfg:collectAncestor ?coll2 }
-#   <= { 
-#     ( ?node ?src ) ?pred true .
-#     ( ?coll ( ?node ) ) list:append ?coll2 .
-#     true log:callWithCut true .
-# } .
-
-# { ( ?node ?pred ?src ?coll ) dfg:collectAncestor ?coll }
-# <= {} .

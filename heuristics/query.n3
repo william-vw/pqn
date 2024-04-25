@@ -3,14 +3,14 @@
 @prefix dfg: <http://rdf.org/dfg#> .
 @prefix : <http://example.org/> .
 
-# - run tests
+# > run tests
 # test data:
 # eye test.n3 / rules.n3 --turtle ./data/data1.n3 --query query.n3 --nope
 # pilot medical:
 # eye rules.n3 --turtle ./data/tc/2/norm.n3 ./data/tc/2/disc.n3 --query query.n3 --nope
 
 
-# - arbitrary tests
+# > component tests
 
 # { 
 #     ?pt dfg:inNormative true .
@@ -46,11 +46,24 @@
 # { ( ( :b ) ( :b ) :e dfg:normative ) dfg:forAllPriorBranches true }
 # => { ( ( :b ) ( :b ) :e dfg:normative ) dfg:forAllPriorBranches true } .
 
+
+# - determinant
+
 { ( :x :b :e ) dfg:determinant true }
 => { ( :x :b :e ) dfg:determinant true } .
 
+# -- test A
+# eye rules.n3 --turtle ./data/tests/determA.n3 ./data/tests/determA-pos1.n3 --query query.n3 --nope
+# eye rules.n3 --turtle ./data/tests/determA.n3 ./data/tests/determA-neg1.n3 --query query.n3 --nope
 
-# - heuristic tests
+# -- test B
+# eye rules.n3 --turtle ./data/tests/determB.n3 --query query.n3 --nope
+
+# -- test C
+# eye rules.n3 --turtle ./data/tests/determC.n3 --query query.n3 --nope
+
+
+# > heuristic tests
 
 # (data1.n3)
 # { ( ?from ?to ) dfg:inferredEventFromKnownEvent ?known_e }
