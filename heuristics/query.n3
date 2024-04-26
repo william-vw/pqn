@@ -35,8 +35,11 @@
 
 # - determinant
 
-# { ( :x :b :e ) dfg:determinant true }
-# => { ( :x :b :e ) dfg:determinant true } .
+# { ( :e :b ) dfg:determinant true }
+# => { ( :e :b ) dfg:determinant true } .
+
+{ ( :c :b ) dfg:determinant true }
+=> { ( :c :b ) dfg:determinant true } .
 
 # -- test A
 # eye rules.n3 --turtle ./data/tests/determ/determA.n3 ./data/tests/determ/determA-pos1.n3 --query query.n3 --nope
@@ -56,6 +59,24 @@
 
 # > heuristic tests
 
+# TODO determB-neg1 - are inferences wrong? 
+# (:c is a valid option for both :k and :b)
+
+# (consistLnk, determinant determ tests)
+# { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } 
+# # => { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } .
+# => {
+#     [
+#         dfg:from ?pt ;
+#         dfg:to ?d ;
+#         dfg:source dfg:discovered ;
+#         dfg:inferred [ 
+#             dfg:heuristic "inferredDecisionFromFollowingEvent" ;
+#             dfg:followingEvent ?e
+#         ]
+#     ]
+# } .
+
 # (heur1.n3)
 # { ( ?from ?to ) dfg:inferredEventFromKnownEvent ?known_e }
 # => {
@@ -66,24 +87,6 @@
 #         dfg:inferred "inferredEventFromKnownEvent"
 #     ]
 # } .
-
-# TODO determB-neg1 - are inferences wrong? 
-# (:c is a valid option for both :k and :b)
-
-# (consistLnk, determinant determ tests)
-{ ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } 
-# => { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } .
-=> {
-    [
-        dfg:from ?pt ;
-        dfg:to ?d ;
-        dfg:source dfg:discovered ;
-        dfg:inferred [ 
-            dfg:heuristic "inferredDecisionFromFollowingEvent" ;
-            dfg:followingEvent ?e
-        ]
-    ]
-} .
 
 # { ?pt dfg:inferredDecisionPointFromDecision ?d } 
 # # => { ?pt dfg:inferredDecisionPointFromDecision ?d } .

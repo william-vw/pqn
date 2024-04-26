@@ -6,47 +6,11 @@
 @prefix : <http://example.org/> .
 
 
-# - infer missing events after a known event up until next decision point OR end
-# (relies on stronger assumptions; likely not a good idea)
-# (data1.n3)
-{ ( ?from ?to ) dfg:inferredEventFromKnownEvent ?known_e }
-<= {
-    ?known_e dfg:inNormative true ; dfg:inDiscovered true .
-    ( ?known_e () ) dfg:collectBranchLinks ?links .
-    ( ?from ?to ) list:in ?links .
-    _:t log:notIncludes { ?l dfg:from ?from ; dfg:to ?to ; dfg:source dfg:discovered }
-} .
-
-{ ( ?from ?cur ) dfg:collectBranchLinks ?links }
-<= {
-    ?l dfg:from ?from ; dfg:to ?to ; dfg:source dfg:normative .
-    ( ?to dfg:normative ) dfg:decisionPoint true .
-    ( ?cur (( ?from ?to )) ) list:append ?links .
-    # "collect1" log:trace ( ?to ?links ).
-    true log:callWithCut true .
-} .
-
-{ ( ?from ?cur ) dfg:collectBranchLinks ?cur }
-<= {
-    ?l dfg:from ?from ; dfg:to dfg:nil ; dfg:source dfg:normative .
-    # "collect2" log:trace ( ?to ?cur ) .
-    true log:callWithCut true .
-} .
-
-{ ( ?from ?cur ) dfg:collectBranchLinks ?links }
-<= {
-    ?l dfg:from ?from ; dfg:to ?to ; dfg:source dfg:normative .
-    ( ?cur (( ?from ?to )) ) list:append ?cur2 .
-    # "collect3" log:trace ( ?to ?cur2 ) .
-    ( ?to ?cur2 ) dfg:collectBranchLinks ?links .
-} .
-
-
-
 # - infer decisions based on their downstream events
-# (data2.n3, data3.n3)
+
 { ( ?pt ?miss_dec ) dfg:inferredDecisionFromFollowingEvent ?disc_evt } 
 <= {
+    # normative DP
     ( ?pt dfg:normative ) dfg:decisionPoint true .
     # "inf - pt" log:trace ?pt .
 
@@ -60,9 +24,19 @@
     ( ?miss_dec (dfg:inDiscovered true) dfg:normative ) dfg:withPredInBranch ?disc_evt .
     "inf - disc_evt" log:trace ?disc_evt .
 
+    # missing decision is a proper determinant of DP
+    # TODO expand definition of "evidence" here
+    # e.g., if e is determinant of b, and x -> e, then also x -> b
+    # separate inference to determine cutoffs
+    # simply B->A rules - follow the transitive closure (but, we don't infer it!)
+    # ( ?miss_dec ?pt ) dfg:determinant true .
+
+    # linked discovered event(s) are consistent with DP
+    # TODO should we also do transitive closure here? ...
     ( ?pt ?disc_evt ) dfg:consistentLink true .
 
-    ( ?pt ?miss_dec ?disc_evt ) dfg:determinant true .
+    # discovered event is a proper determinant of missing decision
+    ( ?disc_evt ?miss_dec ) dfg:determinant true .
 } .
 
 { ( ?pt ?disc_evt ) dfg:consistentLink true }
@@ -89,24 +63,24 @@
     "consistentLink (3)" log:trace (?disc_prior ?pt) .
 } .
 
-{ ( ?pt ?miss_dec ?disc_evt ) dfg:determinant true }
+{ ( ?determ ?subject ) dfg:determinant true }
 <= {
-    "determinant (0)" log:trace ( ?pt ?miss_dec ?disc_evt ) .
+    "determinant (0)" log:trace ( ?determ ?subject ) .
 
-    ( ?pt ?disc_evt ) dfg:cutoffs ?cutoffs .
+    ( ?determ ?subject ) dfg:cutoffs ?cutoffs .
     "determinant (cutoffs)" log:trace ?cutoffs .
 
-    ( ?disc_evt ?miss_dec ?cutoffs ) dfg:determinantPriors true .
+    ( ?determ ?subject ?cutoffs ) dfg:determinantPriors true .
 } .
 
 # cutoff is prior event in discovered model
 # (cutoff states that part in between cutoff & event happened)
-{ ( ?pt ?disc_evt ) dfg:cutoffs ?cutoffs }
+{ ( ?determ ?subject ) dfg:cutoffs ?cutoffs }
 <= {
     (?cutoff
         { 
-            ?l dfg:from ?cutoff ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
-            ( ?cutoff ( ?pt ) dfg:normative ) dfg:oneOfIsInBranch true .
+            ?l dfg:from ?cutoff ; dfg:to ?determ ; dfg:source dfg:discovered .
+            ( ?cutoff ( ?subject ) dfg:normative ) dfg:oneOfIsInBranch true .
         } 
     ?cutoffs ) log:collectAllIn _:t .
 }  .
@@ -150,20 +124,6 @@
         }
     ) log:forAllIn _:t .
  } .
-
-
-
-# # - infer decision points based on decisions
-# # (data3.n3)
-# { ?pt dfg:inferredDecisionPointFromDecision ?d } 
-# <= {
-#     ( ?pt dfg:normative ) dfg:decisionPoint true .
-#     ?pt dfg:inDiscovered false .
-
-#     ?l dfg:from ?pt ; dfg:to ?d ; dfg:source dfg:normative .
-#     ?d dfg:inDiscovered true .
-#     ( ?pt ?d ) dfg:determinant true .
-# } .
 
 
 # helpers
