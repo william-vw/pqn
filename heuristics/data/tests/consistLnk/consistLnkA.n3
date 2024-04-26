@@ -11,14 +11,6 @@
     dfg:source dfg:normative
 ] .
 
-# means that "c2" cannot be a determinant for "c"
-# (since it also occurs in choice branch of "a")
-# [
-#     dfg:from :a ;
-#     dfg:to :c2 ;
-#     dfg:source dfg:normative
-# ] .
-
 [
     dfg:from :x ;
     dfg:to :c ;
@@ -35,11 +27,4 @@
     dfg:from :c2 ;
     dfg:to :c3 ;
     dfg:source dfg:normative
-] .
-
-[
-    # dfg:from :x ; # (dp also in discovered model)
-    dfg:from :k ; # (dp not in discovered model)
-    dfg:to :c3 ;
-    dfg:source dfg:discovered
 ] .

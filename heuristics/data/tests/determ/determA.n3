@@ -5,6 +5,8 @@
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix dfg: <http://rdf.org/dfg#> .
 
+# multiple prior normative links, but all originate at missing decision
+
 [
     dfg:from :y ;
     dfg:to :x ;
