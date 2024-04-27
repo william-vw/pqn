@@ -1,21 +1,20 @@
 # Process Querying in Notation3 (PQN)
 
-## Improved Querying Times
+## Live Demo
 
-Due to significant optimizations of the PQN implementation, we can report much faster query execution times (on the full sepsis log) than currently reported in the PODS4H submission:
+A live demo, using the sepsis event log [1] and a query with multiple constraints, can be found here: [http://editor.notation3.org/pqn/s/z6duWaSv](http://editor.notation3.org/pqn/s/z6duWaSv).
 
-| Query                                       | Execution Time (ms) |
-|---------------------------------------------|---------------------|
-| pq:activitiesCoOccurOrNoneOccurs (q23.n3)   | 43                  |
-| pq:activitiesDoNotCoOccur (q24.n3)          | 49                  |
-| pq:allActivitiesOccurAtLeastNTimes (q5.n3)  | 26                  |
-| pq:activityDoesNotOccur (q22.n3)            | 52                  |
-| pq:activityOccursAtLeastNTimes (q2.n3)      | 22                  |
-| pq:allActivitiesOccur (q3.n3)               | 41                  |
+Note that you can try out any other XES event log as well.
 
-All times are averaged over 10 runs. All query execution times for all event logs can be found in the [`results/`](results/) folder.
+(Note - the online editor is currently rather slow due to the web platform and reasoner version utilized. See instructions below on how to run queries a lot faster on your local machine.)
 
-By further optimizing the loading of the RDF log, we can also report `121ms`, `244ms`, and `507ms` loading times for 25%, 50%, and 100% of the sepsis event log [1], respectively.
+## Performance Tests
+
+The [logs](logs) folder contains subsets (25%, 50%, 100%) of the sepsis event log [1]. 
+The [queries/constraints](queries/constraints) folder contains test queries for individual PQN constraints on the sepsis log.
+We ran performance tests for these test queries on the different log subsets.
+The query execution times for all event logs can be found in the [`results/`](results/) folder.
+All times are averaged over 10 runs. 
 
 We refer to instructions below to reproduce our experiments.
 
