@@ -1,6 +1,0 @@
-discovered: x -> e
-
-normative implications (bertoli et al.), i.e., if link a->b, then implic b=>a
-e => c,
-c => k, c => b - cannot infer both of these (they use SAT, but still, can only follow 1??)
-x => y, y => z

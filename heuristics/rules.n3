@@ -25,10 +25,10 @@
     "inf - disc_evt" log:trace ?disc_evt .
 
     # missing decision is a proper determinant of DP
-    # TODO expand definition of "evidence" here
+    # TODO expand generalize "evidence" here
     # e.g., if e is determinant of b, and x -> e, then also x -> b
     # separate inference to determine cutoffs
-    # simply B->A rules - follow the transitive closure (but, we don't infer it!)
+    # simply B->A rules - follow the transitive closure
     # ( ?miss_dec ?pt ) dfg:determinant true .
 
     # linked discovered event(s) are consistent with DP

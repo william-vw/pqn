@@ -8,6 +8,8 @@
 # eye test.n3 / rules.n3 --turtle ./data/data1.n3 --query query.n3 --nope
 # pilot medical:
 # eye rules.n3 --turtle ./data/tc/2/norm.n3 ./data/tc/2/disc.n3 --query query.n3 --nope
+# implic:
+# eye implic.n3 --turtle ./data/tests/determ/determB.n3 ./data/tests/determ/determB-pos1.n3 --pass-only-new --nope > ./data/out/implic-determB-pos1.n3
 
 
 # > miscellaneous tests
@@ -38,8 +40,8 @@
 # { ( :e :b ) dfg:determinant true }
 # => { ( :e :b ) dfg:determinant true } .
 
-{ ( :c :b ) dfg:determinant true }
-=> { ( :c :b ) dfg:determinant true } .
+# { ( :c :b ) dfg:determinant true }
+# => { ( :c :b ) dfg:determinant true } .
 
 # -- test A
 # eye rules.n3 --turtle ./data/tests/determ/determA.n3 ./data/tests/determ/determA-pos1.n3 --query query.n3 --nope
@@ -62,7 +64,7 @@
 # TODO determB-neg1 - are inferences wrong? 
 # (:c is a valid option for both :k and :b)
 
-# (consistLnk, determinant determ tests)
+# # (consistLnk, determinant determ tests)
 # { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } 
 # # => { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } .
 # => {
