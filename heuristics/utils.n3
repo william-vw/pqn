@@ -1,0 +1,57 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+@prefix : <http://example.org/> .
+
+
+{ ( ?cur ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true }
+<= { 
+    ?cur list:in ?trueAt . 
+    "forAllPriorBranches (0)" log:trace ( ?cur ?trueAt ) .
+    true log:callWithCut true .
+} .
+
+{ ( ?cur ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true }
+<= { 
+    ?cur list:notIn ?falseAt .
+    # at least one exists here
+    ?x dfg:from ?y ; dfg:to ?cur ; dfg:source ?src .
+    ( 
+        { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src }
+        { 
+            "forAllPriorBranches (1)" log:trace ( ?prior "=>" ?cur ) .
+            ( ?prior ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true 
+        }
+    ) log:forAllIn _:t .
+ } .
+ 
+{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:collectAncestors ?coll } 
+<= {
+   ?cur list:in ?stop .
+   true log:callWithCut true .
+} .
+
+{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:collectAncestors ?coll } 
+<= {
+    _:t log:notIncludes { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src } .
+} .
+
+{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:collectAncestors ?anc } 
+ <= { 
+    ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src .
+    ( ?prior ( ?pred ?value ) ?src ?coll ) dfg:collectAncestor ?coll2 .
+
+    ( ?prior ( ?pred ?value ) ?stop ?src ?coll2 ) dfg:collectAncestors ?anc .
+} .
+
+{ ( ?node ( ?pred ?value ) ?src ?coll ) dfg:collectAncestor ?coll2 }
+  <= { 
+    ( ?node ?src ) ?pred ?value .
+    ( ?coll ( ?node ) ) list:append ?coll2 .
+    true log:callWithCut true .
+} .
+
+{ ( ?node ( ?pred ?value ) ?src ?coll ) dfg:collectAncestor ?coll }
+<= {} .

@@ -1,0 +1,102 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+@prefix : <http://example.org/> .
+
+# > run tests
+# test data:
+# eye test.n3 / rules.n3 --turtle ./data/data1.n3 --query query.n3 --nope
+# pilot medical:
+# eye rules.n3 --turtle ./data/tc/2/norm.n3 ./data/tc/2/disc.n3 --query query.n3 --nope
+# implic:
+# eye implic.n3 --turtle ./data/tests/determ/determB.n3 ./data/tests/determ/determB-pos1.n3 --pass-only-new --nope > ./data/out/implic-determB-pos1.n3
+
+
+# > miscellaneous tests
+
+# { 
+#     ?pt dfg:inNormative true .
+#     ( ?pt dfg:normative ) dfg:decisionPoint true .
+
+# } => { ?pt :found true } .
+
+# { 
+#     ( ?pt dfg:normative ) dfg:decisionPoint true .
+#     ?pt dfg:inDiscovered false .
+
+# } => { ?pt :found true } .
+
+# { ( :b dfg:decisionPoint dfg:normative () ) dfg:collectAncestors ?anc } 
+# => { ( :b dfg:decisionPoint dfg:normative () ) dfg:collectAncestors ?anc } .
+
+# { ( ( :b ) ( :b ) :e dfg:normative ) dfg:forAllPriorBranches true }
+# => { ( ( :b ) ( :b ) :e dfg:normative ) dfg:forAllPriorBranches true } .
+
+# { ( :y ( :x ) dfg:normative ) dfg:inSomeBranch true }
+# => { ( :y ( :x ) dfg:normative ) dfg:inSomeBranch true } .
+
+# - determinant
+
+# { ( :e :b ) dfg:determinant true }
+# => { ( :e :b ) dfg:determinant true } .
+
+# { ( :c :b ) dfg:determinant true }
+# => { ( :c :b ) dfg:determinant true } .
+
+# -- test A
+# eye rules.n3 --turtle ./data/tests/determ/determA.n3 ./data/tests/determ/determA-pos1.n3 --query query.n3 --nope
+
+# -- test B
+# eye rules.n3 --turtle ./data/tests/determ/determB.n3 ./data/tests/determ/determB-pos1.n3 --query query.n3 --nope
+# eye rules.n3 --turtle ./data/tests/determ/determB.n3 ./data/tests/determ/determB-neg1.n3 --query query.n3 --nope
+# eye rules.n3 --turtle ./data/tests/determ/determB.n3 ./data/tests/determ/determB-neg2.n3 --query query.n3 --nope
+
+# - consistent link
+
+# { ( :x :c3 ) dfg:consistentLink true }
+# => { ( :x :c3 ) dfg:consistentLink true } .
+
+# eye rules.n3 --turtle ./data/tests/consistLnk/consistLnkA.n3 ./data/tests/consistLnk/consistLnkA-pos1.n3 --query query.n3 --nope
+
+
+# > heuristic tests
+
+# TODO determB-neg1 - are inferences wrong? 
+# (:c is a valid option for both :k and :b)
+
+# # (consistLnk, determinant determ tests)
+# { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } 
+# # => { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } .
+# => {
+#     [
+#         dfg:from ?pt ;
+#         dfg:to ?d ;
+#         dfg:source dfg:discovered ;
+#         dfg:inferred [ 
+#             dfg:heuristic "inferredDecisionFromFollowingEvent" ;
+#             dfg:followingEvent ?e
+#         ]
+#     ]
+# } .
+
+# (heur1.n3)
+# { ( ?from ?to ) dfg:inferredEventFromKnownEvent ?known_e }
+# => {
+#     [
+#         dfg:from ?from ;
+#         dfg:to ?to ;
+#         dfg:source dfg:discovered ;
+#         dfg:inferred "inferredEventFromKnownEvent"
+#     ]
+# } .
+
+# { ?pt dfg:inferredDecisionPointFromDecision ?d } 
+# # => { ?pt dfg:inferredDecisionPointFromDecision ?d } .
+# => {
+#     [
+#         dfg:from ?pt ;
+#         dfg:to ?d ;
+#         dfg:source dfg:discovered ;
+#         dfg:inferred "inferredDecisionPointFromDecision"
+#     ]
+# } .

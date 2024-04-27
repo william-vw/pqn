@@ -1,0 +1,57 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+@prefix : <http://example.org/> .
+
+# - infer missing events after a known event up until next decision point OR end
+# (relies on stronger assumptions; likely not a good idea)
+# (data1.n3)
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+
+{ ( ?from ?to ) dfg:inferredEventFromKnownEvent ?known_e }
+<= {
+    ?known_e dfg:inNormative true ; dfg:inDiscovered true .
+    ( ?known_e () ) dfg:collectBranchLinks ?links .
+    ( ?from ?to ) list:in ?links .
+    _:t log:notIncludes { ?l dfg:from ?from ; dfg:to ?to ; dfg:source dfg:discovered }
+} .
+
+{ ( ?from ?cur ) dfg:collectBranchLinks ?links }
+<= {
+    ?l dfg:from ?from ; dfg:to ?to ; dfg:source dfg:normative .
+    ( ?to dfg:normative ) dfg:decisionPoint true .
+    ( ?cur (( ?from ?to )) ) list:append ?links .
+    # "collect1" log:trace ( ?to ?links ).
+    true log:callWithCut true .
+} .
+
+{ ( ?from ?cur ) dfg:collectBranchLinks ?cur }
+<= {
+    ?l dfg:from ?from ; dfg:to dfg:nil ; dfg:source dfg:normative .
+    # "collect2" log:trace ( ?to ?cur ) .
+    true log:callWithCut true .
+} .
+
+{ ( ?from ?cur ) dfg:collectBranchLinks ?links }
+<= {
+    ?l dfg:from ?from ; dfg:to ?to ; dfg:source dfg:normative .
+    ( ?cur (( ?from ?to )) ) list:append ?cur2 .
+    # "collect3" log:trace ( ?to ?cur2 ) .
+    ( ?to ?cur2 ) dfg:collectBranchLinks ?links .
+} .
+
+
+# # - infer decision points based on decisions
+# # (data3.n3)
+# { ?pt dfg:inferredDecisionPointFromDecision ?d } 
+# <= {
+#     ( ?pt dfg:normative ) dfg:decisionPoint true .
+#     ?pt dfg:inDiscovered false .
+
+#     ?l dfg:from ?pt ; dfg:to ?d ; dfg:source dfg:normative .
+#     ?d dfg:inDiscovered true .
+#     ( ?pt ?d ) dfg:determinant true .
+# } .

@@ -1,0 +1,1 @@
+pyshacl -s ./shapes.n3 -m -a -f human ./data.n3
