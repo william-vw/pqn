@@ -54,7 +54,7 @@
 ] .
 
 [
-    dfg:from :k ;
-    dfg:to :v ;
+    dfg:from :c ;
+    dfg:to :d ;
     dfg:source dfg:discovered
 ] .

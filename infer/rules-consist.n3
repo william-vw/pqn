@@ -1,0 +1,52 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+@prefix : <http://example.org/> .
+
+# {
+#     ?ld dfg:from ?from ; dfg:to ?to ; dfg:source dfg:discovered .
+#     ( 1 { ?ln dfg:from ?from ; dfg:to ?to ; dfg:source dfg:normative } () ) log:collectAllIn _:t .
+# } => {
+#     [
+#         a dfg:ImpossibleLink ;
+#         dfg:reason "Discovered link not possible in normative model" ;
+#         dfg:from ?from ; dfg:to ?to
+#     ]
+# } .
+
+{
+    ( ?dp dfg:normative ) dfg:decisionPoint true .
+
+    (?to
+        {
+            ?l2 dfg:from ?dp ; dfg:to ?to ; dfg:source dfg:discovered .
+            ?to1 log:notEqualTo ?to .
+        }
+    ?tos) log:collectAllIn _:t .
+    ?tos!list:length math:greaterThan 1 .
+   
+} => {
+     [
+        a dfg:MutexChoicesFollowed ;
+        dfg:reason "Mutually exclusive links in discovered model" ;
+        dfg:dp ?dp ; dfg:tos ?tos
+    ]
+} .
+
+
+# helpers
+
+{ ( ?pt ?src ) dfg:decisionPoint true } 
+<= {
+    ?l1 dfg:from ?pt ; dfg:to ?to1 ; dfg:source ?src .
+    ?l2 dfg:from ?pt ; dfg:to ?to2 ; dfg:source ?src .
+    ?l1 log:notEqualTo ?l2 .
+    ?to1 log:notEqualTo ?to2 .
+} .
+
+{ ( ?pt ?src ) dfg:decisionPoint false } 
+<= {
+    ( 1 { ( ?pt ?src ) dfg:decisionPoint true } () ) log:collectAllIn _:t .
+} .

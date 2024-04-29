@@ -27,23 +27,23 @@
     ) log:forAllIn _:t .
  } .
  
-{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:collectAncestors ?coll } 
+{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:allAncestors ?coll } 
 <= {
    ?cur list:in ?stop .
    true log:callWithCut true .
 } .
 
-{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:collectAncestors ?coll } 
+{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:allAncestors ?coll } 
 <= {
     _:t log:notIncludes { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src } .
 } .
 
-{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:collectAncestors ?anc } 
+{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:allAncestors ?anc } 
  <= { 
     ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src .
     ( ?prior ( ?pred ?value ) ?src ?coll ) dfg:collectAncestor ?coll2 .
 
-    ( ?prior ( ?pred ?value ) ?stop ?src ?coll2 ) dfg:collectAncestors ?anc .
+    ( ?prior ( ?pred ?value ) ?stop ?src ?coll2 ) dfg:allAncestors ?anc .
 } .
 
 { ( ?node ( ?pred ?value ) ?src ?coll ) dfg:collectAncestor ?coll2 }

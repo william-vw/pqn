@@ -1,0 +1,16 @@
+# Processed by EYE v9.11.4 (2024-03-04)
+# eye rules-princ.n3 --turtle ./data/tests/princ4.n3 --pass-only-new
+
+@prefix dfg: <http://rdf.org/dfg#>.
+@prefix : <http://example.org/>.
+
+
+_:sk_2 dfg:from :c.
+_:sk_2 dfg:to :d.
+_:sk_2 dfg:source dfg:discovered.
+_:sk_2 dfg:inferred _:sk_3.
+_:sk_3 dfg:reason "priorEvent".
+_:sk_3 dfg:priorEvent :d.
+# 2024-04-29T19:47:01.045Z in=50 out=12 ent=6 step=11 brake=8 inf=191671 sec=0.046 inf/sec=4166761
+# ENDS
+

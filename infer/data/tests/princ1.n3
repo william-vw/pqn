@@ -43,6 +43,6 @@
 
 [
     dfg:from :c ;
-    dfg:to :z ;
+    dfg:to :v ;
     dfg:source dfg:discovered
 ] .

@@ -8,90 +8,113 @@
 # principles (graph-based!) - given discovered event e:
 # (aside from "e", all below refers to normative model)
 
-# 1/ e _implies_ d if:
+# 1/ if e is a choice of a DP, this _rules out other choices & their _unique_ transitive closure 
+# (not incl. nodes also reachable via other nodes)
+
+# rule out other choices given a discovered choice
+{
+    ?e dfg:inDiscovered true .
+
+    # event's associated DP
+    ?l dfg:from ?dp ; dfg:to ?e ; dfg:source dfg:normative .
+    ( ?dp dfg:normative ) dfg:decisionPoint true .
+
+    # DP's other choices
+    ?l2 dfg:from ?dp ; dfg:to ?e2 ; dfg:source dfg:normative .
+    ?e2 log:notEqualTo ?e . # ; dfg:inDiscovered false . (assume mutex choices)
+
+    # (avoid multiple invalidations)
+    ?e2 dfg:validBranch true .
+
+} => {
+    ?e2 dfg:invalidated [
+        dfg:reason "otherChoiceDiscovered" ;
+        dfg:otherChoice ?e
+    ]
+} .
+
+# propagate invalid branch
+{
+    ?e dfg:invalidBranch true .
+
+    ?l dfg:from ?e ; dfg:to ?to ; dfg:source dfg:normative .
+    (
+        # for any incoming link
+        { ?lp dfg:from ?p ; dfg:to ?to ; dfg:source dfg:normative }
+        # it must come from an invalid branch
+        { ?p dfg:invalidBranch true }
+    ) log:forAllIn _:t .
+
+    # (avoid multiple invalidations)
+    ?to dfg:validBranch true .
+
+} => {
+    ?to dfg:invalidated [
+        dfg:reason "invalidTransitiveClosure" ;
+        dfg:priorInvalid ?e
+    ]
+} .
+
+# 2/ e _implies_ d if:
 # 	reverse transitive closure of e = forward transitive closure of d
 # 	i.e., all prior branches of e arrive at d
-# (special case: exists normative link d -> e _and_ no other d' exists where d' <> d and d' -> e)
+# (special/simple case: exists normative link d -> e _and_ no other d' exists where d' <> d and d' -> e)
 
+# special/simple case
 {
     ?e dfg:inDiscovered true .
     ?l dfg:from ?from ; dfg:to ?e ; dfg:source dfg:normative .
+    ?from dfg:validBranch true .
 
     (
+        # if another incoming link exists
         {
             ?l2 dfg:from ?from2 ; dfg:to ?e ; dfg:source dfg:normative .
             ?from2 log:notEqualTo ?from .   
         }
-        { ?from2 dfg:ruledOutBranch true }
+        # it must come from an invalid branch
+        { ?from2 dfg:invalidBranch true }
     ) log:forAllIn _:t .
 
 } => {
     [
-        dfg:from ?from ;
-        dfg:to ?e ;
-        dfg:source dfg:discovered ;
-        dfg:inferred [ 
-            dfg:heuristic "inferredFromPriorEvent" ;
-            dfg:priorEvent ?e
-        ]
+        dfg:from ?from ; dfg:to ?e ; dfg:source dfg:discovered ;
+        dfg:inferred [ dfg:reason "priorEvent" ; dfg:priorEvent ?e ]
     ]
 } .
 
+# complex case
 {
     ?e dfg:inDiscovered true .
 
+    # at least 2 incoming links
     ?l dfg:from ?from ; dfg:to ?e ; dfg:source dfg:normative .
     ?l2 dfg:from ?from2 ; dfg:to ?e ; dfg:source dfg:normative .
     ?from2 log:notEqualTo ?from .
 
+    # get reverse transitive closures of all incoming links
     (?closure
         {
             ?l_n dfg:from ?from_n ; dfg:to ?e ; dfg:source dfg:normative .
             ( ?from_n dfg:normative () ) dfg:priorTransitiveClosure ?closure .
         }
-    ?closures) log:collectAllIn _:t .
+    ?closures) log:collectAllIn ( ?ctx 5 ) .
 
+    # if they have an element in common;
+    # that element has the same forward transitive closure
     ?closures list:intersect ?shareds .
     ( ?shareds 0 ) list:memberAt ?shared .
 
+    # also, make sure these are not yet connected
+    # (avoid redundant links)
+    ( ?shared ?e dfg:discovered ) dfg:reachable false .
+
 } => {
-    [
-        dfg:from ?shared ;
-        dfg:to ?e ;
-        dfg:source dfg:discovered ;
-        dfg:inferred [ 
-            dfg:heuristic "inferredFromPriorTransitiveClosure"
-        ]
+    [ 
+        a dfg:IndirectLink ;
+        dfg:from ?shared ; dfg:to ?e ; dfg:source dfg:discovered ;
+        dfg:inferred [ dfg:reason "convergingPriorTransitiveClosure" ]
     ]
-} .
-
-# 2/ if e is a choice of a DP, this _rules out other choices & their _unique_ transitive closure 
-# (not incl. nodes also reachable via other nodes)
-
-{
-    ?e dfg:inDiscovered true .
-
-    ?l dfg:from ?dp ; dfg:to ?e ; dfg:source dfg:normative .
-    ( ?dp dfg:normative ) dfg:decisionPoint true .
-
-    ?l2 dfg:from ?dp ; dfg:to ?e2 ; dfg:source dfg:normative .
-    ?e2 log:notEqualTo ?e . # ; dfg:inDiscovered false . (assume mutex choices)
-
-} => {
-    ?e2 dfg:ruledOutBranch true .
-} .
-
-{
-    ?e dfg:ruledOutBranch true .
-
-    ?l dfg:from ?e ; dfg:to ?to ; dfg:source dfg:normative .
-    (
-        { ?lp dfg:from ?p ; dfg:to ?to ; dfg:source dfg:normative }
-        { ?p dfg:ruledOutBranch true }
-    ) log:forAllIn _:t .
-
-} => {
-    ?to dfg:ruledOutBranch true 
 } .
 
 
@@ -158,29 +181,11 @@
     # _:t log:notIncludes { ?e dfg:link ?l . ?l dfg:source ?src } 
 } .
 
-{ ( ?cur ?oneOf ?src ) dfg:oneOfIsInBranch true }
-<= { 
-    ?cur list:in ?oneOf .
-    true log:callWithCut true .
-} .
+{ ?e dfg:invalidBranch true } 
+<= { ?e dfg:invalidated _:e } .
 
-{ ( ?cur ?oneOf ?src ) dfg:oneOfIsInBranch true }
-<= {
-    ?l dfg:from ?cur ; dfg:to ?next ; dfg:source ?src .
-    ( ?next ?oneOf ?src ) dfg:oneOfIsInBranch true .
-} .
-
-{ ( ?cur (?pred ?value) ?src ) dfg:withPredInBranch ?cur }
-<= {
-    ?cur ?pred ?value .
-    true log:callWithCut true .
-} .
-
-{ ( ?cur (?pred ?value) ?src ) dfg:withPredInBranch ?found }
-<= {
-    ?l dfg:from ?cur ; dfg:to ?next ; dfg:source ?src .
-    ( ?next (?pred ?value) ?src ) dfg:withPredInBranch ?found .
-} .
+{ ?e dfg:validBranch true } 
+<= { ( 1 { ?e dfg:invalidated _:e } () ) log:collectAllIn _:t } .
 
 {
     ( ?cur ?src ?coll ) dfg:priorTransitiveClosure ?closure
@@ -197,4 +202,18 @@
     
     (1 { ?l dfg:from ?from ; dfg:to ?cur ; dfg:source ?src } ()) log:collectAllIn _:t .
     ( ?coll ( ?cur ) ) list:append ?coll2 .
+} .
+
+{ ( ?cur ?cur ?src ) dfg:reachable true }
+<= { true log:callWithCut true } .
+
+{ ( ?cur ?to ?src ) dfg:reachable true }
+<= {
+    ?l dfg:from ?cur ; dfg:to ?next ; dfg:source ?src .
+    ( ?next ?to ?src ) dfg:reachable true .
+} .
+
+{ ( ?cur ?to ?src ) dfg:reachable false }
+<= { 
+    ( 1 { ( ?cur ?to ?src ) dfg:reachable true } () ) log:collectAllIn _:t .
 } .

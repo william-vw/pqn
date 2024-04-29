@@ -3,7 +3,15 @@
 @prefix dfg: <http://rdf.org/dfg#> .
 @prefix : <http://example.org/> .
 
+
 # > run tests
+# princ:
+# eye rules-princ.n3 --turtle ./data/tests/princ1.5.n3 --pass-only-new > ./data/out/princ1.5.n3
+# eye rules-consist.n3 --turtle ./data/tests/princ1.5.n3 ./data/out/princ1.5.n3 --pass-only-new
+
+{ ( :z :c dfg:discovered ) dfg:reachable false }
+=> { ( :z :c dfg:discovered ) dfg:reachable false } .
+
 # test data:
 # eye test.n3 / rules.n3 --turtle ./data/data1.n3 --query query.n3 --nope
 # pilot medical:
@@ -60,11 +68,11 @@
 
 # - list intersect
 
-{
-    ( ( :o :f :d :r ) ( :p :g :d :s ) ) list:intersect ?intersect
-} => {
-    <> :out ?intersect
-} .
+# {
+#     ( ( :o :f :d :r ) ( :p :g :d :s ) ) list:intersect ?intersect
+# } => {
+#     <> :out ?intersect
+# } .
 
 
 
