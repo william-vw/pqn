@@ -1,0 +1,48 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix : <http://example.org/> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+
+[
+    dfg:from :y ;
+    dfg:to :x ;
+    dfg:source dfg:normative
+] .
+
+[
+    dfg:from :x ;
+    dfg:to :k ;
+    dfg:source dfg:normative
+] .
+
+[
+    dfg:from :k ;
+    dfg:to :l ;
+    dfg:source dfg:normative
+] .
+
+[
+    dfg:from :x ;
+    dfg:to :a ;
+    dfg:source dfg:normative
+] .
+
+[
+    dfg:from :a ;
+    dfg:to :b ;
+    dfg:source dfg:normative
+] .
+
+[
+    dfg:from :b ;
+    dfg:to :c ;
+    dfg:source dfg:normative
+] .
+
+[
+    dfg:from :c ;
+    dfg:to :z ;
+    dfg:source dfg:discovered
+] .

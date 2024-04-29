@@ -58,13 +58,22 @@
 
 # eye rules.n3 --turtle ./data/tests/consistLnk/consistLnkA.n3 ./data/tests/consistLnk/consistLnkA-pos1.n3 --query query.n3 --nope
 
+# - list intersect
+
+{
+    ( ( :o :f :d :r ) ( :p :g :d :s ) ) list:intersect ?intersect
+} => {
+    <> :out ?intersect
+} .
+
+
 
 # > heuristic tests
 
 # TODO determB-neg1 - are inferences wrong? 
 # (:c is a valid option for both :k and :b)
 
-# # (consistLnk, determinant determ tests)
+# (consistLnk, determinant determ tests)
 # { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } 
 # # => { ( ?pt ?d ) dfg:inferredDecisionFromFollowingEvent ?e } .
 # => {
