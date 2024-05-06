@@ -38,15 +38,15 @@
     ?e dfg:invalidBranch true .
 
     ?l dfg:from ?e ; dfg:to ?to ; dfg:source dfg:normative .
+
+    # (avoid multiple invalidations)
+    ?to dfg:validBranch true .
     (
         # for any incoming link
         { ?lp dfg:from ?p ; dfg:to ?to ; dfg:source dfg:normative }
         # it must come from an invalid branch
         { ?p dfg:invalidBranch true }
     ) log:forAllIn _:t .
-
-    # (avoid multiple invalidations)
-    ?to dfg:validBranch true .
 
 } => {
     ?to dfg:invalidated [
@@ -57,7 +57,7 @@
 
 # 2/ e _implies_ d if:
 # 	reverse transitive closure of e = forward transitive closure of d
-# 	i.e., all prior branches of e arrive at d
+# 	i.e., all prior *valid* branches of e arrive at d
 # (special/simple case: exists normative link d -> e _and_ no other d' exists where d' <> d and d' -> e)
 
 # special/simple case
@@ -66,8 +66,7 @@
     ?l dfg:from ?from ; dfg:to ?e ; dfg:source dfg:normative .
     ?from dfg:validBranch true .
 
-    (
-        # if another incoming link exists
+    (   # if another incoming link exists
         {
             ?l2 dfg:from ?from2 ; dfg:to ?e ; dfg:source dfg:normative .
             ?from2 log:notEqualTo ?from .   
@@ -87,10 +86,14 @@
 {
     ?e dfg:inDiscovered true .
 
-    # at least 2 incoming links
+    # at least 2 valid incoming links
     ?l dfg:from ?from ; dfg:to ?e ; dfg:source dfg:normative .
     ?l2 dfg:from ?from2 ; dfg:to ?e ; dfg:source dfg:normative .
     ?from2 log:notEqualTo ?from .
+    ?from dfg:validBranch true .
+    ?from2 dfg:validBranch true .
+
+    # "converge" log:trace ( ?e ?from ?from2 ) .
 
     # get reverse transitive closures of all incoming links
     (?closure
@@ -100,10 +103,14 @@
         }
     ?closures) log:collectAllIn ( ?ctx 5 ) .
 
+    # "converge" log:trace ( ?e ?closures ) .
+
     # if they have an element in common;
     # that element has the same forward transitive closure
     ?closures list:intersect ?shareds .
     ( ?shareds 0 ) list:memberAt ?shared .
+
+    # "converge" log:trace ( ?e ?shared ) .
 
     # also, make sure these are not yet connected
     # (avoid redundant links)
@@ -191,6 +198,7 @@
     ( ?cur ?src ?coll ) dfg:priorTransitiveClosure ?closure
 } <= {
     ?l dfg:from ?from ; dfg:to ?cur ; dfg:source ?src .
+    ?cur list:notIn ?coll .
     ( ?coll ( ?cur ) ) list:append ?coll2 .
 
     ( ?from ?src ?coll2 ) dfg:priorTransitiveClosure ?closure

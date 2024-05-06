@@ -1,0 +1,57 @@
+# Processed by EYE v9.11.4 (2024-03-04)
+# eye rules-princ.n3 --turtle ./data/tc/2/disc.n3 ./data/tc/2/norm.n3 --pass-only-new
+
+@prefix dfg: <http://rdf.org/dfg#>.
+
+
+<http://canada.org/tc#InProgress-Letter-Unfit> dfg:invalidated _:sk_0.
+_:sk_0 dfg:reason "otherChoiceDiscovered".
+_:sk_0 dfg:otherChoice <http://canada.org/tc#InProgress-Letter-Defer>.
+<http://canada.org/tc#InProgress-Letter-Fit> dfg:invalidated _:sk_1.
+_:sk_1 dfg:reason "otherChoiceDiscovered".
+_:sk_1 dfg:otherChoice <http://canada.org/tc#InProgress-Letter-Defer>.
+_:sk_4 dfg:from <http://canada.org/tc#Completed-AssessmentComplete>.
+_:sk_4 dfg:to <http://canada.org/tc#InProgress-Letter-Defer>.
+_:sk_4 dfg:source dfg:discovered.
+_:sk_4 dfg:inferred _:sk_5.
+_:sk_5 dfg:reason "priorEvent".
+_:sk_5 dfg:priorEvent <http://canada.org/tc#InProgress-Letter-Defer>.
+<http://canada.org/tc#Duplicate> dfg:invalidated _:sk_6.
+_:sk_6 dfg:reason "otherChoiceDiscovered".
+_:sk_6 dfg:otherChoice <http://canada.org/tc#Completed-AssessmentComplete>.
+<http://canada.org/tc#OnHoldPending-Administrativeissue> dfg:invalidated _:sk_7.
+_:sk_7 dfg:reason "otherChoiceDiscovered".
+_:sk_7 dfg:otherChoice <http://canada.org/tc#Completed-AssessmentComplete>.
+<http://canada.org/tc#Createdinerror> dfg:invalidated _:sk_8.
+_:sk_8 dfg:reason "otherChoiceDiscovered".
+_:sk_8 dfg:otherChoice <http://canada.org/tc#Completed-AssessmentComplete>.
+<http://canada.org/tc#Fileretrieval> dfg:invalidated _:sk_9.
+_:sk_9 dfg:reason "otherChoiceDiscovered".
+_:sk_9 dfg:otherChoice <http://canada.org/tc#Completed-AssessmentComplete>.
+<http://canada.org/tc#withdrawnbyapplicant> dfg:invalidated _:sk_10.
+_:sk_10 dfg:reason "otherChoiceDiscovered".
+_:sk_10 dfg:otherChoice <http://canada.org/tc#Completed-AssessmentComplete>.
+<http://canada.org/tc#Requestadditionaltests> dfg:invalidated _:sk_11.
+_:sk_11 dfg:reason "otherChoiceDiscovered".
+_:sk_11 dfg:otherChoice <http://canada.org/tc#Completed-AssessmentComplete>.
+<http://canada.org/tc#OnHoldPending-AMRB> dfg:invalidated _:sk_12.
+_:sk_12 dfg:reason "otherChoiceDiscovered".
+_:sk_12 dfg:otherChoice <http://canada.org/tc#Completed-AssessmentComplete>.
+<http://canada.org/tc#Requestadditionaldocs> dfg:invalidated _:sk_13.
+_:sk_13 dfg:reason "otherChoiceDiscovered".
+_:sk_13 dfg:otherChoice <http://canada.org/tc#Completed-AssessmentComplete>.
+_:sk_16 dfg:from <http://canada.org/tc#InProgress-ForFollow-upReview>.
+_:sk_16 dfg:to <http://canada.org/tc#Completed-AssessmentComplete>.
+_:sk_16 dfg:source dfg:discovered.
+_:sk_16 dfg:inferred _:sk_17.
+_:sk_17 dfg:reason "priorEvent".
+_:sk_17 dfg:priorEvent <http://canada.org/tc#Completed-AssessmentComplete>.
+_:sk_20 dfg:from <http://canada.org/tc#InProgress-Letter-Defer>.
+_:sk_20 dfg:to dfg:nil.
+_:sk_20 dfg:source dfg:discovered.
+_:sk_20 dfg:inferred _:sk_21.
+_:sk_21 dfg:reason "priorEvent".
+_:sk_21 dfg:priorEvent dfg:nil.
+# 2024-05-06T14:53:49.771Z in=111 out=96 ent=48 step=59 brake=9 inf=1982359 sec=0.123 inf/sec=16116740
+# ENDS
+

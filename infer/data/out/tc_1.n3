@@ -1,0 +1,48 @@
+# Processed by EYE v9.11.4 (2024-03-04)
+# eye rules-princ.n3 --turtle ./data/tc/1/disc.n3 ./data/tc/1/norm.n3 --pass-only-new
+
+@prefix dfg: <http://rdf.org/dfg#>.
+
+
+_:sk_2 dfg:from <http://canada.org/tc#InProgress-Letter-Defer>.
+_:sk_2 dfg:to <http://canada.org/tc#OnHoldPending-AwaitApplicant>.
+_:sk_2 dfg:source dfg:discovered.
+_:sk_2 dfg:inferred _:sk_3.
+_:sk_3 dfg:reason "priorEvent".
+_:sk_3 dfg:priorEvent <http://canada.org/tc#OnHoldPending-AwaitApplicant>.
+<http://canada.org/tc#InProgress-Letter-Unfit> dfg:invalidated _:sk_4.
+_:sk_4 dfg:reason "otherChoiceDiscovered".
+_:sk_4 dfg:otherChoice <http://canada.org/tc#InProgress-Letter-Defer>.
+<http://canada.org/tc#InProgress-Letter-Fit> dfg:invalidated _:sk_5.
+_:sk_5 dfg:reason "otherChoiceDiscovered".
+_:sk_5 dfg:otherChoice <http://canada.org/tc#InProgress-Letter-Defer>.
+_:sk_8 dfg:from <http://canada.org/tc#Completed-AssessmentComplete>.
+_:sk_8 dfg:to <http://canada.org/tc#InProgress-Letter-Defer>.
+_:sk_8 dfg:source dfg:discovered.
+_:sk_8 dfg:inferred _:sk_9.
+_:sk_9 dfg:reason "priorEvent".
+_:sk_9 dfg:priorEvent <http://canada.org/tc#InProgress-Letter-Defer>.
+<http://canada.org/tc#OnHoldPending-AMRB> dfg:invalidated _:sk_10.
+_:sk_10 dfg:reason "otherChoiceDiscovered".
+_:sk_10 dfg:otherChoice <http://canada.org/tc#Completed-AssessmentComplete>.
+_:sk_13 dfg:from <http://canada.org/tc#InProgress-AssessorReviewing>.
+_:sk_13 dfg:to <http://canada.org/tc#Completed-AssessmentComplete>.
+_:sk_13 dfg:source dfg:discovered.
+_:sk_13 dfg:inferred _:sk_14.
+_:sk_14 dfg:reason "priorEvent".
+_:sk_14 dfg:priorEvent <http://canada.org/tc#Completed-AssessmentComplete>.
+_:sk_17 dfg:from <http://canada.org/tc#End>.
+_:sk_17 dfg:to dfg:nil.
+_:sk_17 dfg:source dfg:discovered.
+_:sk_17 dfg:inferred _:sk_18.
+_:sk_18 dfg:reason "priorEvent".
+_:sk_18 dfg:priorEvent dfg:nil.
+_:sk_21 dfg:from <http://canada.org/tc#OnHoldPending-AwaitApplicant>.
+_:sk_21 dfg:to <http://canada.org/tc#End>.
+_:sk_21 dfg:source dfg:discovered.
+_:sk_21 dfg:inferred _:sk_22.
+_:sk_22 dfg:reason "priorEvent".
+_:sk_22 dfg:priorEvent <http://canada.org/tc#End>.
+# 2024-05-06T12:44:32.725Z in=70 out=78 ent=39 step=90 brake=11 inf=713591 sec=0.105 inf/sec=6796105
+# ENDS
+

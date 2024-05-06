@@ -1,4 +1,6 @@
-{('Request additional docs?', 'In Progress - For Follow-up Review'): 1,
+{
+# will cause inconsistency; inferring 'Request additional docs?' here will rule out 'Completed - Assessment Complete'
+#('Request additional docs?', 'In Progress - For Follow-up Review'): 1,
  ('In Progress - For Follow-up Review', 'On Hold (Pending) - AMRB'): 1,
  ('In Progress - For Follow-up Review', 'Duplicate'): 1,
  ('In Progress - For Follow-up Review', 'Created in error'): 1,
