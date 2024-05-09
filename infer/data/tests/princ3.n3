@@ -46,9 +46,3 @@
     dfg:to :d ;
     dfg:source dfg:normative
 ] .
-
-[
-    dfg:from :c ;
-    dfg:to :d ;
-    dfg:source dfg:discovered
-] .

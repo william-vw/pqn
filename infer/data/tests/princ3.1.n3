@@ -5,12 +5,10 @@
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix dfg: <http://rdf.org/dfg#> .
 
-# rules 0 (rule 2.1 to capture events before x)
-# OR
-# rules 1, 2
+# rule 2.1
 
 [
-    dfg:from :b ;
-    dfg:to :e ;
-    dfg:source dfg:discovered 
+    dfg:from :c ;
+    dfg:to :d ;
+    dfg:source dfg:discovered
 ] .

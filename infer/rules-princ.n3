@@ -8,6 +8,31 @@
 # principles (graph-based!) - given discovered event e:
 # (aside from "e", all below refers to normative model)
 
+# 0/ find single path between discovered events
+{
+    ?l dfg:source dfg:discovered ; dfg:from ?from ; dfg:to ?to .
+    ?to log:notEqualTo dfg:nil .
+
+    (?path
+        { ( ?from ?to dfg:normative () ) dfg:pathBetween ?path }
+    ?paths) log:collectAllIn _:t .
+
+    # "paths" log:trace ( ?from ?to ) .
+    # "paths" log:trace ?paths .
+    
+    ?paths list:length 1 .
+    ?path list:in ?paths .
+
+    ( ?from_i ?to_i ) list:in ?path .
+    ( 1 { ?x dfg:from ?from_i ; dfg:to ?to_i ; dfg:source dfg:discovered } () ) log:collectAllIn _:t .
+
+} => {
+    [
+        dfg:from ?from_i ; dfg:to ?to_i ; dfg:source dfg:discovered ;
+        dfg:inferred [ dfg:reason "onDiscoveredPath" ; dfg:path ( ?from ?to ) ]
+    ]
+} .
+
 # 1/ if e is a choice of a DP, this _rules out other choices & their _unique_ transitive closure 
 # (not incl. nodes also reachable via other nodes)
 
@@ -212,7 +237,22 @@
     ( ?coll ( ?cur ) ) list:append ?coll2 .
 } .
 
-{ ( ?cur ?cur ?src ) dfg:reachable true }
+
+{ ( ?from ?from ?src ?coll ) dfg:pathBetween ?coll } 
+<= { true log:callWithCut true } .
+
+{ ( ?from ?to ?src ?coll ) dfg:pathBetween ?path } 
+<= {
+    ?l dfg:from ?prior ; dfg:to ?to ; dfg:source ?src .
+    # "pathBetween" log:trace ( ?prior ?to ?coll ) .
+
+    ( ?prior ?to ) list:notIn ?coll .
+    ( ?coll ( ( ?prior ?to ) ) ) list:append ?coll2 .
+
+    ( ?from ?prior ?src ?coll2 ) dfg:pathBetween ?path
+} .
+
+{ ( ?cur ?cur ?src ?coll ) dfg:reachable true }
 <= { true log:callWithCut true } .
 
 { ( ?cur ?to ?src ) dfg:reachable true }

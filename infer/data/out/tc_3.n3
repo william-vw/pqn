@@ -4,48 +4,18 @@
 @prefix dfg: <http://rdf.org/dfg#>.
 
 
-_:sk_2 dfg:from <http://canada.org/tc#Requestadditionaldocs>.
-_:sk_2 dfg:to <http://canada.org/tc#InProgress-ForFollow-upReview>.
-_:sk_2 dfg:source dfg:discovered.
-_:sk_2 dfg:inferred _:sk_3.
-_:sk_3 dfg:reason "priorEvent".
-_:sk_3 dfg:priorEvent <http://canada.org/tc#InProgress-ForFollow-upReview>.
-<http://canada.org/tc#Completed-AssessmentComplete> dfg:invalidated _:sk_4.
-_:sk_4 dfg:reason "otherChoiceDiscovered".
-_:sk_4 dfg:otherChoice <http://canada.org/tc#Requestadditionaldocs>.
-<http://canada.org/tc#Fileretrieval> dfg:invalidated _:sk_5.
-_:sk_5 dfg:reason "otherChoiceDiscovered".
-_:sk_5 dfg:otherChoice <http://canada.org/tc#Requestadditionaldocs>.
-<http://canada.org/tc#withdrawnbyapplicant> dfg:invalidated _:sk_6.
-_:sk_6 dfg:reason "otherChoiceDiscovered".
-_:sk_6 dfg:otherChoice <http://canada.org/tc#Requestadditionaldocs>.
-<http://canada.org/tc#Createdinerror> dfg:invalidated _:sk_7.
-_:sk_7 dfg:reason "otherChoiceDiscovered".
-_:sk_7 dfg:otherChoice <http://canada.org/tc#Requestadditionaldocs>.
-<http://canada.org/tc#Duplicate> dfg:invalidated _:sk_8.
-_:sk_8 dfg:reason "otherChoiceDiscovered".
-_:sk_8 dfg:otherChoice <http://canada.org/tc#Requestadditionaldocs>.
-<http://canada.org/tc#OnHoldPending-AMRB> dfg:invalidated _:sk_9.
-_:sk_9 dfg:reason "otherChoiceDiscovered".
-_:sk_9 dfg:otherChoice <http://canada.org/tc#Requestadditionaldocs>.
-<http://canada.org/tc#Requestadditionaltests> dfg:invalidated _:sk_10.
-_:sk_10 dfg:reason "otherChoiceDiscovered".
-_:sk_10 dfg:otherChoice <http://canada.org/tc#Requestadditionaldocs>.
-<http://canada.org/tc#OnHoldPending-Administrativeissue> dfg:invalidated _:sk_11.
-_:sk_11 dfg:reason "otherChoiceDiscovered".
-_:sk_11 dfg:otherChoice <http://canada.org/tc#Requestadditionaldocs>.
-dfg:nil dfg:invalidated _:sk_14.
-_:sk_14 dfg:reason "invalidTransitiveClosure".
-_:sk_14 dfg:priorInvalid <http://canada.org/tc#Completed-AssessmentComplete>.
-<http://canada.org/tc#AdditionaltestresultsreceivedORForfollowupreview> dfg:invalidated _:sk_17.
-_:sk_17 dfg:reason "invalidTransitiveClosure".
-_:sk_17 dfg:priorInvalid <http://canada.org/tc#Requestadditionaltests>.
-_:sk_21 a dfg:IndirectLink.
-_:sk_21 dfg:from <http://canada.org/tc#New-ForAMO/RAMO>.
-_:sk_21 dfg:to <http://canada.org/tc#Requestadditionaldocs>.
-_:sk_21 dfg:source dfg:discovered.
-_:sk_21 dfg:inferred _:sk_22.
-_:sk_22 dfg:reason "convergingPriorTransitiveClosure".
-# 2024-05-06T14:56:04.121Z in=167 out=84 ent=42 step=35 brake=10 inf=2584927 sec=0.144 inf/sec=17950882
+_:sk_1 dfg:from <http://canada.org/tc#Requestadditionaldocs>.
+_:sk_1 dfg:to <http://canada.org/tc#InProgress-ForFollow-upReview>.
+_:sk_1 dfg:source dfg:discovered.
+_:sk_1 dfg:inferred _:sk_2.
+_:sk_2 dfg:reason "onDiscoveredPath".
+_:sk_2 dfg:path (<http://canada.org/tc#New-ForAMO/RAMO> <http://canada.org/tc#InProgress-ForFollow-upReview>).
+_:sk_4 dfg:from <http://canada.org/tc#New-ForAMO/RAMO>.
+_:sk_4 dfg:to <http://canada.org/tc#Requestadditionaldocs>.
+_:sk_4 dfg:source dfg:discovered.
+_:sk_4 dfg:inferred _:sk_5.
+_:sk_5 dfg:reason "onDiscoveredPath".
+_:sk_5 dfg:path (<http://canada.org/tc#New-ForAMO/RAMO> <http://canada.org/tc#InProgress-ForFollow-upReview>).
+# 2024-05-09T14:58:42.264Z in=166 out=24 ent=12 step=2 brake=4 inf=199065 sec=0.036 inf/sec=5529583
 # ENDS
 

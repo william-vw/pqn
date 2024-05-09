@@ -1,0 +1,67 @@
+# Processed by EYE v9.11.4 (2024-03-04)
+# eye rules-princ.n3 --turtle ./data/tests/princ2.n3 ./data/tests/princ2.3.n3 --pass-only-new
+
+@prefix dfg: <http://rdf.org/dfg#>.
+@prefix : <http://example.org/>.
+
+
+_:sk_1 dfg:from :c.
+_:sk_1 dfg:to :e.
+_:sk_1 dfg:source dfg:discovered.
+_:sk_1 dfg:inferred _:sk_2.
+_:sk_2 dfg:reason "onDiscoveredPath".
+_:sk_2 dfg:path (:b :e).
+_:sk_4 dfg:from :b.
+_:sk_4 dfg:to :c.
+_:sk_4 dfg:source dfg:discovered.
+_:sk_4 dfg:inferred _:sk_5.
+_:sk_5 dfg:reason "onDiscoveredPath".
+_:sk_5 dfg:path (:b :e).
+:a dfg:invalidated _:sk_6.
+_:sk_6 dfg:reason "otherChoiceDiscovered".
+_:sk_6 dfg:otherChoice :b.
+:l dfg:invalidated _:sk_7.
+_:sk_7 dfg:reason "otherChoiceDiscovered".
+_:sk_7 dfg:otherChoice :c.
+:d dfg:invalidated _:sk_8.
+_:sk_8 dfg:reason "otherChoiceDiscovered".
+_:sk_8 dfg:otherChoice :c.
+_:sk_11 dfg:from :x.
+_:sk_11 dfg:to :b.
+_:sk_11 dfg:source dfg:discovered.
+_:sk_11 dfg:inferred _:sk_12.
+_:sk_12 dfg:reason "priorEvent".
+_:sk_12 dfg:priorEvent :b.
+_:sk_15 dfg:from :c.
+_:sk_15 dfg:to :e.
+_:sk_15 dfg:source dfg:discovered.
+_:sk_15 dfg:inferred _:sk_16.
+_:sk_16 dfg:reason "priorEvent".
+_:sk_16 dfg:priorEvent :e.
+:k dfg:invalidated _:sk_17.
+_:sk_17 dfg:reason "otherChoiceDiscovered".
+_:sk_17 dfg:otherChoice :x.
+_:sk_20 dfg:from :b.
+_:sk_20 dfg:to :c.
+_:sk_20 dfg:source dfg:discovered.
+_:sk_20 dfg:inferred _:sk_21.
+_:sk_21 dfg:reason "priorEvent".
+_:sk_21 dfg:priorEvent :c.
+_:sk_24 dfg:from :y.
+_:sk_24 dfg:to :x.
+_:sk_24 dfg:source dfg:discovered.
+_:sk_24 dfg:inferred _:sk_25.
+_:sk_25 dfg:reason "priorEvent".
+_:sk_25 dfg:priorEvent :x.
+:m dfg:invalidated _:sk_26.
+_:sk_26 dfg:reason "otherChoiceDiscovered".
+_:sk_26 dfg:otherChoice :y.
+_:sk_29 dfg:from :z.
+_:sk_29 dfg:to :y.
+_:sk_29 dfg:source dfg:discovered.
+_:sk_29 dfg:inferred _:sk_30.
+_:sk_30 dfg:reason "priorEvent".
+_:sk_30 dfg:priorEvent :y.
+# 2024-05-09T15:36:55.325Z in=62 out=114 ent=57 step=114 brake=10 inf=723291 sec=0.059 inf/sec=12259169
+# ENDS
+

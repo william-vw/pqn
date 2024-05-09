@@ -1,0 +1,12 @@
+{ ('Completed - Assessment Complete', 'In Progress - Letter - Unfit'): 1,
+ ('Completed - Assessment Complete', 'In Progress - Letter - Defer'): 1,
+ ('Completed - Assessment Complete', 'In Progress - Letter - Fit'): 1,
+#  ('In Progress - For Follow-up Review', 'Completed - Assessment Complete'): 1,
+ ('File retrieved', 'Request additional tests?'): 1,
+#  ('File retrieved', 'Completed - Assessment Complete'): 1,
+ ('New - For AMO/RAMO', 'On Hold (Pending) - Administrative issue'): 1,
+ ('New - For AMO/RAMO', 'withdrawn by applicant'): 1,
+ ('New - For AMO/RAMO', 'Request additional docs?'): 1,
+ ('New - For AMO/RAMO', 'Request additional tests?'): 1,
+ ('New - For AMO/RAMO', 'Completed - Assessment Complete'): 1,
+ ('New - Received', 'In Progress - Assessor Reviewing'): 1 }
