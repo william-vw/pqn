@@ -21,12 +21,16 @@
     # "paths" log:trace ?paths .
     
     ?paths list:length 1 .
+    # get single path
     ?path list:in ?paths .
 
+    # get single link in path
     ( ?from_i ?to_i ) list:in ?path .
+    # (not yet inferred)
     ( 1 { ?x dfg:from ?from_i ; dfg:to ?to_i ; dfg:source dfg:discovered } () ) log:collectAllIn _:t .
 
 } => {
+    # infer the link
     [
         dfg:from ?from_i ; dfg:to ?to_i ; dfg:source dfg:discovered ;
         dfg:inferred [ dfg:reason "onDiscoveredPath" ; dfg:path ( ?from ?to ) ]
