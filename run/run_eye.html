@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--    get latest one online -->
+    <!--    <script src="https://eyereasoner.github.io/eye-js/latest/index.js"></script>-->
+    <!--    or, use dl'ed one (april 27, 2024) -->
+    <script src="./eye.js"></script>
+
+    <script type="module">
+      const n3reasoner = eyereasoner.n3reasoner;
+
+      window.runEye = async function (code, ondone) {
+        // console.log("code", code)
+
+        var start = performance.now();
+
+        let error = null,
+          result = null;
+        try {
+          result = await n3reasoner(code, undefined, {
+            output: "derivations",
+            outputType: "string",
+          });
+        } catch (e) {
+          error = e;
+        }
+
+        var end = performance.now();
+        console.log("run:", end - start, "ms");
+
+        ondone(result, error)
+      };
+    </script>
+  </head>
+
+  <body>
+    <input type="file" id="file-input" accept=".n3,.ttl,.rdf" />
+    
+    <h3>Results:</h3>
+    <pre id="results"></pre>
+
+    <h3>Error:</h3>
+    <pre id="error"></pre>
+
+    <script>
+      // courtesy
+      // https://stackoverflow.com/questions/3582671/how-to-open-a-local-disk-file-with-javascript
+      function readSingleFile(e, oncontents) {
+        var file = e.target.files[0];
+        if (!file) {
+          return;
+        }
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          var contents = e.target.result;
+          oncontents(contents);
+        };
+        reader.readAsText(file);
+      }
+
+      function runDone(result, error) {
+        console.log("runDone");
+        // if (result) console.log("result:", result);
+        // if (error) console.log("error:", error);
+
+        let resultEl = document.getElementById("results");
+        let errorEl = document.getElementById("error");
+        resultEl.innerText = "";
+        errorEl.innerText = "";
+
+        if (result)
+            resultEl.innerText = result;
+
+        if (error)
+            document.getElementById("error").innerText = error;
+      }
+
+      document.getElementById("file-input").addEventListener(
+        "change",
+        (e) =>
+          readSingleFile(e, (contents) => {
+            window.runEye(contents, runDone);
+          }),
+        false
+      );
+    </script>
+  </body>
+</html>
