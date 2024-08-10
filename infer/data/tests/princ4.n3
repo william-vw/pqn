@@ -52,3 +52,21 @@
     dfg:to :d ;
     dfg:source dfg:normative
 ] .
+
+[
+    dfg:from :d ;
+    dfg:to dfg:nil ;
+    dfg:source dfg:normative 
+] .
+
+[
+    dfg:from :k ;
+    dfg:to dfg:nil ;
+    dfg:source dfg:normative 
+] .
+
+[
+    dfg:from :l ;
+    dfg:to dfg:nil ;
+    dfg:source dfg:normative 
+] .

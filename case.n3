@@ -1,0 +1,36 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tr: <http://rdf.org/trace#> .
+@prefix p2: <http://ocel2.org/p2p#> .
+
+{
+    ?object tr:pathObjectEvents ( ?types ?events ?results )
+} <= {
+    ?types!list:length math:greaterThan 0 .
+
+    # "object" log:trace ?object .
+    ?object tr:objectEvent ( ?events ?events2 ) .
+    
+    ?types list:firstRest ( ?type2 ?types2 ) .
+    [] a tr:O2O ; tr:object ?object ; tr:object2 ?object2 .
+    ?object2 a ?type2 .
+    # "object2" log:trace ?object2 .
+
+    ?object2 tr:pathObjectEvents ( ?types2 ?events2 ?results ) .
+} .
+
+{
+    ?object tr:pathObjectEvents ( () ?events ?events2 )
+} <= {
+    ?object tr:objectEvent ( ?events ?events2 ) .
+} .
+
+{
+    ?object tr:objectEvent ( ?events ?events2 )
+} <= {
+    [] a tr:E2O ; tr:object ?object ; tr:event ?event . ?event tr:ts ?ts .
+    # ( ?events ( ( ( ?event ?object ) ?ts ) ) ) list:append ?events2 .
+    ( ?events ( ( ?event ?ts ) ) ) list:append ?events2 .
+} .

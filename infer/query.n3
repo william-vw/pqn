@@ -6,9 +6,9 @@
 
 # > run tests
 # princ:
-# eye rules-princ.n3 --turtle ./data/tests/princ1.5.n3 --pass-only-new > ./data/out/princ1.5.n3
-# eye rules-princ.n3 --turtle ./data/tc/1/disc.n3 ./data/tc/1/norm.n3 --pass-only-new > ./data/out/tc/1.n3
-# eye rules-consist.n3 --turtle ./data/tests/princ1.5.n3 ./data/out/princ1.5.n3 --pass-only-new
+# eye utils.n3 rules-princ.n3 --turtle ./data/tests/princ1.5.n3 --pass-only-new > ./data/out/princ1.5.n3
+# eye utils.n3 rules-princ.n3 --turtle ./data/tc/1/disc.n3 ./data/tc/1/norm.n3 --pass-only-new > ./data/out/tc/1.n3
+# eye utils.n3 rules-consist.n3 --turtle ./data/tests/princ1.5.n3 ./data/out/princ1.5.n3 --pass-only-new
 
 # { ( :z :c dfg:discovered ) dfg:reachable false }
 # => { ( :z :c dfg:discovered ) dfg:reachable false } .
@@ -21,7 +21,40 @@
 # eye implic.n3 --turtle ./data/tests/determ/determB.n3 ./data/tests/determ/determB-pos1.n3 --pass-only-new --nope > ./data/out/implic-determB-pos1.n3
 
 
+# > invalidation but mutex
+
+# e.g.,
+# <http://canada.org/tc#fileretrieval> dfg:invalidated _:sk_17.
+# _:sk_17 dfg:reason "otherChoiceDiscovered".
+# _:sk_17 dfg:otherChoice <http://canada.org/tc#completed-assessmentcomplete>.
+
+# eye utils.n3 data/tc/all/norm.n3 data/out/tc_all_norm_closure.n3 data/tc/all/diff-0.n3 data/out/tc_all_norm_diff-0.n3 --query query.n3 --nope
+
+{   ?inv dfg:invalidated [
+        dfg:reason "otherChoiceDiscovered" ;
+        dfg:otherChoice ?chosen
+    ] .
+    # ( ?inv ?chosen dfg:normative ) dfg:ancestor true .
+    ( ?ancestors 
+        { ?chosen dfg:ancestors ?ancestors . ?inv list:in ?ancestors }
+    ?all ) log:collectAllIn _:t .
+
+    ( ?all 0 ) list:memberAt ?ancestors0
+
+} => {  ?inv :invalidInvalidation ( ?inv :ancestorOf ?chosen ) . ?chosen :ancestors ?ancestors0 } .
+
+
 # > miscellaneous tests
+
+# { ( (:x :a) (:x :b :c :e) (:x :b :d) (:k :c :e) (:k :l) ) list:flatten ?flat .
+#   ?flat list:unique ?set .
+# } => { <> :out ?set } .
+
+# {
+#     ( <http://canada.org/tc#inprogress-letter-defer> <http://canada.org/tc#end> dfg:normative )
+#         dfg:ancestor false
+
+# } => { <> :out "not ancestor!" } .
 
 # { 
 #     ?pt dfg:inNormative true .

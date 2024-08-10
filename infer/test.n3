@@ -4,28 +4,16 @@
 @prefix dfg: <http://rdf.org/dfg#> .
 @prefix : <http://example.org/> .
 
-{ ( ?pt ?disc_evt ) dfg:consistentLink true }
-<=
-{ (1 { ?l dfg:from ?disc_evt_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered } ()) log:collectAllIn _:t } .
+{   ?list list:flatten ?result } 
+<= { ?list list:flattening ( () ?result ) } .
 
-{ ( ?pt ?disc_evt ) dfg:consistentLink true }
+{   ?list list:flattening ( ?cur ?result ) } 
 <= {
-    ?l dfg:from ?disc_evt_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
-    ( ?pt ?disc_evt_prior dfg:normative ) dfg:hasFollowing true .
+    ?list list:firstRest ( ?first ?rest ) .
+    ( ?first ?cur ) list:append ?cur2 .
+
+    ?rest list:flattening ( ?cur2 ?result )
 } .
 
-{ ( ?pt ?disc_evt ) dfg:consistentLink true }
-<= {
-    ?l dfg:from ?disc_evt_prior ; dfg:to ?disc_evt ; dfg:source dfg:discovered .
-    ( ?disc_evt_prior ?pt dfg:normative ) dfg:hasFollowing true .
-} .
-
-{ ( ?cur ?cur ?src ) dfg:hasFollowing true }
-<= { } .
-
-{ ( ?cur ?needle ?src ) dfg:hasFollowing true }
-<= {
-    ?cur log:notEqualTo ?needle .
-    ?l dfg:from ?cur ; dfg:to ?next ; dfg:source ?src .
-    ( ?next ?needle ?src ) dfg:hasFollowing true .
-} .
+{   () list:flattening ( ?result ?result ) }
+<= true .

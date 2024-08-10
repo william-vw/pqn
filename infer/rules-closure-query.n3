@@ -1,0 +1,21 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+@prefix : <http://example.org/> .
+
+{   ( ?pt dfg:normative ) dfg:decisionPoint true .
+    ?l dfg:from ?pt ; dfg:to ?e ; dfg:source dfg:normative .
+    
+    # TODO adding collectAllIn runs the rule about a million times
+    # (?closure
+    #     {   ?e dfg:ancestors ?closure }
+    # ?closures) log:collectAllIn ?all .
+    # ?closures list:length ?len .
+    # ?closures!list:flatten list:unique ?set .
+    # ?set!list:length math:greaterThan 0 .
+
+    ?e dfg:ancestors ?closure
+
+} => {  ?e dfg:ancestors ?closure } .

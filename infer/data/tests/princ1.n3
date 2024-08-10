@@ -46,3 +46,15 @@
     dfg:to :v ;
     dfg:source dfg:discovered
 ] .
+
+[
+    dfg:from :c ;
+    dfg:to dfg:nil ;
+    dfg:source dfg:normative 
+] .
+
+[
+    dfg:from :l ;
+    dfg:to dfg:nil ;
+    dfg:source dfg:normative 
+] .

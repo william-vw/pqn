@@ -7,14 +7,14 @@ class RdfRepresent(Enum):
     LINK_PRED = 2
 
 class QuoteOptions(Enum):
-    SPACE_UNDERSCORE = 1
+    CUSTOM = 1
     REMOVE_SPECIAL = 2
     QUOTE_PLUS = 3
 
 def str_to_uri(str, ns, space=None):
     match space:
-        case QuoteOptions.SPACE_UNDERSCORE:
-            quoted = urllib.parse.quote(str).replace("%20", "_")
+        case QuoteOptions.CUSTOM:
+            quoted = urllib.parse.quote(str).replace("%20", "_").replace('%3A', ":")
             
         case QuoteOptions.REMOVE_SPECIAL:
             quoted = re.sub("%(\d\d|\d[A-Z])", "", urllib.parse.quote(str))

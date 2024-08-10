@@ -35,24 +35,24 @@ You can run `./test.sh -h`, `./run.sh -h` and `./run_all.sh -h` for details on t
 
 To test an individual query using eye on the full sepsis event log, run the following command:
 ```
-./test.sh -t eye -q queries/sepsis_multi.n3 -l logs/sepsis_reif_all.n3 -p pqn_reif.n3
+./test.sh -t eye -q queries/sepsis_multi.n3 -l logs/sepsis/sepsis_reif_all.n3 -p pqn_reif.n3
 ```
 
 To do the same using a pre-compiled `pvm` image (see below):
 ```
-./test.sh -t pvm -q queries/sepsis_multi.n3 -l logs/sepsis_reif_all.n3 -p pqn_reif.pvm
+./test.sh -t pvm -q queries/sepsis_multi.n3 -l logs/sepsis/sepsis_reif_all.n3 -p pqn_reif.pvm
 ```
 
 ### Measure performance of single query
 
 To measure the performance of an individual test query using eye on the full sepsis event log, run the following command:
 ```
-./run.sh -t eye -q queries/sepsis_multi.n3 -l logs/sepsis_reif_all.n3 -r results/eye/times_reif_all.csv  -n 10 -p pqn_reif.n3
+./run.sh -t eye -q queries/sepsis_multi.n3 -l logs/sepsis/sepsis_reif_all.n3 -r results/eye/times_reif_all.csv  -n 10 -p pqn_reif.n3
 ```
 
 To do the same using a pre-compiled `pvm` image (see below):
 ```
-./run.sh -t pvm -q queries/sepsis_multi.n3 -l logs/sepsis_reif_all.n3 -r results/pvm/times_reif_all.csv  -n 10 -p pqn_reif.pvm
+./run.sh -t pvm -q queries/sepsis_multi.n3 -l logs/sepsis/sepsis_reif_all.n3 -r results/pvm/times_reif_all.csv  -n 10 -p pqn_reif.pvm
 ```
 
 Where result times will appear in `results/times_all.csv` for this example, and times will be averaged over 10 runs. Query outputs will appear in the `out/` folder.
@@ -62,12 +62,12 @@ Where result times will appear in `results/times_all.csv` for this example, and 
 
 To measure the performance of all test queries using eye on the full sepsis event log, run the following command:
 ```
-./run_all.sh -t eye -d queries/constraints -l logs/sepsis_reif_all.n3 -r results/eye/times_reif_all.csv -n 10 -p pqn_reif.n3
+./run_all.sh -t eye -d queries/constraints -l logs/sepsis/sepsis_reif_all.n3 -r results/eye/times_reif_all.csv -n 10 -p pqn_reif.n3
 ```
 
 To do the same using a pre-compiled `pvm` image (see below):
 ```
-./run_all.sh -t pvm -d queries/constraints -l logs/sepsis_reif_all.n3 -r results/pvm/times_reif_all.csv -n 10 -p pqn_reif.pvm
+./run_all.sh -t pvm -d queries/constraints -l logs/sepsis/sepsis_reif_all.n3 -r results/pvm/times_reif_all.csv -n 10 -p pqn_reif.pvm
 ```
 
 
@@ -75,7 +75,7 @@ To do the same using a pre-compiled `pvm` image (see below):
 
 To pre-compile a `pvm` image:
 ```
-eye pqn_reif.n3 --turtle logs/sepsis_reif_all.n3 --image pqn_reif.pvm
+eye pqn_reif.n3 --turtle logs/sepsis/sepsis_reif_all.n3 --image pqn_reif.pvm
 ```
 
 To directly run a `pvm` image:

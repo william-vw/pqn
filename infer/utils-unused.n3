@@ -1,0 +1,87 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+@prefix : <http://example.org/> .
+
+
+{ ( ?cur ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true }
+<= { 
+    ?cur list:in ?trueAt . 
+    "forAllPriorBranches (0)" log:trace ( ?cur ?trueAt ) .
+    true log:callWithCut true .
+} .
+
+{ ( ?cur ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true }
+<= { 
+    ?cur list:notIn ?falseAt .
+    # at least one exists here
+    ?x dfg:from ?y ; dfg:to ?cur ; dfg:source ?src .
+    ( 
+        { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src }
+        { 
+            "forAllPriorBranches (1)" log:trace ( ?prior "=>" ?cur ) .
+            ( ?prior ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true 
+        }
+    ) log:forAllIn _:t .
+ } .
+ 
+{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:allAncestors ?coll } 
+<= {
+   ?cur list:in ?stop .
+   true log:callWithCut true .
+} .
+
+{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:allAncestors ?coll } 
+<= {
+    _:t log:notIncludes { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src } .
+} .
+
+{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:allAncestors ?anc } 
+ <= { 
+    ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src .
+    ( ?prior ( ?pred ?value ) ?src ?coll ) dfg:collectAncestor ?coll2 .
+
+    ( ?prior ( ?pred ?value ) ?stop ?src ?coll2 ) dfg:allAncestors ?anc .
+} .
+
+{ ( ?node ( ?pred ?value ) ?src ?coll ) dfg:collectAncestor ?coll2 }
+  <= { 
+    ( ?node ?src ) ?pred ?value .
+    ( ?coll ( ?node ) ) list:append ?coll2 .
+    true log:callWithCut true .
+} .
+
+{ ( ?node ( ?pred ?value ) ?src ?coll ) dfg:collectAncestor ?coll }
+<= {} .
+
+
+{ ( ?from ?from ?src ?coll ) dfg:pathBetween ?coll } 
+<= { true log:callWithCut true } .
+
+{ ( ?from ?to ?src ?coll ) dfg:pathBetween ?path } 
+<= {
+    ?l dfg:from ?prior ; dfg:to ?to ; dfg:source ?src .
+    
+    ?prior dfg:validBranch true .
+    ( ?prior ?to ) list:notIn ?coll .
+
+    # "pathBetween" log:trace ( ?prior ?to ?coll ) .
+    ( ?coll ( ( ?prior ?to ) ) ) list:append ?coll2 .
+
+    ( ?from ?prior ?src ?coll2 ) dfg:pathBetween ?path
+} .
+
+
+{   ?e dfg:inDiscovered true ; log:notEqualTo dfg:nil } 
+=> { ?e dfg:canReachDiscovered true } .
+
+{
+    ?e dfg:canReachDiscovered true .
+    ?l dfg:from ?from ; dfg:to ?e ; dfg:source dfg:normative .
+    ?from dfg:canReachDiscovered false .
+
+} => {
+    ?from dfg:canReachDiscovered true 
+} .

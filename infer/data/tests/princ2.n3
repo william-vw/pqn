@@ -70,3 +70,27 @@
     dfg:to :e ;
     dfg:source dfg:normative 
 ] .
+
+[
+    dfg:from :d ;
+    dfg:to dfg:nil ;
+    dfg:source dfg:normative 
+] .
+
+[
+    dfg:from :e ;
+    dfg:to dfg:nil ;
+    dfg:source dfg:normative 
+] .
+
+[
+    dfg:from :l ;
+    dfg:to dfg:nil ;
+    dfg:source dfg:normative 
+] .
+
+[
+    dfg:from :a ;
+    dfg:to dfg:nil ;
+    dfg:source dfg:normative 
+] .

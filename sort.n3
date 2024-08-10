@@ -1,0 +1,27 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tr: <http://rdf.org/trace#> .
+@prefix p2: <http://ocel2.org/p2p#> .
+
+{
+    ?list list:sortOn ?vs
+} <= {
+    (?k
+        { 
+            ?list list:member ( ?v ?k ) .
+        } 
+    ?ks ) log:collectAllIn _:t .
+    # "vs" log:trace ?vs .
+
+    ?ks list:sort ?sorted .
+    # "sorted" log:trace ?sorted .
+
+    (?v
+        {
+            ?sorted list:member ?k .
+            ?list list:member ( ?v ?k ) .
+        }
+    ?vs) log:collectAllIn _:t 
+} .

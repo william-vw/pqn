@@ -1,0 +1,71 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+@prefix : <http://example.org/> .
+
+# RUN:
+# eye utils.n3 rules-closure.n3 data/tc/all/norm.n3 --nope --pass-only-new > data/tc/all/norm_closure_all.n3
+# eye utils.n3 data/tc/all/norm.n3 data/tc/all/norm_closure_all.n3 --query rules-closure-query.n3 --nope > data/tc/all/norm_closure.n3
+
+
+# 1/
+{   ?l dfg:from ?start ; dfg:to ?e ; dfg:source dfg:normative .
+    ( 1 { ?l2 dfg:to ?start ; dfg:source dfg:normative . } () ) log:collectAllIn _:t .    
+
+} => { ?e dfg:ancestors ( ?start ) } .
+
+{   ?l dfg:from ?from ; dfg:to ?to ; dfg:source dfg:normative .
+    ?from dfg:ancestors ?closure .
+
+    ?from list:notIn ?closure . # avoid loops
+    ?from log:notEqualTo dfg:nil .
+    ( ( ?from ) ?closure ) list:append ?closure2 .
+
+} => { ?to dfg:ancestors ?closure2 } .
+
+
+# 2/ 
+# {   ( ?pt dfg:normative ) dfg:decisionPoint true .
+
+#     ?l dfg:from ?pt ; dfg:to ?e ; dfg:source dfg:normative .
+#     ( ?e dfg:normative () ) dfg:nextTransitiveClosure ?closure 
+
+#     # (?closure
+#     #     { 
+#     #         ( ?e dfg:normative () ) dfg:nextTransitiveClosure ?closure 
+#     #     }
+#     # ?closures) log:collectAllIn _:t .
+#     # ?closures!list:flatten list:unique ?set .
+#     # ?set!list:length math:greaterThan 0 .
+
+# } => { ?e dfg:descendants ?closure } .
+
+# { ( ?cur ?src ?coll ) dfg:nextTransitiveClosure ?closure
+
+# } <= {
+#     ?l dfg:from ?cur ; dfg:to ?to ; dfg:source ?src .
+    
+#     ?to list:notIn ?coll .
+#     ( ?coll ( ?to ) ) list:append ?coll2 .
+
+#     ( ?to ?src ?coll2 ) dfg:nextTransitiveClosure ?closure
+# } .
+
+# {   ( ?cur ?src ?coll ) dfg:nextTransitiveClosure ?coll 
+# } <= {  ?l dfg:from ?cur ; dfg:to dfg:nil ; dfg:source ?src } .
+
+
+# # 3/ 
+# {   ?l dfg:from ?from ; dfg:to dfg:nil ; dfg:source dfg:normative .
+# } => {  ?from dfg:descendants () } .
+
+# {   ?l dfg:from ?from ; dfg:to ?to ; dfg:source dfg:normative .
+#     ?to dfg:descendants ?desc .
+    
+#     ?from list:notIn ?desc .
+
+#     ( ( ?to ) ?desc ) list:append ?desc2 .
+
+# } => { ?from dfg:descendants ?desc2 } .

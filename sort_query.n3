@@ -1,0 +1,16 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tr: <http://rdf.org/trace#> .
+@prefix p2: <http://ocel2.org/p2p#> .
+
+{
+    # ( ( ("b" 2) ("e" 5) ("a" 1) ("d" 4) ("c" 3) ) 1 ) list:sortOn ?sorted
+    ( ( ("b" "2022-04-05T21:53:00+00:00"^^xsd:dateTime) ("a" "2022-04-05T21:57:00+00:00"^^xsd:dateTime) ("c" "2022-04-05T21:54:00+00:00"^^xsd:dateTime) ) 1 ) list:sortOn ?sorted
+    # 
+
+} => {
+    [] :out ?sorted 
+} .

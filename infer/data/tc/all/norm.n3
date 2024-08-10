@@ -1,0 +1,405 @@
+@prefix ns1: <http://rdf.org/dfg#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#new-foramo/ramo> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#requestadditionaltests> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#onholdpending-awaitapplicant> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#end> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-assessorreviewing> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#onholdpending-administrativeissue> .
+
+[] ns1:from <http://canada.org/tc#onholdpending-amrb> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#new-foramo/ramo> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#duplicate> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#duplicate> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#end> .
+
+[] ns1:from <http://canada.org/tc#onholdpending-administrativeissue> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#medicalexamdate> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#triage> .
+
+[] ns1:from <http://canada.org/tc#inprogress-letter-unfit> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#updatefile> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#inprogress-assessorreviewing> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#new-createfile> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#new-received> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#renewedbycame> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#inprogress-letter-unfit> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-assessorreviewing> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#createdinerror> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#updatefile> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#renewedbycame> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#medicalexamdate> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#new-createfile> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#new-foramo/ramo> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#onholdpending-amrb> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#new-foramo/ramo> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#withdrawnbyapplicant> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-forfollow-upreview> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#duplicate> .
+
+[] ns1:from <http://canada.org/tc#onholdpending-amrb> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-forfollow-upreview> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#onholdpending-amrb> .
+
+[] ns1:from <http://canada.org/tc#end> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:from <http://canada.org/tc#onholdpending-amrb> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#completed-assessmentcomplete> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#inprogress-letter-defer> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#fileretrieved> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#withdrawnbyapplicant> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#createdinerror> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#end> .
+
+[] ns1:from <http://canada.org/tc#end> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-assessorreviewing> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#requestadditionaldocs> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-letter-defer> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#onholdpending-awaitapplicant> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#renewedbycame> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#inprogress-letter-fit> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-forfollow-upreview> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#createdinerror> .
+
+[] ns1:from <http://canada.org/tc#inprogress-letter-unfit> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#new-received> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#inprogress-assessorreviewing> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#triage> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#updatefile> .
+
+[] ns1:from <http://canada.org/tc#end> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:from <http://canada.org/tc#onholdpending-administrativeissue> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#new-foramo/ramo> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#createdinerror> .
+
+[] ns1:from <http://canada.org/tc#inprogress-letter-fit> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#completed-assessmentcomplete> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#inprogress-letter-fit> .
+
+[] ns1:from <http://canada.org/tc#end> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-forfollow-upreview> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#completed-assessmentcomplete> .
+
+[] ns1:from <http://canada.org/tc#end> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#new-foramo/ramo> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#requestadditionaldocs> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-forfollow-upreview> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#onholdpending-administrativeissue> .
+
+[] ns1:from <http://canada.org/tc#end> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#additionaltestresultsreceivedorforfollowupreview> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#completed-assessmentcomplete> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#new-foramo/ramo> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#completed-assessmentcomplete> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#triage> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#triage> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-forfollow-upreview> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#fileretrieval> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-forfollow-upreview> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#withdrawnbyapplicant> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-assessorreviewing> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#completed-assessmentcomplete> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-assessorreviewing> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#onholdpending-amrb> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#medicalexamdate> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#updatefile> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#withdrawnbyapplicant> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#end> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#fileretrieved> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#onholdpending-administrativeissue> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-assessorreviewing> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#requestadditionaltests> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#requestadditionaltests> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#additionaltestresultsreceivedorforfollowupreview> .
+
+[] ns1:from <http://canada.org/tc#onholdpending-administrativeissue> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#renewedbycame> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#inprogress-letter-defer> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#fileretrieved> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#fileretrieval> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#new-received> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#new-foramo/ramo> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#renewedbycame> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#end> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#updatefile> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#new-foramo/ramo> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#fileretrieved> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#completed-assessmentcomplete> .
+
+[] ns1:from <http://canada.org/tc#inprogress-letter-fit> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#new-received> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#renewedbycame> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#fileretrieved> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#onholdpending-amrb> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#fileretrieved> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#duplicate> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-assessorreviewing> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#withdrawnbyapplicant> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-assessorreviewing> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#duplicate> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#completed-assessmentcomplete> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#end> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#fileretrieved> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#requestadditionaltests> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#fileretrieved> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#createdinerror> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#fileretrieved> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#requestadditionaldocs> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#requestadditionaldocs> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#inprogress-forfollow-upreview> .
+
+[] ns1:from <http://canada.org/tc#onholdpending-amrb> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-forfollow-upreview> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#requestadditionaltests> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#triage> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#new-createfile> .
+
+[] ns1:from <http://canada.org/tc#onholdpending-administrativeissue> ;
+    ns1:source ns1:normative ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#new-foramo/ramo> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#fileretrieval> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#fileretrieval> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#fileretrieved> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-assessorreviewing> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#fileretrieval> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#inprogress-forfollow-upreview> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#requestadditionaldocs> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#completed-assessmentcomplete> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#inprogress-letter-unfit> .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#new-foramo/ramo> ;
+    ns1:source ns1:normative ;
+    ns1:to <http://canada.org/tc#onholdpending-administrativeissue> .
+

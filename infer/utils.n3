@@ -5,53 +5,154 @@
 @prefix dfg: <http://rdf.org/dfg#> .
 @prefix : <http://example.org/> .
 
+# list
 
-{ ( ?cur ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true }
-<= { 
-    ?cur list:in ?trueAt . 
-    "forAllPriorBranches (0)" log:trace ( ?cur ?trueAt ) .
-    true log:callWithCut true .
-} .
+{ ?m list:notIn ?lst } 
+<= { (1 { ?m list:in ?lst } ()) log:collectAllIn _:t } .
 
-{ ( ?cur ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true }
-<= { 
-    ?cur list:notIn ?falseAt .
-    # at least one exists here
-    ?x dfg:from ?y ; dfg:to ?cur ; dfg:source ?src .
-    ( 
-        { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src }
-        { 
-            "forAllPriorBranches (1)" log:trace ( ?prior "=>" ?cur ) .
-            ( ?prior ?trueAt ?falseAt ?src ) dfg:forAllPriorBranches true 
+{ ?lists list:intersect ?intersect }
+<= {
+    ( ?lists 0 ) list:memberAt ?list_0 .
+    (?element
+        {
+            ?element list:in ?list_0.
+            (
+                { ?list_i list:in ?lists }
+                { ?element list:in ?list_i }
+            ) log:forAllIn _:t . 
         }
+    ?intersect ) log:collectAllIn _:t .
+} .
+
+
+{   ?list list:flatten ?result } 
+<= { ?list list:flattening ( () ?result ) } .
+
+{   ?list list:flattening ( ?cur ?result ) } 
+<= {
+    ?list list:firstRest ( ?first ?rest ) .
+    ( ?first ?cur ) list:append ?cur2 .
+
+    ?rest list:flattening ( ?cur2 ?result )
+} .
+
+{   () list:flattening ( ?result ?result ) }
+<= true .
+
+
+# dfg
+
+{ ?e dfg:canReachDiscovered false }
+<= { ( 1 { ?e dfg:canReachDiscovered true } () ) log:collectAllIn _:t } .
+
+{ ?e dfg:link ?l }
+<= { ?l dfg:from ?e } .
+
+{ ?e dfg:link ?l }
+<= { ?l dfg:to ?e } .
+
+# { ?e a dfg:Activity } <= { ?l dfg:from ?e } .
+# { ?e a dfg:Activity } <= { ?l dfg:to ?e } .
+
+{ ( ?pt ?src ) dfg:decisionPoint true } 
+<= {
+    ?l1 dfg:from ?pt ; dfg:to ?to1 ; dfg:source ?src .
+    ?l2 dfg:from ?pt ; dfg:to ?to2 ; dfg:source ?src .
+    ?l1 log:notEqualTo ?l2 .
+    ?to1 log:notEqualTo ?to2 .
+} .
+
+{ ( ?pt ?src ) dfg:decisionPoint false } 
+<= {
+    ( 1 { ( ?pt ?src ) dfg:decisionPoint true } () ) log:collectAllIn _:t .
+} .
+
+{ ?e dfg:inNormative true }
+<= { ?e dfg:foundIn dfg:normative } .
+
+{ ?e dfg:inDiscovered true }
+<= { ?e dfg:foundIn dfg:discovered } .
+
+{ ?e dfg:foundIn ?src }
+<= { ?e dfg:link ?l . ?l dfg:source ?src } .
+
+{ ?e dfg:inNormative false }
+<= { ?e dfg:notFoundIn dfg:normative }.
+
+{ ?e dfg:inDiscovered false }
+<= { ?e dfg:notFoundIn dfg:discovered }.
+
+{ ?e dfg:notFoundIn ?src }
+<= { 
+    (1 { ?e dfg:link ?l . ?l dfg:source ?src } ()) log:collectAllIn _:t .
+    # messes up log:trace's
+    # _:t log:notIncludes { ?e dfg:link ?l . ?l dfg:source ?src } 
+} .
+
+{ ?e dfg:invalidBranch true } 
+<= { ?e dfg:invalidated _:e } .
+
+{ ?e dfg:validBranch true } 
+<= { ( 1 { ?e dfg:invalidated _:e } () ) log:collectAllIn _:t } .
+
+
+# now simply retrieved from norm_closure.n3
+
+{   ( ?cur ?src ?coll ) dfg:priorTransitiveClosure ?closure } 
+<= {    ?cur dfg:ancestors ?closure } .
+
+
+{  ( ?anc ?desc ?src ) dfg:ancestor true } 
+<= {    ?desc dfg:ancestors ?ancestors .
+        ?anc list:in ?ancestors 
+} . 
+
+{  ( ?anc ?desc ?src ) dfg:ancestor false } 
+<= {    
+    ( 
+        { ?desc dfg:ancestors ?ancestors }
+        { ?anc list:notIn ?ancestors }
     ) log:forAllIn _:t .
- } .
- 
-{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:allAncestors ?coll } 
-<= {
-   ?cur list:in ?stop .
-   true log:callWithCut true .
-} .
+} . 
 
-{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:allAncestors ?coll } 
-<= {
-    _:t log:notIncludes { ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src } .
-} .
 
-{ ( ?cur ( ?pred ?value ) ?stop ?src ?coll ) dfg:allAncestors ?anc } 
- <= { 
-    ?l dfg:from ?prior ; dfg:to ?cur ; dfg:source ?src .
-    ( ?prior ( ?pred ?value ) ?src ?coll ) dfg:collectAncestor ?coll2 .
 
-    ( ?prior ( ?pred ?value ) ?stop ?src ?coll2 ) dfg:allAncestors ?anc .
-} .
+# {
+#     ( ?cur ?src ?coll ) dfg:priorTransitiveClosure ?closure
+# } <= {
+#     ?cur list:notIn ?coll .
+#     ( ?coll ( ?cur ) ) list:append ?coll2 .
 
-{ ( ?node ( ?pred ?value ) ?src ?coll ) dfg:collectAncestor ?coll2 }
-  <= { 
-    ( ?node ?src ) ?pred ?value .
-    ( ?coll ( ?node ) ) list:append ?coll2 .
-    true log:callWithCut true .
-} .
+#     ?l dfg:from ?from ; dfg:to ?cur ; dfg:source ?src .
 
-{ ( ?node ( ?pred ?value ) ?src ?coll ) dfg:collectAncestor ?coll }
-<= {} .
+#     ( ?from ?src ?coll2 ) dfg:priorTransitiveClosure ?closure
+# } .
+
+# {
+#     ( ?cur ?src ?coll ) dfg:priorTransitiveClosure ?coll2
+# } <= {
+    
+#     (1 { ?l dfg:from ?from ; dfg:to ?cur ; dfg:source ?src } ()) log:collectAllIn _:t .
+#     ( ?coll ( ?cur ) ) list:append ?coll2 .
+# } .
+
+
+# { ( ?anc ?desc ?src ) dfg:ancestor true }
+# <= { ( ?anc ?desc ?src () ) dfg:ancestor true } .
+
+# { ( ?cur ?cur ?src ?coll ) dfg:ancestor true }
+# <= { true log:callWithCut true } .
+
+# { ( ?anc ?cur ?src ?coll ) dfg:ancestor true }
+# <= {
+#     ?cur list:notIn ?coll .
+#     ( ?coll ( ?cur ) ) list:append ?coll2 .
+
+#     ?l dfg:from ?parent ; dfg:to ?cur ; dfg:source ?src .
+#     ( ?anc ?parent ?src ?coll2 ) dfg:ancestor true .
+# } .
+
+# { ( ?anc ?desc ?src ) dfg:ancestor false }
+# <= { 
+#     ( 1 { ( ?anc ?desc ?src ) dfg:ancestor true } () ) log:collectAllIn _:t .
+# } .

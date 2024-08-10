@@ -1,0 +1,12 @@
+@prefix ns1: <http://rdf.org/dfg#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] ns1:from <http://canada.org/tc#inprogress-letter-fit> ;
+    ns1:source ns1:discovered ;
+    ns1:to ns1:nil .
+
+[] ns1:freq 1 ;
+    ns1:from <http://canada.org/tc#onholdpending-administrativeissue> ;
+    ns1:source ns1:discovered ;
+    ns1:to <http://canada.org/tc#inprogress-letter-fit> .
+
