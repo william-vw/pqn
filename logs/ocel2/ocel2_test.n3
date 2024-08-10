@@ -1,0 +1,32 @@
+@prefix ns1: <http://rdf.org/trace#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#a> ;
+    ns1:object2 <http://ocel2.org/p2p#b> ;
+    ns1:qualifier "ab" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#b> ;
+    ns1:object2 <http://ocel2.org/p2p#c> ;
+    ns1:qualifier "bc" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#b> ;
+    ns1:object2 <http://ocel2.org/p2p#d> ;
+    ns1:qualifier "bd" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#b> ;
+    ns1:object2 <http://ocel2.org/p2p#e> ;
+    ns1:qualifier "be" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#x> ;
+    ns1:object2 <http://ocel2.org/p2p#y> ;
+    ns1:qualifier "xy" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#y> ;
+    ns1:object2 <http://ocel2.org/p2p#b> ;
+    ns1:qualifier "yb" .

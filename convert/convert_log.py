@@ -111,7 +111,9 @@ def convert_ocel2_rdf(log, save_to, ns, case_obj_type=None, limit=-1):
     
     g = Graph()
     
+    events = []; count = 0
     for _, row in log.events.iterrows():
+        events.append(row['ocel:eid'])
         evt = str_to_uri(row['ocel:eid'], ns, QuoteOptions.CUSTOM)
         g.add((evt, RDF.type, tr_terms['Event']))
         g.add((evt, tr_terms['activity'], Literal(row['ocel:activity'])))
@@ -119,19 +121,33 @@ def convert_ocel2_rdf(log, save_to, ns, case_obj_type=None, limit=-1):
         g.add((evt, tr_terms['lifecycle'], Literal(row['lifecycle'])))
         g.add((evt, tr_terms['resource'], Literal(row['resource'])))
         
-    for _, row in log.objects.iterrows():
-        obj = str_to_uri(row['ocel:oid'], ns, QuoteOptions.CUSTOM)
-        g.add((obj, RDF.type, tr_terms['Object']))
-        g.add((obj, RDF.type, str_to_uri(row['ocel:type'], ns, QuoteOptions.CUSTOM)))
-
-    for _, row in log.relations.iterrows():
+        if count != -1:
+            count += 1
+            if count == limit:
+                break
+    
+    objects = []
+    for _, row in log.relations.loc[log.relations['ocel:eid'].isin(events),].iterrows():
+    # for _, row in log.relations.iterrows():
+        objects.append(row['ocel:oid'])
         rel = BNode()
         g.add((rel, RDF.type, tr_terms['E2O']))
         g.add((rel, tr_terms['event'], str_to_uri(row['ocel:eid'], ns, QuoteOptions.CUSTOM)))
         g.add((rel, tr_terms['object'], str_to_uri(row['ocel:oid'], ns, QuoteOptions.CUSTOM)))
         g.add((rel, tr_terms['qualifier'], Literal(row['ocel:qualifier'])))
-
-    for _, row in log.o2o.iterrows():
+        
+    for _, row in log.objects.loc[log.objects['ocel:oid'].isin(objects),].iterrows():
+        obj = str_to_uri(row['ocel:oid'], ns, QuoteOptions.CUSTOM)
+        g.add((obj, RDF.type, tr_terms['Object']))
+        g.add((obj, RDF.type, str_to_uri(row['ocel:type'], ns, QuoteOptions.CUSTOM)))  
+        
+    # for _, row in log.objects.iterrows():
+    #     obj = str_to_uri(row['ocel:oid'], ns, QuoteOptions.CUSTOM)
+    #     g.add((obj, RDF.type, tr_terms['Object']))
+    #     g.add((obj, RDF.type, str_to_uri(row['ocel:type'], ns, QuoteOptions.CUSTOM)))
+    
+    for _, row in log.o2o.loc[log.o2o['ocel:oid'].isin(objects),].iterrows():
+    # for _, row in log.o2o.iterrows():
         rel = BNode()
         g.add((rel, RDF.type, tr_terms['O2O']))
         g.add((rel, tr_terms['object'], str_to_uri(row['ocel:oid'], ns, QuoteOptions.CUSTOM)))
