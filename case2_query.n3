@@ -5,10 +5,18 @@
 @prefix tr: <http://rdf.org/trace#> .
 @prefix p2: <http://ocel2.org/p2p#> .
 
-{
-    ?object log:equalTo p2:purchase_requisition:0:pr_trigger_0 .
-    # ?object a p2:purchase_requisition .
+# n3:
+#  eye sort.n3 case2.n3 --turtle logs/ocel2/ocel2-p2p-1000.n3 --query case2_query.n3 > logs/ocel2/ocel2-p2p-1000-traces.n3 --nope 
+# ttl:
+#  eye sort.n3 case2.n3 --turtle logs/ocel2/ocel2-p2p-1000.n3 --query case2_query.n3 > logs/ocel2/ocel2-p2p-1000-traces.ttl --nope 
 
+{
+    # per starting point (purchase_requisition):
+
+    # ?object log:equalTo p2:purchase_requisition:0:pr_trigger_0 .
+    ?object a p2:purchase_requisition .
+
+    # gather all objects related to starting point via these paths
     ( ?result
         {   ( ?object 
                     ( 'path'
@@ -29,8 +37,11 @@
 
     ?all!list:append list:unique ?objs .
 
+    # create trace id
+
     ?object log:skolem ?trace .
 
+    # collect events related to objects
     ( ( ?evt ?ts )
         {
             ?obj2 list:in ?objs .
@@ -39,24 +50,45 @@
         }
     ?evts) log:collectAllIn _:t .
 
-    ?evts list:unique ?uevts .
-    ?uevts list:sortOn ?sevts .
+    ?evts!list:unique list:sortOn ?sevts .
+
+    # per pair of events i & j, create link 
+    # for last event (j == |evts|) link ends at nil
 
     ?sevts list:iterate (?i ?evt ) .
+    ?evt tr:eventObjects ?evt_objs .
+
     ( ?i 1 ) math:sum ?j .
-    ?sevts!list:length math:greaterThan ?j .
-    ( ?sevts ?j ) list:memberAt ?evt2 .
+    (
+        { ?sevts!list:length math:greaterThan ?j }
+        { 
+            ( ?sevts ?j ) list:memberAt ?evt2 .
+            ?evt2 tr:eventObjects ?evt2_objs .
+        }
+        {   ?evt2 log:equalTo tr:nil .
+            ?evt2_objs log:equalTo tr:nil 
+        }
+
+    ) log:ifThenElseIn _:t .
 
 } => {
-    # ?object :object_set ?uall
     [ 
         tr:in ?trace ;
-        # tr:case_obj ?object ;
-        tr:from ?evt ; 
-        tr:to ?evt2 ;
+        tr:from ?evt ;
+        # tr:from [ 
+        #     tr:event ?evt ; 
+        #     tr:objects ?evt_objs
+        # ] ;
+        tr:to ?evt2
+        # tr:to [ 
+        #     tr:event ?evt2 ;
+        #     tr:objects ?evt2_objs
+        # ]
     ]
 } .
 
+
+# test
 
 # {
 #     ?object log:equalTo p2:a .

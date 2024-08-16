@@ -1,0 +1,3096 @@
+@prefix ns1: <http://rdf.org/trace#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ocel2.org/p2p#event:100> a ns1:Event ;
+    ns1:activity "Approve Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Order Manager" ;
+    ns1:ts "2022-04-11T19:13:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:101> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-12T01:54:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:11> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-04T09:25:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:111> a ns1:Event ;
+    ns1:activity "Approve Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Order Manager" ;
+    ns1:ts "2022-04-12T12:09:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:112> a ns1:Event ;
+    ns1:activity "Approve Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Order Manager" ;
+    ns1:ts "2022-04-12T20:15:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:113> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-13T05:23:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:114> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-13T06:51:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:118> a ns1:Event ;
+    ns1:activity "Create Invoice Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Finance/Account Department" ;
+    ns1:ts "2022-04-13T07:49:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:120> a ns1:Event ;
+    ns1:activity "Perform Two-Way Match" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Finance/Account Department" ;
+    ns1:ts "2022-04-13T07:59:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:123> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-13T10:52:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:124> a ns1:Event ;
+    ns1:activity "Approve Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Order Manager" ;
+    ns1:ts "2022-04-13T11:46:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:126> a ns1:Event ;
+    ns1:activity "Create Invoice Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Finance/Account Department" ;
+    ns1:ts "2022-04-13T11:47:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:128> a ns1:Event ;
+    ns1:activity "Perform Two-Way Match" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Finance/Account Department" ;
+    ns1:ts "2022-04-13T11:57:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:132> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-13T14:22:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:134> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-13T17:13:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:135> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-14T03:57:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:136> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-14T06:05:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:143> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-14T07:40:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:145> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-14T08:11:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:147> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-15T00:56:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:152> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-15T11:11:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:154> a ns1:Event ;
+    ns1:activity "Approve Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Order Manager" ;
+    ns1:ts "2022-04-15T11:53:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:159> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-15T12:00:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:161> a ns1:Event ;
+    ns1:activity "Create Invoice Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Finance/Account Department" ;
+    ns1:ts "2022-04-15T13:54:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:163> a ns1:Event ;
+    ns1:activity "Perform Two-Way Match" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Finance/Account Department" ;
+    ns1:ts "2022-04-15T14:04:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:165> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-15T14:22:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:166> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-15T17:24:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:168> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-16T00:29:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:169> a ns1:Event ;
+    ns1:activity "Approve Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Order Manager" ;
+    ns1:ts "2022-04-16T00:52:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:170> a ns1:Event ;
+    ns1:activity "Approve Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Requisition Manager" ;
+    ns1:ts "2022-04-16T01:50:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:171> a ns1:Event ;
+    ns1:activity "Create Invoice Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Finance/Account Department" ;
+    ns1:ts "2022-04-16T03:53:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:172> a ns1:Event ;
+    ns1:activity "Approve Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Order Manager" ;
+    ns1:ts "2022-04-16T09:41:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:173> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-16T09:57:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:174> a ns1:Event ;
+    ns1:activity "Approve Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Order Manager" ;
+    ns1:ts "2022-04-16T10:56:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:175> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-16T12:36:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:178> a ns1:Event ;
+    ns1:activity "Create Invoice Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Finance/Account Department" ;
+    ns1:ts "2022-04-16T18:40:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:179> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-16T21:31:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:182> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-17T18:01:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:183> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-18T04:48:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:208> a ns1:Event ;
+    ns1:activity "Perform Two-Way Match" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Finance/Account Department" ;
+    ns1:ts "2022-04-18T07:10:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:209> a ns1:Event ;
+    ns1:activity "Perform Two-Way Match" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Finance/Account Department" ;
+    ns1:ts "2022-04-18T07:10:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:215> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-18T12:04:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:218> a ns1:Event ;
+    ns1:activity "Create Invoice Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Finance/Account Department" ;
+    ns1:ts "2022-04-18T15:22:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:219> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-18T16:51:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:22> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-05T16:09:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:220> a ns1:Event ;
+    ns1:activity "Approve Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Order Manager" ;
+    ns1:ts "2022-04-18T17:22:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:221> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-18T20:58:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:222> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-18T23:16:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:23> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-05T21:53:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:29> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-06T07:45:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:33> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-06T09:23:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:35> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-06T09:49:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:37> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-06T12:06:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:41> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-06T13:45:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:44> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-06T16:03:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:45> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-07T00:22:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:50> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-07T16:27:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:51> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-07T16:51:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:52> a ns1:Event ;
+    ns1:activity "Approve Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Order Manager" ;
+    ns1:ts "2022-04-07T17:28:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:53> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-07T19:14:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:54> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-07T22:35:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:61> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-08T15:03:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:62> a ns1:Event ;
+    ns1:activity "Approve Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Order Manager" ;
+    ns1:ts "2022-04-08T22:07:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:63> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-09T05:35:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:64> a ns1:Event ;
+    ns1:activity "Approve Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Order Manager" ;
+    ns1:ts "2022-04-09T08:41:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:65> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-09T11:27:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:66> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-09T19:42:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:83> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-11T08:52:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:84> a ns1:Event ;
+    ns1:activity "Create Request for Quotation" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-11T09:50:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:87> a ns1:Event ;
+    ns1:activity "Approve Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Order Manager" ;
+    ns1:ts "2022-04-11T11:00:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:88> a ns1:Event ;
+    ns1:activity "Create Goods Receipt" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Warehouse Department" ;
+    ns1:ts "2022-04-11T11:01:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:89> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-11T11:24:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:95> a ns1:Event ;
+    ns1:activity "Approve Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Requisition Manager" ;
+    ns1:ts "2022-04-11T14:37:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:97> a ns1:Event ;
+    ns1:activity "Create Purchase Order" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Department" ;
+    ns1:ts "2022-04-11T14:56:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#material:44> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:45> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:46> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:47> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:48> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:11:pr_trigger_11> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:15:pr_trigger_15> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:5:pr_trigger_5> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:7:pr_trigger_7> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:8:pr_trigger_8> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#event:137> a ns1:Event ;
+    ns1:activity "Approve Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Requisition Manager" ;
+    ns1:ts "2022-04-14T06:35:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:15> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-04T10:42:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:150> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-15T09:30:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:17> a ns1:Event ;
+    ns1:activity "Delegate Purchase Requisition Approval" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-04T11:07:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:181> a ns1:Event ;
+    ns1:activity "Approve Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Requisition Manager" ;
+    ns1:ts "2022-04-17T16:54:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:213> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-18T11:06:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:91> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-11T12:14:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#material:26> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:27> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:28> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:34> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:35> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:36> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:37> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:38> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:39> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:41> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:12> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:14> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#event:109> a ns1:Event ;
+    ns1:activity "Delegate Purchase Requisition Approval" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-12T07:18:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:121> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-13T08:10:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:13> a ns1:Event ;
+    ns1:activity "Delegate Purchase Requisition Approval" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-04T09:44:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:130> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-13T12:52:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:167> a ns1:Event ;
+    ns1:activity "Approve Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Requisition Manager" ;
+    ns1:ts "2022-04-15T21:31:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:176> a ns1:Event ;
+    ns1:activity "Execute Payment" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Finance/Account Department" ;
+    ns1:ts "2022-04-16T15:46:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:177> a ns1:Event ;
+    ns1:activity "Approve Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Requisition Manager" ;
+    ns1:ts "2022-04-16T18:14:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:180> a ns1:Event ;
+    ns1:activity "Approve Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Requisition Manager" ;
+    ns1:ts "2022-04-16T22:54:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:216> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-18T14:28:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:39> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-06T12:26:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:55> a ns1:Event ;
+    ns1:activity "Approve Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Requisition Manager" ;
+    ns1:ts "2022-04-08T04:32:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:9> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-04T08:37:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:93> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-11T12:27:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:99> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-11T18:02:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#goods_receipt:10> a <http://ocel2.org/p2p#goods_receipt>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#goods_receipt:4> a <http://ocel2.org/p2p#goods_receipt>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#goods_receipt:7> a <http://ocel2.org/p2p#goods_receipt>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#invoice_receipt:6> a <http://ocel2.org/p2p#invoice_receipt>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:23> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:24> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:25> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:42> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:43> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#payment:0> a <http://ocel2.org/p2p#payment>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:11> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:18> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:16:pr_trigger_16> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:18:pr_trigger_18> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:11> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#event:1> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-01T09:26:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:19> a ns1:Event ;
+    ns1:activity "Create Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Manufacturing Department" ;
+    ns1:ts "2022-04-04T15:30:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:3> a ns1:Event ;
+    ns1:activity "Approve Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Requisition Manager" ;
+    ns1:ts "2022-04-02T14:16:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#event:31> a ns1:Event ;
+    ns1:activity "Approve Purchase Requisition" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Procurement Requisition Manager" ;
+    ns1:ts "2022-04-06T08:20:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#goods_receipt:8> a <http://ocel2.org/p2p#goods_receipt>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#invoice_receipt:4> a <http://ocel2.org/p2p#invoice_receipt>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:0> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:1> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:10> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:11> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:12> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:13> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:16> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:17> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:18> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:2> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:3> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:32> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:33> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:7> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:8> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:9> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:13> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:8> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:19:pr_trigger_19> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:4:pr_trigger_4> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:5> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#goods_receipt:6> a <http://ocel2.org/p2p#goods_receipt>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#invoice_receipt:3> a <http://ocel2.org/p2p#invoice_receipt>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:4> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:5> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#material:6> a <http://ocel2.org/p2p#material>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:15> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:16> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:6> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:10:pr_trigger_10> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:12:pr_trigger_12> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:13:pr_trigger_13> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:14:pr_trigger_14> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:17:pr_trigger_17> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:3:pr_trigger_3> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:10> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:12> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:17> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:8> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:9> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#event:212> a ns1:Event ;
+    ns1:activity "Execute Payment" ;
+    ns1:lifecycle "complete" ;
+    ns1:resource "Finance/Account Department" ;
+    ns1:ts "2022-04-18T10:05:00+00:00"^^xsd:dateTime .
+
+<http://ocel2.org/p2p#goods_receipt:0> a <http://ocel2.org/p2p#goods_receipt>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#goods_receipt:2> a <http://ocel2.org/p2p#goods_receipt>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#payment:2> a <http://ocel2.org/p2p#payment>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:0> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:5> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:7> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:9> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:1:pr_trigger_1> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:6:pr_trigger_6> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:9:pr_trigger_9> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:7> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#goods_receipt:1> a <http://ocel2.org/p2p#goods_receipt>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:0:pr_trigger_0> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_requisition:2:pr_trigger_2> a <http://ocel2.org/p2p#purchase_requisition>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:1> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:3> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:6> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:1> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#goods_receipt:3> a <http://ocel2.org/p2p#goods_receipt>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#invoice_receipt:2> a <http://ocel2.org/p2p#invoice_receipt>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:10> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:2> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:2> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:4> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:0> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#quotation:4> a <http://ocel2.org/p2p#quotation>,
+        ns1:Object .
+
+<http://ocel2.org/p2p#purchase_order:3> a <http://ocel2.org/p2p#purchase_order>,
+        ns1:Object .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:22> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:3:pr_trigger_3> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:2> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:44> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:5:pr_trigger_5> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:159> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:15> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:0:pr_trigger_0> ;
+    ns1:object2 <http://ocel2.org/p2p#material:2> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:7> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:13> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:143> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:4:pr_trigger_4> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:18:pr_trigger_18> ;
+    ns1:object2 <http://ocel2.org/p2p#material:44> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:37> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:166> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:1> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:1> ;
+    ns1:object <http://ocel2.org/p2p#material:3> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:9> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:1:pr_trigger_1> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:1:pr_trigger_1> ;
+    ns1:object2 <http://ocel2.org/p2p#material:4> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:17:pr_trigger_17> ;
+    ns1:object2 <http://ocel2.org/p2p#material:43> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:6> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:1> ;
+    ns1:qualifier "goods_receipt_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:6> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:7> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:177> ;
+    ns1:object <http://ocel2.org/p2p#material:38> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:5:pr_trigger_5> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:3> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:182> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:8> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:12> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:12> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:0> ;
+    ns1:object2 <http://ocel2.org/p2p#material:11> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:5> ;
+    ns1:object2 <http://ocel2.org/p2p#material:8> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:134> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:1> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:10:pr_trigger_10> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:13> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:100> ;
+    ns1:object <http://ocel2.org/p2p#quotation:3> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:135> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:0> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:11:pr_trigger_11> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:8> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:93> ;
+    ns1:object <http://ocel2.org/p2p#material:27> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:13:pr_trigger_13> ;
+    ns1:object2 <http://ocel2.org/p2p#material:36> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:120> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:0> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:130> ;
+    ns1:object <http://ocel2.org/p2p#material:39> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:154> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:1> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:4> ;
+    ns1:object2 <http://ocel2.org/p2p#material:10> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:3> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:0> ;
+    ns1:qualifier "invoice_receipt_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:163> ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:3> ;
+    ns1:qualifier "invoice receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:45> ;
+    ns1:object <http://ocel2.org/p2p#quotation:2> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:66> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:9> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:13:pr_trigger_13> ;
+    ns1:object2 <http://ocel2.org/p2p#material:35> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:9:pr_trigger_9> ;
+    ns1:object2 <http://ocel2.org/p2p#material:24> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:3> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:7> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:54> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:7:pr_trigger_7> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:0> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:qualifier "Good Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:135> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:2> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:17> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:19> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:1> ;
+    ns1:object2 <http://ocel2.org/p2p#material:6> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:7:pr_trigger_7> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:5> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:212> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:2> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:208> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:6> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:4> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:1> ;
+    ns1:qualifier "invoice_receipt_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:35> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:1:pr_trigger_1> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:6> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:4> ;
+    ns1:qualifier "Invoice Receipt of Goods Receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:145> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:16:pr_trigger_16> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:216> ;
+    ns1:object <http://ocel2.org/p2p#material:48> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:171> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:6> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:215> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:10> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:8:pr_trigger_8> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:7> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:118> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:0> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:6> ;
+    ns1:object2 <http://ocel2.org/p2p#material:18> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:17> ;
+    ns1:object <http://ocel2.org/p2p#material:11> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:165> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:4> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:121> ;
+    ns1:object <http://ocel2.org/p2p#material:35> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:19:pr_trigger_19> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:19> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:147> ;
+    ns1:object <http://ocel2.org/p2p#quotation:7> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:14:pr_trigger_14> ;
+    ns1:object2 <http://ocel2.org/p2p#material:38> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:3> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:8> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:132> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:3> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:169> ;
+    ns1:object <http://ocel2.org/p2p#quotation:7> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:9:pr_trigger_9> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:10> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:4> ;
+    ns1:object2 <http://ocel2.org/p2p#material:9> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:10:pr_trigger_10> ;
+    ns1:object2 <http://ocel2.org/p2p#material:27> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:2:pr_trigger_2> ;
+    ns1:object2 <http://ocel2.org/p2p#material:7> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:19:pr_trigger_19> ;
+    ns1:object2 <http://ocel2.org/p2p#material:46> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:19> ;
+    ns1:object <http://ocel2.org/p2p#material:8> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:8> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:1> ;
+    ns1:qualifier "Good Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:123> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:4> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:171> ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:4> ;
+    ns1:qualifier "invoice receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:2> ;
+    ns1:object2 <http://ocel2.org/p2p#material:3> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:147> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:13> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:130> ;
+    ns1:object <http://ocel2.org/p2p#material:38> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:13> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:1:pr_trigger_1> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:51> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:4> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:3> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:3> ;
+    ns1:qualifier "Invoice Receipt of Goods Receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:1> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:6> ;
+    ns1:qualifier "Invoice Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:99> ;
+    ns1:object <http://ocel2.org/p2p#material:24> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:7> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:1> ;
+    ns1:qualifier "Good Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:183> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:15:pr_trigger_15> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:19> ;
+    ns1:object <http://ocel2.org/p2p#material:7> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:9> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:15> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:39> ;
+    ns1:object <http://ocel2.org/p2p#material:18> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:6> ;
+    ns1:object2 <http://ocel2.org/p2p#material:16> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:52> ;
+    ns1:object <http://ocel2.org/p2p#quotation:0> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:174> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:5> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:209> ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:2> ;
+    ns1:qualifier "invoice receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:152> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:9> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:172> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:10> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:15> ;
+    ns1:object2 <http://ocel2.org/p2p#material:13> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:10> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:10> ;
+    ns1:qualifier "goods_receipt_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:19> ;
+    ns1:object <http://ocel2.org/p2p#material:9> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:4> ;
+    ns1:object2 <http://ocel2.org/p2p#material:7> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:128> ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:2> ;
+    ns1:qualifier "invoice receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:84> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:11:pr_trigger_11> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:18:pr_trigger_18> ;
+    ns1:object2 <http://ocel2.org/p2p#material:45> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:13> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:17> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:145> ;
+    ns1:object <http://ocel2.org/p2p#material:41> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:100> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:8> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:16> ;
+    ns1:object2 <http://ocel2.org/p2p#material:32> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:221> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:16> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:126> ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:2> ;
+    ns1:qualifier "invoice receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:2:pr_trigger_2> ;
+    ns1:object2 <http://ocel2.org/p2p#material:9> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:4> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:5> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:61> ;
+    ns1:object <http://ocel2.org/p2p#quotation:6> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:216> ;
+    ns1:object <http://ocel2.org/p2p#material:46> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:14> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:17> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:10:pr_trigger_10> ;
+    ns1:object2 <http://ocel2.org/p2p#material:26> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:93> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:10:pr_trigger_10> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:3> ;
+    ns1:object <http://ocel2.org/p2p#material:1> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:176> ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:3> ;
+    ns1:qualifier "invoice receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:113> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:2> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:88> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:1> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:118> ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:2> ;
+    ns1:qualifier "invoice receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:101> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:11> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:7> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:3> ;
+    ns1:qualifier "goods_receipt_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:8> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:3> ;
+    ns1:qualifier "goods_receipt_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:17> ;
+    ns1:object2 <http://ocel2.org/p2p#material:43> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:167> ;
+    ns1:object <http://ocel2.org/p2p#material:28> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:8> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:11> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:172> ;
+    ns1:object <http://ocel2.org/p2p#quotation:6> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:165> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:7> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:31> ;
+    ns1:object <http://ocel2.org/p2p#material:7> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:45> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:1> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:37> ;
+    ns1:object <http://ocel2.org/p2p#quotation:0> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:93> ;
+    ns1:object <http://ocel2.org/p2p#material:28> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:11> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:22> ;
+    ns1:qualifier "Invoice Receipts of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:3> ;
+    ns1:object2 <http://ocel2.org/p2p#material:6> ;
+    ns1:qualifier "Materials of Goods Receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:4> ;
+    ns1:object2 <http://ocel2.org/p2p#material:4> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:62> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:6> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:9> ;
+    ns1:qualifier "Good Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:123> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:8> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:222> ;
+    ns1:object <http://ocel2.org/p2p#quotation:17> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:39> ;
+    ns1:object <http://ocel2.org/p2p#material:16> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:16> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:19> ;
+    ns1:qualifier "Invoice Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:213> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:18:pr_trigger_18> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:114> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:2> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:13:pr_trigger_13> ;
+    ns1:object2 <http://ocel2.org/p2p#material:34> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:66> ;
+    ns1:object <http://ocel2.org/p2p#quotation:5> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:4> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:5> ;
+    ns1:qualifier "goods_receipt_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:4> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:7> ;
+    ns1:qualifier "Good Receipts of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:4:pr_trigger_4> ;
+    ns1:object2 <http://ocel2.org/p2p#material:13> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:112> ;
+    ns1:object <http://ocel2.org/p2p#quotation:2> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:3> ;
+    ns1:object2 <http://ocel2.org/p2p#material:5> ;
+    ns1:qualifier "Materials of Goods Receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:3> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:0:pr_trigger_0> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:53> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:7> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:object2 <http://ocel2.org/p2p#material:2> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:14:pr_trigger_14> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:15> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:159> ;
+    ns1:object <http://ocel2.org/p2p#quotation:9> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:9> ;
+    ns1:object <http://ocel2.org/p2p#material:6> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:17> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:20> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:177> ;
+    ns1:object <http://ocel2.org/p2p#material:37> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:15> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:4> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:174> ;
+    ns1:object <http://ocel2.org/p2p#quotation:4> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:167> ;
+    ns1:object <http://ocel2.org/p2p#material:27> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:11> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:4:pr_trigger_4> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:8> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:5> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:150> ;
+    ns1:object <http://ocel2.org/p2p#material:42> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:91> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:12:pr_trigger_12> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:167> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:10:pr_trigger_10> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:18> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:8> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:6> ;
+    ns1:object2 <http://ocel2.org/p2p#material:10> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:0> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:2> ;
+    ns1:qualifier "goods_receipt_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:65> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:5> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:216> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:19:pr_trigger_19> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:3:pr_trigger_3> ;
+    ns1:object2 <http://ocel2.org/p2p#material:12> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:2:pr_trigger_2> ;
+    ns1:object2 <http://ocel2.org/p2p#material:8> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:62> ;
+    ns1:object <http://ocel2.org/p2p#quotation:0> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:7> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:5> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:6:pr_trigger_6> ;
+    ns1:object2 <http://ocel2.org/p2p#material:18> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:121> ;
+    ns1:object <http://ocel2.org/p2p#material:36> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:179> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:9:pr_trigger_9> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:17> ;
+    ns1:object <http://ocel2.org/p2p#material:12> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:15> ;
+    ns1:object <http://ocel2.org/p2p#material:12> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:1> ;
+    ns1:object <http://ocel2.org/p2p#material:0> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:163> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:3> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:183> ;
+    ns1:object <http://ocel2.org/p2p#quotation:11> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:1> ;
+    ns1:object2 <http://ocel2.org/p2p#material:12> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:176> ;
+    ns1:object <http://ocel2.org/p2p#payment:0> ;
+    ns1:qualifier "payment" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:11> ;
+    ns1:object <http://ocel2.org/p2p#material:13> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:39> ;
+    ns1:object <http://ocel2.org/p2p#material:17> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:0> ;
+    ns1:object2 <http://ocel2.org/p2p#material:1> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:6:pr_trigger_6> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:6> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:218> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:8> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:63> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:6> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:52> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:2> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:128> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:2> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:2> ;
+    ns1:object2 <http://ocel2.org/p2p#material:1> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:150> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:17:pr_trigger_17> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:180> ;
+    ns1:object <http://ocel2.org/p2p#material:36> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:23> ;
+    ns1:object <http://ocel2.org/p2p#quotation:0> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:13> ;
+    ns1:object <http://ocel2.org/p2p#material:4> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:12> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:16> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:9> ;
+    ns1:object <http://ocel2.org/p2p#material:4> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:180> ;
+    ns1:object <http://ocel2.org/p2p#material:34> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:89> ;
+    ns1:object <http://ocel2.org/p2p#quotation:6> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:212> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:33> ;
+    ns1:object <http://ocel2.org/p2p#quotation:2> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:84> ;
+    ns1:object <http://ocel2.org/p2p#quotation:8> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:2> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:qualifier "Good Receipts of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:2:pr_trigger_2> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:4> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:10> ;
+    ns1:object2 <http://ocel2.org/p2p#material:24> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:0:pr_trigger_0> ;
+    ns1:object2 <http://ocel2.org/p2p#material:3> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:212> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:2> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:130> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:14:pr_trigger_14> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:7> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:8> ;
+    ns1:qualifier "Invoice Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:88> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:33> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:0> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:16:pr_trigger_16> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:14> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:168> ;
+    ns1:object <http://ocel2.org/p2p#quotation:7> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:14:pr_trigger_14> ;
+    ns1:object2 <http://ocel2.org/p2p#material:39> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:111> ;
+    ns1:object <http://ocel2.org/p2p#quotation:4> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:6> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:3> ;
+    ns1:qualifier "invoice_receipt_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:99> ;
+    ns1:object <http://ocel2.org/p2p#material:23> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:9> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:4> ;
+    ns1:qualifier "Invoice Receipts of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:5> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:9> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:51> ;
+    ns1:object <http://ocel2.org/p2p#quotation:1> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:137> ;
+    ns1:object <http://ocel2.org/p2p#material:32> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:176> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:4> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:7> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:14> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:17:pr_trigger_17> ;
+    ns1:object2 <http://ocel2.org/p2p#material:42> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:180> ;
+    ns1:object <http://ocel2.org/p2p#material:35> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:10> ;
+    ns1:object2 <http://ocel2.org/p2p#material:23> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:5> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:11> ;
+    ns1:qualifier "Invoice Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:39> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:6:pr_trigger_6> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:177> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:14:pr_trigger_14> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:13> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:32> ;
+    ns1:qualifier "Invoice Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:13> ;
+    ns1:object <http://ocel2.org/p2p#material:6> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:124> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:9> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:175> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:12:pr_trigger_12> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:5> ;
+    ns1:object2 <http://ocel2.org/p2p#material:9> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:55> ;
+    ns1:object <http://ocel2.org/p2p#material:17> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:3> ;
+    ns1:object <http://ocel2.org/p2p#material:3> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:3:pr_trigger_3> ;
+    ns1:object2 <http://ocel2.org/p2p#material:11> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:11> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:18> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:169> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:13> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:219> ;
+    ns1:object <http://ocel2.org/p2p#quotation:11> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:173> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:7> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:175> ;
+    ns1:object <http://ocel2.org/p2p#quotation:12> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:161> ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:3> ;
+    ns1:qualifier "invoice receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:0:pr_trigger_0> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:0> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:2> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:2> ;
+    ns1:qualifier "goods_receipt_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:7> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:6> ;
+    ns1:qualifier "Invoice Receipt of Goods Receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:12:pr_trigger_12> ;
+    ns1:object2 <http://ocel2.org/p2p#material:33> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:93> ;
+    ns1:object <http://ocel2.org/p2p#material:26> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:3> ;
+    ns1:object <http://ocel2.org/p2p#material:0> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:173> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:0> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:166> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:8> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:220> ;
+    ns1:object <http://ocel2.org/p2p#quotation:9> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:3> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:4> ;
+    ns1:qualifier "Good Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:182> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:0> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:170> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:16:pr_trigger_16> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:3> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:0> ;
+    ns1:qualifier "goods_receipt_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:0> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:3> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:12> ;
+    ns1:object2 <http://ocel2.org/p2p#material:32> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:10> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:17> ;
+    ns1:qualifier "Invoice Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:170> ;
+    ns1:object <http://ocel2.org/p2p#material:41> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:2> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:2> ;
+    ns1:qualifier "invoice_receipt_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:31> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:2:pr_trigger_2> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:18> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:15> ;
+    ns1:qualifier "Invoice Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:222> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:17:pr_trigger_17> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:181> ;
+    ns1:object <http://ocel2.org/p2p#material:43> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:4> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:0> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:3:pr_trigger_3> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:2> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:167> ;
+    ns1:object <http://ocel2.org/p2p#material:26> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:4> ;
+    ns1:object2 <http://ocel2.org/p2p#material:6> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:132> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:4> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:23> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:0:pr_trigger_0> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:176> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:3> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:65> ;
+    ns1:object <http://ocel2.org/p2p#quotation:4> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:97> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:12> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:212> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:0> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:212> ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:2> ;
+    ns1:qualifier "invoice receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:121> ;
+    ns1:object <http://ocel2.org/p2p#material:34> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:50> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:8> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:1> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:4> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:112> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:0> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:212> ;
+    ns1:object <http://ocel2.org/p2p#payment:2> ;
+    ns1:qualifier "payment" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:1> ;
+    ns1:object2 <http://ocel2.org/p2p#material:4> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:41> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:2:pr_trigger_2> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:2> ;
+    ns1:object2 <http://ocel2.org/p2p#material:11> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:212> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:1> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:53> ;
+    ns1:object <http://ocel2.org/p2p#quotation:3> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:137> ;
+    ns1:object <http://ocel2.org/p2p#material:33> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:1> ;
+    ns1:object <http://ocel2.org/p2p#material:2> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:221> ;
+    ns1:object <http://ocel2.org/p2p#quotation:12> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:1> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:qualifier "Good Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:209> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:1> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:101> ;
+    ns1:object <http://ocel2.org/p2p#quotation:8> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:6> ;
+    ns1:object2 <http://ocel2.org/p2p#material:7> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:29> ;
+    ns1:object <http://ocel2.org/p2p#quotation:0> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:168> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:14> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:64> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:4> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:17> ;
+    ns1:object2 <http://ocel2.org/p2p#material:42> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:54> ;
+    ns1:object <http://ocel2.org/p2p#quotation:5> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:55> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:6:pr_trigger_6> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:154> ;
+    ns1:object <http://ocel2.org/p2p#quotation:2> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:150> ;
+    ns1:object <http://ocel2.org/p2p#material:43> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:55> ;
+    ns1:object <http://ocel2.org/p2p#material:16> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:10> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:17> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:14:pr_trigger_14> ;
+    ns1:object2 <http://ocel2.org/p2p#material:37> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:50> ;
+    ns1:object <http://ocel2.org/p2p#quotation:3> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:19> ;
+    ns1:object <http://ocel2.org/p2p#material:10> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:97> ;
+    ns1:object <http://ocel2.org/p2p#quotation:8> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:9> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:1> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:178> ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:2> ;
+    ns1:qualifier "invoice receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:15:pr_trigger_15> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:11> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:19:pr_trigger_19> ;
+    ns1:object2 <http://ocel2.org/p2p#material:48> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:18:pr_trigger_18> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:18> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:218> ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:6> ;
+    ns1:qualifier "invoice receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:13> ;
+    ns1:object <http://ocel2.org/p2p#material:5> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:87> ;
+    ns1:object <http://ocel2.org/p2p#quotation:3> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:4:pr_trigger_4> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:9> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:1:pr_trigger_1> ;
+    ns1:object2 <http://ocel2.org/p2p#material:5> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:215> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:10> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:1> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:2> ;
+    ns1:qualifier "goods_receipt_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:134> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:2> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:12:pr_trigger_12> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:12> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:95> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:4:pr_trigger_4> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:2> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:2> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:114> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:10> ;
+    ns1:object2 <http://ocel2.org/p2p#material:17> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:9:pr_trigger_9> ;
+    ns1:object2 <http://ocel2.org/p2p#material:25> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:126> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:2> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:10> ;
+    ns1:object2 <http://ocel2.org/p2p#material:16> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:2> ;
+    ns1:object2 <http://ocel2.org/p2p#material:12> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:10> ;
+    ns1:object2 <http://ocel2.org/p2p#material:25> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:0> ;
+    ns1:object2 <http://ocel2.org/p2p#material:0> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:83> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:0> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:6> ;
+    ns1:object2 <http://ocel2.org/p2p#material:17> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:4> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:6> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:0:pr_trigger_0> ;
+    ns1:object2 <http://ocel2.org/p2p#material:1> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:61> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:6:pr_trigger_6> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:10> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:10> ;
+    ns1:qualifier "Good Receipts of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:8> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:12> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:17> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:3:pr_trigger_3> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:15> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:12> ;
+    ns1:qualifier "Invoice Receipts of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:9:pr_trigger_9> ;
+    ns1:object2 <http://ocel2.org/p2p#material:23> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:22> ;
+    ns1:object <http://ocel2.org/p2p#quotation:2> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:9> ;
+    ns1:object <http://ocel2.org/p2p#material:5> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:2> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:1> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:35> ;
+    ns1:object <http://ocel2.org/p2p#quotation:1> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:178> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:1> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:1> ;
+    ns1:object2 <http://ocel2.org/p2p#material:5> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:208> ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:4> ;
+    ns1:qualifier "invoice receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:4> ;
+    ns1:object2 <http://ocel2.org/p2p#material:8> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:4> ;
+    ns1:object2 <http://ocel2.org/p2p#material:5> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:177> ;
+    ns1:object <http://ocel2.org/p2p#material:39> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:1> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:0:pr_trigger_0> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:113> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:2> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:2:pr_trigger_2> ;
+    ns1:object2 <http://ocel2.org/p2p#material:10> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:19> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:2:pr_trigger_2> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:181> ;
+    ns1:object <http://ocel2.org/p2p#material:42> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:31> ;
+    ns1:object <http://ocel2.org/p2p#material:10> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:121> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:13:pr_trigger_13> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:1:pr_trigger_1> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:1> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:109> ;
+    ns1:object <http://ocel2.org/p2p#material:23> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:10> ;
+    ns1:object2 <http://ocel2.org/p2p#material:18> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:87> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:7> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:130> ;
+    ns1:object <http://ocel2.org/p2p#material:37> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:31> ;
+    ns1:object <http://ocel2.org/p2p#material:9> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:91> ;
+    ns1:object <http://ocel2.org/p2p#material:33> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:0:pr_trigger_0> ;
+    ns1:object2 <http://ocel2.org/p2p#material:0> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:109> ;
+    ns1:object <http://ocel2.org/p2p#material:25> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:3> ;
+    ns1:object <http://ocel2.org/p2p#material:2> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:19:pr_trigger_19> ;
+    ns1:object2 <http://ocel2.org/p2p#material:47> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:0> ;
+    ns1:object2 <http://ocel2.org/p2p#material:2> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:31> ;
+    ns1:object <http://ocel2.org/p2p#material:8> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:109> ;
+    ns1:object <http://ocel2.org/p2p#material:24> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:0> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:1> ;
+    ns1:object <http://ocel2.org/p2p#material:1> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:6> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:10> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:99> ;
+    ns1:object <http://ocel2.org/p2p#material:25> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:1> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:3> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:89> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:10> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:object2 <http://ocel2.org/p2p#material:0> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:11> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:12> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:10> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:17> ;
+    ns1:qualifier "Invoice Receipt of Goods Receipt" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:16:pr_trigger_16> ;
+    ns1:object2 <http://ocel2.org/p2p#material:41> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:1> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:2> ;
+    ns1:qualifier "Invoice Receipt of Goods Receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:213> ;
+    ns1:object <http://ocel2.org/p2p#material:45> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:15> ;
+    ns1:object <http://ocel2.org/p2p#material:11> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:216> ;
+    ns1:object <http://ocel2.org/p2p#material:47> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:143> ;
+    ns1:object <http://ocel2.org/p2p#quotation:9> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:64> ;
+    ns1:object <http://ocel2.org/p2p#quotation:1> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:219> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:18> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:136> ;
+    ns1:object <http://ocel2.org/p2p#quotation:7> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:2> ;
+    ns1:qualifier "Invoice Receipts of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:29> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:2> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:12:pr_trigger_12> ;
+    ns1:object2 <http://ocel2.org/p2p#material:32> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:179> ;
+    ns1:object <http://ocel2.org/p2p#quotation:10> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:161> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:3> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:83> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:3> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:220> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:15> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:17:pr_trigger_17> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:17> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:4> ;
+    ns1:object2 <http://ocel2.org/p2p#invoice_receipt:3> ;
+    ns1:qualifier "Invoice Receipts of Purchase Order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:13:pr_trigger_13> ;
+    ns1:object2 <http://ocel2.org/p2p#quotation:16> ;
+    ns1:qualifier "Quotation of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:44> ;
+    ns1:object <http://ocel2.org/p2p#quotation:3> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:10> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:10> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:2> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:0> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:213> ;
+    ns1:object <http://ocel2.org/p2p#material:44> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:0> ;
+    ns1:object2 <http://ocel2.org/p2p#purchase_order:2> ;
+    ns1:qualifier "Purchase Order of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:63> ;
+    ns1:object <http://ocel2.org/p2p#quotation:4> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:1:pr_trigger_1> ;
+    ns1:object2 <http://ocel2.org/p2p#material:6> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:15> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:3:pr_trigger_3> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:137> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:12:pr_trigger_12> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:6:pr_trigger_6> ;
+    ns1:object2 <http://ocel2.org/p2p#material:16> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:10:pr_trigger_10> ;
+    ns1:object2 <http://ocel2.org/p2p#material:28> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:16> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:11> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:16> ;
+    ns1:object2 <http://ocel2.org/p2p#material:33> ;
+    ns1:qualifier "Materials of Purchase Order" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:152> ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:6> ;
+    ns1:qualifier "goods receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:55> ;
+    ns1:object <http://ocel2.org/p2p#material:18> ;
+    ns1:qualifier "material" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:91> ;
+    ns1:object <http://ocel2.org/p2p#material:32> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#goods_receipt:3> ;
+    ns1:object2 <http://ocel2.org/p2p#material:4> ;
+    ns1:qualifier "Materials of Goods Receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:111> ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:6> ;
+    ns1:qualifier "purchase_order" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:0> ;
+    ns1:object2 <http://ocel2.org/p2p#material:3> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:95> ;
+    ns1:object <http://ocel2.org/p2p#material:13> ;
+    ns1:qualifier "material" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_order:5> ;
+    ns1:object2 <http://ocel2.org/p2p#payment:7> ;
+    ns1:qualifier "order_pm" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:99> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:9:pr_trigger_9> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:109> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:9:pr_trigger_9> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:6:pr_trigger_6> ;
+    ns1:object2 <http://ocel2.org/p2p#material:17> ;
+    ns1:qualifier "assigned_materials of PR" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:181> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:17:pr_trigger_17> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:9> ;
+    ns1:object2 <http://ocel2.org/p2p#material:13> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:136> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:8:pr_trigger_8> ;
+    ns1:qualifier "purchase_requisition" .
+
+[] a ns1:O2O ;
+    ns1:object <http://ocel2.org/p2p#quotation:12> ;
+    ns1:object2 <http://ocel2.org/p2p#material:33> ;
+    ns1:qualifier "Materials of Quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:124> ;
+    ns1:object <http://ocel2.org/p2p#quotation:5> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:120> ;
+    ns1:object <http://ocel2.org/p2p#invoice_receipt:2> ;
+    ns1:qualifier "invoice receipt" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:41> ;
+    ns1:object <http://ocel2.org/p2p#quotation:4> ;
+    ns1:qualifier "quotation" .
+
+[] a ns1:E2O ;
+    ns1:event <http://ocel2.org/p2p#event:180> ;
+    ns1:object <http://ocel2.org/p2p#purchase_requisition:13:pr_trigger_13> ;
+    ns1:qualifier "purchase_requisition" .
+

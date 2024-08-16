@@ -5,40 +5,8 @@
 @prefix tr: <http://rdf.org/trace#> .
 @prefix p2: <http://ocel2.org/p2p#> .
 
-# {
-#     [] tr:object ?pr ; tr:object2 ?qo ; tr:qualifier "Quotation of PR"
-# } => {
-#     ?pr :node1 ?qo
-# } .
 
-# {
-#     ?pr :node1 ?qo .
-#     [] tr:object ?qo ; tr:object2 ?po ; tr:qualifier "Purchase Order of Quotation"
-# } => {
-#     ?qo :node2 ?po
-# } .
-
-# {
-#     ?qo :node2 ?po .
-#     [] tr:object ?gr ; tr:object2 ?po ; tr:qualifier "Good Receipts of Purchase Order"
-# } => {
-#     ?po :node3 ?gr 
-# } .
-
-# {
-#     ?qo :node2 ?po .
-#     [] tr:object ?po ; tr:object2 ?ir ; tr:qualifier "invoice receipt"
-# } => {
-#     ?po :node4 ?ir
-# } .
-
-# {
-#     ?qo :node2 ?po .
-#     [] tr:object ?po ; tr:object2 ?pa ; tr:qualifier "order_pm"
-# } => {
-#     ?po :node5 ?pa
-# } .
-
+# gather objects based on given paths
 
 {
     ( ?object ( 'step' '=>' ?qualifier ) ) tr:objectNode ( ?coll ?result )
@@ -79,3 +47,47 @@
 
 {   ( ?object () ) tr:objectPath ( ?coll ?coll )
 } <= true .
+
+{   ?evt tr:eventObjects ?objs
+} <= {
+    ( ?obj
+        {   [] a tr:E2O ; tr:event ?evt ; tr:object ?obj }
+    ?objs ) log:collectAllIn _:t .
+} .
+
+
+# (hard-coded rules for more or less the same)
+
+# {
+#     [] tr:object ?pr ; tr:object2 ?qo ; tr:qualifier "Quotation of PR"
+# } => {
+#     ?pr :node1 ?qo
+# } .
+
+# {
+#     ?pr :node1 ?qo .
+#     [] tr:object ?qo ; tr:object2 ?po ; tr:qualifier "Purchase Order of Quotation"
+# } => {
+#     ?qo :node2 ?po
+# } .
+
+# {
+#     ?qo :node2 ?po .
+#     [] tr:object ?gr ; tr:object2 ?po ; tr:qualifier "Good Receipts of Purchase Order"
+# } => {
+#     ?po :node3 ?gr 
+# } .
+
+# {
+#     ?qo :node2 ?po .
+#     [] tr:object ?po ; tr:object2 ?ir ; tr:qualifier "invoice receipt"
+# } => {
+#     ?po :node4 ?ir
+# } .
+
+# {
+#     ?qo :node2 ?po .
+#     [] tr:object ?po ; tr:object2 ?pa ; tr:qualifier "order_pm"
+# } => {
+#     ?po :node5 ?pa
+# } .

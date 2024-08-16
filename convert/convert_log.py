@@ -1,3 +1,4 @@
+from pm4py.objects.log.obj import EventLog, Trace, Event
 from convert_base import str_to_uri, RdfRepresent, QuoteOptions
 from rdflib import Namespace, Literal, Graph, BNode, RDF
 import pandas as pd
@@ -105,7 +106,7 @@ def convert_xes_rdf(log, save_to, ns, format, limit=-1):
     end = time.time_ns()
     print("total time (ms):", (end-start)/1000000)
 
-def convert_ocel2_rdf(log, save_to, ns, case_obj_type=None, limit=-1):
+def convert_ocel2_rdf(log, save_to, ns, limit=-1):
     start = time.time_ns()
     start_conv = time.time_ns()
     
@@ -218,3 +219,38 @@ def add_link(prior_evt, next_evt, trace, g, format):
 def add_link_case(prior_evt, next_evt, trace, g, case):
     link = add_link(prior_evt, next_evt, trace, g, RdfRepresent.LINK_REIFIED)
     g.add((link, tr_terms['case_obj'], case))
+    
+    
+def convert_rdf_xes(g):
+    query = """
+PREFIX tr: <http://rdf.org/trace#>
+SELECT ?trace ?evt ?activ ?ts
+WHERE {
+    ?l tr:in ?trace .
+    # ?l tr:from [ tr:event ?evt ] .
+    ?l tr:from ?evt .
+    ?evt tr:ts ?ts ;
+        tr:activity ?activ
+}
+ORDER BY ?trace
+"""
+    qres = g.query(query)
+
+    log = EventLog()
+    cur_trace = None
+    cur_trace_id = None
+    for row in qres:
+        if cur_trace is None or cur_trace_id != row.trace:
+            if cur_trace is not None:
+                log.append(cur_trace)
+                
+            cur_trace = Trace()
+            cur_trace_id = row.trace
+        
+        evt = Event()
+        evt['concept:name'] = row.activ.value
+        evt['time:timestamp'] = row.ts.value
+        
+        cur_trace.append(evt)
+        
+    return log

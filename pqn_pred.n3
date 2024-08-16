@@ -6,7 +6,7 @@
 @prefix math: <http://www.w3.org/2000/10/swap/math#> .
 @prefix pq: <http://notation3.org/pqn#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix tr: <http://notation3.org/trace#> .
+@prefix tr: <http://rdf.org/trace#> .
 
 # NOTE in the associated queries, variable ?t can also be restricted to get results pertaining only to a particular trace
 # NOTE technically the anyActivityX rules can simply call anyActivityXAtLeastNTimes with atLeastN = 1, 
