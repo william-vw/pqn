@@ -253,4 +253,47 @@ ORDER BY ?trace
         
         cur_trace.append(evt)
         
+    log.append(cur_trace)
+        
     return log
+
+
+def filter_traces_graph(traces_file, results_file, filter_file, filter_type):
+    r = Graph().parse(results_file)
+    
+    query = """
+PREFIX pq: <http://notation3.org/pqn#>
+SELECT ?trace
+WHERE {
+    pq:result pq:entry ?trace
+}
+"""
+    traces = [ row['trace'] for row in r.query(query) ]
+    traces_str = "(<" + ">, <".join(traces) + ">)"
+    
+    g2 = Graph().parse(traces_file)
+    
+    query = f"""
+PREFIX pq: <http://notation3.org/pqn#>
+PREFIX tr: <http://rdf.org/trace#>
+CONSTRUCT {{
+    ?t a tr:Trace .
+    ?l tr:in ?t ; tr:from ?e1 ; tr:to ?e2
+}}
+WHERE {{
+    ?t a tr:Trace .
+    FILTER ( ?t { "IN" if filter_type else "NOT IN" } { traces_str }) .
+    ?l tr:in ?t ; tr:from ?e1 ; tr:to ?e2
+}}
+"""
+    # print(query)
+
+    cres = g2.query(query)
+    
+    graph = Graph()
+    for t in cres:
+        # print(t)
+        graph.add(t)
+        
+    graph.serialize(destination=filter_file)
+    

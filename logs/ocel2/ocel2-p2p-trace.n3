@@ -1,0 +1,39 @@
+# Processed by EYE v10.17.3 (2024-08-07)
+# eye --quiet sort.n3 case2.n3 --turtle logs/ocel2/ocel2-p2p-1000.ttl --query case2_query.n3 --nope
+
+@prefix skolem: <https://eyereasoner.github.io/.well-known/genid/42c3e2d0-05b0-4d72-9abb-9735cb5ff8da#>.
+@prefix tr: <http://rdf.org/trace#>.
+@prefix p2: <http://ocel2.org/p2p#>.
+
+skolem:t_0 a tr:Trace.
+_:sk_4 tr:in skolem:t_0.
+_:sk_4 tr:from _:sk_5.
+_:sk_5 tr:event p2:event:1684.
+_:sk_5 tr:objects (p2:material:174 p2:material:175 p2:purchase_requisition:73:pr_trigger_73 p2:material:173).
+_:sk_4 tr:to _:sk_6.
+_:sk_6 tr:event p2:event:1783.
+_:sk_6 tr:objects (p2:material:175 p2:material:174 p2:purchase_requisition:73:pr_trigger_73 p2:material:173).
+_:sk_11 tr:in skolem:t_0.
+_:sk_11 tr:from _:sk_12.
+_:sk_12 tr:event p2:event:1783.
+_:sk_12 tr:objects (p2:material:175 p2:material:174 p2:purchase_requisition:73:pr_trigger_73 p2:material:173).
+_:sk_11 tr:to _:sk_13.
+_:sk_13 tr:event p2:event:1919.
+_:sk_13 tr:objects (p2:quotation:71 p2:purchase_requisition:73:pr_trigger_73).
+_:sk_18 tr:in skolem:t_0.
+_:sk_18 tr:from _:sk_19.
+_:sk_19 tr:event p2:event:1919.
+_:sk_19 tr:objects (p2:quotation:71 p2:purchase_requisition:73:pr_trigger_73).
+_:sk_18 tr:to _:sk_20.
+_:sk_20 tr:event p2:event:2001.
+_:sk_20 tr:objects (p2:quotation:71 p2:purchase_order:117).
+_:sk_26 tr:in skolem:t_0.
+_:sk_26 tr:from _:sk_27.
+_:sk_27 tr:event p2:event:2001.
+_:sk_27 tr:objects (p2:quotation:71 p2:purchase_order:117).
+_:sk_26 tr:to _:sk_28.
+_:sk_28 tr:event tr:nil.
+_:sk_28 tr:objects tr:nil.
+# 2024-08-17T13:07:17.368Z in=21343 out=29 ent=32 step=4 brake=2 inf=896022 sec=0.129 inf/sec=6945907
+# ENDS
+

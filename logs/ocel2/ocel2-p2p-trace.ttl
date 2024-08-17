@@ -1,0 +1,23 @@
+# Processed by EYE v10.17.3 (2024-08-07)
+# eye --quiet sort.n3 case2.n3 --turtle logs/ocel2/ocel2-p2p-1000.ttl --query case2_query.n3 --nope
+
+@prefix skolem: <https://eyereasoner.github.io/.well-known/genid/37f80af4-8c97-4c2f-8298-8aa347e749ff#>.
+@prefix tr: <http://rdf.org/trace#>.
+@prefix p2: <http://ocel2.org/p2p#>.
+
+skolem:t_0 a tr:Trace.
+_:sk_4 tr:in skolem:t_0.
+_:sk_4 tr:from p2:event:1684.
+_:sk_4 tr:to p2:event:1783.
+_:sk_9 tr:in skolem:t_0.
+_:sk_9 tr:from p2:event:1783.
+_:sk_9 tr:to p2:event:1919.
+_:sk_14 tr:in skolem:t_0.
+_:sk_14 tr:from p2:event:1919.
+_:sk_14 tr:to p2:event:2001.
+_:sk_20 tr:in skolem:t_0.
+_:sk_20 tr:from p2:event:2001.
+_:sk_20 tr:to tr:nil.
+# 2024-08-17T13:06:25.550Z in=21343 out=13 ent=16 step=4 brake=2 inf=885741 sec=0.129 inf/sec=6866209
+# ENDS
+

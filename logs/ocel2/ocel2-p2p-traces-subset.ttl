@@ -1,0 +1,24 @@
+@prefix ns1: <http://rdf.org/trace#> .
+
+<https://eyereasoner.github.io/.well-known/genid/trace#t_62> a ns1:Trace .
+
+[] ns1:from <http://ocel2.org/p2p#event:1603> ;
+    ns1:in <https://eyereasoner.github.io/.well-known/genid/trace#t_62> ;
+    ns1:to <http://ocel2.org/p2p#event:1700> .
+
+[] ns1:from <http://ocel2.org/p2p#event:1700> ;
+    ns1:in <https://eyereasoner.github.io/.well-known/genid/trace#t_62> ;
+    ns1:to <http://ocel2.org/p2p#event:1951> .
+
+[] ns1:from <http://ocel2.org/p2p#event:1951> ;
+    ns1:in <https://eyereasoner.github.io/.well-known/genid/trace#t_62> ;
+    ns1:to <http://ocel2.org/p2p#event:2008> .
+
+[] ns1:from <http://ocel2.org/p2p#event:2008> ;
+    ns1:in <https://eyereasoner.github.io/.well-known/genid/trace#t_62> ;
+    ns1:to <http://ocel2.org/p2p#event:2028> .
+
+[] ns1:from <http://ocel2.org/p2p#event:2028> ;
+    ns1:in <https://eyereasoner.github.io/.well-known/genid/trace#t_62> ;
+    ns1:to ns1:nil .
+

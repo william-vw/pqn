@@ -6,14 +6,16 @@
 @prefix p2: <http://ocel2.org/p2p#> .
 
 # n3:
-#  eye sort.n3 case2.n3 --turtle logs/ocel2/ocel2-p2p-1000.n3 --query case2_query.n3 > logs/ocel2/ocel2-p2p-1000-traces.n3 --nope 
+#  eye sort.n3 case2.n3 --turtle logs/ocel2/ocel2-p2p-1000.ttl --query case2_query.n3 > logs/ocel2/ocel2-p2p-1000-traces.n3  --nope --skolem-genid trace
 # ttl:
-#  eye sort.n3 case2.n3 --turtle logs/ocel2/ocel2-p2p-1000.n3 --query case2_query.n3 > logs/ocel2/ocel2-p2p-1000-traces.ttl --nope 
+#  eye sort.n3 case2.n3 --turtle logs/ocel2/ocel2-p2p-1000.ttl --query case2_query.n3 > logs/ocel2/ocel2-p2p-1000-traces.ttl --nope --skolem-genid trace
+# single trace:
+#  eye sort.n3 case2.n3 --turtle logs/ocel2/ocel2-p2p-1000.ttl --query case2_query.n3 > logs/ocel2/ocel2-p2p-trace.ttl --nope --skolem-genid trace
 
 {
     # per starting point (purchase_requisition):
 
-    # ?object log:equalTo p2:purchase_requisition:0:pr_trigger_0 .
+    # ?object log:equalTo p2:purchase_requisition:73:pr_trigger_73 .
     ?object a p2:purchase_requisition .
 
     # gather all objects related to starting point via these paths
@@ -72,6 +74,7 @@
     ) log:ifThenElseIn _:t .
 
 } => {
+    ?trace a tr:Trace .
     [ 
         tr:in ?trace ;
         tr:from ?evt ;

@@ -6,7 +6,8 @@
 @prefix pq: <http://notation3.org/pqn#> .
 @prefix p2: <http://ocel2.org/p2p#> .
 
-# eye pqn_reif.n3 --turtle logs/ocel2/ocel2-p2p-1000.ttl logs/ocel2/ocel2-p2p-1000-traces.ttl --nope --query test_query.n3 
+# eye pqn_reif.n3 --turtle logs/ocel2/ocel2-p2p-1000.ttl logs/ocel2/ocel2-p2p-1000-traces-complete.ttl --nope --query test_query.n3
+# eye pqn_reif.n3 --turtle logs/ocel2/ocel2-p2p-1000.ttl logs/ocel2/ocel2-p2p-1000-traces-complete.ttl --nope --query test_query.n3 > logs/ocel2/ocel2-p2p-filter.ttl
 
 
 # # - check which traces have particular end event
@@ -22,10 +23,33 @@
 # } .
 
 
-# - check event orderings
+# - check strange event orderings
 
-{   
-    # ?t pq:activitiesDirectlyFollow ( "Approve Purchase Requisition" "Create Request for Quotation" ?l )
-    ?t pq:activitiesEventuallyFollow ( "Create Purchase Order" "Approve Purchase Order" )
+# {   
+#     ?t pq:activitiesEventuallyFollow ( "Create Purchase Order" "Approve Purchase Order" )
 
-} => { pq:result pq:entry ?t } .
+# } => { pq:result pq:entry ?t } .
+
+
+# - incomplete traces
+
+# {
+#     ?t pq:activityDoesNotOccurAsEnd "Execute Payment"
+# } => { pq:result pq:entry ?t } .
+
+
+# - maverick buying
+
+# {
+#     ?t pq:activityDoesNotOccur "Approve Purchase Requisition" .
+
+# } => { pq:result pq:entry ?t } .
+
+
+# - duplicate payments
+
+{
+    ?t pq:activityOccursAtLeastNTimes ( "Approve Purchase Order" 2 ?n1 ) .
+    ?t pq:activityOccursAtLeastNTimes ( "Execute Payment" 2 ?n2 )
+
+} => { pq:result pq:entry ( ?t ?n1 ?n2 ) } .

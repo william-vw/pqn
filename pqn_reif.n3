@@ -31,7 +31,9 @@
 }
 <= 
 {
-    ?e tr:in ?t ; tr:activity ?a .
+    ?l tr:from [ tr:activity ?a ] ;
+        tr:in ?t .
+    # ?e tr:in ?t ; tr:activity ?a .
 } .
 
 # for all traces, get all their activities
@@ -247,6 +249,20 @@
         tr:from ?e ;
         tr:to tr:nil . # no further events (ends) 
     ?e tr:activity ?a . # event e involves activity a
+} .
+
+# pq:activityDoesNotOccurAsEnd
+
+{
+    ?t pq:activityDoesNotOccurAsEnd ?a
+}
+<=
+{
+    ?t a tr:Trace .
+    ?l  tr:in ?t ;
+        tr:from ?e ;
+        tr:to tr:nil . # no further events (ends) 
+    ?e!tr:activity log:notEqualTo ?a . # end event e _does not_ involve activity a
 } .
 
 
@@ -538,7 +554,11 @@
 <= 
 {
     ?t a tr:Trace .
-    _:t log:notIncludes { [ tr:activity ?a ] tr:in ?t } .
+    _:t log:notIncludes { 
+        # [ tr:activity ?a ] tr:in ?t 
+        ?l tr:from [ tr:activity ?a ] ;
+            tr:in ?t .
+    } .
 } .
 
 
