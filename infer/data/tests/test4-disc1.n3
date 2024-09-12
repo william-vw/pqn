@@ -1,0 +1,15 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix : <http://example.org/> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+
+# nothing to be inferred
+# can get to c either from z or b, and neither are in disc
+
+[
+    dfg:from :c ;
+    dfg:to :d ;
+    dfg:source dfg:discovered
+] .

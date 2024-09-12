@@ -96,7 +96,7 @@
 <= { ( 1 { ?e dfg:invalidated _:e } () ) log:collectAllIn _:t } .
 
 
-# now simply retrieved from norm_closure.n3
+# now simply retrieved from normative closure
 
 {   ( ?cur ?src ?coll ) dfg:priorTransitiveClosure ?closure } 
 <= {    ?cur dfg:ancestors ?closure } .

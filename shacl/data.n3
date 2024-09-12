@@ -1,6 +1,0 @@
-@prefix : <http://example.com/ns#> .
-
-:injury :next :acute , :rehab .
-:acute :next :rehab , :morgue , :disch .
-:rehab :next :disch . # , :morgue .
-#:disch :next :disch .

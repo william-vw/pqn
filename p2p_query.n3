@@ -1,0 +1,59 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tr: <http://rdf.org/trace#> .
+@prefix pq: <http://notation3.org/pqn#> .
+@prefix p2: <http://ocel2.org/p2p#> .
+
+# eye pqn_reif.n3 --turtle logs/ocel2/ocel2-p2p-1000.ttl logs/ocel2/ocel2-p2p-1000-traces.ttl --nope --query test_query.n3
+# eye pqn_reif.n3 --turtle logs/ocel2/ocel2-p2p-1000.ttl logs/ocel2/ocel2-p2p-1000-traces.ttl --nope --query test_query.n3 > logs/ocel2/ocel2-p2p-filter.ttl
+
+# eye pqn_reif.n3 --turtle logs/ocel2/ocel2-p2p-5000.ttl logs/ocel2/ocel2-p2p-5000-traces-complete.ttl --nope --query test_query.n3
+# eye pqn_reif.n3 --turtle logs/ocel2/ocel2-p2p-5000.ttl logs/ocel2/ocel2-p2p-5000-traces-complete.ttl --nope --query test_query.n3 > logs/ocel2/ocel2-p2p-filter.ttl
+
+
+# # - check which traces have particular end event
+
+# {
+#     ?t  tr:to [ tr:event tr:nil ] ; 
+#         tr:from [ tr:event ?e ] .
+
+#     ?e tr:activity "Create Goods Receipt" 
+
+# } => {
+#     pq:result pq:entry ( ?t ?e ) . 
+# } .
+
+
+# - check strange event orderings
+
+# {   
+#     ?t pq:activitiesEventuallyFollow ( "Create Purchase Order" "Approve Purchase Order" )
+
+# } => { pq:result pq:entry ?t } .
+
+
+# - confirm that all traces are complete
+
+{
+    ?t pq:activityDoesNotOccurAsEnd "Execute Payment"
+
+} => { pq:result pq:entry ?t } .
+
+
+# - maverick buying
+
+# {
+#     ?t pq:activityDoesNotOccur "Approve Purchase Requisition" .
+
+# } => { pq:result pq:entry ?t } .
+
+
+# # - duplicate payments
+
+# {
+#     ?t pq:activityOccursAtLeastNTimes ( "Approve Purchase Order" 2 ?n1 ) .
+#     ?t pq:activityOccursAtLeastNTimes ( "Execute Payment" 2 ?n2 )
+
+# } => { pq:result pq:entry ( ?t ?n1 ?n2 ) } .

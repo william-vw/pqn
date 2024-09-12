@@ -1,0 +1,55 @@
+# Processed by EYE v10.17.3 (2024-08-07)
+# eye --quiet utils.n3 rules-princ.n3 --turtle data/tests/test2-norm.n3 data/out/tests_test2-norm_closure.n3 data/tests/test2-disc5.n3 --pass-only-new
+
+@prefix dfg: <http://rdf.org/dfg#>.
+@prefix : <http://example.org/>.
+
+
+_:sk_2 dfg:from :x.
+_:sk_2 dfg:to :a.
+_:sk_2 dfg:source dfg:discovered.
+_:sk_2 dfg:inferred _:sk_3.
+_:sk_3 dfg:reason "priorEvent".
+_:sk_3 dfg:priorEvent :a.
+_:sk_6 dfg:from :c.
+_:sk_6 dfg:to :e.
+_:sk_6 dfg:source dfg:discovered.
+_:sk_6 dfg:inferred _:sk_7.
+_:sk_7 dfg:reason "priorEvent".
+_:sk_7 dfg:priorEvent :e.
+:b dfg:invalidated _:sk_8.
+_:sk_8 dfg:reason "otherChoiceDiscovered".
+_:sk_8 dfg:otherChoice :a.
+:k dfg:invalidated _:sk_9.
+_:sk_9 dfg:reason "otherChoiceDiscovered".
+_:sk_9 dfg:otherChoice :x.
+:l dfg:invalidated _:sk_10.
+_:sk_10 dfg:reason "otherChoiceDiscovered".
+_:sk_10 dfg:otherChoice :c.
+:d dfg:invalidated _:sk_11.
+_:sk_11 dfg:reason "otherChoiceDiscovered".
+_:sk_11 dfg:otherChoice :c.
+:c dfg:invalidated _:sk_14.
+_:sk_14 dfg:reason "invalidatedTransitiveClosure".
+_:sk_14 dfg:priorInvalid :b.
+_:sk_17 dfg:from :y.
+_:sk_17 dfg:to :x.
+_:sk_17 dfg:source dfg:discovered.
+_:sk_17 dfg:inferred _:sk_18.
+_:sk_18 dfg:reason "priorEvent".
+_:sk_18 dfg:priorEvent :x.
+:m dfg:invalidated _:sk_19.
+_:sk_19 dfg:reason "otherChoiceDiscovered".
+_:sk_19 dfg:otherChoice :y.
+:e dfg:invalidated _:sk_22.
+_:sk_22 dfg:reason "invalidatedTransitiveClosure".
+_:sk_22 dfg:priorInvalid :c.
+_:sk_25 dfg:from :z.
+_:sk_25 dfg:to :y.
+_:sk_25 dfg:source dfg:discovered.
+_:sk_25 dfg:inferred _:sk_26.
+_:sk_26 dfg:reason "priorEvent".
+_:sk_26 dfg:priorEvent :y.
+# 2024-09-12T20:35:22.158Z in=85 out=90 ent=45 step=50 brake=10 inf=387264 sec=0.054 inf/sec=7171556
+# ENDS
+

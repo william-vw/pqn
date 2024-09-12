@@ -1,0 +1,93 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tr: <http://rdf.org/trace#> .
+@prefix p2: <http://ocel2.org/p2p#> .
+
+
+# gather objects based on given paths
+
+{
+    ( ?object ( 'step' '=>' ?qualifier ) ) tr:objectNode ( ?coll ?result )
+} <= {
+    [] a tr:O2O ; tr:object ?object ; tr:object2 ?object2 ; tr:qualifier ?qualifier .
+    # "object2 (=>)" log:trace ?object2 .
+    ( ( ?object2 ) ?coll ) list:append ?result
+} .
+
+{   ( ?object ( 'step' '<=' ?qualifier ) ) tr:objectNode ( ?coll ?result )
+} <= {
+    [] a tr:O2O ; tr:object2 ?object ; tr:object ?object2 ; tr:qualifier ?qualifier .
+    # "object2 (<=)" log:trace ?object2 .
+    ( ( ?object2 ) ?coll ) list:append ?result
+} .
+
+{   ( ?object ( 'alt' ?alts ) ) tr:objectNode ( ?coll ?result )
+} <= {
+    ?alts list:member ?alt .
+    # "alt" log:trace (?object ?alt) .
+    ( ?object ?alt ) tr:objectNode ( ?coll ?result )
+} .
+
+{   ( ?object ( 'path' ?path ) ) tr:objectNode ( ?coll ?result )
+} <= {
+    ( ?object ?path ) tr:objectPath ( ?coll ?result )
+} .
+
+{   ( ?object ?path ) tr:objectPath ( ?coll ?result )
+} <= {
+    ?path list:firstRest ( ?node ?path2 ) .
+
+    ( ?object ?node ) tr:objectNode ( ?coll ?coll2 ) .
+    
+    ( ?coll2 0 ) list:memberAt ?object2 .
+    ( ?object2 ?path2 ) tr:objectPath ( ?coll2 ?result )
+} .
+
+{   ( ?object () ) tr:objectPath ( ?coll ?coll )
+} <= true .
+
+{   ?evt tr:eventObjects ?objs
+} <= {
+    ( ?obj
+        {   [] a tr:E2O ; tr:event ?evt ; tr:object ?obj }
+    ?objs ) log:collectAllIn _:t .
+} .
+
+
+# (hard-coded rules for more or less the same)
+
+# {
+#     [] tr:object ?pr ; tr:object2 ?qo ; tr:qualifier "Quotation of PR"
+# } => {
+#     ?pr :node1 ?qo
+# } .
+
+# {
+#     ?pr :node1 ?qo .
+#     [] tr:object ?qo ; tr:object2 ?po ; tr:qualifier "Purchase Order of Quotation"
+# } => {
+#     ?qo :node2 ?po
+# } .
+
+# {
+#     ?qo :node2 ?po .
+#     [] tr:object ?gr ; tr:object2 ?po ; tr:qualifier "Good Receipts of Purchase Order"
+# } => {
+#     ?po :node3 ?gr 
+# } .
+
+# {
+#     ?qo :node2 ?po .
+#     [] tr:object ?po ; tr:object2 ?ir ; tr:qualifier "invoice receipt"
+# } => {
+#     ?po :node4 ?ir
+# } .
+
+# {
+#     ?qo :node2 ?po .
+#     [] tr:object ?po ; tr:object2 ?pa ; tr:qualifier "order_pm"
+# } => {
+#     ?po :node5 ?pa
+# } .

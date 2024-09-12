@@ -31,9 +31,8 @@
 }
 <= 
 {
-    ?l tr:from [ tr:activity ?a ] ;
-        tr:in ?t .
-    # ?e tr:in ?t ; tr:activity ?a .
+    ?l tr:from ?e . ?e tr:activity ?a .
+    ?l tr:in ?t .
 } .
 
 # for all traces, get all their activities

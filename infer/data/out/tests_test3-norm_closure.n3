@@ -1,0 +1,18 @@
+# Processed by EYE v10.17.3 (2024-08-07)
+# eye --quiet utils.n3 rules-closure.n3 --turtle data/tests/test3-norm.n3 --nope --pass-only-new
+
+@prefix : <http://example.org/>.
+@prefix dfg: <http://rdf.org/dfg#>.
+
+:y dfg:ancestors ().
+:x dfg:ancestors (:y).
+:k dfg:ancestors (:x :y).
+:l dfg:ancestors (:x :y).
+:a dfg:ancestors (:x :y).
+:b dfg:ancestors (:a :x :y).
+:c dfg:ancestors (:b :a :x :y).
+:d dfg:ancestors (:c :b :a :x :y).
+dfg:nil dfg:ancestors (:l :x :y :k :d :c :b :a).
+# 2024-09-12T20:36:55.675Z in=53 out=18 ent=9 step=22 brake=4 inf=119941 sec=0.030 inf/sec=3998033
+# ENDS
+

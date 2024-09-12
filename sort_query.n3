@@ -6,6 +6,8 @@
 @prefix tr: <http://rdf.org/trace#> .
 @prefix p2: <http://ocel2.org/p2p#> .
 
+# (test sort.n3)
+
 {
     # ( ( ("b" 2) ("e" 5) ("a" 1) ("d" 4) ("c" 3) ) 1 ) list:sortOn ?sorted
     ( ( ("b" "2022-04-05T21:53:00+00:00"^^xsd:dateTime) ("a" "2022-04-05T21:57:00+00:00"^^xsd:dateTime) ("c" "2022-04-05T21:54:00+00:00"^^xsd:dateTime) ) 1 ) list:sortOn ?sorted

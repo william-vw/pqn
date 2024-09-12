@@ -1,0 +1,18 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix : <http://example.org/> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+
+# example covers:
+# - causality (x, y, z; c)
+# - mutex (rule out b, d, k, l, m)
+# - inconsistency; 
+#       c only has invalid incoming links, but is also in disc
+
+[
+    dfg:from :a ;
+    dfg:to :e ;
+    dfg:source dfg:discovered 
+] .

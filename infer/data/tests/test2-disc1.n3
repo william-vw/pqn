@@ -1,0 +1,17 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix : <http://example.org/> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+
+# example covers:
+# - mutex (rule out k, m, l, d)
+# - causality (infer c, b, y, z)
+# interaction between principles
+
+[
+    dfg:from :x ;
+    dfg:to :e ;
+    dfg:source dfg:discovered 
+] .

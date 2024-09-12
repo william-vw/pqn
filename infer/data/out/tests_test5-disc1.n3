@@ -1,0 +1,20 @@
+# Processed by EYE v10.17.3 (2024-08-07)
+# eye --quiet utils.n3 rules-princ.n3 --turtle data/tests/test5-norm.n3 data/out/tests_test5-norm_closure.n3 data/tests/test5-disc1.n3 --pass-only-new
+
+@prefix skolem: <https://eyereasoner.github.io/.well-known/genid/617bc016-0d52-45ae-aa1d-12dbfc297b05#>.
+@prefix dfg: <http://rdf.org/dfg#>.
+@prefix : <http://example.org/>.
+
+
+skolem:node_2 dfg:invalidLink _:sk_0.
+_:sk_0 dfg:reason "otherChoiceDiscovered".
+_:sk_0 dfg:otherChoice :m.
+_:sk_3 dfg:from :z.
+_:sk_3 dfg:to :m.
+_:sk_3 dfg:source dfg:discovered.
+_:sk_3 dfg:inferred _:sk_4.
+_:sk_4 dfg:reason "priorEvent".
+_:sk_4 dfg:priorEvent :m.
+# 2024-09-12T21:23:02.802Z in=45 out=18 ent=9 step=16 brake=4 inf=162730 sec=0.035 inf/sec=4649429
+# ENDS
+

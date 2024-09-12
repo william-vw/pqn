@@ -1,0 +1,32 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix : <http://example.org/> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+
+# example case where other choice is actually descendant of chosen event
+
+[
+    dfg:from :z ;
+    dfg:to :m ;
+    dfg:source dfg:normative
+] .
+
+[
+    dfg:from :z ;
+    dfg:to :y;
+    dfg:source dfg:normative
+] .
+
+[
+    dfg:from :m ;
+    dfg:to :y ;
+    dfg:source dfg:normative
+] .
+
+[
+    dfg:from :y ;
+    dfg:to :x ;
+    dfg:source dfg:normative
+] .

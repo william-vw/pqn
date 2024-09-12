@@ -1,0 +1,41 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix : <http://example.org/> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix dfg: <http://rdf.org/dfg#> .
+
+# example case where chosen event is actually descendant of other choice
+# (inverse of test 5)
+
+# NOTE currently rules out y as invalid
+# unsure whether this is correct; 
+# on one hand, y is ruled out due to other choice , which is correct
+# but, m is also reachable from y, so _could have gotten to m via y_
+
+# TODO this is a broader issue; 
+# consider m as "choice" only if m is reachable via the DP
+
+[
+    dfg:from :z ;
+    dfg:to :m ;
+    dfg:source dfg:normative
+] .
+
+[
+    dfg:from :z ;
+    dfg:to :y;
+    dfg:source dfg:normative
+] .
+
+[
+    dfg:from :y ;
+    dfg:to :m ;
+    dfg:source dfg:normative
+] .
+
+[
+    dfg:from :m ;
+    dfg:to :x ;
+    dfg:source dfg:normative
+] .

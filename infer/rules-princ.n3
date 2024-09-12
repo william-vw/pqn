@@ -48,12 +48,6 @@
     } ?in) log:collectAllIn _:t .
     ?in!list:length math:notLessThan 2 .
 
-    # ?l dfg:from ?from ; dfg:to ?e ; dfg:source dfg:normative .
-    # ?l2 dfg:from ?from2 ; dfg:to ?e ; dfg:source dfg:normative .
-    # ?from2 log:notEqualTo ?from .
-    # ?from dfg:validBranch true .
-    # ?from2 dfg:validBranch true .
-
     # "converge (0)" log:trace ?e .
 
     # get reverse transitive closures of all incoming links
@@ -101,83 +95,41 @@
     ?l2 dfg:from ?dp ; dfg:to ?e2 ; dfg:source dfg:normative .
     ?e2 log:notEqualTo ?e ; log:notEqualTo dfg:nil .
 
-    # (avoid multiple invalidations)
-    ?e2 dfg:validBranch true .
-
-    # # mutex - we chose a, so we didn't chose b
-    # # but, contradicted by:
-    # # if b can still occur after a (a is anc of b), 
-    # ( ?e2 ?e dfg:normative ) dfg:ancestor false .
-    # # or if a can still occur after b (b is anc of a)
-    # ( ?e ?e2 dfg:normative ) dfg:ancestor false .
-
 } => {
-    ?e2 dfg:invalidated [
+    ?l2 dfg:invalidLink [
         dfg:reason "otherChoiceDiscovered" ;
         dfg:otherChoice ?e
     ]
 } .
 
-# propagate invalid branch
+# propagate invalid links & events
+
 {
-    ?e dfg:invalidBranch true .
+    ?l dfg:invalidLink _:r .
+    ?l dfg:from ?from ; dfg:to ?e .
 
-    ?l dfg:from ?e ; dfg:to ?to ; dfg:source dfg:normative .
-    ?to log:notEqualTo dfg:nil .
-
-    # (avoid multiple invalidations, loops)
-    ?to dfg:validBranch true .
-
+    # only invalidate event if all incoming links are invalid
     (   # for any incoming link
-        { ?lp dfg:from ?p ; dfg:to ?to ; dfg:source dfg:normative }
-        # it must come from an invalid branch
-        { ?p dfg:invalidBranch true }
+        { ?l2 dfg:to ?e ; dfg:source dfg:normative }
+        # it must come from an invalid link
+        { ?l2 dfg:invalidLink _:r2 }
     ) log:forAllIn _:t .
 
 } => {
-    ?to dfg:invalidated [
+    ?e dfg:invalidEvent [
+        dfg:reason "invalidatedTransitiveClosure" ;
+        dfg:priorInvalid ?from
+    ]
+} .
+
+# all outgoing links from invalid e are also invalid
+{
+    ?e dfg:invalidEvent _:r .
+    ?l dfg:from ?e ; dfg:source dfg:normative .
+
+} => {
+    ?l dfg:invalidLink [
         dfg:reason "invalidatedTransitiveClosure" ;
         dfg:priorInvalid ?e
     ]
 } .
-
-
-# # 0/ find single path between discovered events
-# {
-#     ?l dfg:source dfg:discovered ; dfg:from ?from ; dfg:to ?to .
-#     ?to log:notEqualTo dfg:nil .
-
-#     (?path
-#         { ( ?from ?to dfg:normative () ) dfg:pathBetween ?path }
-#     ?paths) log:collectAllIn _:t .
-
-#     # "paths" log:trace ( ?from ?to ) .
-#     # "paths" log:trace ?paths .
-    
-#     ?paths list:length 1 .
-#     # get single path
-#     ?path list:in ?paths .
-
-#     # get each link in path
-#     ( ?from_i ?to_i ) list:in ?path .
-#     # (not yet inferred)
-#     ( 1 { ?x dfg:from ?from_i ; dfg:to ?to_i ; dfg:source dfg:discovered } () ) log:collectAllIn _:t .
-
-# } => {
-#     # infer the link
-#     [
-#         dfg:from ?from_i ; dfg:to ?to_i ; dfg:source dfg:discovered ;
-#         dfg:inferred [ dfg:reason "onDiscoveredPath" ; dfg:path ( ?from ?to ) ]
-#     ]
-# } .
-
-# # x/ invalidate everything not reachable from a discovered event
-# {
-#     ?e dfg:link ?l . ?l dfg:source dfg:normative .
-#     ?e dfg:canReachDiscovered false .
-
-# } => {
-#     ?e dfg:invalidated [
-#         dfg:reason "cannotReachDiscovered" 
-#     ]
-# } .

@@ -1,0 +1,117 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tr: <http://rdf.org/trace#> .
+@prefix p2: <http://ocel2.org/p2p#> .
+
+# n3:
+#  eye sort.n3 traces.n3 --turtle logs/ocel2/ocel2-p2p-1000.ttl --query traces_query.n3 > logs/ocel2/ocel2-p2p-1000-traces.n3  --nope --skolem-genid trace
+# ttl:
+#  eye sort.n3 traces.n3 --turtle logs/ocel2/ocel2-p2p-1000.ttl --query traces_query.n3 > logs/ocel2/ocel2-p2p-1000-traces.ttl --nope --skolem-genid trace
+# single trace:
+#  eye sort.n3 traces.n3 --turtle logs/ocel2/ocel2-p2p-1000.ttl --query traces_query.n3 > logs/ocel2/ocel2-p2p-trace.ttl --nope --skolem-genid trace
+
+{
+    ?persp_ot log:equalTo p2:purchase_requisition .
+    ?persp_path log:equalTo 
+        ( 'path'
+                (
+                    ( 'step' '=>' "Quotation of PR" ) 
+                    ( 'step' '=>' "Purchase Order of Quotation" ) 
+                    ( 'alt' 
+                        (
+                            ( 'step' '=>' "Invoice Receipts of Purchase Order" )
+                            ( 'step' '=>' "order_pm" )
+                            ( 'step' '<=' "Good Receipts of Purchase Order" )
+                        )
+                    )
+                )
+            ) .
+
+    # - per object of start type persp_ot:
+    ?object a ?persp_ot .
+
+    # (test with individual object)
+    # ?object log:equalTo p2:purchase_requisition:73:pr_trigger_73 .
+
+    # - gather all objects related to start object via path
+    ( ?result
+        {   ( ?object ?persp_path ) tr:objectNode ( ( ?object ) ?result ) }
+    ?all ) log:collectAllIn _:t .
+
+    ?all!list:append list:unique ?objs .
+
+    # - create trace id
+
+    ?object log:skolem ?trace .
+
+    # - collect events related to objects
+    ( ( ?evt ?ts )
+        {
+            ?obj2 list:in ?objs .
+            [] a tr:E2O ; tr:object ?obj2 ; tr:event ?evt .
+            ?evt tr:ts ?ts .
+        }
+    ?evts) log:collectAllIn _:t .
+
+    ?evts!list:unique list:sortOn ?sevts .
+
+    # - per pair of events i & j, create link 
+    # (for last event (j == |evts|) link ends at nil)
+
+    ?sevts list:iterate (?i ?evt ) .
+    ?evt tr:eventObjects ?evt_objs .
+
+    ( ?i 1 ) math:sum ?j .
+    (
+        { ?sevts!list:length math:greaterThan ?j }
+        { 
+            ( ?sevts ?j ) list:memberAt ?evt2 .
+            ?evt2 tr:eventObjects ?evt2_objs .
+        }
+        {   ?evt2 log:equalTo tr:nil .
+            ?evt2_objs log:equalTo tr:nil 
+        }
+
+    ) log:ifThenElseIn _:t .
+
+} => {
+    ?trace a tr:Trace .
+    [ 
+        tr:in ?trace ;
+        tr:from ?evt ;
+        tr:to ?evt2
+    ]
+} .
+
+
+# test
+
+# {
+#     ?object log:equalTo p2:a .
+#     ( ?object 
+#             (  'path'
+#                 ( 
+#                     ( 'step' '=>' "ab" ) 
+#                     ( 'alt' 
+#                         (
+#                             ( 'step' '=>' "bc" ) 
+#                             ( 'step' '=>' "bd" )
+#                             ( 'step' '=>' "be" )
+#                             ( 'path' 
+#                                 (
+#                                     ( 'step' '<=' "yb" )
+#                                     ( 'step' '<=' "xy" )
+#                                 )
+#                             )
+#                         )
+#                     )
+#                 )
+#             )
+#     ) tr:objectNode ( () ?result ) .
+
+#     ( ?result ( ?object ) ) list:append ?result2
+# } => {
+#     [] :waffles ?result2
+# } .

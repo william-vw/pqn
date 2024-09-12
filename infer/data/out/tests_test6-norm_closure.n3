@@ -1,0 +1,13 @@
+# Processed by EYE v10.17.3 (2024-08-07)
+# eye --quiet utils.n3 rules-closure.n3 --turtle data/tests/test6-norm.n3 --nope --pass-only-new
+
+@prefix : <http://example.org/>.
+@prefix dfg: <http://rdf.org/dfg#>.
+
+:z dfg:ancestors ().
+:y dfg:ancestors (:z).
+:m dfg:ancestors (:y :z).
+:x dfg:ancestors (:m :y :z).
+# 2024-09-12T21:31:23.859Z in=35 out=8 ent=4 step=11 brake=4 inf=102843 sec=0.031 inf/sec=3317516
+# ENDS
+

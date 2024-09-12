@@ -1,0 +1,37 @@
+# Processed by EYE v10.17.3 (2024-08-07)
+# eye --quiet utils.n3 rules-princ.n3 --turtle data/tests/test2-norm.n3 data/out/tests_test2-norm_closure.n3 data/tests/test2-disc2.n3 --pass-only-new
+
+@prefix dfg: <http://rdf.org/dfg#>.
+@prefix : <http://example.org/>.
+
+
+_:sk_2 dfg:from :z.
+_:sk_2 dfg:to :y.
+_:sk_2 dfg:source dfg:discovered.
+_:sk_2 dfg:inferred _:sk_3.
+_:sk_3 dfg:reason "priorEvent".
+_:sk_3 dfg:priorEvent :y.
+_:sk_6 dfg:from :c.
+_:sk_6 dfg:to :e.
+_:sk_6 dfg:source dfg:discovered.
+_:sk_6 dfg:inferred _:sk_7.
+_:sk_7 dfg:reason "priorEvent".
+_:sk_7 dfg:priorEvent :e.
+:m dfg:invalidated _:sk_8.
+_:sk_8 dfg:reason "otherChoiceDiscovered".
+_:sk_8 dfg:otherChoice :y.
+:l dfg:invalidated _:sk_9.
+_:sk_9 dfg:reason "otherChoiceDiscovered".
+_:sk_9 dfg:otherChoice :c.
+:d dfg:invalidated _:sk_10.
+_:sk_10 dfg:reason "otherChoiceDiscovered".
+_:sk_10 dfg:otherChoice :c.
+_:sk_16 a dfg:IndirectLink.
+_:sk_16 dfg:from :y.
+_:sk_16 dfg:to :c.
+_:sk_16 dfg:source dfg:discovered.
+_:sk_16 dfg:inferred _:sk_17.
+_:sk_17 dfg:reason "convergingPriorTransitiveClosure".
+# 2024-09-12T20:33:37.951Z in=85 out=54 ent=27 step=35 brake=9 inf=295994 sec=0.040 inf/sec=7399850
+# ENDS
+

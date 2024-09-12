@@ -1,0 +1,21 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tr: <http://rdf.org/trace#> .
+@prefix pq: <http://notation3.org/pqn#> .
+@prefix p2: <http://ocel2.org/p2p#> .
+
+# eye pqn_reif.n3 --turtle logs/ocel2/ocel2-p2p-5000.ttl logs/ocel2/ocel2-p2p-5000-traces.ttl --nope --query filter_query.n3 > logs/ocel2/ocel2-p2p-5000-traces-complete.ttl
+
+
+# - keep only complete traces
+
+{
+    ?t pq:activityOccursAsEnd ( "Execute Payment" ?e ) .
+    ?l tr:in ?t ; tr:from ?e1 ; tr:to ?e2 .
+
+} => {
+    ?t a tr:Trace .
+    ?l tr:in ?t ; tr:from ?e1 ; tr:to ?e2
+} .
