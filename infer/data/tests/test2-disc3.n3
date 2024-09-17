@@ -5,7 +5,8 @@
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix dfg: <http://rdf.org/dfg#> .
 
-# simple example of causality
+# example covers:
+# - causality via closures (infer z, y, c)
 
 [
     dfg:from :b ;

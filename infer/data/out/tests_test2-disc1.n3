@@ -1,0 +1,68 @@
+# Processed by EYE v10.17.3 (2024-08-07)
+# eye --quiet utils.n3 rules-princ.n3 --turtle data/tests/test2-norm.n3 data/out/tests_test2-norm_closure.n3 data/tests/test2-disc1.n3 --pass-only-new --skolem-genid 123
+
+@prefix dfg: <http://rdf.org/dfg#>.
+@prefix : <http://example.org/>.
+@prefix skolem: <https://eyereasoner.github.io/.well-known/genid/123#>.
+
+
+_:sk_2 dfg:from :y.
+_:sk_2 dfg:to :x.
+_:sk_2 dfg:source dfg:discovered.
+_:sk_2 dfg:inferred _:sk_3.
+_:sk_3 dfg:reason "priorEvent".
+_:sk_3 dfg:priorEvent :x.
+_:sk_6 dfg:from :c.
+_:sk_6 dfg:to :e.
+_:sk_6 dfg:source dfg:discovered.
+_:sk_6 dfg:inferred _:sk_7.
+_:sk_7 dfg:reason "priorEvent".
+_:sk_7 dfg:priorEvent :e.
+skolem:node_4 dfg:invalidLink _:sk_10.
+_:sk_10 dfg:reason "otherChoiceDiscovered".
+_:sk_10 dfg:otherChoice :x.
+skolem:node_2 dfg:invalidLink _:sk_13.
+_:sk_13 dfg:reason "otherChoiceDiscovered".
+_:sk_13 dfg:otherChoice :y.
+:k dfg:invalidEvent _:sk_16.
+_:sk_16 dfg:reason "invalidatedTransitiveClosure".
+_:sk_16 dfg:priorInvalid :y.
+:m dfg:invalidEvent _:sk_19.
+_:sk_19 dfg:reason "invalidatedTransitiveClosure".
+_:sk_19 dfg:priorInvalid :z.
+skolem:node_5 dfg:invalidLink _:sk_20.
+_:sk_20 dfg:reason "invalidatedTransitiveClosure".
+_:sk_20 dfg:priorInvalid :k.
+skolem:node_6 dfg:invalidLink _:sk_21.
+_:sk_21 dfg:reason "invalidatedTransitiveClosure".
+_:sk_21 dfg:priorInvalid :k.
+_:sk_24 dfg:from :z.
+_:sk_24 dfg:to :y.
+_:sk_24 dfg:source dfg:discovered.
+_:sk_24 dfg:inferred _:sk_25.
+_:sk_25 dfg:reason "priorEvent".
+_:sk_25 dfg:priorEvent :y.
+skolem:node_10 dfg:invalidLink _:sk_28.
+_:sk_28 dfg:reason "otherChoiceDiscovered".
+_:sk_28 dfg:otherChoice :c.
+:l dfg:invalidEvent _:sk_31.
+_:sk_31 dfg:reason "invalidatedTransitiveClosure".
+_:sk_31 dfg:priorInvalid :k.
+:d dfg:invalidEvent _:sk_34.
+_:sk_34 dfg:reason "invalidatedTransitiveClosure".
+_:sk_34 dfg:priorInvalid :b.
+skolem:node_14 dfg:invalidLink _:sk_35.
+_:sk_35 dfg:reason "invalidatedTransitiveClosure".
+_:sk_35 dfg:priorInvalid :l.
+skolem:node_12 dfg:invalidLink _:sk_36.
+_:sk_36 dfg:reason "invalidatedTransitiveClosure".
+_:sk_36 dfg:priorInvalid :d.
+_:sk_42 a dfg:IndirectLink.
+_:sk_42 dfg:from :y.
+_:sk_42 dfg:to :c.
+_:sk_42 dfg:source dfg:discovered.
+_:sk_42 dfg:inferred _:sk_43.
+_:sk_43 dfg:reason "convergingPriorTransitiveClosure".
+# 2024-09-17T19:32:37.219Z in=86 out=114 ent=57 step=194 brake=10 inf=383474 sec=0.046 inf/sec=8336391
+# ENDS
+

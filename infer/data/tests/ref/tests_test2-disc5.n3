@@ -99,6 +99,6 @@ _:sk_68 dfg:to :c.
 _:sk_68 dfg:source dfg:discovered.
 _:sk_68 dfg:inferred _:sk_69.
 _:sk_69 dfg:reason "convergingPriorTransitiveClosure".
-# 2024-09-17T19:43:09.160Z in=86 out=186 ent=93 step=370 brake=11 inf=490903 sec=0.049 inf/sec=10018429
+# 2024-09-17T19:41:55.868Z in=86 out=186 ent=93 step=370 brake=11 inf=490904 sec=0.051 inf/sec=9625569
 # ENDS
 

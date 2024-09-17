@@ -91,6 +91,13 @@
     ?l dfg:from ?dp ; dfg:to ?e ; dfg:source dfg:normative .
     ( ?dp dfg:normative ) dfg:decisionPoint true .
 
+    # only reachable from this DP; any other incoming links should be invalid
+    (   # for any incoming link not equal to DP's link
+        { ?oil dfg:to ?e ; dfg:source dfg:normative . ?l log:notEqualTo ?oil }
+        # it must come from an invalid link
+        { ?oil dfg:invalidLink _:r2 }
+    ) log:forAllIn _:t .
+
     # DP's other choices
     ?l2 dfg:from ?dp ; dfg:to ?e2 ; dfg:source dfg:normative .
     ?e2 log:notEqualTo ?e ; log:notEqualTo dfg:nil .

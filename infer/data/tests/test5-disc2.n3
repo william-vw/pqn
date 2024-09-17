@@ -9,7 +9,7 @@
 # - mutex, but choice is descendant of invalid choice in disc
 
 [
-    dfg:from :m ;
+    dfg:from :y ;
     dfg:to :k ;
     dfg:source dfg:discovered
 ] .

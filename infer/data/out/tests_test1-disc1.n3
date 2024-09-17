@@ -1,0 +1,50 @@
+# Processed by EYE v10.17.3 (2024-08-07)
+# eye --quiet utils.n3 rules-princ.n3 --turtle data/tests/test1-norm.n3 data/out/tests_test1-norm_closure.n3 data/tests/test1-disc1.n3 --pass-only-new --skolem-genid 123
+
+@prefix dfg: <http://rdf.org/dfg#>.
+@prefix : <http://example.org/>.
+@prefix skolem: <https://eyereasoner.github.io/.well-known/genid/123#>.
+
+
+_:sk_2 dfg:from :b.
+_:sk_2 dfg:to :c.
+_:sk_2 dfg:source dfg:discovered.
+_:sk_2 dfg:inferred _:sk_3.
+_:sk_3 dfg:reason "priorEvent".
+_:sk_3 dfg:priorEvent :c.
+_:sk_6 dfg:from :a.
+_:sk_6 dfg:to :b.
+_:sk_6 dfg:source dfg:discovered.
+_:sk_6 dfg:inferred _:sk_7.
+_:sk_7 dfg:reason "priorEvent".
+_:sk_7 dfg:priorEvent :b.
+skolem:node_2 dfg:invalidLink _:sk_10.
+_:sk_10 dfg:reason "otherChoiceDiscovered".
+_:sk_10 dfg:otherChoice :a.
+:k dfg:invalidEvent _:sk_13.
+_:sk_13 dfg:reason "invalidatedTransitiveClosure".
+_:sk_13 dfg:priorInvalid :x.
+skolem:node_3 dfg:invalidLink _:sk_14.
+_:sk_14 dfg:reason "invalidatedTransitiveClosure".
+_:sk_14 dfg:priorInvalid :k.
+_:sk_17 dfg:from :x.
+_:sk_17 dfg:to :a.
+_:sk_17 dfg:source dfg:discovered.
+_:sk_17 dfg:inferred _:sk_18.
+_:sk_18 dfg:reason "priorEvent".
+_:sk_18 dfg:priorEvent :a.
+:l dfg:invalidEvent _:sk_21.
+_:sk_21 dfg:reason "invalidatedTransitiveClosure".
+_:sk_21 dfg:priorInvalid :k.
+skolem:node_9 dfg:invalidLink _:sk_22.
+_:sk_22 dfg:reason "invalidatedTransitiveClosure".
+_:sk_22 dfg:priorInvalid :l.
+_:sk_25 dfg:from :y.
+_:sk_25 dfg:to :x.
+_:sk_25 dfg:source dfg:discovered.
+_:sk_25 dfg:inferred _:sk_26.
+_:sk_26 dfg:reason "priorEvent".
+_:sk_26 dfg:priorEvent :x.
+# 2024-09-17T19:30:40.748Z in=64 out=78 ent=39 step=61 brake=7 inf=257773 sec=0.038 inf/sec=6783500
+# ENDS
+

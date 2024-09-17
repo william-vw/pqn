@@ -1,5 +1,5 @@
 # Processed by EYE v10.17.3 (2024-08-07)
-# eye --quiet utils.n3 rules-closure.n3 --turtle data/tests/test4-norm.n3 --nope --pass-only-new
+# eye --quiet utils.n3 rules-closure.n3 --turtle data/tests/test4-norm.n3 --nope --pass-only-new --skolem-genid 123
 
 @prefix : <http://example.org/>.
 @prefix dfg: <http://rdf.org/dfg#>.
@@ -14,6 +14,6 @@
 :c dfg:ancestors (:z :b :a :x :y).
 :d dfg:ancestors (:c :z :b :a :x :y).
 dfg:nil dfg:ancestors (:l :x :y :k :d :c :z :b :a).
-# 2024-09-12T20:37:35.049Z in=56 out=20 ent=10 step=26 brake=4 inf=123322 sec=0.032 inf/sec=3853813
+# 2024-09-17T19:45:00.717Z in=56 out=20 ent=10 step=26 brake=4 inf=123350 sec=0.032 inf/sec=3854688
 # ENDS
 

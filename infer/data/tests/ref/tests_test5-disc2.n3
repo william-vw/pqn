@@ -1,0 +1,7 @@
+# Processed by EYE v10.17.3 (2024-08-07)
+# eye --quiet utils.n3 rules-princ.n3 --turtle data/tests/test5-norm.n3 data/out/tests_test5-norm_closure.n3 data/tests/test5-disc2.n3 --pass-only-new --skolem-genid 123
+
+
+# 2024-09-17T19:29:02.103Z in=45 out=0 ent=0 step=0 brake=7 inf=161482 sec=0.035 inf/sec=4613771
+# ENDS
+

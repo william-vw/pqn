@@ -30,6 +30,6 @@ _:sk_19 dfg:source dfg:discovered.
 _:sk_19 dfg:inferred _:sk_20.
 _:sk_20 dfg:reason "priorEvent".
 _:sk_20 dfg:priorEvent :y.
-# 2024-09-17T19:41:10.512Z in=86 out=48 ent=24 step=41 brake=10 inf=287732 sec=0.040 inf/sec=7193300
+# 2024-09-17T19:40:55.641Z in=86 out=48 ent=24 step=41 brake=10 inf=287733 sec=0.049 inf/sec=5872102
 # ENDS
 
